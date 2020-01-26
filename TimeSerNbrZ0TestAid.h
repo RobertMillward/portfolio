@@ -21,9 +21,9 @@ typedef struct TimeSerNbrZ0QualityClassApiStruct
      * Please see TimeSerNbrO0.h for documentation
      */
     void (*newTimeAndSerNbrNow)(theStampAIdataPT, lineNbrT);
-    Sint (*getStrOfTime)(gpSllgCharArrayPT, lineNbrT);
-    Sint (*getRowOfSerNbr)(gpSllgCharArrayPT, lineNbrT);
-    void (*getAgeInWeeksAndDays)(gpSllgCharArrayPT, lineNbrT);
+    Sint (*getStrOfTime)(gpSllgChar32PT, lineNbrT);
+    Sint (*getRowOfSerNbr)(gpSllgChar32PT, lineNbrT);
+    void (*getAgeInWeeksAndDays)(gpSllgChar32PT, lineNbrT);
     /**
      * Tools
      */

@@ -121,11 +121,11 @@ typedef struct HashBasicsZ0ACapiS
      */
     void (*get8100code)(char* the8100store, Ssht hash);
     
-}HashBasicsZ0ACapiT, *HashBasicsZ0ACapiPT;
+}HashBasicsO0HCapiT, *HashBasicsO0HCapiPT;
 
-#define HashBasicsACapiT HashBasicsZ0ACapiT
-#define HashBasicsACapi HashBasicsZ0ACapi
-extern HashBasicsACapiT HashBasicsACapi;
+#define HashBasicsHCapiT HashBasicsO0HCapiT
+#define HashBasicsHCapi HashBasicsO0HCapi
+extern HashBasicsHCapiT HashBasicsHCapi;
 /*
  */
 #pragma mark - New instance

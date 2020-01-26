@@ -2,8 +2,7 @@
 //  HashBasicsZ0Tests.m
 //
 //  Created by Robert R on 4/1/15.
-//  Copyright (c) 2015 Robert Russell Millward.
-//  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
@@ -47,7 +46,7 @@
         
         while(*hc.tokenNxtP)
         {
-            int hash = (int)HashBasicsACapi.getBasicHash(&hc);
+            int hash = (int)HashBasicsHCapi.getBasicHash(&hc);
             
             char wkS[1001];
             strncpy(wkS, hc.tokenBegP, hc.tokenEndP - hc.tokenBegP);
@@ -104,7 +103,7 @@
         
         while(*hc.tokenNxtP)
         {
-            int hash = (int)HashBasicsACapi.getBasicHash(&hc);
+            int hash = (int)HashBasicsHCapi.getBasicHash(&hc);
             char wkS[1001];
             strncpy(wkS, hc.tokenBegP, hc.tokenEndP - hc.tokenBegP);
             wkS[hc.tokenEndP - hc.tokenBegP] = 0;
@@ -127,14 +126,14 @@
 {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName))
     {
-        if(TestAidC.putTestInts(   0, (int)HashBasicsACapi.get8100HashForOtherName("00200"),         __LINE__) != 0 ||
-           TestAidC.putTestInts(  15, (int)HashBasicsACapi.get8100HashForOtherName("02000"),         __LINE__) != 0 ||
-           TestAidC.putTestInts(4168, (int)HashBasicsACapi.get8100HashForOtherName("getHappyDays"),  __LINE__) != 0 ||
-           TestAidC.putTestInts(4168, (int)HashBasicsACapi.get8100HashForOtherName("setHappyDays"),  __LINE__) != 0 ||
-           TestAidC.putTestInts(4168, (int)HashBasicsACapi.get8100HashForOtherName("HappyDays"),     __LINE__) != 0 ||
-           TestAidC.putTestInts(4546, (int)HashBasicsACapi.get8100HashForOtherName("islandTime"),    __LINE__) != 0 ||
-           TestAidC.putTestInts(7399, (int)HashBasicsACapi.get8100HashForOtherName("isZooAnimal"),   __LINE__) != 0 ||
-           TestAidC.putTestInts(7447, (int)HashBasicsACapi.get8100HashForOtherName("ZZZsleep"),      __LINE__) != 0)
+        if(TestAidC.putTestInts(   0, (int)HashBasicsHCapi.get8100HashForOtherName("00200"),         __LINE__) != 0 ||
+           TestAidC.putTestInts(  15, (int)HashBasicsHCapi.get8100HashForOtherName("02000"),         __LINE__) != 0 ||
+           TestAidC.putTestInts(4168, (int)HashBasicsHCapi.get8100HashForOtherName("getHappyDays"),  __LINE__) != 0 ||
+           TestAidC.putTestInts(4168, (int)HashBasicsHCapi.get8100HashForOtherName("setHappyDays"),  __LINE__) != 0 ||
+           TestAidC.putTestInts(4168, (int)HashBasicsHCapi.get8100HashForOtherName("HappyDays"),     __LINE__) != 0 ||
+           TestAidC.putTestInts(4546, (int)HashBasicsHCapi.get8100HashForOtherName("islandTime"),    __LINE__) != 0 ||
+           TestAidC.putTestInts(7399, (int)HashBasicsHCapi.get8100HashForOtherName("isZooAnimal"),   __LINE__) != 0 ||
+           TestAidC.putTestInts(7447, (int)HashBasicsHCapi.get8100HashForOtherName("ZZZsleep"),      __LINE__) != 0)
         {
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
@@ -171,7 +170,7 @@
         
         while(*hbc.tokenNxtP)
         {
-            gotFromText[gftIx].bigHash = HashBasicsACapi.getBasicHash(&hbc);
+            gotFromText[gftIx].bigHash = HashBasicsHCapi.getBasicHash(&hbc);
             gotFromText[gftIx].whereInBufferP = hbc.tokenBegP;
             gotFromText[gftIx].mass = hbc.tokenEndP - hbc.tokenBegP;
             /*
@@ -180,7 +179,7 @@
             wkS[gotFromText[gftIx].mass] = 0;
             gotFromText[gftIx++].littleHash = HashBasicsC.get8100HashForOtherName(wkS);
              */
-            gotFromText[gftIx].littleHash = HashBasicsACapi.get8100HashForOtherName(gotFromText[gftIx].whereInBufferP);
+            gotFromText[gftIx].littleHash = HashBasicsHCapi.get8100HashForOtherName(gotFromText[gftIx].whereInBufferP);
             gftIx++;
         }
             

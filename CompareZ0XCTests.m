@@ -32,22 +32,22 @@
     if(TA0C.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         char *retStr = NULL;
         sortNullsArcT sn = NULLS_HI_ARC;
-        fieldTypeCprT tp = CPR_FTYPE_STRL;
+        /*fieldTypeT*/ char tp = CPR_FTYPE_STRL; // TODO
         
         char *a = "a val";
         char *b = "b val";
         
-        retStr = CompareZ0ACapi.sortTwoFields(a, b, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(a, b, tp, sn);
         if(TestAidZ0QCapi.putTestChars(IS_LOW_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
-        retStr = CompareZ0ACapi.sortTwoFields(a, a, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(a, a, tp, sn);
         if(TestAidZ0QCapi.putTestChars(IS_EQL_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
-        retStr = CompareZ0ACapi.sortTwoFields(b, a, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(b, a, tp, sn);
         if(TestAidZ0QCapi.putTestChars(IS_HIGH_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
@@ -59,38 +59,38 @@
     if(TA0C.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         char *retStr = NULL;
         sortNullsArcT sn = NULLS_HI_ARC;
-        fieldTypeCprT tp = CPR_FTYPE_STRL;
+        /*fieldTypeCprT*/ char tp = CPR_FTYPE_STRL; // TODO
         
         char *a = "a val";
         
-        retStr = CompareZ0ACapi.sortTwoFields(a, 0, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(a, 0, tp, sn);
         if(TestAidC.putTestChars(NULL_LO_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
-        retStr = CompareZ0ACapi.sortTwoFields(0, a, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(0, a, tp, sn);
         if(TestAidC.putTestChars(NULL_HI_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
-        retStr = CompareZ0ACapi.sortTwoFields(0, 0, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(0, 0, tp, sn);
         if(TestAidC.putTestChars(UNDEFINED_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
         sn = NULLS_LO_ARC;
         
-        retStr = CompareZ0ACapi.sortTwoFields(a, 0, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(a, 0, tp, sn);
         if(TestAidC.putTestChars(NULL_HI_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
-        retStr = CompareZ0ACapi.sortTwoFields(0, a, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(0, a, tp, sn);
         if(TestAidC.putTestChars(NULL_LO_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
-        retStr = CompareZ0ACapi.sortTwoFields(0, 0, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(0, 0, tp, sn);
         if(TestAidC.putTestChars(UNDEFINED_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
@@ -103,22 +103,22 @@
     if(TA0C.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         char *retStr = NULL;
         sortNullsArcT sn = NULLS_HI_ARC;
-        fieldTypeCprT tp = CPR_FTYPE_DTTM;
+        /*fieldTypeCprT*/ char tp = CPR_FTYPE_DTTM; // TODO
         
         char *a = "a val";
         char *b = "b val";
         
-        retStr = CompareZ0ACapi.sortTwoFields(a, b, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(a, b, tp, sn);
         if(TestAidC.putTestChars(IS_LOW_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
-        retStr = CompareZ0ACapi.sortTwoFields(a, a, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(a, a, tp, sn);
         if(TestAidC.putTestChars(IS_EQL_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
         
-        retStr = CompareZ0ACapi.sortTwoFields(b, a, tp, sn);
+        retStr = CompareO0HCapi.sortTwoFields(b, a, tp, sn);
         if(TestAidC.putTestChars(IS_HIGH_ARC, retStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
