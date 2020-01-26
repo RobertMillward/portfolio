@@ -2,43 +2,46 @@
 //  CompareZ0TestAid.c
 //
 //  Created by Robert R on 2/21/15.
-//  Copyright (c) 2015 Robert Russell Millward.
-//  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
+// os
 #include <string.h>
-#include <libc.h>
+#include <stdio.h>
+// data plan
+// api's
+// aids
 #include "CompareZ0TestAid.h"
 #include "TestAidZ0.h"
 
 static compareResultArcT
-sortTwoFieldsZ0Q(thisValT thisVal,
+CompareZ0TestAid_sortTwoFieldsQ(thisValT thisVal,
                  thatValT thatVal,
-                 dataTypeArcT onType,
+                 dataTypeT onType,
                  sortNullsArcT hiLo,
                  lineNbrT lineNbr)
 {
-    compareResultArcT status = CompareZ0ACapi.sortTwoFields(thisVal, thatVal, onType, hiLo);
+    compareResultArcT status = CompareO0HCapi.sortTwoFields(thisVal, thatVal, onType, hiLo);
     
     return status;
 }
 
 
 static rankCprT
-isSimilarZ0Q(thisValT thisVal, char *similarItem, dataTypeArcT tp, lineNbrT lineNbr)
+CompareZ0TestAid_isSimilarQ(thisValT thisVal, char *similarItem, dataTypeT tp, lineNbrT lineNbr)
 {
-    rankCprT rank = CompareZ0ACapi.isSimilar(thisVal, similarItem, tp);
+    rankCprT rank = CompareO0HCapi.isSimilar(thisVal, similarItem, tp);
     
     return rank;
 }
 
 
 static compareResultArcT
-isLikeZ0Q(thisValT thisVal,
+CompareZ0TestAid_isLikeQ(thisValT thisVal,
           thatValT thatVal,
-          dataTypeArcT onType,
+          dataTypeT onType,
           lineNbrT lineNbr)
 {
-    compareResultArcT retStr = CompareZ0ACapi.isLike(thisVal, thatVal, onType);
+    compareResultArcT retStr = CompareO0HCapi.isLike(thisVal, thatVal, onType);
     
 
     return retStr;
@@ -49,13 +52,13 @@ isLikeZ0Q(thisValT thisVal,
  * Test tools.
  */
 static Zint
-sortTwoTestsZ0Q(SortTwoZ0QCdataPT items, itemCountT itemCount, dataTypeArcT dataType, sortNullsArcT nullsTo, lineNbrT driverLineNbr, lineNbrT lineNbr)
+CompareZ0TestAid_sortTwoTestsQ(SortTwoZ0QCdataPT items, itemCountT itemCount, dataTypeT dataType, sortNullsArcT nullsTo, lineNbrT driverLineNbr, lineNbrT lineNbr)
 {
     Zint retVal = 0;
     
     for(int itemIx = 0 ; itemIx < itemCount ; itemIx++)
     {
-        items[itemIx].recieved = sortTwoFieldsZ0Q(items[0].thisP, items[itemIx].thisP, dataType, nullsTo, lineNbr);
+        items[itemIx].recieved = CompareZ0TestAid_sortTwoFieldsQ(items[0].thisP, items[itemIx].thisP, dataType, nullsTo, lineNbr);
         
         char* okElse = "ok";
         if(items[itemIx].recieved != items[itemIx].expect )
@@ -80,13 +83,13 @@ sortTwoTestsZ0Q(SortTwoZ0QCdataPT items, itemCountT itemCount, dataTypeArcT data
 }
 
 static Zint // The number of failed tests
-isSimilarTestsZ0Q(SimilarZ0QCdataT items[], itemCountT itemCount, dataTypeArcT dataType, lineNbrT driverLineNbr, lineNbrT lineNbr)
+CompareZ0TestAid_isSimilarTestsQ(SimilarZ0QCdataT items[], itemCountT itemCount, dataTypeT dataType, lineNbrT driverLineNbr, lineNbrT lineNbr)
 {
     Zint retVal = 0;
     
     for(int itemIx = 0 ; itemIx < itemCount ; itemIx++)
     {
-        items[itemIx].recievedRank = isSimilarZ0Q(items[0].this, items[itemIx].this, dataType, lineNbr);
+        items[itemIx].recievedRank = CompareZ0TestAid_isSimilarQ(items[0].this, items[itemIx].this, dataType, lineNbr);
         
         char* okElse = "ok";
         if(items[itemIx].recievedRank != items[itemIx].expectRank )
@@ -112,12 +115,12 @@ isSimilarTestsZ0Q(SimilarZ0QCdataT items[], itemCountT itemCount, dataTypeArcT d
 
 
 static Zint
-isLikeTestsZ0Q(LikeZ0QCdataPT items, dataTypeArcT dataType, itemCountT itemCount, lineNbrT driverLineNbr, lineNbrT lineNbr)
+CompareZ0TestAid_isLikeTestsQ(LikeZ0QCdataPT items, dataTypeT dataType, itemCountT itemCount, lineNbrT driverLineNbr, lineNbrT lineNbr)
 {
     Zint retVal = -1;
     for(int itemIx = 0 ; itemIx < itemCount ; itemIx++)
     {
-        items[itemIx].recieved = isLikeZ0Q(items[0].thisP, items[itemIx].thisP, dataType, lineNbr);
+        items[itemIx].recieved = CompareZ0TestAid_isLikeQ(items[0].thisP, items[itemIx].thisP, dataType, lineNbr);
         
         char* okElse = "ok";
         if(items[itemIx].recieved != items[itemIx].expect )
@@ -144,7 +147,7 @@ isLikeTestsZ0Q(LikeZ0QCdataPT items, dataTypeArcT dataType, itemCountT itemCount
  * Specific tests of similar.
  */
 static Zint // The number of failed tests
-edwardSimilarTest(lineNbrT driverLineNbr)
+CompareZ0TestAid_edwardSimilarTest(lineNbrT driverLineNbr)
 {
     SimilarZ0QCdataT edward = {"Edward",    15};
     SimilarZ0QCdataT ed     = {"Ed",        11};
@@ -157,7 +160,7 @@ edwardSimilarTest(lineNbrT driverLineNbr)
         edwd
     };
     
-    Zint retVal = isSimilarTestsZ0Q(items, 3, CPR_FTYPE_STRL, driverLineNbr, __LINE__);
+    Zint retVal = CompareZ0TestAid_isSimilarTestsQ(items, 3, CPR_FTYPE_STRL, driverLineNbr, __LINE__);
     
     return retVal;
 }
@@ -166,7 +169,7 @@ edwardSimilarTest(lineNbrT driverLineNbr)
  * Specific tests of like.
  */
 static Zint
-aLikeTest(lineNbrT driverLineNbr)
+CompareZ0TestAid_aLikeTest(lineNbrT driverLineNbr)
 {
     LikeZ0QCdataT leftItem  = {"a val", IS_LIKE_ARC, 0};
     LikeZ0QCdataT beginsW   = {"a*",    IS_LIKE_ARC, 0};
@@ -183,13 +186,13 @@ aLikeTest(lineNbrT driverLineNbr)
         nope
     };
     
-    Zint retVal = isLikeTestsZ0Q(items, CPR_FTYPE_STRL, 5, driverLineNbr, __LINE__);
+    Zint retVal = CompareZ0TestAid_isLikeTestsQ(items, CPR_FTYPE_STRL, 5, driverLineNbr, __LINE__);
     
     return retVal;
 }
 
 Zint
-sortTwoTest(lineNbrT driverLineNbr)
+CompareZ0TestAid_sortTwoTest(lineNbrT driverLineNbr)
 {
     SortTwoZ0QCdataT middleStr =    {"b", IS_EQL_ARC, 0};
     SortTwoZ0QCdataT highStr =      {"a", IS_HIGH_ARC, 0};
@@ -203,13 +206,13 @@ sortTwoTest(lineNbrT driverLineNbr)
     };
     
     Zint retNbr =
-    sortTwoTestsZ0Q(items, 3, CPR_FTYPE_STRL, NULLS_HI_ARC, driverLineNbr, __LINE__);
+    CompareZ0TestAid_sortTwoTestsQ(items, 3, CPR_FTYPE_STRL, NULLS_HI_ARC, driverLineNbr, __LINE__);
 
     return retNbr;
 }
 
 Zint
-sortNullTest(lineNbrT driverLineNbr)
+CompareZ0TestAid_sortNullTest(lineNbrT driverLineNbr)
 {
     Zint retNbr = 0;
     
@@ -225,10 +228,10 @@ sortNullTest(lineNbrT driverLineNbr)
         
         itemsZipVal[0].expect = UNDEFINED_ARC;
         itemsZipVal[1].expect = NULL_HI_ARC;
-        retNbr += sortTwoTestsZ0Q(itemsZipVal, 2, CPR_FTYPE_STRL, NULLS_HI_ARC, driverLineNbr, __LINE__);
+        retNbr += CompareZ0TestAid_sortTwoTestsQ(itemsZipVal, 2, CPR_FTYPE_STRL, NULLS_HI_ARC, driverLineNbr, __LINE__);
         
         itemsZipVal[1].expect = NULL_LO_ARC;
-        retNbr += sortTwoTestsZ0Q(itemsZipVal, 2, CPR_FTYPE_STRL, NULLS_LO_ARC, driverLineNbr, __LINE__);
+        retNbr += CompareZ0TestAid_sortTwoTestsQ(itemsZipVal, 2, CPR_FTYPE_STRL, NULLS_LO_ARC, driverLineNbr, __LINE__);
     }
     
     {
@@ -240,9 +243,9 @@ sortNullTest(lineNbrT driverLineNbr)
 
         itemsZipVal[0].expect = IS_EQL_ARC;
         itemsZipVal[1].expect = NULL_LO_ARC;
-        retNbr += sortTwoTestsZ0Q(itemsZipVal, 2, CPR_FTYPE_STRL, NULLS_HI_ARC, driverLineNbr, __LINE__);
+        retNbr += CompareZ0TestAid_sortTwoTestsQ(itemsZipVal, 2, CPR_FTYPE_STRL, NULLS_HI_ARC, driverLineNbr, __LINE__);
         itemsZipVal[1].expect = NULL_HI_ARC;
-        retNbr += sortTwoTestsZ0Q(itemsZipVal, 2, CPR_FTYPE_STRL, NULLS_LO_ARC, driverLineNbr, __LINE__);
+        retNbr += CompareZ0TestAid_sortTwoTestsQ(itemsZipVal, 2, CPR_FTYPE_STRL, NULLS_LO_ARC, driverLineNbr, __LINE__);
     }
     
 
@@ -254,20 +257,20 @@ sortNullTest(lineNbrT driverLineNbr)
  */
 const CompareZ0QCapiT CompareZ0QCapi =
 {
-    sortTwoFieldsZ0Q,
-    isSimilarZ0Q,
-    isLikeZ0Q,
-    sortTwoTestsZ0Q,
-    isSimilarTestsZ0Q,
-    isLikeTestsZ0Q,
+    CompareZ0TestAid_sortTwoFieldsQ,
+    CompareZ0TestAid_isSimilarQ,
+    CompareZ0TestAid_isLikeQ,
+    CompareZ0TestAid_sortTwoTestsQ,
+    CompareZ0TestAid_isSimilarTestsQ,
+    CompareZ0TestAid_isLikeTestsQ,
     
-    edwardSimilarTest,
-    aLikeTest,
-    sortTwoTest,
-    sortNullTest
+    CompareZ0TestAid_edwardSimilarTest,
+    CompareZ0TestAid_aLikeTest,
+    CompareZ0TestAid_sortTwoTest,
+    CompareZ0TestAid_sortNullTest
 };
 
-
-
-
 //END CompareZ0TestAid.c
+/**
+ *
+ */

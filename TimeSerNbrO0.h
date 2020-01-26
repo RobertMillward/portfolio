@@ -2,7 +2,7 @@
 //  TimeSerNbrO0.h
 //
 //  Created by Robert Russell Millward on 12/24/18.
-//  Copyright © 2018 Robert Russell Millward. All rights reserved.
+//  Copyright © 2020 Robert Russell Millward. All rights reserved.
 //
 #ifndef TimeSerNbrO0_h
 #define TimeSerNbrO0_h
@@ -10,7 +10,7 @@
 /**
  *
  */
-typedef const struct TimeSerNbrO0ApplicationClassStructure
+typedef const struct TimeSerNbrO0HelperClassStructure
 {
     /**
      * Builds a structure of time information.
@@ -30,11 +30,11 @@ typedef const struct TimeSerNbrO0ApplicationClassStructure
      * over 99 weeks and 6 days is 99+W.
      */
     void (*getAgeInWeeksAndDays)(gpSllgChar32PT yourSpaceP);
-}TimeSerNbrO0ACapiT, *TimeSerNbrO0ACapiPT;
+}TimeSerNbrO0HCapiT, *TimeSerNbrO0HCapiPT;
 
-#define TimeSerNbrACapiT TimeSerNbrO0ACapiT
-#define TimeSerNbrACapi TimeSerNbrO0ACapi
-extern TimeSerNbrACapiT TimeSerNbrACapi;
+#define TimeSerNbrHCapiT TimeSerNbrO0HCapiT
+#define TimeSerNbrHCapi TimeSerNbrO0HCapi
+extern TimeSerNbrHCapiT TimeSerNbrHCapi;
 
 #endif /* defined(TimeSerNbrO0_h) */
 /**

@@ -2,13 +2,16 @@
 //  RowO0.h - A thread safe library to robustly support Row manipulation.
 //
 //  Created by Robert Russell Millward on 10/4/19.
-//  Copyright (c) 2019 Robert Russell Millward. All rights reserved
+//  Copyright (c) 2020 Robert Russell Millward. All rights reserved
 //
 #ifndef RowO0_h
 #define RowO0_h
+// os
+// data plans
 #include "RowZ0Plan.h"
+// api's
 
-typedef const struct RowO0ACapiS
+typedef const struct RowO0HCapiS
 {
     /**
      * Initialize this Row to the empty char[]. The length can be MIN_FIELD_Z_ROW or greater.
@@ -41,9 +44,9 @@ typedef const struct RowO0ACapiS
     RowZ0AIwxyzT
     (*getWXYZ)(char* rowP);
     
-}RowO0ACapiT, *RowO0ACapiPT;
+}RowO0HCapiT, *RowO0HCapiPT;
 
-extern RowO0ACapiT RowO0ACapi;
+extern RowO0HCapiT RowO0HCapi;
 
 #endif /* defined(RowO0_h) */
 /**

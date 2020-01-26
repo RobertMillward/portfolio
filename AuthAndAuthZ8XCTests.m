@@ -1,5 +1,5 @@
 //
-//  AuthAndAuthZ8Tests.m
+//  AuthAndAuthZ8XCTests.m
 //
 //  Created by Robert Russell Millward on 10/8/19.
 //  Copyright (c) 2019 Robert Russell Millward.  All rights reserved.

@@ -6,11 +6,14 @@
 //
 #ifndef CompareO0_h
 #define CompareO0_h
+// os
+// data plan
 #include "CompareZ0Plan.h"
+// api's
 /**
- *
+ * Compare for EQ, LOW, HIGH, Starts with, Ends with, Contains, is numerically similar to.
  */
-typedef struct CompareO0AppClassApiStructure
+typedef struct CompareO0HelperClassApiStructure
 {
     /**
      * Compare two fields.
@@ -18,7 +21,7 @@ typedef struct CompareO0AppClassApiStructure
     compareResultArcT(*sortTwoFields)(
             char *thisVal,
             char *thatVal,
-            dataTypeArcT onType,
+            dataTypeT onType,
             sortNullsArcT hiLo);
     /**
      * Rank the similarity of two fields.
@@ -26,20 +29,23 @@ typedef struct CompareO0AppClassApiStructure
     rankCprT (*isSimilar)(
             char *val1,
             char *similarTo,
-            dataTypeArcT onType);
+            dataTypeT onType);
     /**
      * See if this field or value is like that value.
      */
     compareResultArcT (*isLike)(
             char *thisVal,
             char *thatVal,
-            dataTypeArcT onType);
+            dataTypeT onType);
     
-}CompareO0ACapiT, *CompareO0ACapiPT;
+}CompareO0HCapiT, *CompareO0HCapiPT;
 
 
-#define CompareACapiT CompareO0ACapiT
-#define CompareACapi CompareO0ACapi
-extern const CompareACapiT CompareACapi;
+#define CompareHCapiT CompareO0HCapiT
+#define CompareHCapi CompareO0HCapi
+extern const CompareHCapiT CompareHCapi;
 
 #endif /* defined(CompareO0_h) */
+/**
+ *
+ */
