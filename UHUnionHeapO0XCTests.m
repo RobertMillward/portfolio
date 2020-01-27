@@ -1,6 +1,5 @@
 //
-//  UnionHeapO0XCTests.m - tests for version o level 0
-//  gitrealportfolio
+//  UnionHeapO0XCTests.m - tests for version O level 0
 //
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
@@ -8,11 +7,10 @@
 // os
 #import <XCTest/XCTest.h>
 // data plan
-#import "UHUnionHeapZ0Plan.h"
+//#import "UHUnionHeapZ0Plan.h"
 // api's
-#import "UHUnionHeapO0.h"
 // test aids
-#import "SortMergeZ0TestAid.h"
+#import "UHUnionHeapZ0TestAid.h"
 
 
 #define MYARRAYCT       1000000
@@ -81,6 +79,6 @@ static uhxPassT masterMillionUnionsInfo;
 
 
 
-// END UnionHeapZ0XCTests.m
+// END UnionHeapO0XCTests.m
 /**
  */

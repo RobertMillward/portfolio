@@ -1,17 +1,22 @@
 //
-//  SortMergeZ0TestAid.h - interface file for all level 0 quality assurance code silo parts common to all versions
+//  UHUnionHeapZ0TestAid.h - interface file for all level 0 quality assurance code silo parts common to all versions
 //
 //  Created by Robert R on 11/2/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
 //
-
-#ifndef SortMergeZ0TestAid_h
-#define SortMergeZ0TestAid_h
-
+#ifndef UHUnionHeapZ0TestAid_h
+#define UHUnionHeapZ0TestAid_h
+// os
 #include <stdio.h>
-#include "SortMergeZ0.h" // Need the api and the plan
+// data plans
+#import "UHUnionHeapZ0Plan.h"
+// api's
+#import "UHUnionHeapO0.h"
+//#import "UHSortO0.h"
+//#import "UHBtreeO0.h"
+// quality
 
-typedef enum SortMergeFillOrderQ0enum
+typedef enum UHUnionHeapFillOrderQ0enum
 {
     FILL_RANDOM,
     FILL_ASCENDING,
@@ -19,17 +24,17 @@ typedef enum SortMergeFillOrderQ0enum
 }sortMergeFillOrderQ0T;
 
 /**
- * The SortMerge applcation silo quality assurance class api
+ * The UHUnionHeap applcation silo quality assurance class api
  */
-typedef struct SortMergeZ0QCLineApiStruct
+typedef struct UHUnionHeapZ0QualityHelperClassApiStruct
 {
-    long (*sort)(uhxPassPT, int lineNbr);
+    long (*ourSort)(uhxPassPT, int lineNbr);
     int  (*clang)(uhxPassPT, int lineNbr);
     void (*brute)(uhxPassPT, int lineNbr);
     /**
      * New
      */
-    uhxPassT (*newInfo)(uhxElPT, size_t massOf, uhxSubTypeT, sortMergeFillOrderQ0T, int lineNbr);
+    uhxPassT (*newUhxPassT)(uhxElPT, size_t massOf, uhxSubTypeT, sortMergeFillOrderQ0T, int lineNbr);
     /**
      * Tools
      */
@@ -43,10 +48,10 @@ typedef struct SortMergeZ0QCLineApiStruct
     void (*slosh)(uhxPassPT, int lineNbr);
     void (*btree)(uhxPassPT, int lineNbr);
     
-}SortMergeZ0QClineApiT, * SortMergeZ0QClineApiPT;
+}UHUnionHeapZ0QHCapiT, * UHUnionHeapZ0QHCapiPT;
 
-extern SortMergeZ0QClineApiT SortMergeZ0QClineApi;
+extern UHUnionHeapZ0QHCapiT UHUnionHeapZ0QHCapi;
 
-#endif /* SortMergeZ0QTestAid_h */
+#endif /* UHUnionHeapZ0TestAid_h */
 /**
  */

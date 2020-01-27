@@ -62,7 +62,7 @@ typedef struct CompareZ0QualityClassApiStructure
      * Tests
      */
     Zint (*edwardSimilarTest)(lineNbrT);
-    Zint (*aLikeTest)(lineNbrT);
+    itemCountT (*aLikeTest)(lineNbrT);
     Zint (*sortTwoTest)(lineNbrT);
     Zint (*sortNullTest)(lineNbrT);
     

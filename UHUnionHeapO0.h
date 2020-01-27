@@ -1,6 +1,5 @@
 //
 //  UHUnionHeapO0.h
-//  gitrealportfolio
 //
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
@@ -13,10 +12,10 @@
 // data plans
 // api's
 
-typedef struct UnionHeapZ0HelperClassApiStruct
+typedef struct UnionHeapO0HelperClassApiStruct
 {
     void (*fillInCompareAsNeeded)(uhxPassPT);
-}UHUnionHeapO0HCapiT, *UHUnionHeapO0HCapiPT;
+}UHUnionHeapO0QHCapiT, *UHUnionHeapO0QHCapiPT;
 
 extern UHUnionHeapO0HCapiT UHUnionHeapO0HCapi;
 
