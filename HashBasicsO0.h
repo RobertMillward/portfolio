@@ -4,91 +4,15 @@
 //  Created by Robert R on 2/3/15.
 //  Copyright (c) 2015 Robert Russell Millward.  All rights reserved.
 //
-
-/**
- * Note: this is also well tested by TestAidZ0.
- */
 #ifndef HashBasicsO0_h
 #define HashBasicsO0_h
+// os
+// data plans
 #include "HashBasicsZ0Plan.h"
-
-///*
-// */
-//#pragma mark - init and destroy.
-///*
-// */
-//
-///*
-// */
-//#pragma mark - The instance
-///*
-// */
-//
-///*
-// */
-//#pragma mark - Class Methods
-///*
-// */
-//typedef struct HashBasicsO0CtlS
-//{
-//    Uchr   doAtLeast;
-//    Uchr   maxShift;
-//    Uchr   condense;    // see HB_NO_CONDENSE
-//    Zchr   byCol;       // see HB_NO_COLUMNS
-//    Uint   hashMod;     // see HB_BIG_HASH_RSVD
-//    char *fs;
-//    char *rs;
-//    char *tokenNxtP;
-//    char *tokenBegP;
-//    char *tokenEndP;
-//}HashBasicsO0CtlT, *HashBasicsO0CtlPT;
-//#define HashBasicsCtlT HashBasicsO0CtlT
-//#define HashBasicsCtlPT HashBasicsO0CtlPT
-/**
- * If reserved (preserved actually) then the
- * mod operator is not applied to the Ulng hash value
- * else the Ulng is % this value in the control structure.
- */
-//#define HB_BIG_HASH_RSVD 0
-/**
- * Condensing can be used when hashing alpha-only.
- * The value of blank is subtracted before using
- * the character's value in the hash.
- */
-//#define HB_CONDENSE     1
-//#define HB_NO_CONDENSE  0
-/**
- * Use if multiple column separators are as 1
- * else the zero based column number.
- */
-//#define HB_NO_COLUMNS   -1 // requires Pchr data type
-//#define HB_COL_NBR_BASE  0
+// api's
 
 
-//typedef unsigned int    fourHashT;
-//typedef unsigned long   eightHashT;
-/**
- * Tools to manage the 8100 (90*90) element array.
- * The array itself can be initialized with a negative value.
- * An element can hold an index into another array
- * or a count of items that hash to that cell.
- * Invoke with struct Hash8100S yourHashName[90*90]
- * and each element is yourHashName[yourIx].countOrIndex.
- * then initialize each element with a negative number.
- */
-/**
- * For encoding 90x90 values which is 8100 which is just short of 8192 which is 2^13.
- * Add VISIBLE_ARC to get all printable characters.
- */
-//#define ENCODE_13b_ARC 90
-//
-//struct Hash8100S
-//{
-//    long countOrIndex;
-//};
-//#define MAX_8100_HB 7688 // 31*31*8
-
-typedef struct HashBasicsO0ACapiS
+typedef struct HashBasicsO0HelperClassApiStruct
 {
     /**
      * Will not parse past '\0' or your row-separator(s).

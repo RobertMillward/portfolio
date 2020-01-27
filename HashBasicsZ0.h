@@ -1,32 +1,16 @@
 //
-//  HashBasicsZ0.h
+//  HashBasicsZ0.h -  DELETE
 //
 //  Created by Robert R on 2/3/15.
-//  Copyright (c) 2015 Robert Russell Millward.
+//  Copyright (c) 2020 Robert Russell Millward.
 //  All rights reserved.
 //
-
-/**
- * Note: this is also well tested by TestAidZ0.
- */
 #ifndef HashBasicsZ0_h
 #define HashBasicsZ0_h
-#include "ArchitectureZ0.h"
+// os
+// data plans
+#include "ArchitectureZ0Plan.h"
 
-/*
- */
-#pragma mark - init and destroy.
-/*
- */
-
-/*
- */
-#pragma mark - The instance
-/*
- */
-
-/*
- */
 #pragma mark - Class Methods
 /*
  */

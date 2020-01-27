@@ -1,32 +1,34 @@
 //
-//  HashBasicsZ0Tests.m
+//  HashBasicsZ0XCTests.m - Test the O0 interfac3
 //
 //  Created by Robert R on 4/1/15.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-
+// os
 #import <XCTest/XCTest.h>
-#import "HashBasicsZ0.h"
+// data plans
+// api's
+#import "HashBasicsO0.h"
+// quality
 #import "TestAidZ0.h"
 
-@interface HashBasicsZ0Tests : XCTestCase
+
+@interface HashBasicsO0Tests : XCTestCase
 
 @end
 
-@implementation HashBasicsZ0Tests
+@implementation HashBasicsO0Tests
 
 - (void)setUp {
 }
 
 - (void)tearDown {
-    TestAidC.getCounts();
 }
 
-
-
-
-
-- (void)test2019SampleNotWorking {
+/**
+ * This test is not working TODO
+ */
+- (void)test2015SampleNotWorking {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
         char *tP = ",,\n,,\n";
@@ -80,7 +82,7 @@
 }
 
 
-- (void)test2019LikeTestAidZ0 {
+- (void)test2019LikeTestAid {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName))
     {
         char *tP = "someFunc inSomeFile.c\n exit\n";
@@ -122,7 +124,7 @@
     }
 }
 
-- (void)test2019therNameZ0
+- (void)test2019therName
 {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName))
     {
@@ -141,7 +143,7 @@
 }
 
 
-- (void)test201901CompileLikeZ0
+- (void)test201901CompileLike
 {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName))
     {
@@ -193,4 +195,7 @@
 
 @end
 
-//END HashBasicsZ0Tests.m
+//END HashBasicsZ0XCTests.m
+/**
+ *
+ */

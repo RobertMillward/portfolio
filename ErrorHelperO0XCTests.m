@@ -1,5 +1,5 @@
 //
-//  ErrorHelperO0Tests.m
+//  ErrorHelperO0XCTests.m
 //
 //  Created by Robert R on 10/22/14.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -9,9 +9,11 @@
 #import <XCTest/XCTest.h>
 // api
 #import "ErrorHelperO0.h"
-// data
-#import "TestAidZ0.h"
+// data plans
 #import "ErrorHelperZ0Plan.h"
+// api's
+// quality
+#import "TestAidZ0.h"
 
 @interface ErrorHelperO0Tests : XCTestCase
 
@@ -19,22 +21,19 @@
 
 @implementation ErrorHelperO0Tests
 
-static bool showFunctionNameEHO0 = false;
-
 - (void)setUp {
 }
 
 - (void)tearDown
 {
-    TestAidC.getCounts();
 }
 
-
-
-
+/**
+ * This little bit of testing is not worth the crafting of a ErrorHelperZ0Aid.c/h set.
+ */
 - (void)test2099EHO0setGet
 {
-    if(TestAidC.isScheduled(__FUNCTION__, showFunctionNameEHO0))
+    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName))
     {
         int goodBase = ERRERRBASE;
         char* badTxt = "99.Bad text, good base";
@@ -54,6 +53,6 @@ static bool showFunctionNameEHO0 = false;
 }
 
 
-@end
+@end // ErrorHelperO0XCTests.m
 /**
  */

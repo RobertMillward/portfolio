@@ -117,7 +117,7 @@ CompareZ0TestAid_isSimilarTestsQ(SimilarZ0QCdataT items[], itemCountT itemCount,
 static Zint
 CompareZ0TestAid_isLikeTestsQ(LikeZ0QCdataPT items, dataTypeT dataType, itemCountT itemCount, lineNbrT driverLineNbr, lineNbrT lineNbr)
 {
-    Zint retVal = -1;
+    Zint retVal = 0;
     for(int itemIx = 0 ; itemIx < itemCount ; itemIx++)
     {
         items[itemIx].recieved = CompareZ0TestAid_isLikeQ(items[0].thisP, items[itemIx].thisP, dataType, lineNbr);
@@ -126,7 +126,8 @@ CompareZ0TestAid_isLikeTestsQ(LikeZ0QCdataPT items, dataTypeT dataType, itemCoun
         if(items[itemIx].recieved != items[itemIx].expect )
         {
             okElse = "bad";
-            retVal++;if(retVal == 1){
+            retVal++;
+            if(retVal == 1){ // report first issue only
                 TestAidZ0QCapi.putTestChars(items[itemIx].recieved, items[itemIx].expect, lineNbr);
             }
         }
@@ -168,7 +169,7 @@ CompareZ0TestAid_edwardSimilarTest(lineNbrT driverLineNbr)
 /**
  * Specific tests of like.
  */
-static Zint
+static itemCountT
 CompareZ0TestAid_aLikeTest(lineNbrT driverLineNbr)
 {
     LikeZ0QCdataT leftItem  = {"a val", IS_LIKE_ARC, 0};
@@ -186,7 +187,7 @@ CompareZ0TestAid_aLikeTest(lineNbrT driverLineNbr)
         nope
     };
     
-    Zint retVal = CompareZ0TestAid_isLikeTestsQ(items, CPR_FTYPE_STRL, 5, driverLineNbr, __LINE__);
+    itemCountT retVal = CompareZ0TestAid_isLikeTestsQ(items, CPR_FTYPE_STRL, 5, driverLineNbr, __LINE__);
     
     return retVal;
 }
