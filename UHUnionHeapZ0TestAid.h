@@ -21,7 +21,12 @@ typedef enum UHUnionHeapFillOrderQ0enum
     FILL_RANDOM,
     FILL_ASCENDING,
     FILL_DESCENDING
-}unionHeapFillOrderQ0T;
+}uhxqFillOrderQ0T;
+
+#define MYARRAYCT       1000000
+#define MYBIGODD_HEAPCT  999997 // To test the left edge of the third row
+#define MYSMALL_HEAPCT      900 // To keep the test small
+#define MYTINY_HEAPCT        16
 
 /**
  * The UHUnionHeap applcation silo quality assurance class api
@@ -31,7 +36,8 @@ typedef struct UHUnionHeapO0QualityInstanceApiStruct
     /**
      * Canned Tests
      */
-    ErrorWarnCountT     (*sizeCheck)(lineNbrT);
+    ErrorWarnCountT     (*sizeChecks)(lineNbrT);
+    ErrorWarnCountT     (*safetyChecks012n)(lineNbrT);
     /**
      * Functions
      */
@@ -44,7 +50,7 @@ typedef struct UHUnionHeapO0QualityInstanceApiStruct
     /**
      * New
      */
-    uhxPassT (*newUhxPassT)(uhxElPT, massOfT, uhxSubTypeT, unionHeapFillOrderQ0T, lineNbrT);
+    uhxPassT (*newUhxPassT)(uhxElPT, massOfT, uhxSubTypeT, uhxqFillOrderQ0T, lineNbrT);
     /**
      * Test tools
      */
@@ -53,10 +59,10 @@ typedef struct UHUnionHeapO0QualityInstanceApiStruct
     void                (*fillDescending)   (uhxElPT, massOfT, uhxSubTypeT, lineNbrT);
 
     /**
-     * Expirments
+     * Experirments
      */
-    void (*slosh)(uhxPassPT, int lineNbr);
-    void (*btree)(uhxPassPT, int lineNbr);
+    void (*slosh)(uhxPassPT, lineNbrT);
+    void (*btree)(uhxPassPT, lineNbrT);
     
 }UHUnionHeapO0QIapiT, * UHUnionHeapO0QIapiPT;
 
