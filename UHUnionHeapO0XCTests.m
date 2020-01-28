@@ -83,7 +83,7 @@ static uhxPassT masterMillionUnionsInfo;
 
 - (void)test2099BruteA {
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    UHUnionHeapO0QIapi.brute(&masterMillionUnionsInfo, __LINE__);
+    UHUnionHeapO0QIapi.bruteSort(&masterMillionUnionsInfo, __LINE__);
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
 
@@ -291,7 +291,7 @@ static uhxPassT masterMillionUnionsInfo;
 
 - (void)test2099CompareClangIntegers {
     
-    UHUnionHeapO0QIapi.clang(&masterMillionUnionsInfo, __LINE__);
+    UHUnionHeapO0QIapi.clangSort(&masterMillionUnionsInfo, __LINE__);
 }
 
 /**
@@ -311,7 +311,7 @@ static uhxPassT masterMillionUnionsInfo;
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
     
-    UHUnionHeapO0QIapi.clang(&masterMillionUnionsInfo, __LINE__);
+    UHUnionHeapO0QIapi.clangSort(&masterMillionUnionsInfo, __LINE__);
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }

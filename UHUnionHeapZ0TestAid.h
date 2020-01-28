@@ -21,20 +21,20 @@ typedef enum UHUnionHeapFillOrderQ0enum
     FILL_RANDOM,
     FILL_ASCENDING,
     FILL_DESCENDING
-}sortMergeFillOrderQ0T;
+}unionHeapFillOrderQ0T;
 
 /**
  * The UHUnionHeap applcation silo quality assurance class api
  */
-typedef struct UHUnionHeapZ0QualityHelperClassApiStruct
+typedef struct UHUnionHeapO0QualityInstanceApiStruct
 {
     long (*ourSort)(uhxPassPT, int lineNbr);
-    int  (*clang)(uhxPassPT, int lineNbr);
-    void (*brute)(uhxPassPT, int lineNbr);
+    int  (*clangSort)(uhxPassPT, int lineNbr);
+    void (*bruteSort)(uhxPassPT, int lineNbr);
     /**
      * New
      */
-    uhxPassT (*newUhxPassT)(uhxElPT, size_t massOf, uhxSubTypeT, sortMergeFillOrderQ0T, int lineNbr);
+    uhxPassT (*newUhxPassT)(uhxElPT, size_t massOf, uhxSubTypeT, unionHeapFillOrderQ0T, int lineNbr);
     /**
      * Tools
      */
