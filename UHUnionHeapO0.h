@@ -40,6 +40,15 @@ typedef struct UHUnionHeapO0HelperInstanceApiStruct
                              long inCount, long subsectionSize,
                              uhxComparePT uhxCompare,
                              uhxPassPT mergeInfoP);
+    /**
+     * Compare a triplet then rearrange the triplet as needed.
+     */
+    uhxTripletDiagramT  (*mapTriplet)(uhxPassPT uhxPassP, long item1Ix, long item2Ix, long item3Ix);
+    void                (*xferTriplet)(uhxPassPT uhxPassP, long item1Ix, long item2Ix, long item3Ix, uhxTripletDiagramT);
+    /**
+     * From a sampling of the heap produce an analysis which can be used to guide any process such as sorting.
+     */
+    uhxAnalysisT        (*analyze)(uhxPassPT uhxPassP);
     
 }UHUnionHeapO0HIapiT, *UHUnionHeapO0HIapiPT;
 

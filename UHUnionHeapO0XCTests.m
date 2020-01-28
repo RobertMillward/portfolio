@@ -4,15 +4,20 @@
 //  Created by Robert R on 11/1/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
 //
-
+// os
 #import <XCTest/XCTest.h>
+// data plans
+#import "ArchitectureZ0Plan.h"
+// api's
+// quality
 #import "UHUnionHeapZ0TestAid.h"
+#import "TestAidZ0.h"
 
 
 #define MYARRAYCT       1000000
-#define MYBIGODD_HEAPCT 999997 // To test the left edge of the third row
-#define MYSMALL_HEAPCT  900 // To keep the test small
-#define MYTINY_HEAPCT   16
+#define MYBIGODD_HEAPCT  999997 // To test the left edge of the third row
+#define MYSMALL_HEAPCT      900 // To keep the test small
+#define MYTINY_HEAPCT        16
 static uhxElT myMillionUnions[MYARRAYCT];
 
 static uhxPassT masterMillionUnionsInfo;
@@ -29,7 +34,6 @@ static uhxPassT masterMillionUnionsInfo;
 
 
 - (void)setUp {
-    //[super setUp];
     masterMillionUnionsInfo =
         UHUnionHeapO0QIapi.newUhxPassT(myMillionUnions,
                                  sizeof(myMillionUnions),
@@ -39,18 +43,14 @@ static uhxPassT masterMillionUnionsInfo;
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    //[super tearDown];
 }
 
 - (void)test2099SloshA {
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
     UHUnionHeapO0QIapi.slosh(&masterMillionUnionsInfo, __LINE__);
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
 
 - (void)test2099BtreeA {
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
     UHUnionHeapO0QIapi.btree(&masterMillionUnionsInfo, __LINE__);
 }
 
@@ -67,7 +67,6 @@ static uhxPassT masterMillionUnionsInfo;
 
 
 - (void)setUp {
-    //[super setUp];
     masterMillionUnionsInfo =
         UHUnionHeapO0QIapi.newUhxPassT(myMillionUnions,
                                  sizeof(myMillionUnions),
@@ -77,12 +76,9 @@ static uhxPassT masterMillionUnionsInfo;
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    //[super tearDown];
 }
 
 - (void)test2099BruteA {
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
     UHUnionHeapO0QIapi.bruteSort(&masterMillionUnionsInfo, __LINE__);
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
@@ -110,9 +106,14 @@ static uhxPassT masterMillionUnionsInfo;
     //[super tearDown];
 }
 
-- (void)test2099SizeHeapUnion {
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-    printf("*******%lu, %lu, %lu, %lu\n", sizeof(void*), sizeof(uhxPtrSzMfloatT), sizeof(uhxPtrSzMintegerT), sizeof(uhxPtrSzCstringT));
+- (void)test2099SizeUnionHeap {
+    
+    ErrorWarnCountT ewc = UHUnionHeapO0QIapi.sizeCheck(__LINE__);
+    
+    if(ewc.classErrors > 0)
+    {
+        XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidQCapi.getAssertText(__FUNCTION__)]);
+    }
 }
 
 
@@ -261,26 +262,19 @@ static uhxPassT masterMillionUnionsInfo;
 @implementation SortZ0PerfIntRandTests
 
 - (void)setUp {
-    //[super setUp];
-    // Do not display this array when over 10 elements
-    masterMillionUnionsInfo = UHUnionHeapO0QIapi.newUhxPassT(myMillionUnions, sizeof(myMillionUnions), INT_DATATYPESM, FILL_RANDOM, __LINE__);
+
+    masterMillionUnionsInfo = UHUnionHeapO0QIapi.newUhxPassT(myMillionUnions,
+                                                             sizeof(myMillionUnions),
+                                                             INT_DATATYPESM,
+                                                             FILL_RANDOM,
+                                                             __LINE__);
     
     masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT;
 }
 
 - (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    //[super tearDown];
+    
 }
-
-
-//- (void)testPerformanceExample {
-//    // This is an example of a performance test case.
-//
-//    [self measureBlock:^{
-//        // Put the code you want to measure the time of here.
-//    }];
-//}
 
 
 - (void)test2099CompareSortIntegers {

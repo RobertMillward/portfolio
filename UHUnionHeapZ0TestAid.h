@@ -28,23 +28,33 @@ typedef enum UHUnionHeapFillOrderQ0enum
  */
 typedef struct UHUnionHeapO0QualityInstanceApiStruct
 {
-    long (*ourSort)(uhxPassPT, int lineNbr);
-    int  (*clangSort)(uhxPassPT, int lineNbr);
-    void (*bruteSort)(uhxPassPT, int lineNbr);
+    /**
+     * Canned Tests
+     */
+    ErrorWarnCountT     (*sizeCheck)(lineNbrT);
+    /**
+     * Functions
+     */
+    long                (*ourSort)     (uhxPassPT, lineNbrT);
+    int                 (*clangSort)   (uhxPassPT, lineNbrT);
+    void                (*bruteSort)   (uhxPassPT, lineNbrT);
+    
+    uhxIxNoMoreT        (*sortCouplets)(uhxPassPT, lineNbrT);
+    uhxIxNoMoreT        (*seqChk)      (uhxPassPT, lineNbrT);
     /**
      * New
      */
-    uhxPassT (*newUhxPassT)(uhxElPT, size_t massOf, uhxSubTypeT, unionHeapFillOrderQ0T, int lineNbr);
+    uhxPassT (*newUhxPassT)(uhxElPT, massOfT, uhxSubTypeT, unionHeapFillOrderQ0T, lineNbrT);
     /**
-     * Tools
+     * Test tools
      */
-    void (*fillRandom)(uhxElPT, size_t, uhxSubTypeT, int lineNbr);
-    void (*fillAscending)(uhxElPT, size_t, uhxSubTypeT, int lineNbr);
-    void (*fillDescending)(uhxElPT, size_t, uhxSubTypeT, int lineNbr);
-    
-    uhxIxNoMoreT (*sortCouplets)(uhxPassPT, int lineNbr);
-    uhxIxNoMoreT (*seqChk)(uhxPassPT, int lineNbr);
-    
+    void                (*fillRandom)       (uhxElPT, massOfT, uhxSubTypeT, lineNbrT);
+    void                (*fillAscending)    (uhxElPT, massOfT, uhxSubTypeT, lineNbrT);
+    void                (*fillDescending)   (uhxElPT, massOfT, uhxSubTypeT, lineNbrT);
+
+    /**
+     * Expirments
+     */
     void (*slosh)(uhxPassPT, int lineNbr);
     void (*btree)(uhxPassPT, int lineNbr);
     
