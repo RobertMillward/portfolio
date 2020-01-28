@@ -48,9 +48,9 @@ typedef struct UHUnionHeapZ0QualityHelperClassApiStruct
     void (*slosh)(uhxPassPT, int lineNbr);
     void (*btree)(uhxPassPT, int lineNbr);
     
-}UHUnionHeapZ0QHCapiT, * UHUnionHeapZ0QHCapiPT;
+}UHUnionHeapO0QIapiT, * UHUnionHeapO0QIapiPT;
 
-extern UHUnionHeapZ0QHCapiT UHUnionHeapZ0QHCapi;
+extern UHUnionHeapO0QIapiT UHUnionHeapO0QIapi;
 
 #endif /* UHUnionHeapZ0TestAid_h */
 /**

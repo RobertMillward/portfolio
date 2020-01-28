@@ -5,18 +5,28 @@
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
 //
 
-#ifndef UnionHeapO0_h
-#define UnionHeapO0_h
+#ifndef UHUnionHeapO0_h
+#define UHUnionHeapO0_h
 // os
 #include <stdio.h>
 // data plans
 // api's
 
-typedef struct UnionHeapO0HelperClassApiStruct
+typedef struct UnionHeapO0HelperInstanceApiStruct
 {
-    void (*fillInCompareAsNeeded)(uhxPassPT);
-}UHUnionHeapO0QHCapiT, *UHUnionHeapO0QHCapiPT;
+    uhxPassT    (*newUhxPassT)(uhxElPT, uhxHeapCountT, uhxSubTypeT, uhxComparePT);
+    void        (*fillInCompareAsNeeded)(uhxPassPT);
+    uhxIxNoMoreT (*seqCheckYourItems)(uhxPassPT);
+    void        (*mergeSubs)(uhxElPT sourcePairs, uhxElPT targetPairs,
+                             long inCount, long subsectionSize,
+                             uhxComparePT uhxCompare,
+                             uhxPassPT mergeInfoP);
+    
+}UHUnionHeapO0HIapiT, *UHUnionHeapO0HIapiPT;
 
-extern UHUnionHeapO0HCapiT UHUnionHeapO0HCapi;
+extern UHUnionHeapO0HIapiT UHUnionHeapO0HIapi;
+
+
+
 
 #endif /* UHUnionHeapO0_h */

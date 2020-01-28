@@ -10,7 +10,9 @@
 #define UHBtreeO0_h
 // os
 // data plan
+#include "UHBtreeZ0Plan.h"
 // api
+
 typedef const struct UHBtreeO0HelperInstanceApiStruct
 {
     // These functions are in this file

@@ -1,23 +1,50 @@
 //
-//  UHUnionHeapO0.h
-//  gitrealportfolio
+//  UHSortO0.h
 //
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
 //
 
-#ifndef UnionHeapO0_h
-#define UnionHeapO0_h
+#ifndef UHSortO0_h
+#define UHSortO0_h
 // os
 #include <stdio.h>
 // data plans
+#include "UHUnionHeapZ0Plan.h"
 // api's
 
-typedef struct UnionHeapZ0HelperClassApiStruct
+//typedef struct UHSortO0HelperInstanceApiStruct
+//{
+//    long        (*ourSort)(uhxPassPT);
+//    int         (*clang)(uhxPassPT);
+//    void        (*brute)(uhxPassPT);
+//    /**
+//     * Tools
+//     */
+//    uhxIxNoMoreT (*sortYourToBeCoupledItems)(uhxPassPT);
+//    void        (*swapItems)(uhxPassPT);
+//    
+//}UHSortO0HIapiT, *UHSortO0HIapiPT;
+//
+//extern UHSortO0HIapiT UHSortO0HIapi;
+
+typedef struct UHSortO0HelperInstanceApiStruct
 {
-    void (*fillInCompareAsNeeded)(uhxPassPT);
-}UHUnionHeapO0HCapiT, *UHUnionHeapO0HCapiPT;
+    /**
+     * Functions
+     */
+    long (*ourSort)(uhxPassPT);
+    /**
+     * These simple sort examples are here to avoid two more code sets.
+     */
+    int (*clangSort)(uhxPassPT);
+    void (*bruteSort)(uhxPassPT);
+    /**
+     * Tools
+     */
+    uhxIxNoMoreT (*sortYourToBeCoupledItems)(uhxPassPT);
+    void (*swapItems)(uhxPassPT);
+}UHSortO0HIapiT, *UHSortO0HIapiPT;
+extern UHSortO0HIapiT UHSortO0HIapi;
 
-extern UHUnionHeapO0HCapiT UHUnionHeapO0HCapi;
-
-#endif /* UHUnionHeapO0_h */
+#endif /* UHSortO0_h */
