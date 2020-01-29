@@ -16,8 +16,8 @@
 
 
 static uhxElT myMillionUnions[MYARRAYCT];
-
 static uhxPassT masterMillionUnionsInfo;
+static srtPassT srtPass;
 
 #pragma mark - USE
 /**
@@ -76,7 +76,9 @@ static uhxPassT masterMillionUnionsInfo;
 }
 
 - (void)test2099BruteA {
-    UHUnionHeapO0QIapi.bruteSort(&masterMillionUnionsInfo, __LINE__);
+    srtPass.uhxPassP = &masterMillionUnionsInfo;
+    srtPass.passCount = 0;
+    UHUnionHeapO0QIapi.bruteSort(&srtPass, __LINE__);
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
 
@@ -162,9 +164,11 @@ static uhxPassT masterMillionUnionsInfo;
 - (void)test2099SortSeqChkIntegers {
     
     masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT;
+    srtPass.uhxPassP = &masterMillionUnionsInfo;
+    srtPass.passCount = 0;
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
     
-    UHUnionHeapO0QIapi.ourSort(&masterMillionUnionsInfo, __LINE__);
+    UHUnionHeapO0QIapi.ourSort(&srtPass, __LINE__);
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
@@ -200,14 +204,16 @@ static uhxPassT masterMillionUnionsInfo;
 
 
 - (void)test2099CompareSortIntegers {
-    
-    UHUnionHeapO0QIapi.ourSort(&masterMillionUnionsInfo, __LINE__);
+    srtPass.uhxPassP = &masterMillionUnionsInfo;
+    srtPass.passCount = 0;
+    UHUnionHeapO0QIapi.ourSort(&srtPass, __LINE__);
 }
 
 
 - (void)test2099CompareClangIntegers {
-    
-    UHUnionHeapO0QIapi.clangSort(&masterMillionUnionsInfo, __LINE__);
+    srtPass.uhxPassP = &masterMillionUnionsInfo;
+    srtPass.passCount = 0;
+    UHUnionHeapO0QIapi.clangSort(&srtPass, __LINE__);
 }
 
 /**
@@ -216,8 +222,9 @@ static uhxPassT masterMillionUnionsInfo;
 - (void)test2099SeqChkSortIntegers {
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
-    
-    UHUnionHeapO0QIapi.ourSort(&masterMillionUnionsInfo, __LINE__);
+    srtPass.uhxPassP = &masterMillionUnionsInfo;
+    srtPass.passCount = 0;
+    UHUnionHeapO0QIapi.ourSort(&srtPass, __LINE__);
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
@@ -226,8 +233,9 @@ static uhxPassT masterMillionUnionsInfo;
 - (void)test2099SeqChkClangIntegers {
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
-    
-    UHUnionHeapO0QIapi.clangSort(&masterMillionUnionsInfo, __LINE__);
+    srtPass.uhxPassP = &masterMillionUnionsInfo;
+    srtPass.passCount = 0;
+    UHUnionHeapO0QIapi.clangSort(&srtPass, __LINE__);
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }

@@ -33,8 +33,8 @@ typedef struct UHUnionHeapO0HelperInstanceApiStruct
      * Two sequencers.
      * - The index of the first couplet that is out of sequence with the prior couplet or IXNOMORE_HEAPSM
      */
-    uhxIxNoMoreT (*UHUnionHeapZ0_sortYourToBeCoupledItems_fx99)(uhxPassPT );
-    void         (*UHUnionHeapZ0_swapItems_fx99)(uhxPassPT uhxPassP);
+    //uhxIxNoMoreT (*UHUnionHeapZ0_sortYourToBeCoupledItems_fx99)(uhxPassPT );
+    //void         (*UHUnionHeapZ0_swapItems_fx99)(uhxPassPT uhxPassP);
     /**
      * Sequence check the uhxElT array.
      */

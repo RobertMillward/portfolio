@@ -12,7 +12,7 @@
 #import "UHUnionHeapZ0Plan.h"
 // api's
 #import "UHUnionHeapO0.h"
-//#import "UHSortO0.h"
+#import "UHSortO0.h"
 //#import "UHBtreeO0.h"
 // quality
 
@@ -41,12 +41,14 @@ typedef struct UHUnionHeapO0QualityInstanceApiStruct
     /**
      * Functions
      */
-    long                (*ourSort)     (uhxPassPT, lineNbrT);
-    int                 (*clangSort)   (uhxPassPT, lineNbrT);
-    void                (*bruteSort)   (uhxPassPT, lineNbrT);
+    long                (*ourSort)      (srtPassPT, lineNbrT);
+    int                 (*clangSort)    (srtPassPT, lineNbrT);
+    void                (*bruteSort)    (srtPassPT, lineNbrT);
     
-    uhxIxNoMoreT        (*sortCouplets)(uhxPassPT, lineNbrT);
-    uhxIxNoMoreT        (*seqChk)      (uhxPassPT, lineNbrT);
+    uhxIxNoMoreT        (*sortCouplets) (srtPassPT, lineNbrT);
+    uhxIxNoMoreT        (*swapEnds)     (srtPassPT, lineNbrT);
+    
+    uhxIxNoMoreT        (*seqChk)       (uhxPassPT, lineNbrT);
     /**
      * New
      */

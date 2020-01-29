@@ -13,22 +13,31 @@
 #include "UHUnionHeapZ0Plan.h"
 // api's
 
+typedef struct UHSortO0HelperInstanceDataStruct
+{
+    long    passCount;
+    
+    uhxPassPT uhxPassP;
+}srtPassT, *srtPassPT;
+
 typedef struct UHSortO0HelperInstanceApiStruct
 {
     /**
      * Functions
      */
-    long            (*ourSort)(uhxPassPT);
+    long            (*ourSort)(srtPassPT);
     /**
      * These simple sort examples being here avoid two more code sets.
      */
-    int             (*clangSort)(uhxPassPT);
-    void            (*bruteSort)(uhxPassPT);
+    int             (*clangSort)(srtPassPT);
+    void            (*bruteSort)(srtPassPT);
     /**
      * Tools
+     * - caller should increment srtPassP->passCount for these two
      */
-    uhxIxNoMoreT    (*sortYourToBeCoupledItems)(uhxPassPT);
-    void            (*swapItems)                (uhxPassPT);
+    uhxIxNoMoreT    (*sortYourToBeCoupledItems)(srtPassPT);
+    void            (*swapItems)               (srtPassPT);
+    
 }UHSortO0HIapiT, *UHSortO0HIapiPT;
 
 extern UHSortO0HIapiT UHSortO0HIapi;
