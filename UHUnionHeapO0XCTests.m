@@ -19,15 +19,15 @@ static uhxElT myMillionUnions[MYARRAYCT];
 static uhxPassT masterMillionUnionsInfo;
 static srtPassT srtPass;
 
-#pragma mark - USE
+#pragma mark - USE slosh
 /**
  *
  */
-@interface UHUnionHeapO0SloshUseTests : XCTestCase
+@interface UHUnionHeapO0UseSloshTests : XCTestCase
 
 @end
 
-@implementation UHUnionHeapO0SloshUseTests
+@implementation UHUnionHeapO0UseSloshTests
 
 
 - (void)setUp {
@@ -47,8 +47,35 @@ static srtPassT srtPass;
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
 
+
+@end
+
+/**
+ *
+ */
+@interface UHUnionHeapO0UseBtreeTests : XCTestCase
+
+@end
+
+@implementation UHUnionHeapO0UseBtreeTests
+
+
+- (void)setUp {
+    masterMillionUnionsInfo =
+        UHUnionHeapO0QIapi.newUhxPassT(myMillionUnions,
+                                 sizeof(myMillionUnions),
+                                 INT_DATATYPESM,
+                                 FILL_RANDOM,
+                                 __LINE__);
+}
+
+- (void)tearDown {
+}
+
+
 - (void)test2099BtreeA {
     UHUnionHeapO0QIapi.btree(&masterMillionUnionsInfo, __LINE__);
+    UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
 
 @end
@@ -56,11 +83,11 @@ static srtPassT srtPass;
 /**
  *
  */
-@interface UHUnionHeapO0BruteUseTests : XCTestCase
+@interface UHUnionHeapO0UseBruteTests : XCTestCase
 
 @end
 
-@implementation UHUnionHeapO0BruteUseTests
+@implementation UHUnionHeapO0UseBruteTests
 
 
 - (void)setUp {
@@ -101,6 +128,7 @@ static srtPassT srtPass;
 - (void)tearDown {
 }
 
+
 - (void)test2099SizeUnionHeap {
     
     ErrorWarnCountT ewc = UHUnionHeapO0QIapi.sizeChecks(__LINE__);
@@ -130,7 +158,9 @@ static srtPassT srtPass;
 
 - (void)tearDown {
 }
-
+/**
+* This includes about 20 tests for safety.
+*/
 - (void)test2099Safe {
     
     ErrorWarnCountT ewc = UHUnionHeapO0QIapi.safetyChecks012n(__LINE__);
@@ -147,11 +177,11 @@ static srtPassT srtPass;
 /**
  *
  */
-@interface UHUnionHeapO0UseTests : XCTestCase
+@interface UHUnionHeapO0UseOurSortTests : XCTestCase
 
 @end
 
-@implementation UHUnionHeapO0UseTests
+@implementation UHUnionHeapO0UseOurSortTests
 
 - (void)setUp {
     masterMillionUnionsInfo =
@@ -203,7 +233,7 @@ static srtPassT srtPass;
 }
 
 
-- (void)test2099CompareSortIntegers {
+- (void)test2099CompareOurSortIntegers {
     srtPass.uhxPassP = &masterMillionUnionsInfo;
     srtPass.passCount = 0;
     UHUnionHeapO0QIapi.ourSort(&srtPass, __LINE__);
@@ -219,7 +249,7 @@ static srtPassT srtPass;
 /**
  * A big sort with sequence checks before and after
  */
-- (void)test2099SeqChkSortIntegers {
+- (void)test2099SeqChkOurSortIntegers {
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
     srtPass.uhxPassP = &masterMillionUnionsInfo;
