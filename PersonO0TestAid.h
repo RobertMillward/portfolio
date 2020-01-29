@@ -1,20 +1,21 @@
 //
-//  PersonO0TestAid.h
+//  PersonO0TestAid.h - Delete soon
 //
 //  Created by Robert Russell Millward on 9/26/13.
-//  Copyright (c) 2013 Robert Russell Millward.
+//  Copyright (c) 1000 Robert Russell Millward.
 //  All rights reserved.
 //
-/**
- * The Q class is for Quality checking.
- * Persons (plural) is for the class and Person (singular) is for the instance.
- * InitDestroyHelper.destroyAll() is the class cleanup
- */
-
 #ifndef PersonO0TestAid_h
 #define PersonO0TestAid_h
-#include "TestAidO0.h"
+// os
+// helper api's
+// data plans
+#include "ArchitectureZ0Plan.h"
+#include "PersonZ0Plan.h"
+// application api's
 #include "PersonO0.h"
+// quality
+#include "TestAidZ0.h"
 
 /*
  */
@@ -23,24 +24,13 @@
  */
 typedef struct PsnAidO0toExpectDataStructure
 {
-    PersonAIdataT theInstanceData;
+    PersonZ0AIdataT theInstanceData;
     /*
      * Compares to the expected data.
      */
-    char qfamilyName[44];
-    char qfirstName[44];
-    char qtitle[6];
-    char qmiddleName[44];
-    char qemail[44];
-    char qpostalCode[10];
-    char qauthentCodeBefore[8];
-    char qauthentCodeNow[8];
-    char qpassPhrase[24];
-
-    char qpersonSigCode[10];
     
     gpTxPplGrpBatchTwoWayO0T    qtxSzFlags;  // Not checked if null
-    gpVersionLevelO0T           qvsnLvl;     // Not checked if null
+    gpVersionLevelZ0T           qvsnLvl;     // Not checked if null
     /*
      * Compares to the expected warnings and errors.
      */
@@ -58,20 +48,20 @@ typedef struct PsnAidO0toExpectDataStructure
 /*
  */
 
-typedef struct PsnAidO0goInstanceQualityStructure
+typedef struct PsnAidO0QualityInstanceStructure
 {
-    void (* generateSignatureCodeForTest)( int codeLine, PersonAIdataPT dataP);
+    void (* generateSignatureCodeForTest)( int codeLine, PersonZ0AIdataPT dataP);
     /**
      * Copy in and copy out the basic data.
      */
-    void (* setGetEmailForTest)(emailT emailOrNullP, int codeLine, PsnAidQIdataPT, emailCellPT, gdbIsRevisedT);
-    void (* setGetFamilyNameForTest)(nameT familyNameOrNullP, int codeLine,  PsnAidQIdataPT, familyNameCellPT, gdbIsRevisedT);
-    void (* setGetFirstNameForTest)(nameT firstNameOrNullP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetMiddleNameForTest)(nameT middleNameP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetPassPhraseForTest)(passPhraseT passPhraseOrNullP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetPostalCodeForTest)(postalT postalCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetReturnedCodeForTest)(char* returnedCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetTitleForTest)(char* titleOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetEmailForTest)(emailT emailOrNullP, int codeLine, PsnAidQIdataPT, emailCellPT, gdbIsRevisedT);
+//    void (* setGetFamilyNameForTest)(nameT familyNameOrNullP, int codeLine,  PsnAidQIdataPT, familyNameCellPT, gdbIsRevisedT);
+//    void (* setGetFirstNameForTest)(nameT firstNameOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetMiddleNameForTest)(nameT middleNameP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetPassPhraseForTest)(passPhraseT passPhraseOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetPostalCodeForTest)(postalT postalCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetReturnedCodeForTest)(char* returnedCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetTitleQ)(char* titleOrNullP, int codeLine,  PersonAIdataPT dataP);
     
 }PsnAidO0QIapiT, *PsnAidO0QIapiPT;
 

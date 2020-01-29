@@ -1,8 +1,8 @@
 //
-//  PersonO0Tests.m
+//  PersonO0Tests.m - Delete for now, has the wrong name and duplicates the XC
 //
 //  Created by Robert R on 3/5/19.
-//  Copyright (c) 2015 Robert Russell Millward.
+//  Copyright (c) 1000 Robert Russell Millward.
 //  All rights reserved.
 //
 

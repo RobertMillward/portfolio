@@ -2,11 +2,16 @@
 //  PersonO0.h
 //
 //  Created by Robert Russell Millward on 9/26/13.
-//  Copyright (c) 2013 Robert Russell Millward.  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 #ifndef PersonO0_h
 #define PersonO0_h
+// os
+// helper api's
+// data plans
 #include "PersonZ0Plan.h"
+// application api's
+
 /*
  */
 #pragma mark - instance methods
@@ -18,13 +23,7 @@ typedef struct PersonO0ApplicationInstanceApiStructure
     /**
      * Copy in and copy out the basic data.
      */
-    //void (* setGetEmail)        (emailT,        PersonZ0AIdataPT, emailPT,        gdbIsRevisedT);
-    void (* setGetFamilyName)   (nameT,         PersonZ0AIdataPT, familyNamePT,   gdbIsRevisedT);
-    void (* setGetFirstName)    (nameT,         PersonZ0AIdataPT, firstNamePT,    gdbIsRevisedT);
-    void (* setGetMiddleName)   (nameT,         PersonZ0AIdataPT, middleNamePT,   gdbIsRevisedT);
     //void (* setGetPassPhrase)   (passPhraseT,   PersonZ0AIdataPT, passPhrasePT,   gdbIsRevisedT);
-    //void (* setGetPostalCode)   (postalT,       PersonZ0AIdataPT, postalCodePT,   gdbIsRevisedT);
-    void (* setGetTitle)        (titleT,        PersonZ0AIdataPT, titlePT,        gdbIsRevisedT);
     //void (* setGetReturnedCode) (returnedCodeT, PersonZ0AIdataPT, returnedCodePT, gdbIsRevisedT);
     //void (* setGetAuthentCode)  (authentT,      PersonZ0AIdataPT, authentNowPT,   gdbIsRevisedT);
     //void (* generateSignatureCode)(PersonZ0AIdataPT dataP);
@@ -66,3 +65,6 @@ typedef struct PersonO0ApplicationInstanceNewStructure
 /**
  */
 //END PersonO0.h
+/**
+ *
+ */

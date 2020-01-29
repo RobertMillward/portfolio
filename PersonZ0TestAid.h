@@ -23,7 +23,7 @@
  */
 typedef struct PsnAidZ0toExpectDataStructure
 {
-    PersonAIdataT theInstanceData;
+    PersonZ0AIdataT theInstanceData;
     /*
      * Compares to the expected data.
      */
@@ -60,18 +60,18 @@ typedef struct PsnAidZ0toExpectDataStructure
 
 typedef struct PsnAidZ0ApplicationInstanceApiQualityStructure
 {
-    void (* generateSignatureCodeForTest)( int codeLine, PersonAIdataPT dataP);
+    void (* generateSignatureCodeForTest)( int codeLine, PersonZ0AIdataPT dataP);
     /**
      * Copy in and copy out the basic data.
      */
-    void (* setGetEmailForTest)(emailT emailOrNullP, int codeLine, PsnAidQIdataPT, emailPT, gdbIsRevisedT);
-    void (* setGetFamilyNameForTest)(nameT familyNameOrNullP, int codeLine,  PsnAidQIdataPT, familyNamePT, gdbIsRevisedT);
-    void (* setGetFirstNameForTest)(nameT firstNameOrNullP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetMiddleNameForTest)(nameT middleNameP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetPassPhraseForTest)(passPhraseT passPhraseOrNullP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetPostalCodeForTest)(postalT postalCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetReturnedCodeForTest)(char* returnedCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
-    void (* setGetTitleForTest)(char* titleOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetEmailForTest)(emailT emailOrNullP, int codeLine, PsnAidQIdataPT, emailPT, gdbIsRevisedT);
+//    void (* setGetFamilyNameForTest)(nameT familyNameOrNullP, int codeLine,  PsnAidQIdataPT, familyNamePT, gdbIsRevisedT);
+//    void (* setGetFirstNameForTest)(nameT firstNameOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetMiddleNameForTest)(nameT middleNameP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetPassPhraseForTest)(passPhraseT passPhraseOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetPostalCodeForTest)(postalT postalCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetReturnedCodeForTest)(char* returnedCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
+//    void (* setGetTitleForTest)(char* titleOrNullP, int codeLine,  PersonAIdataPT dataP);
     
 }PsnAidZ0QIapiT, *PsnAidZ0QIapiPT;
 
