@@ -7,36 +7,31 @@
 #ifndef PeopleGroupO2_h
 #define PeopleGroupO2_h
 // os
+// helper api's
 // data plans
 #include "ArchitectureZ0Plan.h"
-// api's
+#include "PeopleGroupZ0Plan.h"
+// application api's
 
-#define GRP_DEFAULT 0
+//#define GRP_DEFAULT 0
 
+typedef struct PeopleGroupO2ApplicationInstanceApiStructure
+{
+    
+}PeopleGroupO2AIapiT, *PeopleGroupO2AIapiPT;
 
-/**
- * This will eventually fill out to a new-able structure.
- */
-/*
-typedef struct PeopleGroupO2ApplicationInstanceDataStruct
- (
-        char *groupID,
-        char *schemaDate,
-        bool canShare); // ...with other designated groups.
- 
-    gpTransactionSizeO0PT flagsForTxSizeBatchP;
-    gpVersionLevelO0PT flagsForCodeVersionAndLevelP;
-#define newPeopleGroup newPeopleGroupO2
+typedef struct PeopleGroupO2ApplicationInstanceNewStructure
+{
+    PeopleGroupO2AIapiPT apiP;
+    PeopleGroupZ0AIdataT data;
+    
+}PeopleGroupO2AInewT, *PeopleGroupO2AInewPT;
 
-extern char *initPeopleGroupO2(void);
-#define initPeopleGroup initPeopleGroupO2
-extern peopleGroupT PeopleGroupO2
- */
-#endif /* defined(PeopleGroupO2_h) */
+#endif /* PeopleGroupO2_h */
 /**
 * This is very incomplete.
 * Group has special rules :
 * - normally there is only the default group
 * - groups can share data if allowed at init
-* A user group is the collection of users that support a particular community process.
+* A people group is the collection of users that support a particular community process.
 */
