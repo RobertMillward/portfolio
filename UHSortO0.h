@@ -16,9 +16,11 @@
 typedef struct UHSortO0HelperInstanceDataStruct
 {
     long    passCount;
+    long    parentSwapCount;
     
     uhxPassPT uhxPassP;
 }srtPassT, *srtPassPT;
+
 
 typedef struct UHSortO0HelperInstanceApiStruct
 {

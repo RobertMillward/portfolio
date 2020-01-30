@@ -107,7 +107,7 @@ static srtPassT srtPass;
     
     masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT;
     srtPass.uhxPassP = &masterMillionUnionsInfo;
-    srtPass.passCount = 0;
+    srtPass.passCount = srtPass.parentSwapCount = 0;
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
     
     UHUnionHeapO0QIapi.ourSort(&srtPass, __LINE__);
@@ -148,14 +148,14 @@ static srtPassT srtPass;
 
 - (void)test2099CompareOurSortIntegers {
     srtPass.uhxPassP = &masterMillionUnionsInfo;
-    srtPass.passCount = 0;
+    srtPass.passCount = srtPass.parentSwapCount = 0;
     UHUnionHeapO0QIapi.ourSort(&srtPass, __LINE__);
 }
 
 
 - (void)test2099CompareClangSortIntegers {
     srtPass.uhxPassP = &masterMillionUnionsInfo;
-    srtPass.passCount = 0;
+    srtPass.passCount = srtPass.parentSwapCount = 0;
     UHUnionHeapO0QIapi.clangSort(&srtPass, __LINE__);
 }
 
@@ -191,7 +191,7 @@ static srtPassT srtPass;
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
     srtPass.uhxPassP = &masterMillionUnionsInfo;
-    srtPass.passCount = 0;
+    srtPass.passCount = srtPass.parentSwapCount = 0;
     UHUnionHeapO0QIapi.clangSort(&srtPass, __LINE__);
     
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
@@ -255,7 +255,7 @@ static srtPassT srtPass;
 
 - (void)test2099BruteA {
     srtPass.uhxPassP = &masterMillionUnionsInfo;
-    srtPass.passCount = 0;
+    srtPass.passCount = srtPass.parentSwapCount = 0;
     UHUnionHeapO0QIapi.bruteSort(&srtPass, __LINE__);
     UHUnionHeapO0QIapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }

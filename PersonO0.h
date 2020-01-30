@@ -56,7 +56,7 @@ extern PersonACapiT PersonACapi;
  */
 typedef struct PersonO0ApplicationInstanceNewStructure
 {
-    PersonO0AIapiPT api;
+    PersonO0AIapiPT apiP;
     PersonZ0AIdataT data;
     
 }PersonO0AInewT, *PersonO0AInewPT;
