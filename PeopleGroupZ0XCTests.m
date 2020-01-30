@@ -1,5 +1,5 @@
 //
-//  PeopleGroupO2Tests.m
+//  PeopleGroupZ0XCTests.m
 //
 //  Created by Robert Russell Millward on 10/8/13.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -11,17 +11,17 @@
 // helper api's
 //#import "InitDestroyHelperO0.h"
 // app api's
-#import "PeopleGroupO2.h"
+#import "PeopleGroupO4.h"
 #import "PeopleGroupO0.h"
 // quality
 #import "TestAidZ0.h"
 
 
-@interface PeopleGroupO2TestsPartOne : XCTestCase
+@interface PeopleGroupO4TestsPartOne : XCTestCase
 
 @end
 
-@implementation PeopleGroupO2TestsPartOne
+@implementation PeopleGroupO4TestsPartOne
 
 - (void)setUp
 {
@@ -73,11 +73,11 @@
 
 
 
-@interface PeopleGroupO2TestsPartTwo : XCTestCase
+@interface PeopleGroupO4TestsPartTwo : XCTestCase
 
 @end
 
-@implementation PeopleGroupO2TestsPartTwo
+@implementation PeopleGroupO4TestsPartTwo
 
 - (void)setUp
 {
@@ -92,7 +92,7 @@
 
 #pragma mark - Tests, part one
 
-//- (void)test2019TemplateO2B
+//- (void)test2019TemplateO4B
 //{
 //    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
 //        if(TestAidC.putTestChars("not", "tested", __LINE__) == 0)
@@ -102,7 +102,7 @@
 //    }
 //}
 
-//- (void)test2099ZULUPGO2BDestroy {
+//- (void)test2099ZULUPGO4BDestroy {
 //    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
 //        char* report = InitDestroyerHelperC.getReport();
 //
@@ -122,4 +122,4 @@
 //    }
 //}
 
-@end
+@end // END PeopleGroupZ0XCTests.m

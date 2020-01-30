@@ -1,11 +1,11 @@
 //
-//  PeopleGroupO2.h
+//  PeopleGroupO4.h
 //
 //  Created by Robert R on 11/3/14.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-#ifndef PeopleGroupO2_h
-#define PeopleGroupO2_h
+#ifndef PeopleGroupO4_h
+#define PeopleGroupO4_h
 // os
 // helper api's
 // data plans
@@ -15,19 +15,19 @@
 
 //#define GRP_DEFAULT 0
 
-typedef struct PeopleGroupO2ApplicationInstanceApiStructure
+typedef struct PeopleGroupO4ApplicationInstanceApiStructure
 {
     
-}PeopleGroupO2AIapiT, *PeopleGroupO2AIapiPT;
+}PeopleGroupO4AIapiT, *PeopleGroupO4AIapiPT;
 
-typedef struct PeopleGroupO2ApplicationInstanceNewStructure
+typedef struct PeopleGroupO4ApplicationInstanceNewStructure
 {
-    PeopleGroupO2AIapiPT apiP;
+    PeopleGroupO4AIapiPT apiP;
     PeopleGroupZ0AIdataT data;
     
-}PeopleGroupO2AInewT, *PeopleGroupO2AInewPT;
+}PeopleGroupO4AInewT, *PeopleGroupO4AInewPT;
 
-#endif /* PeopleGroupO2_h */
+#endif /* PeopleGroupO4_h */
 /**
 * This is very incomplete.
 * Group has special rules :

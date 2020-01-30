@@ -1,11 +1,11 @@
 //
-//  PersonO0.h
+//  PersonO4.h
 //
 //  Created by Robert Russell Millward on 9/26/13.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-#ifndef PersonO0_h
-#define PersonO0_h
+#ifndef PersonO4_h
+#define PersonO4_h
 // os
 // helper api's
 // data plans
@@ -18,7 +18,7 @@
 /*
  */
 
-typedef struct PersonO0ApplicationInstanceApiStructure
+typedef struct PersonO4ApplicationInstanceApiStructure
 {
     /**
      * Copy in and copy out the basic data.
@@ -28,11 +28,11 @@ typedef struct PersonO0ApplicationInstanceApiStructure
     //void (* setGetAuthentCode)  (authentT,      PersonZ0AIdataPT, authentNowPT,   gdbIsRevisedT);
     //void (* generateSignatureCode)(PersonZ0AIdataPT dataP);
     
-}PersonO0AIapiT, *PersonO0AIapiPT;
+}PersonO4AIapiT, *PersonO4AIapiPT;
 
-#define PersonAIapiT PersonO0AIapiT
-#define PersonAIapi  PersonO0AIapi
-extern PersonO0AIapiT PersonAIapi;
+#define PersonAIapiT PersonO4AIapiT
+#define PersonAIapi  PersonO4AIapi
+extern PersonAIapiT PersonAIapi;
 
 
 /*
@@ -40,13 +40,13 @@ extern PersonO0AIapiT PersonAIapi;
 #pragma mark - Class Methods
 /*
  */
-typedef struct PersonO0ApplicationClassApiStructure
+typedef struct PersonO4ApplicationClassApiStructure
 {
 
-}PersonO0ACapiT, *PersonO0ACapiPT;
+}PersonO4ACapiT, *PersonO4ACapiPT;
 
-#define PersonACapiT PersonO0ACapiT
-#define PersonACapi  PersonO0ACapi
+#define PersonACapiT PersonO4ACapiT
+#define PersonACapi  PersonO4ACapi
 extern PersonACapiT PersonACapi;
 
 /*
@@ -54,17 +54,14 @@ extern PersonACapiT PersonACapi;
 #pragma mark - New instance
 /*
  */
-typedef struct PersonO0ApplicationInstanceNewStructure
+typedef struct PersonO4ApplicationInstanceNewStructure
 {
-    PersonO0AIapiPT apiP;
+    PersonO4AIapiPT apiP;
     PersonZ0AIdataT data;
     
-}PersonO0AInewT, *PersonO0AInewPT;
+}PersonO4AInewT, *PersonO4AInewPT;
 
-#endif
-/**
- */
-//END PersonO0.h
+#endif // END PersonO4_h
 /**
  *
  */
