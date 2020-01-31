@@ -2,10 +2,10 @@
 //  ContactMeO0.h - A thread safe library to store and share contact information.
 //
 //  Created by Robert R on 12/21/19.
-//  Copyright (c) 2019 Robert Russell Millward.  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-#ifndef ContactMeO0_h
-#define ContactMeO0_h
+#ifndef ContactMeO4_h
+#define ContactMeO4_h
 //#include "ArchitectureZ0.h"
 #include "ContactMeZ0Plan.h"
 
@@ -31,7 +31,7 @@ typedef struct ContactMeO0AppInstanceApiStructure
 #define ContactMeAIapi  ContactMeO0AIapi
 extern const ContactMeAIapiT ContactMeAIapi;
 
-#endif /* defined(ContactMeO0_h) */
+#endif /* defined(ContactMeO4_h) */
 /**
  FEATURED 12/18/19
  */

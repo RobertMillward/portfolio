@@ -15,10 +15,16 @@
 
 //#define GRP_DEFAULT 0
 
+
+
 typedef struct PeopleGroupO4ApplicationInstanceApiStructure
 {
+    void                (*getSignature) (PeopleGroupZ0AIdataPT);
+    void                (*getNode)      (PeopleGroupZ0AIdataPT);
+    void                (*getGroupSize) (PeopleGroupZ0AIdataPT);
     
 }PeopleGroupO4AIapiT, *PeopleGroupO4AIapiPT;
+
 
 typedef struct PeopleGroupO4ApplicationInstanceNewStructure
 {
@@ -26,6 +32,12 @@ typedef struct PeopleGroupO4ApplicationInstanceNewStructure
     PeopleGroupZ0AIdataT data;
     
 }PeopleGroupO4AInewT, *PeopleGroupO4AInewPT;
+
+typedef struct PeopleGroupO4ApplicationClassApiStructure
+{
+    PeopleGroupO4AInewT (*newPplGrp)(void);
+    
+}PeopleGroupO4ACapiT, *PeopleGroupO4ACapiPT;
 
 #endif /* PeopleGroupO4_h */
 /**
