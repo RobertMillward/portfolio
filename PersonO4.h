@@ -28,6 +28,8 @@ typedef struct PersonO4ApplicationInstanceApiStructure
     //void (* setGetAuthentCode)  (authentT,      PersonZ0AIdataPT, authentNowPT,   gdbIsRevisedT);
     //void (* generateSignatureCode)(PersonZ0AIdataPT dataP);
     
+    void                (*rowOf)        (PeopleGroupZ0AIdataPT);
+    
 }PersonO4AIapiT, *PersonO4AIapiPT;
 
 #define PersonAIapiT PersonO4AIapiT
@@ -35,19 +37,6 @@ typedef struct PersonO4ApplicationInstanceApiStructure
 extern PersonAIapiT PersonAIapi;
 
 
-/*
- */
-#pragma mark - Class Methods
-/*
- */
-typedef struct PersonO4ApplicationClassApiStructure
-{
-
-}PersonO4ACapiT, *PersonO4ACapiPT;
-
-#define PersonACapiT PersonO4ACapiT
-#define PersonACapi  PersonO4ACapi
-extern PersonACapiT PersonACapi;
 
 /*
  */
@@ -60,6 +49,22 @@ typedef struct PersonO4ApplicationInstanceNewStructure
     PersonZ0AIdataT data;
     
 }PersonO4AInewT, *PersonO4AInewPT;
+
+
+/*
+ */
+#pragma mark - Class Methods
+/*
+ */
+typedef struct PersonO4ApplicationClassApiStructure
+{
+    PersonO4AInewT (*newOfWeb)(void);
+    PersonO4AInewT (*newOfRow)(void);
+}PersonO4ACapiT, *PersonO4ACapiPT;
+
+#define PersonACapiT PersonO4ACapiT
+#define PersonACapi  PersonO4ACapi
+extern PersonACapiT PersonACapi;
 
 #endif // END PersonO4_h
 /**

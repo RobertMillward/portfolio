@@ -43,7 +43,8 @@ typedef struct AppO4ApplicationClassMethodsStruct
     /**
      *
      */
-    AppO4AInewT (*newAppAI)(appNameT);
+    AppO4AInewT (*newOfWeb)(appNameT);
+    AppO4AInewT (*newOfRow)(appNameT);
     
     void        (*generateSignatureCode)(AppZ0AIdataPT);
     

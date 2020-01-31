@@ -16,16 +16,22 @@
 //#define GRP_DEFAULT 0
 
 
-
+/**
+ * The Instance api
+ */
 typedef struct PeopleGroupO4ApplicationInstanceApiStructure
 {
     void                (*getSignature) (PeopleGroupZ0AIdataPT);
     void                (*getNode)      (PeopleGroupZ0AIdataPT);
     void                (*getGroupSize) (PeopleGroupZ0AIdataPT);
     
+    void                (*rowOf)        (PeopleGroupZ0AIdataPT);
+    
 }PeopleGroupO4AIapiT, *PeopleGroupO4AIapiPT;
 
-
+/**
+ * The New structure
+ */
 typedef struct PeopleGroupO4ApplicationInstanceNewStructure
 {
     PeopleGroupO4AIapiPT apiP;
@@ -33,9 +39,13 @@ typedef struct PeopleGroupO4ApplicationInstanceNewStructure
     
 }PeopleGroupO4AInewT, *PeopleGroupO4AInewPT;
 
+/**
+ * The Class api
+ */
 typedef struct PeopleGroupO4ApplicationClassApiStructure
 {
-    PeopleGroupO4AInewT (*newPplGrp)(void);
+    PeopleGroupO4AInewT (*newOfRow)(void);
+    PeopleGroupO4AInewT (*newOfWeb)(void);
     
 }PeopleGroupO4ACapiT, *PeopleGroupO4ACapiPT;
 
@@ -45,5 +55,5 @@ typedef struct PeopleGroupO4ApplicationClassApiStructure
 * Group has special rules :
 * - normally there is only the default group
 * - groups can share data if allowed at init
-* A people group is the collection of users that support a particular community process.
+* A people group is the collection of users and applications that support a particular community process.
 */
