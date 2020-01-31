@@ -1,5 +1,5 @@
 //
-//  CityY0.c
+//  DGCityY0.c
 //
 //  Created by Robert R on 10/08/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -8,9 +8,9 @@
 #include <string.h>
 #include <ctype.h>
 // data
-#include "CityY0Plan.h"
+#include "DGCityY0Plan.h"
 // api's
-#include "CityT0.h"
+#include "DGCityT0.h"
 
 static char *nameParts[] =
 {
@@ -52,6 +52,6 @@ CityT0HCapiT CityT0HCapi =
     CityT0_name_fx99
 };
 
-
+// END DGCity.c
 /**
  */

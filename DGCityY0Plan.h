@@ -8,12 +8,12 @@
 #define CityY0Plan_h
 // os
 // data plan
-#include "DataAidY0Plan.h"
+#include "DGDataAidY0Plan.h"
 
 
 
 
-#endif /* defined(CityY0Plan_h) */
+#endif /* DGCityY0Plan_h */
 /**
  
  */

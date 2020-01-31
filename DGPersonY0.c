@@ -1,5 +1,5 @@
 //
-//  PersonY0.c
+//  DGPersonY0.c
 //
 //  Created by Robert R on 10/08/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -8,9 +8,9 @@
 #include <string.h>
 #include <ctype.h>
 // data plan
-#include "PersonY0Plan.h"
+#include "DGPersonY0Plan.h"
 // api's
-#include "PersonT0.h"
+#include "DGPersonT0.h"
 
 
 #pragma mark - phonics and words for names
@@ -30,13 +30,13 @@ static char* phonicsPlus[] = {
     "ga", "ge",       "gi",       "go", "gr", "gu", "gw", "gy",
 };
 
-static char *specialBegin[] = {
-    "Von", "Mc"
-};
+//static char *specialBegin[] = {
+//    "Von", "Mc"
+//};
 
-static char *specialEnd[] = {
-    "sen", "son"
-};
+//static char *specialEnd[] = {
+//    "sen", "son"
+//};
 
 #define IS_FAM 1
 #define IS_PSN 2
@@ -199,6 +199,6 @@ PersonT0HCapiT PersonT0HCapi =
     PersonT0_age_fx99,
     PersonT0_nextPerson_fx99
 };
-
+// END DGPersonY0.c
 /**
  */

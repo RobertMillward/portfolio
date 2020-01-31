@@ -1,11 +1,11 @@
 //
-//  DataAidY0Plan.h
+//  DGDataAidY0Plan.h
 //
 //  Created by Robert R on 01/08/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-#ifndef DataAidY0Plan_h
-#define DataAidY0Plan_h
+#ifndef DGDataAidY0Plan_h
+#define DGDataAidY0Plan_h
 // os
 // data plan
 #include "ArchitectureZ0Plan.h"
@@ -51,7 +51,7 @@ typedef struct DataAidLocY0HelperClassLocStruct
 }DataAidLocY0HClocT, *DataAidLocY0HClocPT;
 
 
-#endif /* defined(DataAidY0Plan_h) */
+#endif /* DGDataAidY0Plan_h */
 /**
  
  */

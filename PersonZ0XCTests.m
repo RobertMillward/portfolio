@@ -16,7 +16,7 @@
 //#import "HashBasicsZ0.h"
 //#import "InitDestroyHelperZ0.h"
 // data plans
-#import "ArchitectureZ0.h"
+#import "ArchitectureZ0Plan.h"
 // application api's
 #import "PeopleGroupO4.h"
 #import "PersonO4.h"

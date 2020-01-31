@@ -1,16 +1,16 @@
 //
-//  StreetY0.c - 
+//  DGStreetY0.c -
 //
 //  Created by Robert R on 10/08/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 // os
-#include <libc.h>
+#include <stdio.h>
 #include <string.h>
 // data
-#include "StreetY0Plan.h"
+#include "DGStreetY0Plan.h"
 // api's
-#include "StreetT0.h"
+#include "DGStreetT0.h"
 
 
 static char *streetNames[] =
@@ -80,6 +80,6 @@ StreetT0HCapiT StreetT0HCapi =
     StreetT0_getName_fx99,
     StreetT0_getFloor_fx99
 };
-
+// END DGStreetY0.c
 /**
  */

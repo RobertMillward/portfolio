@@ -1,16 +1,16 @@
 //
-//  StateY0.c - support for state level information generation
+//  DGStateY0.c - support for state level information generation
 //
 //  Created by Robert R on 10/08/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 // os
-#include "libc.h"
+#include "stdio.h"
 #include "string.h"
 // data plan 
-#include "StateY0Plan.h"
+#include "DGStateY0Plan.h"
 // api's
-#include "StateT0.h"
+#include "DGStateT0.h"
 
 static char *stateCode[5][8] =
 {
@@ -67,6 +67,6 @@ StateT0HCapiT StateT0HCapi =
     StateY0_popOf_fx99
 };
 
-
+// END DGStateY0.c
 /**
  */

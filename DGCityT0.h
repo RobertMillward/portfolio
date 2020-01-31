@@ -1,14 +1,14 @@
 //
-//  CityT0.h - Specifics of T0 city api
+//  DGCityT0.h - Specifics of T0 city api
 //
 //  Created by Robert R on 01/08/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-#ifndef CityT0_h
-#define CityT0_h
+#ifndef DGCityT0_h
+#define DGCityT0_h
 // os
 // data plan
-#include "DataAidY0Plan.h"
+#include "DGDataAidY0Plan.h"
 
 typedef struct CityT0HelperClassApiStruct
 {
@@ -18,7 +18,7 @@ typedef struct CityT0HelperClassApiStruct
 extern CityT0HCapiT CityT0HCapi;
 
 
-#endif /* defined(CityT0_h) */
+#endif /* DGCityT0_h */
 /**
 
  */

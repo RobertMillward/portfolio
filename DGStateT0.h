@@ -1,14 +1,14 @@
 //
-//  StateT0.h - Specifics of T0 state api
+//  DGStateT0.h - Specifics of T0 state api
 //
 //  Created by Robert R on 01/08/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-#ifndef StateT0_h
-#define StateT0_h
+#ifndef DGStateT0_h
+#define DGStateT0_h
 // os
 // data plan
-#include "StateY0Plan.h"
+#include "DGStateY0Plan.h"
 
 typedef struct StateT0HelperClassApiStruct
 {
@@ -21,7 +21,7 @@ typedef struct StateT0HelperClassApiStruct
 extern StateT0HCapiT StateT0HCapi;
 
 
-#endif /* defined(StateT0_h) */
+#endif /* DGStateT0_h */
 /**
 
  */
