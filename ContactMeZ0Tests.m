@@ -16,8 +16,6 @@
 #import "ContactMeZ0TestAid.h"
 #import "TestAidZ0.h"
 
-extern ErrorWarnCountT ContactMeZ0QC_testSupply_fx99(lineNbrT);
-
 @interface ContactMeZ0SafetyTests : XCTestCase
 
 @end
@@ -35,8 +33,8 @@ extern ErrorWarnCountT ContactMeZ0QC_testSupply_fx99(lineNbrT);
 test2019Safety
 {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = ContactMeZ0QC_testSupply_fx99(__LINE__);
-        //ErrorWarnCountT ewc = cnctMeDGZ0QCapi .testSupply(__LINE__);
+        
+        ErrorWarnCountT ewc = cnctMeDGZ0QCapi.testSupply(__LINE__);
         
         if(ewc.classErrors != 0)
         {
