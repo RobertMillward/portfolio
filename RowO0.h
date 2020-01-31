@@ -29,6 +29,9 @@ typedef const struct RowO0HCapiS
     Sint // -1 if error else 0
     (*addMore)(fieldLetterRowT, sourcePT, targetPT);
     
+    Sint // -1 if error else 0
+    (*addChar)(fieldLetterRowT, sourceT, targetPT);
+    
     /**
      * Add the metadata.
      */
