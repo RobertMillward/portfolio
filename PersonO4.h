@@ -11,6 +11,12 @@
 // data plans
 #include "PersonZ0Plan.h"
 // application api's
+/**
+ * Copy in and copy out the basic data.
+ */
+//void (* setGetPassPhrase)   (passPhraseT,   PersonZ0AIdataPT, passPhrasePT,   gdbIsRevisedT);
+//void (* setGetReturnedCode) (returnedCodeT, PersonZ0AIdataPT, returnedCodePT, gdbIsRevisedT);
+//void (* setGetAuthentCode)  (authentT,      PersonZ0AIdataPT, authentNowPT,   gdbIsRevisedT);
 
 /*
  */
@@ -20,15 +26,9 @@
 
 typedef struct PersonO4ApplicationInstanceApiStructure
 {
-    /**
-     * Copy in and copy out the basic data.
-     */
-    //void (* setGetPassPhrase)   (passPhraseT,   PersonZ0AIdataPT, passPhrasePT,   gdbIsRevisedT);
-    //void (* setGetReturnedCode) (returnedCodeT, PersonZ0AIdataPT, returnedCodePT, gdbIsRevisedT);
-    //void (* setGetAuthentCode)  (authentT,      PersonZ0AIdataPT, authentNowPT,   gdbIsRevisedT);
     //void (* generateSignatureCode)(PersonZ0AIdataPT dataP);
     
-    void                (*rowOf)        (PeopleGroupZ0AIdataPT);
+    void                (*rowOf)        (PersonZ0AIdataPT);
     
 }PersonO4AIapiT, *PersonO4AIapiPT;
 

@@ -18,6 +18,8 @@
 typedef struct AppO4ApplicationInstanceMethodsStruct
 {
     
+    void        (*generateSignatureCode)(AppZ0AIdataPT);
+    void        (*rowOf)    (appNameT);
 }AppO4AIapiT, *AppO4AIapiPT;
 
 extern AppO4AIapiT AppO4AIapi;
@@ -45,9 +47,6 @@ typedef struct AppO4ApplicationClassMethodsStruct
      */
     AppO4AInewT (*newOfWeb)(appNameT);
     AppO4AInewT (*newOfRow)(appNameT);
-    
-    void        (*generateSignatureCode)(AppZ0AIdataPT);
-    
     
 }AppO4ACapiT, *AppO4ACapiPT;
 
