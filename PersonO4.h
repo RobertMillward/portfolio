@@ -28,7 +28,9 @@
 
 typedef struct PersonO4ApplicationInstanceApiStructure
 {
-    void                (*rowOf)        (PersonZ0AIdataPT);
+    void    (*saveRow)(void);
+    void    (*trashRow)(void);
+    void    (*rowOf)        (PersonZ0AIdataPT);
     //void (* generateSignatureCode)(PersonZ0AIdataPT dataP);
     
 }PersonO4AIapiT, *PersonO4AIapiPT;
@@ -37,7 +39,9 @@ typedef struct PersonO4ApplicationInstanceApiStructure
 
 typedef struct PersonPassPhraseO4ApplicationInstanceApiStructure
 {
-    void                (*rowOf)        (PersonPassPhraseZ0AIdataPT);
+    void    (*saveRow)(void);
+    void    (*trashRow)(void);
+    void    (*rowOf)        (PersonPassPhraseZ0AIdataPT);
 }PersonPassPhraseO4AIapiT, *PersonPassPhraseO4AIapiPT;
 
 

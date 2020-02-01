@@ -19,6 +19,8 @@
  */
 typedef struct AppO4ApplicationInstanceApiStruct
 {
+    void    (*saveRow)(void);
+    void    (*trashRow)(void);
     void        (*rowOf)    (appNameT);
     void        (*generateSignatureCode)(AppZ0AIdataPT);
 }AppO4AIapiT, *AppO4AIapiPT;

@@ -28,6 +28,8 @@ typedef struct PeopleGroupO4ApplicationInstanceApiStructure
     void                (*getNode)      (PeopleGroupZ0AIdataPT);
     void                (*getGroupSize) (PeopleGroupZ0AIdataPT);
     
+    void    (*saveRow)(void);
+    void    (*trashRow)(void);
     void                (*rowOf)        (PeopleGroupZ0AIdataPT);
     
 }PeopleGroupO4AIapiT, *PeopleGroupO4AIapiPT;

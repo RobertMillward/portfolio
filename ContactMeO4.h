@@ -16,26 +16,32 @@
  */
 typedef struct ContactMeO4AppInstanceApiStructure
 {
-    void    (* rowOf)(ContactMeZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
+    void    (*saveRow)(ContactMeZ0AIdataPT);
+    void    (*trashRow)(ContactMeZ0AIdataPT);
+    void    (*toRow)(ContactMeZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
     
 }ContactMeO4AIapiT, *ContactMeO4AIapiPT;
-extern const ContactMeO4AIapiT ContactMeO4AIapi;
+extern ContactMeO4AIapiT ContactMeO4AIapi;
 
 
 typedef struct ContactMeLinkO4AppInstanceApiStructure
 {
-    void    (* rowOf)(ContactMeLinkZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
+    void    (*saveRow)(ContactMeLinkZ0AIdataPT);
+    void    (*trashRow)(ContactMeLinkZ0AIdataPT);
+    void    (*toRow)(ContactMeLinkZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
     
 }ContactMeLinkO4AIapiT, *ContactMeLinkO4AIapiPT;
-extern const ContactMeLinkO4AIapiT ContactMeLinkO4AIapi;
+extern ContactMeLinkO4AIapiT ContactMeLinkO4AIapi;
 
 
 typedef struct ContactMeStatusO4AppInstanceApiStructure
 {
-    void    (* rowOf)(ContactMeStatusZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
+    void    (*saveRow)(ContactMeStatusZ0AIdataPT);
+    void    (*trashRow)(ContactMeStatusZ0AIdataPT);
+    void    (*rowOf)(ContactMeStatusZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
     
 }ContactMeStatusO4AIapiT, *ContactMeStatusO4AIapiPT;
-extern const ContactMeStatusO4AIapiT ContactMeStatusO4AIapi;
+extern ContactMeStatusO4AIapiT ContactMeStatusO4AIapi;
 
 /*
  */
@@ -76,7 +82,7 @@ typedef struct ContactMeO4AppClassApiStruct
 }ContactMeO4ACapiT, *ContactMeO4ACapiPT;
 #define ContactMeACapiT ContactMeO4ACapiT
 #define ContactMeACapi  ContactMeO4ACapi
-extern const ContactMeACapiT ContactMeACapi;
+extern ContactMeACapiT ContactMeACapi;
 
 typedef struct ContactMeLinkO4AppClassApiStruct
 {
@@ -86,7 +92,7 @@ typedef struct ContactMeLinkO4AppClassApiStruct
 }ContactMeLinkO4ACapiT, *ContactMeLinkO4ACapiPT;
 #define ContactMeLinkACapiT ContactMeLinkO4ACapiT
 #define ContactMeLinkACapi  ContactMeLinkO4ACapi
-extern const ContactMeLinkACapiT ContactMeLinkACapi;
+extern ContactMeLinkACapiT ContactMeLinkACapi;
 
 typedef struct ContactMeStatusO4AppClassApiStruct
 {
@@ -96,7 +102,7 @@ typedef struct ContactMeStatusO4AppClassApiStruct
 }ContactMeStatusO4ACapiT, *ContactMeStatusO4ACapiPT;
 #define ContactMeStatusACapiT ContactMeStatusO4ACapiT
 #define ContactMeStatusACapi  ContactMeStatusO4ACapi
-extern const ContactMeStatusACapiT ContactMeStatusACapi;
+extern ContactMeStatusACapiT ContactMeStatusACapi;
 
 #endif /* defined(ContactMeO4_h) */
 /**
