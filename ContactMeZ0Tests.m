@@ -30,11 +30,11 @@
 
 
 - (void)
-test2019Safety
+test2019Supply
 {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
-        ErrorWarnCountT ewc = cnctMeDGZ0QCapi.testSupply(__LINE__);
+        ErrorWarnCountT ewc = cnctMeDGZ0QCapi.testSupplyQ(__LINE__);
         
         if(ewc.classErrors != 0)
         {
@@ -44,109 +44,89 @@ test2019Safety
 }
 @end
 
-//@interface ContactMeZ0GeneralTests : XCTestCase
-//
-//@end
-//
-//@implementation ContactMeZ0GeneralTests
-//
-//- (void)setUp{
-//}
-//
-//- (void)tearDown{
-//    //TestAidC.getCounts();
-//}
-//
-//- (void)
-//test2019General
-//{
-//    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-//         ErrorWarnCountT ewc = {0,0,0,0};
-//        if(ewc.classErrors != 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-//        }
-//    }
-//}
-//@end
-//
-//@interface ContactMeZ0MisuseTests : XCTestCase
-//
-//@end
-//
-//@implementation ContactMeZ0MisuseTests
-//
-//- (void)setUp{
-//}
-//
-//- (void)tearDown{
-//    //TestAidC.getCounts();
-//}
-//
-//- (void)
-//test2019Misuse
-//{
-//    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-//        ErrorWarnCountT ewc = {0,0,0,0};
-//        if(ewc.classErrors != 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-//        }
-//    }
-//}
-//@end
-//
-//@interface StressContactMeZ0QTests : XCTestCase
-//
-//@end
-//
-//@implementation StressContactMeZ0QTests
-//
-//- (void)setUp{
-//}
-//
-//- (void)tearDown{
-//    //TestAidC.getCounts();
-//}
-//
-//- (void)
-//test2019StressContactMe
-//{
-//    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-//        ErrorWarnCountT ewc = {0,0,0,0};
-//        if(ewc.classErrors != 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-//        }
-//    }
-//}
-//
-//@end
-//
-//@interface StressThreadingZ0QTests : XCTestCase
-//
-//@end
-//
-//@implementation StressThreadingZ0QTests
-//
-//- (void)setUp{
-//}
-//
-//- (void)tearDown{
-//    //TestAidC.getCounts();
-//}
-//
-//- (void)
-//test2019StressThreading
-//{
-//    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-//        ErrorWarnCountT ewc = {0,0,0,0};
-//        if(ewc.classErrors != 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-//        }
-//    }
-//}
-//@end // END ContactMeZ0Tests.m
+@interface ContactMeZ0GeneralTests : XCTestCase
+
+@end
+
+@implementation ContactMeZ0GeneralTests
+
+- (void)setUp{
+}
+
+- (void)tearDown{
+}
+
+
+- (void)
+test2019ContactMe
+{
+    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
+        
+        ErrorWarnCountT ewc = cnctMeDGZ0QCapi.testContactMeQ(__LINE__);
+        
+        if(ewc.classErrors != 0)
+        {
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+        }
+    }
+}
+@end
+
+@interface ContactMeLinkZ0GeneralTests : XCTestCase
+
+@end
+
+@implementation ContactMeLinkZ0GeneralTests
+
+- (void)setUp{
+}
+
+- (void)tearDown{
+}
+
+
+- (void)
+test2019Link
+{
+    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
+        
+        ErrorWarnCountT ewc = cnctMeDGZ0QCapi.testLinkQ(__LINE__);
+        
+        if(ewc.classErrors != 0)
+        {
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+        }
+    }
+}
+@end
+
+@interface ContactMeStatusZ0GeneralTests : XCTestCase
+
+@end
+
+@implementation ContactMeStatusZ0GeneralTests
+
+- (void)setUp{
+}
+
+- (void)tearDown{
+}
+
+
+- (void)
+test2019Status
+{
+    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
+        
+        ErrorWarnCountT ewc = cnctMeDGZ0QCapi.testStatusQ(__LINE__);
+        
+        if(ewc.classErrors != 0)
+        {
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+        }
+    }
+}
+
+@end // END ContactMeZ0Tests.m
 /**
  */

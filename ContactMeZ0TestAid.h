@@ -19,7 +19,10 @@
 */
 typedef struct ContactMeZ0QualityClassApiStruct
 {
-    ErrorWarnCountT (*testSupply)(lineNbrT); // see note 1 above
+    ErrorWarnCountT (*testSupplyQ)(lineNbrT); // see note 1 above
+    ErrorWarnCountT (*testContactMeQ)(lineNbrT);
+    ErrorWarnCountT (*testLinkQ)(lineNbrT);
+    ErrorWarnCountT (*testStatusQ)(lineNbrT);
 }cnctMeDGZ0QCapiT, * cnctMeDGZ0QCapiPT;
 
 extern cnctMeDGZ0QCapiT cnctMeDGZ0QCapi;

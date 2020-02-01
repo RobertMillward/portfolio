@@ -76,8 +76,11 @@ typedef struct ContactMeStatusO4AppNewInstanceStruct // (both data and methods)
  */
 typedef struct ContactMeO4AppClassApiStruct
 {
-    ContactMeO4AInewT (*newForInsert)(abstractRowT);
-    ContactMeO4AInewT (*newToView)(abstractRowT);
+    ContactMeO4AInewT (*newHasKey)(abstractRowT);
+    ContactMeO4AInewT (*newNoKey)(abstractRowT);
+    ContactMeO4AInewT (*newHasFields)(timeSerNbrNodeIdT,
+                                      dataTypeT type, orderT, dataTypeT subType, contactInfoT,
+                                      gpTxPplGrpBatchTwoWayZ0PT);
     
 }ContactMeO4ACapiT, *ContactMeO4ACapiPT;
 #define ContactMeACapiT ContactMeO4ACapiT
@@ -86,8 +89,9 @@ extern ContactMeACapiT ContactMeACapi;
 
 typedef struct ContactMeLinkO4AppClassApiStruct
 {
-    ContactMeLinkO4AInewT (*newForInsert)(abstractRowT);
-    ContactMeLinkO4AInewT (*newToView)(abstractRowT);
+    ContactMeLinkO4AInewT (*newHasKey)(abstractRowT);
+    ContactMeLinkO4AInewT (*newNoKey)(abstractRowT);
+    ContactMeLinkO4AInewT (*newHasFields)(abstractRowT, int, gpTxPplGrpBatchTwoWayZ0PT);
     
 }ContactMeLinkO4ACapiT, *ContactMeLinkO4ACapiPT;
 #define ContactMeLinkACapiT ContactMeLinkO4ACapiT
@@ -96,15 +100,16 @@ extern ContactMeLinkACapiT ContactMeLinkACapi;
 
 typedef struct ContactMeStatusO4AppClassApiStruct
 {
-    ContactMeO4AInewT (*newForInsert)(abstractRowT);
-    ContactMeO4AInewT (*newToView)(abstractRowT);
+    ContactMeStatusO4AInewT (*newHasKey)(abstractRowT);
+    ContactMeStatusO4AInewT (*newNoKey)(abstractRowT);
+    ContactMeStatusO4AInewT (*newHasFields)(abstractRowT, int, gpTxPplGrpBatchTwoWayZ0PT);
     
 }ContactMeStatusO4ACapiT, *ContactMeStatusO4ACapiPT;
 #define ContactMeStatusACapiT ContactMeStatusO4ACapiT
 #define ContactMeStatusACapi  ContactMeStatusO4ACapi
 extern ContactMeStatusACapiT ContactMeStatusACapi;
 
-#endif /* defined(ContactMeO4_h) */
+#endif /* ContactMeO4_h */
 /**
  FEATURED 12/18/19
  */
