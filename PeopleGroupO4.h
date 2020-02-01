@@ -11,13 +11,16 @@
 // data plans
 #include "ArchitectureZ0Plan.h"
 #include "PeopleGroupZ0Plan.h"
+#include "RowZ0Plan.h"
 // application api's
 
 //#define GRP_DEFAULT 0
 
 
-/**
- * The Instance api
+/*
+ */
+#pragma mark - instance api
+/*
  */
 typedef struct PeopleGroupO4ApplicationInstanceApiStructure
 {
@@ -29,8 +32,12 @@ typedef struct PeopleGroupO4ApplicationInstanceApiStructure
     
 }PeopleGroupO4AIapiT, *PeopleGroupO4AIapiPT;
 
-/**
- * The New structure
+// extern PeopleGroupO4AIapiT PeopleGroupO4AIapi; // available through the instance.apiP
+
+/*
+ */
+#pragma mark - New instance
+/*
  */
 typedef struct PeopleGroupO4ApplicationInstanceNewStructure
 {
@@ -39,15 +46,24 @@ typedef struct PeopleGroupO4ApplicationInstanceNewStructure
     
 }PeopleGroupO4AInewT, *PeopleGroupO4AInewPT;
 
-/**
- * The Class api
+
+/*
+ */
+#pragma mark - Class Api
+/*
  */
 typedef struct PeopleGroupO4ApplicationClassApiStructure
 {
-    PeopleGroupO4AInewT (*newOfRow)(void);
-    PeopleGroupO4AInewT (*newOfWeb)(void);
+    /**
+     * The sources for new instances are to create from scratch and to retrieve from the repository.
+     */
+    PeopleGroupO4AInewT (*newForInsert)(abstractRowT);
+    PeopleGroupO4AInewT (*newToView) (abstractRowT);
     
 }PeopleGroupO4ACapiT, *PeopleGroupO4ACapiPT;
+#define PeopleGroupACapiT PeopleGroupO4ACapiT
+#define PeopleGroupACapi PeopleGroupO4ACapi
+extern PeopleGroupACapiT PeopleGroupACapi;
 
 #endif /* PeopleGroupO4_h */
 /**

@@ -12,45 +12,48 @@
 #include "AppZ0Plan.h"
 // app api's
 
-/**
- * Instance methods.
+/*
  */
-typedef struct AppO4ApplicationInstanceMethodsStruct
+#pragma mark - Instance Api
+/*
+ */
+typedef struct AppO4ApplicationInstanceApiStruct
 {
-    
-    void        (*generateSignatureCode)(AppZ0AIdataPT);
     void        (*rowOf)    (appNameT);
+    void        (*generateSignatureCode)(AppZ0AIdataPT);
 }AppO4AIapiT, *AppO4AIapiPT;
-
 extern AppO4AIapiT AppO4AIapi;
 
 
-
+/*
+ */
+#pragma mark - New Instance
+/*
+ */
 typedef struct AppO4NewInstanceStruct // (both data and methods)
 {
     AppO4AIapiPT apiP;
     AppZ0AIdataT data;
     
 } AppO4AInewT, *AppO4AInewPT;
-#define AppAInewT AppZ0AInewT
-#define AppAInewPT AppZ0AInewPT
 
 /*
  */
-#pragma mark - Class Methods
+#pragma mark - Class Api
 /*
  */
-typedef struct AppO4ApplicationClassMethodsStruct
+typedef struct AppO4ApplicationClassApiStruct
 {
     /**
-     *
-     */
-    AppO4AInewT (*newOfWeb)(appNameT);
-    AppO4AInewT (*newOfRow)(appNameT);
+    * The sources for new instances are to create from scratch and to retrieve from the repository.
+    */
+    AppO4AInewT (*newForInsert)(abstractRowT);
+    AppO4AInewT (*newToView)(abstractRowT);
     
 }AppO4ACapiT, *AppO4ACapiPT;
-
-extern AppO4ACapiT AppO4ACapi;
+#define AppACapiT AppO4ACapiT
+#define AppACapi AppO4ACapi
+extern AppACapiT AppACapi;
 
 
 #endif /* AppO4_h */

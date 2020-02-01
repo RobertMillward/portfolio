@@ -9,32 +9,36 @@
 // os
 // helper api's
 // data plans
+#include "ArchitectureZ0Plan.h"
 #include "PersonZ0Plan.h"
 // application api's
+
+
 /**
  * Copy in and copy out the basic data.
  */
 //void (* setGetPassPhrase)   (passPhraseT,   PersonZ0AIdataPT, passPhrasePT,   gdbIsRevisedT);
-//void (* setGetReturnedCode) (returnedCodeT, PersonZ0AIdataPT, returnedCodePT, gdbIsRevisedT);
 //void (* setGetAuthentCode)  (authentT,      PersonZ0AIdataPT, authentNowPT,   gdbIsRevisedT);
 
 /*
  */
-#pragma mark - instance methods
+#pragma mark - Instance api
 /*
  */
 
 typedef struct PersonO4ApplicationInstanceApiStructure
 {
-    //void (* generateSignatureCode)(PersonZ0AIdataPT dataP);
-    
     void                (*rowOf)        (PersonZ0AIdataPT);
+    //void (* generateSignatureCode)(PersonZ0AIdataPT dataP);
     
 }PersonO4AIapiT, *PersonO4AIapiPT;
 
-#define PersonAIapiT PersonO4AIapiT
-#define PersonAIapi  PersonO4AIapi
-extern PersonAIapiT PersonAIapi;
+// extern PersonO4AIapiT PersonO4AIapi; available through the instance
+
+typedef struct PersonPassPhraseO4ApplicationInstanceApiStructure
+{
+    void                (*rowOf)        (PersonPassPhraseZ0AIdataPT);
+}PersonPassPhraseO4AIapiT, *PersonPassPhraseO4AIapiPT;
 
 
 
@@ -51,20 +55,36 @@ typedef struct PersonO4ApplicationInstanceNewStructure
 }PersonO4AInewT, *PersonO4AInewPT;
 
 
+typedef struct PersonPassPhraseO4ApplicationInstanceNewStructure
+{
+    PersonPassPhraseO4AIapiPT apiP;
+    PersonPassPhraseZ0AIdataT data;
+    
+}PersonPassPhraseO4AInewT, *PersonPassPhraseO4AInewPT;
+
+
 /*
  */
-#pragma mark - Class Methods
+#pragma mark - Class Api
 /*
  */
 typedef struct PersonO4ApplicationClassApiStructure
 {
-    PersonO4AInewT (*newOfWeb)(void);
-    PersonO4AInewT (*newOfRow)(void);
+    PersonO4AInewT (*forInsert)(abstractRowT);
+    PersonO4AInewT (*toView)(abstractRowT);
 }PersonO4ACapiT, *PersonO4ACapiPT;
-
 #define PersonACapiT PersonO4ACapiT
 #define PersonACapi  PersonO4ACapi
 extern PersonACapiT PersonACapi;
+
+typedef struct PersonPassPhraseO4ApplicationClassApiStructure
+{
+    PersonPassPhraseO4AInewT (*forInsert)(abstractRowT);
+    PersonPassPhraseO4AInewT (*toView)(abstractRowT);
+}PersonPassPhraseO4ACapiT, *PersonPassPhraseO4ACapiPT;
+#define PersonPassPhraseACapiT PersonPassPhraseO4ACapiT
+#define PersonPassPhraseACapi  PersonPassPhraseO4ACapi
+extern PersonPassPhraseACapiT PersonPassPhraseACapi;
 
 #endif // END PersonO4_h
 /**
