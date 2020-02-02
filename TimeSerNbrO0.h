@@ -42,19 +42,23 @@ typedef struct TimeSerNbrLinkO0HelperInstanceApiStruct
 {
     void (*saveRow)(TimeSerNbrLinkZ0HIdataPT);
     void (*trashRow)(TimeSerNbrLinkZ0HIdataPT);
-    void (*toRow)(TimeSerNbrLinkZ0HIdataPT);
+    void (*toRow)(TimeSerNbrLinkZ0HIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar32PT);
 }TimeSerNbrLinkO0HIapiT, *TimeSerNbrLinkO0HIapiPT;
 extern TimeSerNbrLinkO0HIapiT TimeSerNbrLinkO0HIapi;
 
-typedef struct TimeSerNbrLinkZ0HelperInstanceNewStruct
+typedef struct TimeSerNbrLinkO0HelperInstanceNewStruct
 {
     TimeSerNbrLinkO0HIapiPT apiP;
     TimeSerNbrLinkZ0HIdataT data;
-}TimeSerNbrLinkO0HInewT, *TimeSerNbrLinkO0HInewPT;
+}TimeSerNbrLinkO0AInewT, *TimeSerNbrLinkO0AInewPT;
 
-typedef struct TimeSerNbrLinkZ0HelperClassApiStruct
+typedef struct TimeSerNbrLinkO0HelperClassApiStruct
 {
-    
+    TimeSerNbrLinkO0AInewT (*newHasKey)(abstractRowT);
+    TimeSerNbrLinkO0AInewT (*newNoKey)(abstractRowT);
+    TimeSerNbrLinkO0AInewT (*newHasFields)(timeSerNbrNodeIdT ownr,  timeSerNbrNodeIdT grntee,
+                                           timeSerNbrDateTimeT,     timeSerNbrDateTimeT,
+                                           gpSllgChar32PT);
 }TimeSerNbrLinkO0HCapiT, *TimeSerNbrLinkO0HCapiPT;
 extern TimeSerNbrLinkO0HCapiT TimeSerNbrLinkO0HCapi;
 
