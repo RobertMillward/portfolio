@@ -4,22 +4,18 @@
 //  Created by Robert Russell Millward on 11/29/13.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-/**
- * Do include this ".c" in the app compile otherwise the .h files are not available.
- * See ArchitectureZ0.h for an explanation of the naming of Object typedef parts.
- */
 #ifndef TestAidZ0_h
 #define TestAidZ0_h
-// api
-// data
+// os
+// helper api's
+// data plans
 #include "ArchitectureZ0Plan.h"
+// application api's
+
 /*
  */
 #pragma mark - class data.
 /*
- */
-/**
- * Some reliable options to creating your own for testing.
  */
 typedef struct TestAidZ0QualityClassDataStructure
 {
@@ -31,86 +27,30 @@ typedef struct TestAidZ0QualityClassDataStructure
 }TestAidZ0QCdataT, *TestAidZ0QCdataPT;
 extern TestAidZ0QCdataT TestAidZ0QCdata;
 
-
-#define GOOD_LOGIN_PPLGRP "BOEINGZ"
-
-#define GOOD_PERSON_PPLG "RRMZZZZ"
-
-
-///*
-// */
-//#pragma mark - The instance
-///*
-// */
-//typedef struct TestAidZ0QualityInstanceDataStruct // TODO delete
-//{
-//    /**
-//     * General information.
-//     */
-//    
-//    /**
-//     * Generated information.
-//     */
-//    
-//    /**
-//     * Overhead variables.
-//     */
-//    gpTxPplGrpBatchTwoWayZ0PT flagsForTxSizeBatchP;
-//    gpVersionLevelZ0PT flagsForCodeVersionAndLevelP;
-//    
-//}TestAidZ0QIdataIT, *TestAidZ0QIdataIPT;
-//
-//
-///**
-// * Instance methods.
-// * Other methods may refer to these through the extern immediately below.
-// */
-//typedef struct TestAidZ0QualityInstanceApiStruct
-//{
-//    /**
-//     * Generate signature code from data so far.
-//     */
-//    void (* generateSignatureCode)(TestAidZ0QIdataIPT dataP);
-//    
-//}TestAidZ0QIapiT, *TestAidZ0QIapiPT;
-//
-//extern TestAidZ0QIapiT TestAidZ0QIapi; // For easy non instance reference
-//
-//
-//
-//typedef struct TestAidZ0QIapinstanceStruct // (both data and methods from new)
-//{
-//    TestAidZ0QIapiPT api;
-//    TestAidZ0QIdataIT data;
-//    
-//} TestAidZ0QInewT, *TestAidZ0QInewPT;
-//#define TestAidQIT TestAidZ0QInewT
-//#define TestAidQIPT TestAidZ0QInewPT
+/**
+* Some test constants.
+*/
+#define GOOD_LOGIN_PPLGRP   "BOEINGZ"
+#define GOOD_PERSON_PPLG    "RRMZZZZ"
+#define WIKIDB_REAL_APP     "WIKIDBA"
+#define WIKIDB_SHARED_APP   "WIKIDBG"
 
 /*
  */
 #pragma mark - Class Methods
 /*
  */
-/**
- * A assert result has the format: // assert=w91=x-[HashBasicsZ0Tests test2015Asample]=a2=eNE=f0=g
- * where:
- * w[hat]   = assert
- * [inde]x  = the line number
- * a[bout]  = -[file func]
- * e[xpect] = the expected value
- * g[ot]    = what actually occured
- * f[or]    = EQ or NE test
- */
-
 
 /**
  * How many years to run a test before it expires.
  */
-#define TA_FOR_YRS 400 // 4 years, 0 months
+#define TA_FOR_YRS 400 // 4 years, 00 months
 
-typedef char    *expectCharPT;
-typedef char    *actualCharPT;
+
+typedef char*   expectCharPT;
+typedef char*   actualCharPT;
+typedef char    expectCharT;
+typedef char    actualCharT;
 typedef int     expectIntT;
 typedef int     actualIntT;
 typedef const char *funcNamePT;
@@ -123,25 +63,32 @@ typedef struct TestAidZ0ClassMethodStructure
 {
     void (*basicInit)(void);
     void (*nextTx)(void);
-    bool (*isScheduled)(funcNamePT funcName,
-                        bool showFunc);
-#define TRM_SHOWFUNC true
-#define TRM_HIDEFUNC false
-    
-    Sint (*putTestInts)(
-            expectIntT expect,
-            actualIntT got,
-            lineNbrT lineNbr);
-    Sint (*putTestChars)(
-            expectCharPT expect,
-            actualCharPT got,
-            lineNbrT lineNbr);
-    void (*getCounts)(void);
-    //void (*processSuiteStats)(void);
-    char *(*getAssertText)(funcNamePT testName);
-    //char *(*getTraceText)(void);
-    //void (*dumpTrace)(void);
-    //void (*clearTrace)(void);
+    #define TRM_SHOWFUNC true
+    #define TRM_HIDEFUNC false
+    bool (*isScheduled)(funcNamePT, bool);
+    /**
+     * TestInts returns subtraction thus LT, GT, and EQ can be detected.
+     */
+    Sint (*putTestInts)(expectIntT,     actualIntT,     lineNbrT);
+    Sint (*putTestChars)(expectCharPT,  actualCharPT,   lineNbrT);
+    Sint (*putTestChar1)(expectCharT,   actualCharT,    lineNbrT);
+    /**
+     * Returns a pointer to the report of the count of tests and failures.
+     */
+    char*  (*getCounts)(void);
+    /**
+     * Returns a Row of the test results including EQ or NE as the violated condition.
+      * A assert result has the format:  =wassert=x91=c3=a-[HashBasicsZ0Tests test2015Asample]=e2=fNE=g0
+      * where:
+      * w[hat]   = assert
+      * [inde]x  = the line number
+      * c[ount] = the number of failures so far
+      * a[bout]  = -[file func]
+      * e[xpect] = the expected value
+      * g[ot]    = what actually occured
+      * f[or]    = EQ or NE test
+     */
+    char* (*getAssertText)(funcNamePT testName);
     
 }TestAidZ0QCapiT, *TestAidZ0QCapiPT;
 
@@ -149,12 +96,17 @@ typedef struct TestAidZ0ClassMethodStructure
 #define TestAidQCapi TestAidZ0QCapi
 extern TestAidQCapiT TestAidQCapi;
 
-#define TestAidC TestAidZ0QCapi // temporary
+#define TestAidC TestAidZ0QCapi // temporary, diminishing as 0f 03Feb2020
 
 // If a shorter call name will clarify code.
 #define TA0C TestAidZ0QCapi
 #define intV putTestInts
 #define chrV putTestChars
+#define ch1V putTestChar1
 
 
-#endif
+#endif // TestAidZ0_h
+/**
+* Do include this ".c" in the app compile otherwise the .h files are not available.
+* See ArchitectureZ0.h for an explanation of the naming of Object typedef parts.
+*/
