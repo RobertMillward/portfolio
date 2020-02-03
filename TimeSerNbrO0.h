@@ -12,13 +12,12 @@
 #include "TimeSerNbrZ0Plan.h"
 // application api's
 /**
- *
+ * Managing the time and serial number values
  */
 typedef const struct TimeSerNbrO0HelperClassStructure
 {
     /**
      * Builds a structure of time information.
-     * Is thread safe if a transaction id is not shared among threads.
      * NodeId is a subset of the TimeSerNbrRow.
      */
     void (*newTimeAndSerNbrNow)(theStampAIdataPT);
@@ -28,7 +27,6 @@ typedef const struct TimeSerNbrO0HelperClassStructure
     Zint (*getStrOfTime)(gpSllgChar32PT);
     /**
      * Get a whole row or only the node.
-     * For these two functions the gp32 must be maintained seperate.
      */
     Zint (*getRowOfSerNbr)(gpSllgChar32PT);
     Zint (*getNodeId)(gpSllgChar32PT);
