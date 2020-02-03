@@ -23,8 +23,11 @@
  */
 typedef struct TestAidZ0QualityClassDataStructure
 {
-    gpTxPplGrpBatchTwoWayZ0T twoWay;
-    bool showFunctionName;
+    bool                        showFunctionName;
+    gpVersionLevelZ0T           vsnLvl;
+    gpTxPplGrpBatchTwoWayZ0T    twoWay;
+    gpSllgChar32T               gp32;
+    gpSllgChar64T               gp64;
 }TestAidZ0QCdataT, *TestAidZ0QCdataPT;
 extern TestAidZ0QCdataT TestAidZ0QCdata;
 

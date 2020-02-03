@@ -38,27 +38,37 @@ typedef const struct TimeSerNbrO0HelperClassStructure
 #define TimeSerNbrHCapi TimeSerNbrO0HCapi
 extern TimeSerNbrHCapiT TimeSerNbrHCapi;
 
+/**
+ * Link Instance functions to saveRow, trashRow, or toRow a link.
+ * Only revised links will save.
+ * Validation failure information will appear in gpSllgChar64PT->theChar64
+ */
 typedef struct TimeSerNbrLinkO0HelperInstanceApiStruct
 {
     void (*saveRow)(TimeSerNbrLinkZ0HIdataPT);
     void (*trashRow)(TimeSerNbrLinkZ0HIdataPT);
-    void (*toRow)(TimeSerNbrLinkZ0HIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar32PT);
+    void (*toRow)(TimeSerNbrLinkZ0HIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar64PT);
 }TimeSerNbrLinkO0HIapiT, *TimeSerNbrLinkO0HIapiPT;
 extern TimeSerNbrLinkO0HIapiT TimeSerNbrLinkO0HIapi;
 
+/**
+ * The "new" instance. apiPT->the api and dataT has the data.
+ */
 typedef struct TimeSerNbrLinkO0HelperInstanceNewStruct
 {
     TimeSerNbrLinkO0HIapiPT apiP;
     TimeSerNbrLinkZ0HIdataT data;
 }TimeSerNbrLinkO0AInewT, *TimeSerNbrLinkO0AInewPT;
-
+/**
+ * The Link Class functions.
+ */
 typedef struct TimeSerNbrLinkO0HelperClassApiStruct
 {
     TimeSerNbrLinkO0AInewT (*newHasKey)(abstractRowT);
     TimeSerNbrLinkO0AInewT (*newNoKey)(abstractRowT);
     TimeSerNbrLinkO0AInewT (*newHasFields)(timeSerNbrNodeIdT ownr,  timeSerNbrNodeIdT grntee,
                                            timeSerNbrDateTimeT,     timeSerNbrDateTimeT,
-                                           gpSllgChar32PT);
+                                           gpSllgChar64PT);
 }TimeSerNbrLinkO0HCapiT, *TimeSerNbrLinkO0HCapiPT;
 extern TimeSerNbrLinkO0HCapiT TimeSerNbrLinkO0HCapi;
 

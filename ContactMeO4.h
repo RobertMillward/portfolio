@@ -18,7 +18,7 @@ typedef struct ContactMeO4AppInstanceApiStructure
 {
     void    (*saveRow)(ContactMeZ0AIdataPT);
     void    (*trashRow)(ContactMeZ0AIdataPT);
-    void    (*toRow)(ContactMeZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
+    void    (*toRow)(ContactMeZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar64PT);
     
 }ContactMeO4AIapiT, *ContactMeO4AIapiPT;
 extern ContactMeO4AIapiT ContactMeO4AIapi;
@@ -28,7 +28,7 @@ typedef struct ContactMeLinkO4AppInstanceApiStructure
 {
     void    (*saveRow)(ContactMeLinkZ0AIdataPT);
     void    (*trashRow)(ContactMeLinkZ0AIdataPT);
-    void    (*toRow)(ContactMeLinkZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
+    void    (*toRow)(ContactMeLinkZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar64PT);
     
 }ContactMeLinkO4AIapiT, *ContactMeLinkO4AIapiPT;
 extern ContactMeLinkO4AIapiT ContactMeLinkO4AIapi;
@@ -38,7 +38,7 @@ typedef struct ContactMeStatusO4AppInstanceApiStructure
 {
     void    (*saveRow)(ContactMeStatusZ0AIdataPT);
     void    (*trashRow)(ContactMeStatusZ0AIdataPT);
-    void    (*rowOf)(ContactMeStatusZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
+    void    (*rowOf)(ContactMeStatusZ0AIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar64PT);
     
 }ContactMeStatusO4AIapiT, *ContactMeStatusO4AIapiPT;
 extern ContactMeStatusO4AIapiT ContactMeStatusO4AIapi;
@@ -80,7 +80,7 @@ typedef struct ContactMeO4AppClassApiStruct
     ContactMeO4AInewT (*newNoKey)(abstractRowT);
     ContactMeO4AInewT (*newHasFields)(timeSerNbrNodeIdT,
                                       dataTypeT type, orderT, dataTypeT subType, contactInfoT,
-                                      gpTxPplGrpBatchTwoWayZ0PT);
+                                      gpSllgChar64PT);
     
 }ContactMeO4ACapiT, *ContactMeO4ACapiPT;
 #define ContactMeACapiT ContactMeO4ACapiT
@@ -91,7 +91,7 @@ typedef struct ContactMeLinkO4AppClassApiStruct
 {
     ContactMeLinkO4AInewT (*newHasKey)(abstractRowT);
     ContactMeLinkO4AInewT (*newNoKey)(abstractRowT);
-    ContactMeLinkO4AInewT (*newHasFields)(abstractRowT, int, gpTxPplGrpBatchTwoWayZ0PT);
+    ContactMeLinkO4AInewT (*newHasFields)(abstractRowT, int, gpSllgChar64PT);
     
 }ContactMeLinkO4ACapiT, *ContactMeLinkO4ACapiPT;
 #define ContactMeLinkACapiT ContactMeLinkO4ACapiT
@@ -102,7 +102,7 @@ typedef struct ContactMeStatusO4AppClassApiStruct
 {
     ContactMeStatusO4AInewT (*newHasKey)(abstractRowT);
     ContactMeStatusO4AInewT (*newNoKey)(abstractRowT);
-    ContactMeStatusO4AInewT (*newHasFields)(abstractRowT, int, gpTxPplGrpBatchTwoWayZ0PT);
+    ContactMeStatusO4AInewT (*newHasFields)(abstractRowT, int, gpSllgChar64PT);
     
 }ContactMeStatusO4ACapiT, *ContactMeStatusO4ACapiPT;
 #define ContactMeStatusACapiT ContactMeStatusO4ACapiT
