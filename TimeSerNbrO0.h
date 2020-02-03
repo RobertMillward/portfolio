@@ -6,7 +6,11 @@
 //
 #ifndef TimeSerNbrO0_h
 #define TimeSerNbrO0_h
+// os
+// helper api's
+// data plans
 #include "TimeSerNbrZ0Plan.h"
+// application api's
 /**
  *
  */
@@ -46,9 +50,10 @@ extern TimeSerNbrHCapiT TimeSerNbrHCapi;
  */
 typedef struct TimeSerNbrLinkO0HelperInstanceApiStruct
 {
-    void (*saveRow)(TimeSerNbrLinkZ0HIdataPT);
-    void (*trashRow)(TimeSerNbrLinkZ0HIdataPT);
-    void (*toRow)(TimeSerNbrLinkZ0HIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar64PT);
+    void (*setHideRow)      (TimeSerNbrLinkZ0HIdataPT);
+    void (*setUnhideRow)    (TimeSerNbrLinkZ0HIdataPT);
+    void (*saveRow)         (TimeSerNbrLinkZ0HIdataPT); // Not fully implemented
+    void (*toRow)           (TimeSerNbrLinkZ0HIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar64PT);
 }TimeSerNbrLinkO0HIapiT, *TimeSerNbrLinkO0HIapiPT;
 extern TimeSerNbrLinkO0HIapiT TimeSerNbrLinkO0HIapi;
 
@@ -65,10 +70,9 @@ typedef struct TimeSerNbrLinkO0HelperInstanceNewStruct
  */
 typedef struct TimeSerNbrLinkO0HelperClassApiStruct
 {
-    TimeSerNbrLinkO0AInewT (*newHasKey)(abstractRowT);
-    TimeSerNbrLinkO0AInewT (*newNoKey)(abstractRowT);
-    TimeSerNbrLinkO0AInewT (*newHasFields)(timeSerNbrNodeIdT ownr,  timeSerNbrNodeIdT grntee,
-                                           timeSerNbrDateTimeT,     timeSerNbrDateTimeT,
+    TimeSerNbrLinkO0AInewT (*newHasRow)   (abstractRowT);
+    TimeSerNbrLinkO0AInewT (*newHasFields)(timeSerNbrNodeIdT grantor,   timeSerNbrNodeIdT grntee,
+                                           timeSerNbrDateTimeT,         timeSerNbrDateTimeT,
                                            gpSllgChar64PT);
 }TimeSerNbrLinkO0HCapiT, *TimeSerNbrLinkO0HCapiPT;
 extern TimeSerNbrLinkO0HCapiT TimeSerNbrLinkO0HCapi;

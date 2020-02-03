@@ -98,34 +98,7 @@ test2019Link
         }
     }
 }
-@end
 
-@interface ContactMeStatusZ0GeneralTests : XCTestCase
-
-@end
-
-@implementation ContactMeStatusZ0GeneralTests
-
-- (void)setUp{
-}
-
-- (void)tearDown{
-}
-
-
-- (void)
-test2019Status
-{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        
-        ErrorWarnCountT ewc = cnctMeDGZ0QCapi.testStatusQ(__LINE__);
-        
-        if(ewc.classErrors != 0)
-        {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
 
 @end // END ContactMeZ0Tests.m
 /**
