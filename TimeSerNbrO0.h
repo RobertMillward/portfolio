@@ -24,6 +24,7 @@ typedef const struct TimeSerNbrO0HelperClassStructure
     Zint (*getStrOfTime)(gpSllgChar32PT);
     /**
      * Get a whole row or only the node.
+     * For these two functions the gp32 must be maintained seperate.
      */
     Zint (*getRowOfSerNbr)(gpSllgChar32PT);
     Zint (*getNodeId)(gpSllgChar32PT);
