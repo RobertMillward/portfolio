@@ -28,10 +28,10 @@
 
 typedef struct PersonO4ApplicationInstanceApiStructure
 {
-    void    (*saveRow)(void);
-    void    (*trashRow)(void);
-    void    (*rowOf)        (PersonZ0AIdataPT);
-    //void (* generateSignatureCode)(PersonZ0AIdataPT dataP);
+    void    (*hideRow)  (PersonZ0AIdataPT);
+    void    (*unhideRow)(PersonZ0AIdataPT);
+    void    (*saveRow)  (PersonZ0AIdataPT);
+    void    (*rowOf)    (PersonZ0AIdataPT);
     
 }PersonO4AIapiT, *PersonO4AIapiPT;
 
@@ -75,7 +75,8 @@ typedef struct PersonPassPhraseO4ApplicationInstanceNewStructure
 typedef struct PersonO4ApplicationClassApiStructure
 {
     PersonO4AInewT (*forInsert)(abstractRowT);
-    PersonO4AInewT (*toView)(abstractRowT);
+    //PersonO4AInewT (*toView)(abstractRowT);
+    PersonO4AInewT (*fromFields)(personIdT, gpSllgChar64PT);
 }PersonO4ACapiT, *PersonO4ACapiPT;
 #define PersonACapiT PersonO4ACapiT
 #define PersonACapi  PersonO4ACapi
@@ -85,6 +86,7 @@ typedef struct PersonPassPhraseO4ApplicationClassApiStructure
 {
     PersonPassPhraseO4AInewT (*forInsert)(abstractRowT);
     PersonPassPhraseO4AInewT (*toView)(abstractRowT);
+    PersonPassPhraseO4AInewT (*fromFields)(abstractRowT);
 }PersonPassPhraseO4ACapiT, *PersonPassPhraseO4ACapiPT;
 #define PersonPassPhraseACapiT PersonPassPhraseO4ACapiT
 #define PersonPassPhraseACapi  PersonPassPhraseO4ACapi

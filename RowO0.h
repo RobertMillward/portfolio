@@ -51,6 +51,30 @@ typedef const struct RowO0HCapiS
 
 extern RowO0HCapiT RowO0HCapi;
 
+typedef struct RowStoreZ0HelperInstanceApiStruct
+{
+    /**
+     * Set needsSaved = false then return the original needsSaved true/false
+     * Make it true
+     */
+    bool (*needsSavedRow)(RowStoreZ0HIdataPT);
+    void (*setNeedsSavedRow)(RowStoreZ0HIdataPT);
+    /**
+     *
+     */
+    void (*setTableName)(RowStoreZ0HIdataPT, cfuncNameT, gpSllgChar64PT);
+    /**
+     *
+     */
+    void (*setActiveRow)(RowStoreZ0HIdataPT);
+    void (*setEmptyRow) (RowStoreZ0HIdataPT);
+    void (*setHiddenRow)(RowStoreZ0HIdataPT);
+    void (*setDebugRow) (RowStoreZ0HIdataPT);
+    void (*setPurgeRow) (RowStoreZ0HIdataPT);
+    
+}RowStoreZ0HIapiT, *RowStoreZ0HIapiPT;
+extern RowStoreZ0HIapiT RowStoreZ0HIapi;
+
 #endif /* defined(RowO0_h) */
 /**
  A Row is an essential building block in the library.
