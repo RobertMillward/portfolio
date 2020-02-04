@@ -35,6 +35,7 @@ typedef const struct RowO0QCapiS
     ErrorWarnCountT (*targetTests)(lineNbrT);
     ErrorWarnCountT (*letterTests)(lineNbrT);
     ErrorWarnCountT (*sourceTests)(lineNbrT);
+    ErrorWarnCountT (*storeTests)(lineNbrT);
     
 }RowO0QCapiT, *RowO0QCapiPT;
 

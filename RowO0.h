@@ -44,7 +44,7 @@ typedef const struct RowO0HCapiS
     Zint // final length
     (*finish)(targetPT);
     
-    RowZ0AIwxyzT
+    RowWxyzZ0AIdataT
     (*getWXYZ)(char* rowP);
     
 }RowO0HCapiT, *RowO0HCapiPT;
@@ -60,17 +60,31 @@ typedef struct RowStoreZ0HelperInstanceApiStruct
     bool (*needsSaved)(RowStoreZ0HIdataPT);
     void (*setNeedsSaved)(RowStoreZ0HIdataPT);
     /**
-     * Set the table name (that What is stored in) and a free indeX.
-     * It will be used in groupIdT/prod/fileName
+     * Set the unix file name (repository which contails this What ) and get a free indeX.
+     * It will be used in groupId/[prod|test|train|dev]/fileName
      */
     void (*setFileNameIndeX)(RowStoreZ0HIdataPT, cfuncNameT, gpSllgChar64PT);
     /**
-     * Set the various whY values and needsSaved
+     * Set the various whY values and needsSaved:
+     * Show this record as active for regular processing.
      */
     void (*setActive)(RowStoreZ0HIdataPT);
+    /**
+     * Used with things like clone and clear.
+     * Should not be saved.
+     */
     void (*setEmpty) (RowStoreZ0HIdataPT);
+    /**
+     * A logical delete, All deletes can be undone.
+     */
     void (*setHidden)(RowStoreZ0HIdataPT);
+    /**
+     * Identify a node that an otherwise restricted external analyst can see.
+     */
     void (*setDebug) (RowStoreZ0HIdataPT);
+    /**
+     * In the next roll of a detail file purge thiis along with scheduled deletes.
+     */
     void (*setPurge) (RowStoreZ0HIdataPT);
     
 }RowStoreZ0HIapiT, *RowStoreZ0HIapiPT;
