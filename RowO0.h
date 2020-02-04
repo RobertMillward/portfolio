@@ -57,20 +57,21 @@ typedef struct RowStoreZ0HelperInstanceApiStruct
      * Set needsSaved = false then return the original needsSaved true/false
      * Make it true
      */
-    bool (*needsSavedRow)(RowStoreZ0HIdataPT);
-    void (*setNeedsSavedRow)(RowStoreZ0HIdataPT);
+    bool (*needsSaved)(RowStoreZ0HIdataPT);
+    void (*setNeedsSaved)(RowStoreZ0HIdataPT);
     /**
-     *
+     * Set the table name (that What is stored in) and a free indeX.
+     * It will be used in groupIdT/prod/fileName
      */
-    void (*setTableName)(RowStoreZ0HIdataPT, cfuncNameT, gpSllgChar64PT);
+    void (*setFileNameIndeX)(RowStoreZ0HIdataPT, cfuncNameT, gpSllgChar64PT);
     /**
-     *
+     * Set the various whY values and needsSaved
      */
-    void (*setActiveRow)(RowStoreZ0HIdataPT);
-    void (*setEmptyRow) (RowStoreZ0HIdataPT);
-    void (*setHiddenRow)(RowStoreZ0HIdataPT);
-    void (*setDebugRow) (RowStoreZ0HIdataPT);
-    void (*setPurgeRow) (RowStoreZ0HIdataPT);
+    void (*setActive)(RowStoreZ0HIdataPT);
+    void (*setEmpty) (RowStoreZ0HIdataPT);
+    void (*setHidden)(RowStoreZ0HIdataPT);
+    void (*setDebug) (RowStoreZ0HIdataPT);
+    void (*setPurge) (RowStoreZ0HIdataPT);
     
 }RowStoreZ0HIapiT, *RowStoreZ0HIapiPT;
 extern RowStoreZ0HIapiT RowStoreZ0HIapi;

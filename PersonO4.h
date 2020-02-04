@@ -31,11 +31,17 @@ typedef struct PersonO4ApplicationInstanceApiStructure
     void    (*hideRow)  (PersonZ0AIdataPT);
     void    (*unhideRow)(PersonZ0AIdataPT);
     void    (*saveRow)  (PersonZ0AIdataPT);
-    void    (*rowOf)    (PersonZ0AIdataPT);
+    /**
+     * Run either ... or ... on gp64.vsnLvlP
+     */
+    void    (*rowOf)    (PersonZ0AIdataPT,
+                         targetPT, massOfT,
+                         indeXPT, whoZPT,
+                         gpSllgChar64PT);
     
 }PersonO4AIapiT, *PersonO4AIapiPT;
 
-// extern PersonO4AIapiT PersonO4AIapi; available through the instance
+// extern PersonO4AIapiT PersonO4AIapi; available only through the instance
 
 typedef struct PersonPassPhraseO4ApplicationInstanceApiStructure
 {
