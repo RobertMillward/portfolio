@@ -14,12 +14,6 @@
 // application api's
 
 
-/**
- * Copy in and copy out the basic data.
- */
-//void (* setGetPassPhrase)   (passPhraseT,   PersonZ0AIdataPT, passPhrasePT,   gdbIsRevisedT);
-//void (* setGetAuthentCode)  (authentT,      PersonZ0AIdataPT, authentNowPT,   gdbIsRevisedT);
-
 /*
  */
 #pragma mark - Instance api
@@ -43,12 +37,6 @@ typedef struct PersonO4ApplicationInstanceApiStructure
 
 // extern PersonO4AIapiT PersonO4AIapi; available only through the instance
 
-typedef struct PersonPassPhraseO4ApplicationInstanceApiStructure
-{
-    void    (*saveRow)(void);
-    void    (*trashRow)(void);
-    void    (*rowOf)        (PersonPassPhraseZ0AIdataPT);
-}PersonPassPhraseO4AIapiT, *PersonPassPhraseO4AIapiPT;
 
 
 
@@ -64,15 +52,6 @@ typedef struct PersonO4ApplicationInstanceNewStructure
     
 }PersonO4AInewT, *PersonO4AInewPT;
 
-
-typedef struct PersonPassPhraseO4ApplicationInstanceNewStructure
-{
-    PersonPassPhraseO4AIapiPT apiP;
-    PersonPassPhraseZ0AIdataT data;
-    
-}PersonPassPhraseO4AInewT, *PersonPassPhraseO4AInewPT;
-
-
 /*
  */
 #pragma mark - Class Api
@@ -80,13 +59,39 @@ typedef struct PersonPassPhraseO4ApplicationInstanceNewStructure
  */
 typedef struct PersonO4ApplicationClassApiStructure
 {
-    PersonO4AInewT (*forInsert)(abstractRowT);
-    //PersonO4AInewT (*toView)(abstractRowT);
+    /**
+     *
+     */
+    PersonO4AInewT (*fromRow)(abstractRowT);
+    /**
+     *
+     */
     PersonO4AInewT (*fromFields)(personIdT, gpSllgChar64PT);
 }PersonO4ACapiT, *PersonO4ACapiPT;
 #define PersonACapiT PersonO4ACapiT
 #define PersonACapi  PersonO4ACapi
 extern PersonACapiT PersonACapi;
+
+
+
+
+//////// PassPhrase
+
+
+
+typedef struct PersonPassPhraseO4ApplicationInstanceApiStructure
+{
+    void    (*saveRow)(void);
+    void    (*trashRow)(void);
+    void    (*rowOf)        (PersonPassPhraseZ0AIdataPT);
+}PersonPassPhraseO4AIapiT, *PersonPassPhraseO4AIapiPT;
+
+typedef struct PersonPassPhraseO4ApplicationInstanceNewStructure
+{
+    PersonPassPhraseO4AIapiPT apiP;
+    PersonPassPhraseZ0AIdataT data;
+    
+}PersonPassPhraseO4AInewT, *PersonPassPhraseO4AInewPT;
 
 typedef struct PersonPassPhraseO4ApplicationClassApiStructure
 {
@@ -97,6 +102,8 @@ typedef struct PersonPassPhraseO4ApplicationClassApiStructure
 #define PersonPassPhraseACapiT PersonPassPhraseO4ACapiT
 #define PersonPassPhraseACapi  PersonPassPhraseO4ACapi
 extern PersonPassPhraseACapiT PersonPassPhraseACapi;
+
+
 
 #endif // END PersonO4_h
 /**

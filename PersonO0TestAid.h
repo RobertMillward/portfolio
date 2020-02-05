@@ -39,8 +39,6 @@ typedef struct PsnAidO0toExpectDataStructure
     Ullg qrandomGen;
     char* qtheOffender;
 } PsnAidO0QIdataT, *PsnAidO0QIdataPT;
-#define PsnAidQIdataPT PsnAidO0QIdataPT
-#define PsnAidQIdataT PsnAidO0QIdataT
 
 /*
  */
@@ -65,30 +63,22 @@ typedef struct PsnAidO0QualityInstanceStructure
     
 }PsnAidO0QIapiT, *PsnAidO0QIapiPT;
 
-#define PsnAidQIapiT PsnAidO0QIapiT
-#define PsnAidQIapi PsnAidO0QIapi
-extern PsnAidQIapiT PsnAidQIapi;
+extern PsnAidO0QIapiT PsnAidO0QIapi;
 
 
 /*
  */
-#pragma mark - Class Methods
+#pragma mark - Class Methods Deleting
 /*
  */
 typedef struct PsnsAidO0goClassQualityStructure
 {
 
-}PsnsAidO0QCgoT, *PsnsAidO0QCgoPT;
+}PsnsAidO0QCapiT, *PsnsAidO0QCapiPT;
 
-#define PsnsAidQCgoT PsnsAidO0QCgoT
-#define PsnsAidQCgo PsnsAidO0QCgo
-extern PsnsAidQCgoT PsnsAidQCgo;
+extern PsnsAidZ0QCapiT PsnsAidZ0QCapi;
 
-/*
+#endif //END PersonO0TestAid_h
+/**
+ *
  */
-#pragma mark - New instance
-/*
- */
-extern char* newExpectAndPersonO0In(int codeLine, PsnAidQIdataPT here);
-
-#endif // PersonO0TestAid.h

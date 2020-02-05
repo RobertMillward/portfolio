@@ -17,6 +17,11 @@
 #pragma mark - class data.
 /*
  */
+/**
+ *
+ * Initialize the basic testing environment.
+ * Caller should spin on serial number if needed.
+ */
 typedef struct TestAidZ0QualityClassDataStructure
 {
     bool                        showFunctionName;

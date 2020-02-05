@@ -2,19 +2,17 @@
 //  PersonZ0TestAid.h
 //
 //  Created by Robert Russell Millward on 9/26/13.
-//  Copyright (c) 2013 Robert Russell Millward.
-//  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-/**
- * The Q class is for Quality checking.
- * Persons (plural) is for the class and Person (singular) is for the instance.
- * InitDestroyHelper.destroyAll() is the class cleanup
- */
-
 #ifndef PersonZ0TestAid_h
 #define PersonZ0TestAid_h
-#include "TestAidZ0.h"
+// os
+// helper api's
+// data plans
 #include "PersonZ0Plan.h"
+// application api's
+// quality
+#include "TestAidZ0.h"
 
 /*
  */
@@ -49,8 +47,7 @@ typedef struct PsnAidZ0toExpectDataStructure
     Ullg qrandomGen;
     char* qtheOffender;
 } PsnAidZ0QIdataT, *PsnAidZ0QIdataPT;
-#define PsnAidQIdataPT PsnAidZ0QIdataPT
-#define PsnAidQIdataT PsnAidZ0QIdataT
+
 
 /*
  */
@@ -75,9 +72,7 @@ typedef struct PsnAidZ0ApplicationInstanceApiQualityStructure
     
 }PsnAidZ0QIapiT, *PsnAidZ0QIapiPT;
 
-#define PsnAidQIapiT PsnAidZ0QIapiT
-#define PsnAidQIapi PsnAidZ0QIapi
-extern PsnAidQIapiT PsnAidQIapi;
+extern PsnAidZ0QIapiT PsnAidZ0QIapi;
 
 
 /*
@@ -88,17 +83,26 @@ extern PsnAidQIapiT PsnAidQIapi;
 typedef struct PsnsAidZ0goClassQualityStructure
 {
 
-}PsnsAidZ0QCgoT, *PsnsAidZ0QCgoPT;
+}PsnAidZ0QCapiT, *PsnAidZ0QCapiPT;
 
-#define PsnsAidQCgoT PsnsAidZ0QCgoT
-#define PsnsAidQCgo PsnsAidZ0QCgo
-extern PsnsAidQCgoT PsnsAidQCgo;
 
-/*
+extern PsnAidZ0QCapiT PsnsAidZ0QCapi;
+
+
+typedef struct PersonZ0QualityClassApiStruct
+{
+    ErrorWarnCountT (*newQ)(lineNbrT);
+    /**
+     *
+     */
+    ErrorWarnCountT (*fakeTestQ)(lineNbrT);
+    
+    
+}PersonZ0QCapiT, *PersonZ0QCapiPT;
+
+extern PersonZ0QCapiT PersonZ0QCapi;
+
+#endif // END PersonZ0TestAid_h
+/**
+ *
  */
-#pragma mark - New instance
-/*
- */
-extern char* newExpectAndPersonZ0In(int codeLine, PsnAidQIdataPT here);
-
-#endif // PersonZ0TestAid.h

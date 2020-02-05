@@ -86,9 +86,39 @@ typedef struct RowStoreZ0HelperInstanceApiStruct
      * In the next roll of a detail file purge thiis along with scheduled deletes.
      */
     void (*setPurge) (RowStoreZ0HIdataPT);
+    /**
+     *
+     */
+    void (*header)(RowStoreZ0HIdataPT, indeXT nodeIdP, cfuncNameT, gpSllgChar64PT);
+    
+    void (*footer)(RowStoreZ0HIdataPT, gpSllgChar64PT);
     
 }RowStoreZ0HIapiT, *RowStoreZ0HIapiPT;
 extern RowStoreZ0HIapiT RowStoreZ0HIapi;
+
+/**
+ * See SampleHeader
+ * Must be named gp64P.
+ */
+#define FIELDS_BEGIN \
+int stepIx = 99; \
+for(; stepIx > 0; stepIx--) \
+{ \
+    gp64P->versionLevelP = newObj.data.storeData.vsnLvlP; \
+    strcpy(gp64P->theCharValue, ""); \
+    \
+    switch(stepIx) \
+    { \
+        default: stepIx = 0; break;
+
+#define FIELDS_UNTIL \
+    } \
+       \
+       if(gp64P->twoWayP->twoWayStatusP == KNOW_NO_ARC) \
+       { \
+           stepIx = -1; \
+       } \
+   }
 
 #endif /* defined(RowO0_h) */
 /**

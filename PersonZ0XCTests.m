@@ -25,15 +25,6 @@
 #import "PersonZ0TestAid.h"
 
 
-static ErrorWarnCountT fakeTest()
-{
-    ErrorWarnCountT ewc = {0, 0, 0, 0};
-    
-    TestAidQCapi.putTestChars("fake", "test", __LINE__);
-    ewc.classErrors++;
-    
-    return ewc;
-}
 
 
 @interface PersonZ0NewTests : XCTestCase
@@ -44,8 +35,7 @@ static ErrorWarnCountT fakeTest()
 
 
 - (void)setUp {
-    TestAidQCapi.basicInit(); // this gets signature
-
+    TestAidQCapi.basicInit();
 }
 
 - (void)tearDown {
@@ -56,7 +46,7 @@ static ErrorWarnCountT fakeTest()
 {
     if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
-        ErrorWarnCountT ewc = fakeTest();
+        ErrorWarnCountT ewc = PersonZ0QCapi.fakeTestQ(__LINE__);
 
         if(ewc.classErrors != 0)
         {
@@ -86,7 +76,7 @@ static ErrorWarnCountT fakeTest()
 {
     if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
-        ErrorWarnCountT ewc = fakeTest();
+        ErrorWarnCountT ewc = PersonZ0QCapi.fakeTestQ(__LINE__);
 
         if(ewc.classErrors != 0)
         {
@@ -116,7 +106,7 @@ static ErrorWarnCountT fakeTest()
 {
     if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
-        ErrorWarnCountT ewc = fakeTest();
+        ErrorWarnCountT ewc = PersonZ0QCapi.fakeTestQ(__LINE__);
 
         if(ewc.classErrors != 0)
         {
@@ -126,3 +116,6 @@ static ErrorWarnCountT fakeTest()
 }
 
 @end
+/**
+ *
+ */
