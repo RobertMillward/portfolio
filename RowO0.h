@@ -29,6 +29,9 @@ typedef const struct RowO0HCapiS
     Sint // -1 if error else 0
     (*addMore)(fieldLetterRowT, sourcePT, targetPT);
     
+    Sint // -1 if error else 0
+    (*addChar)(fieldLetterRowT, sourceT, targetPT);
+    
     /**
      * Add the metadata.
      */
@@ -41,12 +44,81 @@ typedef const struct RowO0HCapiS
     Zint // final length
     (*finish)(targetPT);
     
-    RowZ0AIwxyzT
+    RowWxyzZ0AIdataT
     (*getWXYZ)(char* rowP);
     
 }RowO0HCapiT, *RowO0HCapiPT;
 
 extern RowO0HCapiT RowO0HCapi;
+
+typedef struct RowStoreZ0HelperInstanceApiStruct
+{
+    /**
+     * Set needsSaved = false then return the original needsSaved true/false
+     * Make it true
+     */
+    bool (*needsSaved)(RowStoreZ0HIdataPT);
+    void (*setNeedsSaved)(RowStoreZ0HIdataPT);
+    /**
+     * Set the unix file name (repository which contails this What ) and get a free indeX.
+     * It will be used in groupId/[prod|test|train|dev]/fileName
+     */
+    void (*setFileNameIndeX)(RowStoreZ0HIdataPT, cfuncNameT, gpSllgChar64PT);
+    /**
+     * Set the various whY values and needsSaved:
+     * Show this record as active for regular processing.
+     */
+    void (*setActive)(RowStoreZ0HIdataPT);
+    /**
+     * Used with things like clone and clear.
+     * Should not be saved.
+     */
+    void (*setEmpty) (RowStoreZ0HIdataPT);
+    /**
+     * A logical delete, All deletes can be undone.
+     */
+    void (*setHidden)(RowStoreZ0HIdataPT);
+    /**
+     * Identify a node that an otherwise restricted external analyst can see.
+     */
+    void (*setDebug) (RowStoreZ0HIdataPT);
+    /**
+     * In the next roll of a detail file purge thiis along with scheduled deletes.
+     */
+    void (*setPurge) (RowStoreZ0HIdataPT);
+    /**
+     *
+     */
+    void (*header)(RowStoreZ0HIdataPT, indeXT nodeIdP, cfuncNameT, gpSllgChar64PT);
+    
+    void (*footer)(RowStoreZ0HIdataPT, cfuncNameT, gpSllgChar64PT);
+    
+}RowStoreZ0HIapiT, *RowStoreZ0HIapiPT;
+extern RowStoreZ0HIapiT RowStoreZ0HIapi;
+
+/**
+ * See SampleHeader
+ * Must be named gp64P.
+ */
+#define FIELDS_BEGIN \
+int stepIx = 99; \
+for(; stepIx > 0; stepIx--) \
+{ \
+    gp64P->versionLevelP = newObj.data.storeData.vsnLvlP; \
+    strcpy(gp64P->theCharValue, ""); \
+    \
+    switch(stepIx) \
+    { \
+        default: stepIx = 0; break;
+
+#define FIELDS_UNTIL \
+    } \
+       \
+    if(stepIx > 0 && gp64P->twoWayP->twoWayStatusP == KNOW_NO_ARC) \
+    { \
+        stepIx = -1; \
+    } \
+}
 
 #endif /* defined(RowO0_h) */
 /**

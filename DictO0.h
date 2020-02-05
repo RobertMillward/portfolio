@@ -13,8 +13,7 @@ typedef const struct DictO0ACapiS
     /**
      * Get the field Dictionary.
      */
-    DictZ0AInewT
-    (*getDict)(sourcePT, cfuncNameT, gpTxPplGrpBatchTwoWayZ0PT);
+    DictZ0AInewT    (*getDict)(sourcePT, cfuncNameT, gpSllgChar64PT);
     
     /**
      * Check the source data using the field dictionary.
@@ -22,14 +21,14 @@ typedef const struct DictO0ACapiS
      * The Row.addMore() will impose additional accptance criteria.
      */
     void
-    (*checkViaDict)(DictZ0AInewT, gpTxPplGrpBatchTwoWayZ0PT);
+    (*checkViaDict) (DictZ0AInewT, gpSllgChar64PT);
     
     /**
      * Format the source data using the dictionary.
      * This is simlple formatting.
      */
     void
-    (*formatViaDict)(DictZ0AInewT, targetPT, targetLengthT, gpTxPplGrpBatchTwoWayZ0PT);
+    (*formatViaDict)(DictZ0AInewT, targetPT, targetLengthT, gpSllgChar64PT);
     
 }DictO0ACapiT, *DictO0ACapiPT;
 

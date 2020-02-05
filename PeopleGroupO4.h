@@ -9,23 +9,40 @@
 // os
 // helper api's
 // data plans
-#include "ArchitectureZ0Plan.h"
 #include "PeopleGroupZ0Plan.h"
+#include "ArchitectureZ0Plan.h"
+#include "RowZ0Plan.h"
 // application api's
 
-//#define GRP_DEFAULT 0
 
-
-
+/*
+ */
+#pragma mark - instance api
+/*
+ */
 typedef struct PeopleGroupO4ApplicationInstanceApiStructure
 {
-    void                (*getSignature) (PeopleGroupZ0AIdataPT);
-    void                (*getNode)      (PeopleGroupZ0AIdataPT);
-    void                (*getGroupSize) (PeopleGroupZ0AIdataPT);
+    //void    (*getSignature) (PeopleGroupZ0AIdataPT);
+    //void    (*getNode)      (PeopleGroupZ0AIdataPT);
+    //void    (*getGroupSize) (PeopleGroupZ0AIdataPT);
+    
+    void    (*hide)  (PeopleGroupZ0AIdataPT);
+    void    (*unhide)(PeopleGroupZ0AIdataPT);
+    void    (*save)  (PeopleGroupZ0AIdataPT);
+    void    (*rowOf) (PeopleGroupZ0AIdataPT,
+                      targetPT targetP, massOfT massOf,
+                      indeXPT indeXP, whoZPT whoZP,
+                      gpSllgChar64PT gp64P);
     
 }PeopleGroupO4AIapiT, *PeopleGroupO4AIapiPT;
 
+// extern PeopleGroupO4AIapiT PeopleGroupO4AIapi; // available through the instance.apiP
 
+/*
+ */
+#pragma mark - New instance
+/*
+ */
 typedef struct PeopleGroupO4ApplicationInstanceNewStructure
 {
     PeopleGroupO4AIapiPT apiP;
@@ -33,11 +50,27 @@ typedef struct PeopleGroupO4ApplicationInstanceNewStructure
     
 }PeopleGroupO4AInewT, *PeopleGroupO4AInewPT;
 
+
+/*
+ */
+#pragma mark - Class Api
+/*
+ */
 typedef struct PeopleGroupO4ApplicationClassApiStructure
 {
-    PeopleGroupO4AInewT (*newPplGrp)(void);
+    /**
+     *
+     */
+    PeopleGroupO4AInewT (*fromRow)(abstractRowT);
+    /**
+     *
+     */
+    PeopleGroupO4AInewT (*fromFields)(personIdT, gpSllgChar64PT);
     
 }PeopleGroupO4ACapiT, *PeopleGroupO4ACapiPT;
+#define PeopleGroupACapiT PeopleGroupO4ACapiT
+#define PeopleGroupACapi PeopleGroupO4ACapi
+extern PeopleGroupACapiT PeopleGroupACapi;
 
 #endif /* PeopleGroupO4_h */
 /**
@@ -45,5 +78,5 @@ typedef struct PeopleGroupO4ApplicationClassApiStructure
 * Group has special rules :
 * - normally there is only the default group
 * - groups can share data if allowed at init
-* A people group is the collection of users that support a particular community process.
+* A people group is the collection of users and applications that support a particular community process.
 */

@@ -9,117 +9,40 @@
 // data plans
 #import "ArchitectureZ0Plan.h"
 // helper api's
-//#import "InitDestroyHelperO0.h"
 // app api's
 #import "PeopleGroupO4.h"
-#import "PeopleGroupO0.h"
 // quality
 #import "TestAidZ0.h"
+#import "PeopleGroupZ0TestAid.h"
 
-
-@interface PeopleGroupO4TestsPartOne : XCTestCase
-
-@end
-
-@implementation PeopleGroupO4TestsPartOne
-
-- (void)setUp
-{
-    TestAidC.nextTx();
-}
-
-- (void)tearDown
-{
-    TestAidC.getCounts();
-}
-
-
-#pragma mark - Tests, part one
-
-//- (void)test2019Template
-//{
-//    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-//        if(TestAidC.putTestChars("not", "tested", __LINE__) == 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-//        }
-//    }
-//}
-
-//- (void)test2099ZULURowO0Destroy {
-//    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-//        char* report = InitDestroyerHelperC.getReport();
-//
-//        // Before destroyAll().
-//        if(report[0] != 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:InitDestroyerHelperC.getReport()]);
-//            report[0] = 0;
-//        }
-//
-//        // After destroyAll().
-//        InitDestroyerHelperC.destroyAll(&TestAidO0QCre.infoTwoWay);
-//        if(report[0] != 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:InitDestroyerHelperC.getReport()]);
-//        }
-//    }
-//}
+@interface PeopleGroupZ0NewTests : XCTestCase
 
 @end
 
+@implementation PeopleGroupZ0NewTests
 
 
+- (void)setUp {
+    TestAidQCapi.basicInit();
+}
+
+- (void)tearDown {
+}
 
 
+- (void)test2099PersonZ0New
+{
+    if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
+        
+        ErrorWarnCountT ewc = PeopleGroupZ0QCapi.newQ(__LINE__);
 
-@interface PeopleGroupO4TestsPartTwo : XCTestCase
-
+        if(ewc.classErrors != 0)
+        {
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+        }
+    }
+}
 @end
-
-@implementation PeopleGroupO4TestsPartTwo
-
-- (void)setUp
-{
-    TestAidC.nextTx();
-}
-
-- (void)tearDown
-{
-    TestAidC.getCounts();
-}
-
-
-#pragma mark - Tests, part one
-
-//- (void)test2019TemplateO4B
-//{
-//    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-//        if(TestAidC.putTestChars("not", "tested", __LINE__) == 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-//        }
-//    }
-//}
-
-//- (void)test2099ZULUPGO4BDestroy {
-//    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-//        char* report = InitDestroyerHelperC.getReport();
-//
-//        // Before destroyAll().
-//        if(report[0] != 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:InitDestroyerHelperC.getReport()]);
-//            report[0] = 0;
-//        }
-//
-//        // After destroyAll().
-//        InitDestroyerHelperC.destroyAll(&TestAidO0QCre.infoTwoWay);
-//        if(report[0] != 0)
-//        {
-//            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:InitDestroyerHelperC.getReport()]);
-//        }
-//    }
-//}
-
-@end // END PeopleGroupZ0XCTests.m
+/**
+ * 2020/01/30 converted to fakeTest pending Z0TestAid.[ch]
+ */

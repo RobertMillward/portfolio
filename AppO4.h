@@ -10,47 +10,68 @@
 // helper api's
 // data plans
 #include "AppZ0Plan.h"
+#include "ArchitectureZ0Plan.h"
+#include "RowZ0Plan.h"
 // app api's
+// application api's
 
-/**
- * Instance methods.
+
+/*
  */
-typedef struct AppO4ApplicationInstanceMethodsStruct
+#pragma mark - instance api
+/*
+ */
+typedef struct AppO4ApplicationInstanceApiStructure
 {
+    //void    (*getSignature) (AppZ0AIdataPT);
+    //void    (*getNode)      (AppZ0AIdataPT);
+    //void    (*getGroupSize) (AppZ0AIdataPT);
+    
+    void    (*hide)  (AppZ0AIdataPT);
+    void    (*unhide)(AppZ0AIdataPT);
+    void    (*save)  (AppZ0AIdataPT);
+    void    (*rowOf) (AppZ0AIdataPT,
+                      targetPT targetP, massOfT massOf,
+                      indeXPT indeXP, whoZPT whoZP,
+                      gpSllgChar64PT gp64P);
     
 }AppO4AIapiT, *AppO4AIapiPT;
 
-extern AppO4AIapiT AppO4AIapi;
+// extern AppO4AIapiT AppO4AIapi; // available through the instance.apiP
 
-
-
-typedef struct AppO4NewInstanceStruct // (both data and methods)
+/*
+ */
+#pragma mark - New instance
+/*
+ */
+typedef struct AppO4ApplicationInstanceNewStructure
 {
     AppO4AIapiPT apiP;
     AppZ0AIdataT data;
     
-} AppO4AInewT, *AppO4AInewPT;
-#define AppAInewT AppZ0AInewT
-#define AppAInewPT AppZ0AInewPT
+}AppO4AInewT, *AppO4AInewPT;
+
 
 /*
  */
-#pragma mark - Class Methods
+#pragma mark - Class Api
 /*
  */
-typedef struct AppO4ApplicationClassMethodsStruct
+typedef struct AppO4ApplicationClassApiStructure
 {
     /**
      *
      */
-    AppO4AInewT (*newAppAI)(appNameT);
-    
-    void        (*generateSignatureCode)(AppZ0AIdataPT);
-    
+    AppO4AInewT (*fromRow)(abstractRowT);
+    /**
+     *
+     */
+    AppO4AInewT (*fromFields)(appIdT, gpSllgChar64PT);
     
 }AppO4ACapiT, *AppO4ACapiPT;
-
-extern AppO4ACapiT AppO4ACapi;
+#define AppACapiT AppO4ACapiT
+#define AppACapi AppO4ACapi
+extern AppACapiT AppACapi;
 
 
 #endif /* AppO4_h */
