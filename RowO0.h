@@ -114,11 +114,11 @@ for(; stepIx > 0; stepIx--) \
 #define FIELDS_UNTIL \
     } \
        \
-       if(gp64P->twoWayP->twoWayStatusP == KNOW_NO_ARC) \
-       { \
-           stepIx = -1; \
-       } \
-   }
+    if(stepIx > 0 && gp64P->twoWayP->twoWayStatusP == KNOW_NO_ARC) \
+    { \
+        stepIx = -1; \
+    } \
+}
 
 #endif /* defined(RowO0_h) */
 /**

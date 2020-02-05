@@ -42,11 +42,11 @@
 }
 
 
-- (void)test2099PersonZ0NewRandom
+- (void)test2099PersonZ0New
 {
     if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
-        ErrorWarnCountT ewc = PersonZ0QCapi.fakeTestQ(__LINE__);
+        ErrorWarnCountT ewc = PersonZ0QCapi.newQ(__LINE__);
 
         if(ewc.classErrors != 0)
         {
@@ -56,66 +56,7 @@
 }
 @end
 
-
-
-@interface PersonZ0ReviseTests : XCTestCase
-
-@end
-
-@implementation PersonZ0ReviseTests
-
-- (void)setUp {
-    TestAidQCapi.basicInit();
-}
-
-- (void)tearDown {
-}
-
-
-- (void)test2099PersonZ0RevisionOk
-{
-    if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        
-        ErrorWarnCountT ewc = PersonZ0QCapi.fakeTestQ(__LINE__);
-
-        if(ewc.classErrors != 0)
-        {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-@end
-
-
-
-@interface PersonZ0ReviseBadTests : XCTestCase
-
-@end
-
-@implementation PersonZ0ReviseBadTests
-
-
-- (void)setUp {
-    TestAidQCapi.basicInit();
-}
-
-- (void)tearDown {
-}
-
-- (void)test2099PersonZ0RevisionOk
-{
-    if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        
-        ErrorWarnCountT ewc = PersonZ0QCapi.fakeTestQ(__LINE__);
-
-        if(ewc.classErrors != 0)
-        {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-@end
+// END PersonZ0Tests.m
 /**
  *
  */
