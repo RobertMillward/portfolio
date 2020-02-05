@@ -91,7 +91,7 @@ typedef struct RowStoreZ0HelperInstanceApiStruct
      */
     void (*header)(RowStoreZ0HIdataPT, indeXT nodeIdP, cfuncNameT, gpSllgChar64PT);
     
-    void (*footer)(RowStoreZ0HIdataPT, gpSllgChar64PT);
+    void (*footer)(RowStoreZ0HIdataPT, cfuncNameT, gpSllgChar64PT);
     
 }RowStoreZ0HIapiT, *RowStoreZ0HIapiPT;
 extern RowStoreZ0HIapiT RowStoreZ0HIapi;
