@@ -19,34 +19,34 @@
 #pragma mark - instance data
 /*
  */
-typedef struct PsnAidZ0toExpectDataStructure
-{
-    PersonZ0AIdataT theInstanceData;
-    /*
-     * Compares to the expected data.
-     */
-    char qfamilyName[44];
-    char qfirstName[44];
-    char qtitle[6];
-    char qmiddleName[44];
-    char qemail[44];
-    char qpostalCode[10];
-    char qauthentCodeBefore[8];
-    char qauthentCodeNow[8];
-    char qpassPhrase[24];
-
-    char qpersonSigCode[10];
-    
-    gpTxPplGrpBatchTwoWayZ0T    qtxSzFlags;  // Not checked if null
-    gpVersionLevelZ0T           qvsnLvl;     // Not checked if null
-    /*
-     * Compares to the expected warnings and errors.
-     */
-    ErrorWarnCountT qpersonCounts;
-    ErrorWarnCountT qaggregateCounts;
-    Ullg qrandomGen;
-    char* qtheOffender;
-} PsnAidZ0QIdataT, *PsnAidZ0QIdataPT;
+//typedef struct PsnAidZ0toExpectDataStructure
+//{
+//    PersonZ0AIdataT theInstanceData;
+//    /*
+//     * Compares to the expected data.
+//     */
+//    char qfamilyName[44];
+//    char qfirstName[44];
+//    char qtitle[6];
+//    char qmiddleName[44];
+//    char qemail[44];
+//    char qpostalCode[10];
+//    char qauthentCodeBefore[8];
+//    char qauthentCodeNow[8];
+//    char qpassPhrase[24];
+//
+//    char qpersonSigCode[10];
+//
+//    gpTxPplGrpBatchTwoWayZ0T    qtxSzFlags;  // Not checked if null
+//    gpVersionLevelZ0T           qvsnLvl;     // Not checked if null
+//    /*
+//     * Compares to the expected warnings and errors.
+//     */
+//    ErrorWarnCountT qpersonCounts;
+//    ErrorWarnCountT qaggregateCounts;
+//    Ullg qrandomGen;
+//    char* qtheOffender;
+//} PsnAidZ0QIdataT, *PsnAidZ0QIdataPT;
 
 
 /*
@@ -55,24 +55,16 @@ typedef struct PsnAidZ0toExpectDataStructure
 /*
  */
 
-typedef struct PsnAidZ0ApplicationInstanceApiQualityStructure
-{
-    void (* generateSignatureCodeForTest)( int codeLine, PersonZ0AIdataPT dataP);
-    /**
-     * Copy in and copy out the basic data.
-     */
-//    void (* setGetEmailForTest)(emailT emailOrNullP, int codeLine, PsnAidQIdataPT, emailPT, gdbIsRevisedT);
-//    void (* setGetFamilyNameForTest)(nameT familyNameOrNullP, int codeLine,  PsnAidQIdataPT, familyNamePT, gdbIsRevisedT);
-//    void (* setGetFirstNameForTest)(nameT firstNameOrNullP, int codeLine,  PersonAIdataPT dataP);
-//    void (* setGetMiddleNameForTest)(nameT middleNameP, int codeLine,  PersonAIdataPT dataP);
-//    void (* setGetPassPhraseForTest)(passPhraseT passPhraseOrNullP, int codeLine,  PersonAIdataPT dataP);
-//    void (* setGetPostalCodeForTest)(postalT postalCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
-//    void (* setGetReturnedCodeForTest)(char* returnedCodeOrNullP, int codeLine,  PersonAIdataPT dataP);
-//    void (* setGetTitleForTest)(char* titleOrNullP, int codeLine,  PersonAIdataPT dataP);
-    
-}PsnAidZ0QIapiT, *PsnAidZ0QIapiPT;
-
-extern PsnAidZ0QIapiT PsnAidZ0QIapi;
+//typedef struct PsnAidZ0ApplicationInstanceApiQualityStructure
+//{
+//    void (* generateSignatureCodeForTest)( int codeLine, PersonZ0AIdataPT dataP);
+//    /**
+//     * Copy in and copy out the basic data.
+//     */
+//
+//}PsnAidZ0QIapiT, *PsnAidZ0QIapiPT;
+//
+//extern PsnAidZ0QIapiT PsnAidZ0QIapi;
 
 
 /*
@@ -80,13 +72,13 @@ extern PsnAidZ0QIapiT PsnAidZ0QIapi;
 #pragma mark - Class Methods
 /*
  */
-typedef struct PsnsAidZ0goClassQualityStructure
-{
-
-}PsnAidZ0QCapiT, *PsnAidZ0QCapiPT;
-
-
-extern PsnAidZ0QCapiT PsnsAidZ0QCapi;
+//typedef struct PsnsAidZ0goClassQualityStructure
+//{
+//
+//}PsnAidZ0QCapiT, *PsnAidZ0QCapiPT;
+//
+//
+//extern PsnAidZ0QCapiT PsnsAidZ0QCapi;
 
 
 typedef struct PersonZ0QualityClassApiStruct

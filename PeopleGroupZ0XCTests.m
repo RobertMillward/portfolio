@@ -9,45 +9,32 @@
 // data plans
 #import "ArchitectureZ0Plan.h"
 // helper api's
-//#import "InitDestroyHelperO0.h"
 // app api's
 #import "PeopleGroupO4.h"
-#import "PeopleGroupO0.h"
 // quality
 #import "TestAidZ0.h"
+#import "PeopleGroupZ0TestAid.h"
 
-static ErrorWarnCountT fakeTest()
-{
-    ErrorWarnCountT ewc = {0, 0, 0, 0};
-    
-    TestAidQCapi.putTestChars("fake", "test", __LINE__);
-    ewc.classErrors++;
-    
-    return ewc;
-}
-
-@interface PeopleGroupO4TestsPartOne : XCTestCase
+@interface PeopleGroupZ0NewTests : XCTestCase
 
 @end
 
-@implementation PeopleGroupO4TestsPartOne
+@implementation PeopleGroupZ0NewTests
 
-- (void)setUp
-{
-    TestAidC.nextTx();
+
+- (void)setUp {
+    TestAidQCapi.basicInit();
 }
 
-- (void)tearDown
-{
-    TestAidC.getCounts();
+- (void)tearDown {
 }
 
-#pragma mark - Tests, part one
 
-- (void)test2019ZfakeTest {
+- (void)test2099PersonZ0New
+{
     if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
-        ErrorWarnCountT ewc = fakeTest();
+        ErrorWarnCountT ewc = PeopleGroupZ0QCapi.newQ(__LINE__);
 
         if(ewc.classErrors != 0)
         {
@@ -55,47 +42,7 @@ static ErrorWarnCountT fakeTest()
         }
     }
 }
-
-
 @end
-
-
-
-
-
-
-@interface PeopleGroupO4TestsPartTwo : XCTestCase
-
-@end
-
-@implementation PeopleGroupO4TestsPartTwo
-
-- (void)setUp
-{
-    TestAidC.nextTx();
-}
-
-- (void)tearDown
-{
-    TestAidC.getCounts();
-}
-
-
-#pragma mark - Tests, part two
-
-- (void)test2019ZfakeTest {
-    if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        
-        ErrorWarnCountT ewc = fakeTest();
-
-        if(ewc.classErrors != 0)
-        {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-@end // END PeopleGroupZ0XCTests.m
 /**
  * 2020/01/30 converted to fakeTest pending Z0TestAid.[ch]
  */

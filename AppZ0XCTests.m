@@ -7,52 +7,34 @@
 // os
 #import <XCTest/XCTest.h>
 // helper api's
-#import "ErrorHelperO0.h"
-//#import "InitDestroyHelperO0.h"
-//#import "SignatureFactoryO0.h"
-//#import "CommaSepO3.h"
-//#import "UnixStreamO0.h"
-//#import "RowO0.h"
-//#import "HashBasicsO0.h"
 // data plans
 #import "ArchitectureZ0Plan.h"
 // application api's
 #import "AppO4.h"
-#import "PeopleGroupO0.h"
 // quality
 #import "TestAidZ0.h"
+#import "AppZ0TestAid.h"
 
-static ErrorWarnCountT fakeTest()
-{
-    ErrorWarnCountT ewc = {0, 0, 0, 0};
-    
-    TestAidQCapi.putTestChars("fake", "test", __LINE__);
-    ewc.classErrors++;
-    
-    return ewc;
-}
-
-@interface AppO4Tests : XCTestCase
+@interface AppZ0NewTests : XCTestCase
 
 @end
 
-@implementation AppO4Tests
-
+@implementation AppZ0NewTests
 
 
 - (void)setUp {
-    //initSignatureFactoryO0(&TestAidO0QCre.infoTwoWay);
+    TestAidQCapi.basicInit();
 }
 
 - (void)tearDown {
-    //TestAidC.getCounts();
-    //InitDestroyerHelperC.destroyAll(&TestAidO0QCre.infoTwoWay);
 }
 
-- (void)test2019ZfakeTest {
+
+- (void)test2099PersonZ0New
+{
     if(TestAidQCapi.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
-        ErrorWarnCountT ewc = fakeTest();
+        ErrorWarnCountT ewc = AppZ0QCapi.newQ(__LINE__);
 
         if(ewc.classErrors != 0)
         {

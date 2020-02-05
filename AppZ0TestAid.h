@@ -8,25 +8,23 @@
 #define AppZ0TestAid_h
 // os
 // helper api's
-//#include "TransactionZ0.h"
-//#include "PermissionZ0.h"
 // data plans
 #include "ArchitectureZ0Plan.h"
 // application api's
 
 
-
-/**
- * Quality Instance methods.
- */
-typedef struct AppZ0QualityInstanceMethodsStruct // ApplicationInstance with line numbers
+typedef struct AppZ0QualityClassApiStruct
 {
+    ErrorWarnCountT (*newQ)(lineNbrT);
+    /**
+     *
+     */
+    ErrorWarnCountT (*fakeTestQ)(lineNbrT);
     
-}AppZ0QIapiT, *AppZ0QIapiPT;
+    
+}AppZ0QCapiT, *AppZ0QCapiPT;
 
-extern AppZ0QIapiT AppZ0QIapi;
-
-
+extern AppZ0QCapiT AppZ0QCapi;
 
 #endif /* AppZ0TestAid_h */
 /**

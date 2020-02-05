@@ -10,47 +10,63 @@
 // helper api's
 // data plans
 #include "AppZ0Plan.h"
+#include "ArchitectureZ0Plan.h"
+#include "RowZ0Plan.h"
 // app api's
+// application api's
+
 
 /*
  */
-#pragma mark - Instance Api
+#pragma mark - instance api
 /*
  */
-typedef struct AppO4ApplicationInstanceApiStruct
+typedef struct AppO4ApplicationInstanceApiStructure
 {
-    void    (*saveRow)(void);
-    void    (*trashRow)(void);
-    void        (*rowOf)    (appNameT);
-    void        (*generateSignatureCode)(AppZ0AIdataPT);
+    //void    (*getSignature) (AppZ0AIdataPT);
+    //void    (*getNode)      (AppZ0AIdataPT);
+    //void    (*getGroupSize) (AppZ0AIdataPT);
+    
+    void    (*hide)  (AppZ0AIdataPT);
+    void    (*unhide)(AppZ0AIdataPT);
+    void    (*save)  (AppZ0AIdataPT);
+    void    (*rowOf) (AppZ0AIdataPT,
+                      targetPT targetP, massOfT massOf,
+                      indeXPT indeXP, whoZPT whoZP,
+                      gpSllgChar64PT gp64P);
+    
 }AppO4AIapiT, *AppO4AIapiPT;
-extern AppO4AIapiT AppO4AIapi;
 
+// extern AppO4AIapiT AppO4AIapi; // available through the instance.apiP
 
 /*
  */
-#pragma mark - New Instance
+#pragma mark - New instance
 /*
  */
-typedef struct AppO4NewInstanceStruct // (both data and methods)
+typedef struct AppO4ApplicationInstanceNewStructure
 {
     AppO4AIapiPT apiP;
     AppZ0AIdataT data;
     
-} AppO4AInewT, *AppO4AInewPT;
+}AppO4AInewT, *AppO4AInewPT;
+
 
 /*
  */
 #pragma mark - Class Api
 /*
  */
-typedef struct AppO4ApplicationClassApiStruct
+typedef struct AppO4ApplicationClassApiStructure
 {
     /**
-    * The sources for new instances are to create from scratch and to retrieve from the repository.
-    */
-    AppO4AInewT (*newForInsert)(abstractRowT);
-    AppO4AInewT (*newToView)(abstractRowT);
+     *
+     */
+    AppO4AInewT (*fromRow)(abstractRowT);
+    /**
+     *
+     */
+    AppO4AInewT (*fromFields)(appIdT, gpSllgChar64PT);
     
 }AppO4ACapiT, *AppO4ACapiPT;
 #define AppACapiT AppO4ACapiT

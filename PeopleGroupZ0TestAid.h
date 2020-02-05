@@ -6,6 +6,26 @@
 //
 #ifndef PeopleGroupZ0TestAid_h
 #define PeopleGroupZ0TestAid_h
+// os
+// helper api's
+// data plans
+#include "PersonZ0Plan.h"
+// application api's
+// quality
+#include "TestAidZ0.h"
 
+
+typedef struct PeopleGroupZ0QualityClassApiStruct
+{
+    ErrorWarnCountT (*newQ)(lineNbrT);
+    /**
+     *
+     */
+    ErrorWarnCountT (*fakeTestQ)(lineNbrT);
+    
+    
+}PeopleGroupZ0QCapiT, *PeopleGroupZ0QCapiPT;
+
+extern PeopleGroupZ0QCapiT PeopleGroupZ0QCapi;
 
 #endif /* PeopleGroupZ0TestAid_h */

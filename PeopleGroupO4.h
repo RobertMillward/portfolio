@@ -9,12 +9,10 @@
 // os
 // helper api's
 // data plans
-#include "ArchitectureZ0Plan.h"
 #include "PeopleGroupZ0Plan.h"
+#include "ArchitectureZ0Plan.h"
 #include "RowZ0Plan.h"
 // application api's
-
-//#define GRP_DEFAULT 0
 
 
 /*
@@ -24,13 +22,17 @@
  */
 typedef struct PeopleGroupO4ApplicationInstanceApiStructure
 {
-    void                (*getSignature) (PeopleGroupZ0AIdataPT);
-    void                (*getNode)      (PeopleGroupZ0AIdataPT);
-    void                (*getGroupSize) (PeopleGroupZ0AIdataPT);
+    //void    (*getSignature) (PeopleGroupZ0AIdataPT);
+    //void    (*getNode)      (PeopleGroupZ0AIdataPT);
+    //void    (*getGroupSize) (PeopleGroupZ0AIdataPT);
     
-    void    (*saveRow)(void);
-    void    (*trashRow)(void);
-    void                (*rowOf)        (PeopleGroupZ0AIdataPT);
+    void    (*hide)  (PeopleGroupZ0AIdataPT);
+    void    (*unhide)(PeopleGroupZ0AIdataPT);
+    void    (*save)  (PeopleGroupZ0AIdataPT);
+    void    (*rowOf) (PeopleGroupZ0AIdataPT,
+                      targetPT targetP, massOfT massOf,
+                      indeXPT indeXP, whoZPT whoZP,
+                      gpSllgChar64PT gp64P);
     
 }PeopleGroupO4AIapiT, *PeopleGroupO4AIapiPT;
 
@@ -57,10 +59,13 @@ typedef struct PeopleGroupO4ApplicationInstanceNewStructure
 typedef struct PeopleGroupO4ApplicationClassApiStructure
 {
     /**
-     * The sources for new instances are to create from scratch and to retrieve from the repository.
+     *
      */
-    PeopleGroupO4AInewT (*newForInsert)(abstractRowT);
-    PeopleGroupO4AInewT (*newToView) (abstractRowT);
+    PeopleGroupO4AInewT (*fromRow)(abstractRowT);
+    /**
+     *
+     */
+    PeopleGroupO4AInewT (*fromFields)(personIdT, gpSllgChar64PT);
     
 }PeopleGroupO4ACapiT, *PeopleGroupO4ACapiPT;
 #define PeopleGroupACapiT PeopleGroupO4ACapiT

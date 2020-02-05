@@ -18,7 +18,6 @@
 // data plans
 #import "ArchitectureZ0Plan.h"
 // application api's
-#import "PeopleGroupO4.h"
 #import "PersonO4.h"
 // quality
 #import "TestAidZ0.h"
