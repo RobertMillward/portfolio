@@ -1,19 +1,21 @@
 //
-//  FoldersO4.h (TODO in the Box tree)
+//  FoldersO4.h
 //
 //  Created by Robert Russell Millward on 11/22/13.
-//  Copyright (c) 2013 Robert Russell Millward.
-//  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-
-#ifndef _FoldersO4_h
-#define _FoldersO4_h
-
-#include "BufferShareO0.h"
-#include "RowO2.h"
-#include "DictionaryO3.h"
-#include "TransactionO3.h"
-#include "UserGroupO2.h"
+#ifndef FoldersO4_h
+#define FoldersO4_h
+// os
+// helper api's
+//#include "BufferShareO0.h"
+//#include "RowO2.h"
+//#include "DictionaryO3.h"
+//#include "TransactionO3.h"
+//#include "UserGroupO2.h"
+// data plans
+#include "ArchitectureZ0Plan.h"
+// app api's
 
 
 typedef char *branchPT;
@@ -34,7 +36,7 @@ enum folderInfoO4T
 };
 
 
-typedef struct FolderO4Y
+typedef struct FolderO4HelperClassApiStruct
 {
     int (*exists)(
             branchPT branch,
@@ -44,7 +46,7 @@ typedef struct FolderO4Y
             tranIxT txIX);
     void (*getFolderInfo)(
             branchPT branch,
-            userGroupT group,
+            peopleGroupIdT group,
             likePT like,
             BufferShareP mgr,
             tranIxT txIX);
@@ -62,13 +64,16 @@ typedef struct FolderO4Y
     char *(*remove)(
             branchPT branch,
             tranIxT txIX);
-}FolderO4X, *FolderO4XP;
+}FolderO4HCapiT, *FolderO4HCapiPT;
 
-#define FolderX FolderO4X
-#define FolderC FolderO4C
-extern FolderX FolderC;
+#define FolderHCapiT FolderO4HCapiT
+#define FolderHCapi FolderO4HCapi
+extern FolderHCapiT FolderHCapi;
 
 #define initFolders initFoldersO4
 extern initStatusT initFolders(void);
 
-#endif
+#endif /* FoldersO4_h */
+/**
+ *
+ */
