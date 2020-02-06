@@ -1,22 +1,24 @@
 //
-//  BufferShareO0Tests.m
+//  BufferShareZ0XCTests.m
 //
 //  Created by Robert R on 3/27/15.
-//  Copyright (c) 2015 Robert Russell Millward.
-//  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-
+// os
 #import <XCTest/XCTest.h>
-#import "ArchitectureO0.h"
+// helper api's
 #import "BufferShareO0.h"
 #import "UserGroupO0.h"
+// data plans
+#import "ArchitectureO0.h"
+// quality
 #import "TestAidO0.h"
 
-@interface BufferShareO0Tests : XCTestCase
+@interface BufferShareZ0XCTests : XCTestCase
 
 @end
 
-@implementation BufferShareO0Tests
+@implementation BufferShareZ0XCTests
 
 static bool showFunctionName = false;
 #define TRANSACTION_ID 1
@@ -27,6 +29,7 @@ static gpTransactionSizeO0T myTxSizeInteractiveInfo = {TRANSACTION_ID, TINY_UG, 
     //[super setUp];
     // Put setup code here.
     // This method is called before the invocation of each test method in the class.
+    
 }
 
 - (void)tearDown {

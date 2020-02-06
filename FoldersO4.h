@@ -12,9 +12,10 @@
 //#include "RowO2.h"
 //#include "DictionaryO3.h"
 //#include "TransactionO3.h"
-//#include "UserGroupO2.h"
+#include "PeopleGroupO0.h"
 // data plans
 #include "ArchitectureZ0Plan.h"
+#include "BufferShareZ0Plan.h"
 // app api's
 
 
@@ -38,32 +39,12 @@ enum folderInfoO4T
 
 typedef struct FolderO4HelperClassApiStruct
 {
-    int (*exists)(
-            branchPT branch,
-                  // userGroupT group,
-            likePT like,
-                  // BufferShareP mgr,
-            tranIxT txIX);
-    void (*getFolderInfo)(
-            branchPT branch,
-            peopleGroupIdT group,
-            likePT like,
-            BufferShareP mgr,
-            tranIxT txIX);
-    char *(*makeFolder)(
-            pathPT path,
-            tranIxT txIX);
-    char *(*chgFolder)(
-            pathPT path,
-            tranIxT txIX);
-    char *(*copyJournal)(
-            char *journal,
-            char *from,
-            char *to,
-            tranIxT txIX);
-    char *(*remove)(
-            branchPT branch,
-            tranIxT txIX);
+    int  (*exists)          (branchPT, peopleGroupIdT, likePT, BufferShareZ0dataPT, gpSllgChar64PT);
+    void (*getFolderInfo)   (branchPT, peopleGroupIdT, likePT, BufferShareZ0dataPT, gpSllgChar64PT);
+    char *(*makeFolder)     (pathPT, gpSllgChar64PT);
+    char *(*chgFolder)      (pathPT, gpSllgChar64PT);
+    char* (*copyJournal)    (char *journal, char *from, char *to, gpSllgChar64PT);
+    char *(*remove)         (branchPT, gpSllgChar64PT);
 }FolderO4HCapiT, *FolderO4HCapiPT;
 
 #define FolderHCapiT FolderO4HCapiT
