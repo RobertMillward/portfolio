@@ -20,6 +20,7 @@
 @implementation HashBasicsO0Tests
 
 - (void)setUp {
+    TestAidZ0QCapi.basicInit();
 }
 
 - (void)tearDown {

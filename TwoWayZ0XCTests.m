@@ -1,8 +1,8 @@
 //
-//  TwoWayZ0Tests.m
+//  TwoWayZ0XCTests.m
 //
 //  Created by Robert R on 3/27/19.
-//  Copyright (c) 2015 Robert Russell Millward.
+//  Copyright (c) 2020 Robert Russell Millward.
 //  All rights reserved.
 //
 
@@ -20,7 +20,7 @@
 @implementation TwoWayZ0SetATests
 
 - (void)setUp {
-    //initSignatureFactoryZ0(&TestAidZ0QCdata.twoWay);
+    TestAidZ0QCapi.basicInit();
 }
 
 - (void)tearDown {
@@ -61,12 +61,11 @@
 @implementation TwoWayZ0SetBTests
 
 - (void)setUp {
-    //initSignatureFactoryZ0(&TestAidZ0QCdata.twoWay);
+    TestAidZ0QCapi.basicInit();
 }
 
 - (void)tearDown {
     TestAidC.getCounts();
-    //InitDestroyerHelperC.destroyAll(&TestAidZ0QCdata.twoWay);
 }
 
 
@@ -90,4 +89,4 @@
     }
 }
 
-@end // TwoWayZ0Tests.m
+@end // TwoWayZ0XCTests.m

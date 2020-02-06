@@ -1,11 +1,15 @@
 //
-//  DictZ0Tests.m
+//  DictZ0XCTests.m - rename
 //
 //  Created by Robert Russell Millward on 12/3/19.
-//  Copyright (c) 2019 Robert Russell Millward.  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
+// os
 #import <XCTest/XCTest.h>
+// helper api's
+// data plans
 #import "DictZ0TestAid.h"
+// quality
 #import "TestAidZ0.h"
 
 @interface DictO0GetTests : XCTestCase
@@ -14,6 +18,7 @@
 
 @implementation DictO0GetTests
 - (void)setUp{
+    TestAidZ0QCapi.basicInit();
 }
 
 - (void)tearDown{
@@ -72,6 +77,7 @@
 
 @implementation DictO0CheckTests
 - (void)setUp{
+    TestAidZ0QCapi.basicInit();
 }
 
 - (void)tearDown{
@@ -139,6 +145,7 @@
 
 @implementation DictO0FormatTests
 - (void)setUp{
+    TestAidZ0QCapi.basicInit();
 }
 
 - (void)tearDown{
@@ -195,7 +202,7 @@
     }
 }
 
-@end
+@end // DictZ0XCTests.m
 
 /**
  */

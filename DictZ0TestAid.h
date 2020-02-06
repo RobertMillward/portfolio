@@ -2,11 +2,16 @@
 //  DictZ0TestAid.h
 //
 //  Created by Robert Russell Millward on 12/4/19.
-//  Copyright (c) 2019 Robert Russell Millward. All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward. All rights reserved.
 //
 #ifndef DictZ0TestAid_h
 #define DictZ0TestAid_h
+// os
+// helper api's
 #include "DictO0.h"
+// data plans
+// app api's
+// quality
 
 /**
  * A thread safe library to support the stages of Dict creation.
