@@ -14,7 +14,7 @@
 
 typedef struct BufferShareO0HelperClassApiStruct
 {
-    BufferShareZ0dataT (*new)(char* bufFirstByte, char* bufLastByte, gpSllgChar64PT);
+    BufferShareZ0dataT (*newData)(char* bufFirstByte, char* bufLastByte, gpSllgChar64PT);
     /**
      * get the number of bytes from loadHere
      * to bufEnd as, for example, how long

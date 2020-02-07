@@ -15,19 +15,19 @@
 #include "RowZ0Plan.h"
 
 
-typedef struct CursorZ0QIapiS
+typedef struct CursorO0QualityInstanceApiStruct
 {
     /**
      * Create a ready to journal string.
      */
-    void (*toRow)(CursorZ0AIdataPT data,
+    void (*toRow)(CursorZ0HIdataPT data,
                     char * here,
                   lineNbrT);
     /**
      * Get a pointer to the designated field.
      */
-    char* (*getField)(CursorZ0AIdataPT data,
-                      fieldLetterCursorPT field,
+    char* (*getField)(CursorZ0HIdataPT data,
+                      fieldLetterRowPT field,
                       lineNbrT);
     /**
      * Update to/from without deleting missing from
@@ -37,14 +37,14 @@ typedef struct CursorZ0QIapiS
      */
     // For sure ROW_ITEM_NAME must match.
     // Probably ROW_ID should match.
-    void (*updateMatchingCursor)(CursorZ0AIdataPT data,
-                              CursorZ0AIdataPT that,
+    void (*updateMatchingCursor)(CursorZ0HIdataPT data,
+                              CursorZ0HIdataPT that,
                                  lineNbrT);
     /**
      * Clear or drop the value for the designated field.
      */
-    void (*dropField)(CursorZ0AIdataPT data,
-                      fieldLetterCursorPT field,
+    void (*dropField)(CursorZ0HIdataPT data,
+                      fieldLetterRowPT field,
                       lineNbrT);
     /**
      * Compare per the sortOn list
@@ -56,8 +56,8 @@ typedef struct CursorZ0QIapiS
      * - field c, date-time
      * sortOn literally looks like "Halbnct"
      */
-    char *(*sort)(CursorZ0AIdataPT data,
-                  CursorZ0AIdataPT that,
+    char *(*sort)(CursorZ0HIdataPT data,
+                  CursorZ0HIdataPT that,
                   sortCtlCprPT sortOnP,
                   lineNbrT);
     /**
@@ -70,18 +70,18 @@ typedef struct CursorZ0QIapiS
      */
     ErrorWarnCountT (*toRowSafety)(lineNbrT, cfuncNameT);
     
-}CursorZ0QIapiT, *CursorZ0QIapiPT;
+}CursorO0QIapiT, *CursorO0QIapiPT;
 
-extern CursorZ0QIapiT CursorZ0QIapi;
+extern CursorO0QIapiT CursorO0QIapi;
 
 typedef struct CursorZ0QInewS
 {
-    CursorZ0AIdataT data;
+    CursorZ0HIdataT data;
     
     // Instance functions:
-    CursorZ0QIapiPT api;  // The externalized methods to keep the instance as small as possible.
+    CursorO0QIapiPT api;  // The externalized methods to keep the instance as small as possible.
     
-} CursorZ0QInewT, *CursorZ0QInewPT;
+} CursorO0QInewT, *CursorO0QInewPT;
 
 
 
@@ -89,7 +89,7 @@ typedef struct CursorZ0QInewS
  * A newCursor reformats the input data (journal or commaSep)
  * so preserve the input row first as necessary.
  */
-extern CursorZ0QInewT newCursorZ0Test(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT, lineNbrT);
+extern CursorO0QInewT newCursorZ0Test(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT, lineNbrT);
 
 
 

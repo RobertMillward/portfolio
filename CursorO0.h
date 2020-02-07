@@ -11,16 +11,22 @@
 #include "TimeSerNbrO0.h"
 // data plans
 #include "ArchitectureZ0Plan.h"
+#include "CompareZ0Plan.h"
 #include "CursorZ0Plan.h"
 #include "RowZ0Plan.h"
 
-typedef struct CursorO0HelperInstanceDataStruct
+
+
+typedef struct CursorO0HelperInstanceApiStruct
 {
+    /**
+     * Create a new data instance
+     */
+    CursorZ0HIdataT (*newData)(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT infoP);
     /**
      * Create a ready to journal string.
      */
-    void (*toASCII)(CursorZ0HIdataPT data,
-                    char * here);
+    void (*toRow)(CursorZ0HIdataPT data, char* here, massOfT);
     /**
      * Get a pointer to the designated field.
      */
@@ -34,7 +40,7 @@ typedef struct CursorO0HelperInstanceDataStruct
      */
     // For sure ROW_ITEM_NAME must match.
     // Probably ROW_ID should match.
-    void (*updateMatchingRow)(CursorZ0HIdataPT data,
+    void (*updateMatchingCursor)(CursorZ0HIdataPT data,
                               CursorZ0HIdataPT that);
     /**
      * Clear or drop the value for the designated field.
@@ -53,12 +59,12 @@ typedef struct CursorO0HelperInstanceDataStruct
      */
     char *(*sort)(CursorZ0HIdataPT data,
                   CursorZ0HIdataPT that,
-                  sortCtlRowPT sortOnP);
+                  sortCtlCprPT sortOnP);
 }CursorO0HIapiT, *CursorO0HIapiPT;
+extern CursorO0HIapiT CursorO0HIapi;
 
 
-
-typedef struct CursorO0IS
+typedef struct CursorO0HelperInstanceNewStruct
 {
     CursorZ0HIdataT data;
     
@@ -68,12 +74,19 @@ typedef struct CursorO0IS
 } CursorO0HInewT, *CursorO0HInewPT;
 #define CursorHInewT CursorO0HInewT
 #define CursorHInew CursorO0HInew
-/**
- * A newRow reformats the input data (journal or commaSep)
- * so copy or strlen the input row first as necessary.
- */
-extern CursorHInewT CursorHInew(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT infoP);
 
+
+
+//extern CursorO0HInewT newCursorO0HI(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT infoP);
+
+typedef struct CursorO0HelperClassApiStruct
+{/**
+    * A newCursor reformats the input data (journal or commaSep)
+    * so copy or strlen the input row first as necessary.
+    */
+    CursorO0HInewT (*newCursor)(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT infoP);
+}CursorO0HCapiT, *CursorO0HCapiPT;
+extern CursorO0HCapiT CursorO0HCapi;
 
 #endif /* CursorO0_h */
 /**
