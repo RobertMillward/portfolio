@@ -6,21 +6,26 @@
 //
 #ifndef BufferShareO0_h
 #define BufferShareO0_h
+// os
+// helper api's
+// data plans
+#include "ArchitectureZ0Plan.h"
+#include "BufferShareZ0Plan.h"
 
 typedef struct BufferShareO0HelperClassApiStruct
 {
-    BufferShareT newBufferShare(char* bufFirstByte, char* bufLastByte, gpTxPplGrpBatchTwoWayO0PT gpTxEtAl);
+    BufferShareZ0dataT (*new)(char* bufFirstByte, char* bufLastByte, gpSllgChar64PT);
     /**
      * get the number of bytes from loadHere
      * to bufEnd as, for example, how long
      * of a file can be read.
      */
-    Ulng (*getSizeForLoad)(struct BufferShareO0S *this);
+    Ulng (*getSizeForLoad)(BufferShareZ0dataPT);
     
     /**
      * Setup for readCurrent().
      */
-    bool (*isMore)(struct BufferShareO0S *this);
+    bool (*isMore)      (BufferShareZ0dataPT);
     
     /**
      * If the next read will not overlap the
@@ -29,7 +34,7 @@ typedef struct BufferShareO0HelperClassApiStruct
      * Note that the string can safely be
      * broken into fields.
      */
-    void (*readCurrent)(struct BufferShareO0S *this);
+    void (*readCurrent)(BufferShareZ0dataPT);
     
     /**
      * If room between currentWrite and bufEnd then
@@ -37,7 +42,7 @@ typedef struct BufferShareO0HelperClassApiStruct
      * increment currentWrite by that length plus
      * one.
      */
-    void (*writeCurrent)(struct BufferShareO0S *this, char *data);
+    void (*writeCurrent)(BufferShareZ0dataPT, char *data);
     
     /**
      * If the caller is quitting the current
@@ -48,23 +53,24 @@ typedef struct BufferShareO0HelperClassApiStruct
      * 2) process null terminated rows
      * 3) all done
      */
-    void (*nextPhase)(struct BufferShareO0S *this);
+    void (*nextPhase)   (BufferShareZ0dataPT);
     
     /**
      * Into caller's buffer of BS0_DESC_SZ
      * put a description of the current state
      * of this instance.
      */
-#define BS0_DESC_SZ 50
-    void (*description)(struct BufferShareO0S *this, char *here);
+    void (*description)(BufferShareZ0dataPT, char *here);
     
     /**
      * Into the transaction log put current statics
      * then clean up.
      */
-    void (*destroy)(struct BufferShareO0S *this);
+    void (*destroy)     (BufferShareZ0dataPT);
     
 }BufferShareO0HCapiT, *BufferShareO0HCapiPT;
+
+extern BufferShareO0HCapiT BufferShareO0HCapi;
 
 #endif /* BufferShareO0_h */
 /**

@@ -2,16 +2,17 @@
 //  CursorZ0TestAid.h
 //
 //  Created by Robert Russell Millward on 10/4/13.
-//  Copyright (c) 2013 Robert Russell Millward.
+//  Copyright (c) 2020 Robert Russell Millward. All rights reserved
 //
-
 #ifndef CursorZ0TestAid_h
 #define CursorZ0TestAid_h
-
+// os
+// helper api's
+#include "CompareO0.h"
+#include "CursorO0.h"
+// data plans
 #include "CursorZ0Plan.h"
-#include "CursorZ0.h"
 #include "RowZ0Plan.h"
-#include "CompareZ0.h"
 
 
 typedef struct CursorZ0QIapiS

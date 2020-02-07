@@ -6,13 +6,14 @@
 //
 // os
 #import <XCTest/XCTest.h>
-// helper api's
+// helper api's (contains HCapi and HIapi)
 #import "BufferShareO0.h"
-#import "UserGroupO0.h"
-// data plans
-#import "ArchitectureO0.h"
+#import "PeopleGroupO0.h"
+// data plans (contains HCdata and HIdata)
+#import "ArchitectureZ0Plan.h"
+#import "BufferSshareZ0Plan.h"
 // quality
-#import "TestAidO0.h"
+#import "TestAidZ0.h"
 
 @interface BufferShareZ0XCTests : XCTestCase
 
@@ -23,7 +24,7 @@
 static bool showFunctionName = false;
 #define TRANSACTION_ID 1
 #define IS_INTERACTIVE true
-static gpTransactionSizeO0T myTxSizeInteractiveInfo = {TRANSACTION_ID, TINY_UG, IS_INTERACTIVE};
+static gp myTxSizeInteractiveInfo = {TRANSACTION_ID, TINY_PPLG, IS_INTERACTIVE};
 
 - (void)setUp {
     //[super setUp];
@@ -59,7 +60,7 @@ static gpTransactionSizeO0T myTxSizeInteractiveInfo = {TRANSACTION_ID, TINY_UG, 
  * -- readCurrent()
  */
 static void
-loadAndProcessCSVsim(BufferShareO0P ctlP)
+loadAndProcessCSVsim(BufferShareO0HCdataPT ctlP)
 {
     Ulng maxLoadLen = ctlP->getSizeForLoad(ctlP);
     char *simCSV = "a,b,c,d,e,f\n\rg,h,i,j,k,l\n\r";
@@ -91,8 +92,8 @@ loadAndProcessCSVsim(BufferShareO0P ctlP)
     {
         // Create a sharable buffer and a control to share it.
         char sharedBuf[BS0_BFSZ];
-        BufferShare shareCtl =
-        newBufferShare(sharedBuf,
+        BufferShareZ0dataT shareCtl =
+        BufferShareO0HCapi.new(sharedBuf,
                         sharedBuf + sizeof(sharedBuf) - 1,
                         &myTxSizeInteractiveInfo);
         // Load the buffer with (simulated) CSV data
@@ -281,3 +282,6 @@ loadAndProcessCSVsim(BufferShareO0P ctlP)
 
 
 @end
+/**
+ *
+ */

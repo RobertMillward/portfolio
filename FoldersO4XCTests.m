@@ -2,38 +2,41 @@
 //  FoldersO4XCTests.m
 //
 //  Created by Robert Russell Millward on 10/16/13.
-//  Copyright (c) 2013 Robert Russell Millward. All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward. All rights reserved.
 //
 // os
 #import <XCTest/XCTest.h>
 // helper api's
 #import "BufferShareO0.h"
 #import "FoldersO4.h"
-#import "RowOO.h"
+#import "RowO0.h"
 #import "ErrorHelperO0.h"
 //#import "InitDestroyHelper1.h"
+// data plans
+#import "ArchitectureZ0Plan.h"
 // quality
-#import "TestAid0.h"
+#import "TestAidZ0.h"
 
-@interface Folders4Tests : XCTestCase
+#define TA_HOMPATH "hp"
+#define TA_GRPFLDR "gf"
+
+@interface FoldersO4XCTests : XCTestCase
 
 @end
 
 
-@implementation Folders4Tests
+@implementation FoldersO4XCTests
 
 
 // The execution does this per test.
 
 - (void)setUp
 {
-    [super setUp];
+    //[super setUp];
     
     // Set-up code below here.
 
-    TestAidC.nextTx();
-
-    initStatusT status = initFolders();
+    TestAidC.basicInit();
     
 }
 
@@ -43,7 +46,7 @@
     
     // Tear-down code above here.
     
-    [super tearDown];
+    //[super tearDown];
 }
 
 
@@ -53,58 +56,65 @@
 
 -(void) testGetFolderInfoThatExists
 {
+    gpSllgChar64PT gp64P = &TestAidZ0QCdata.gp64;
     char here[4096];
-    BufferShare bufShr = newBufferShare(here, here + sizeof(here) -1, testAid0TxIX);
+    BufferShareZ0dataT bufShr = BufferShareO0HCapi.new(here, here + sizeof(here) -1, gp64P);
     likePT like = "some*like";
     
-    FolderC.getFolderInfo(TA_HOMPATH, TA_GRPFLDR, like, &bufShr, testAid0TxIX);
-    Row mFI = newRow(bufShr.currentRead, testAid0TxIX);
+    FolderO4HCapi.getInfo(TA_HOMPATH, TA_GRPFLDR, like, &bufShr, gp64P);
+    CursorZ0HCdataT mFI = CursorZ0HCapi.new(bufShr.currentRead, gp64P);
     
     if(TestAidC.putTestInts(ACTIVE_ROWST, *mFI.rowStatus, __LINE__) != 0 ||
        TestAidC.putTestChars("folderInfo", mFI.itemName, __LINE__) != 0  ||
        1 == 2){
-        TestAidC.asserT(__FUNCTION__);
+        //TestAidC.asserT(__FUNCTION__);
     }
 }
 
 -(void) testGetExistsNo
 {
+    gpSllgChar64PT gp64P = &TestAidZ0QCdata.gp64;
     char *retPtr = IDH_DO_HERE_INIT;
     
-    int tE = FolderC.exists(TA_HOMPATH, TA_GRPFLDR, testAid0TxIX);
+    int tE = FolderO4HCapi.exists(TA_HOMPATH, TA_GRPFLDR, /*likePT*/ like, /*BufferShareZ0dataPT*/ mgr, gp64P);
     if(tE != EMPTY_ROWST){
-        retPtr = FolderC.remove(TA_GRPFLDR, testAid0TxIX);
+        retPtr = FolderO4HCapi.remove(TA_GRPFLDR, gp64P);
         
         if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-            TestAidC.asserT(__FUNCTION__);
+            //TestAidC.asserT(__FUNCTION__);
         }
     }
     
     
-    retPtr = FolderC.makeFolder(TA_GRPFLDR, testAid0TxIX);
+    retPtr = FolderO4HCapi.make(TA_GRPFLDR, gp64P);
     if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-        TestAidC.asserT(__FUNCTION__);
+        //TestAidC.asserT(__FUNCTION__);
     }else{
-        retPtr = FolderC.remove(TA_GRPFLDR, testAid0TxIX);
+        retPtr = FolderO4HCapi.remove(TA_GRPFLDR, gp64P);
         
         if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-            TestAidC.asserT(__FUNCTION__);
+            //TestAidC.asserT(__FUNCTION__);
         }
     }
 }
 
 -(void) testGetExistsYes
 {
-    int tE = FolderC.exists(TA_HOMPATH, TA_GRPFLDR, testAid0TxIX);
+    gpSllgChar64PT gp64P = &TestAidZ0QCdata.gp64;
+    int tE = FolderO4HCapi.exists(TA_HOMPATH, TA_GRPFLDR, /*likePT*/ like, /*BufferShareZ0dataPT*/ mgr, gp64P);
+    // branchPT branch, peopleGroupIdT grpId, likePT like, BufferShareZ0dataPT mgr, gpSllgChar64PT gp64P
     if(TestAidC.putTestInts(ACTIVE_ROWST, tE, __LINE__) != 0){
-        TestAidC.asserT(__FUNCTION__);
+        //TestAidC.asserT(__FUNCTION__);
     }
 }
 
 
 - (void)testZReportSuitStats
 {
-    TestAidC.processSuiteStats();
+    //TestAidC.processSuiteStats();
 }
 
 @end // FoldersO4XCTests.m
+/**
+ *
+ */

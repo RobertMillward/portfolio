@@ -18,6 +18,9 @@
 #include "BufferShareZ0Plan.h"
 // app api's
 
+// temporary, move to plan then move out
+#define IDH_DO_HERE_INIT "Do"
+#define IDH_IS_DONE_STEP "Done"
 
 typedef char *branchPT;
 typedef char *likePT;
@@ -40,9 +43,9 @@ enum folderInfoO4T
 typedef struct FolderO4HelperClassApiStruct
 {
     int  (*exists)          (branchPT, peopleGroupIdT, likePT, BufferShareZ0dataPT, gpSllgChar64PT);
-    void (*getFolderInfo)   (branchPT, peopleGroupIdT, likePT, BufferShareZ0dataPT, gpSllgChar64PT);
-    char *(*makeFolder)     (pathPT, gpSllgChar64PT);
-    char *(*chgFolder)      (pathPT, gpSllgChar64PT);
+    void (*getInfo)         (branchPT, peopleGroupIdT, likePT, BufferShareZ0dataPT, gpSllgChar64PT);
+    char *(*make)           (pathPT, gpSllgChar64PT);
+    char *(*change)         (pathPT, gpSllgChar64PT);
     char* (*copyJournal)    (char *journal, char *from, char *to, gpSllgChar64PT);
     char *(*remove)         (branchPT, gpSllgChar64PT);
 }FolderO4HCapiT, *FolderO4HCapiPT;
@@ -50,9 +53,6 @@ typedef struct FolderO4HelperClassApiStruct
 #define FolderHCapiT FolderO4HCapiT
 #define FolderHCapi FolderO4HCapi
 extern FolderHCapiT FolderHCapi;
-
-#define initFolders initFoldersO4
-extern initStatusT initFolders(void);
 
 #endif /* FoldersO4_h */
 /**
