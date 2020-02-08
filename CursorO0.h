@@ -22,7 +22,7 @@ typedef struct CursorO0HelperInstanceApiStruct
     /**
      * Create a new data instance
      */
-    CursorZ0HIdataT (*newData)(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT infoP);
+    CursorZ0HIdataT (*newData)(char *jnlOrCsvLine, gpSllgChar64PT);
     /**
      * Create a ready to journal string.
      */
@@ -30,8 +30,7 @@ typedef struct CursorO0HelperInstanceApiStruct
     /**
      * Get a pointer to the designated field.
      */
-    char* (*getField)(CursorZ0HIdataPT data,
-                      fieldLetterRowPT field);
+    char* (*getField)(CursorZ0HIdataPT data, fieldLetterRowPT field);
     /**
      * Update to/from without deleting missing from
      * fields.
@@ -40,13 +39,11 @@ typedef struct CursorO0HelperInstanceApiStruct
      */
     // For sure ROW_ITEM_NAME must match.
     // Probably ROW_ID should match.
-    void (*updateMatchingCursor)(CursorZ0HIdataPT data,
-                              CursorZ0HIdataPT that);
+    void (*updateMatchingCursor)(CursorZ0HIdataPT data, CursorZ0HIdataPT that);
     /**
      * Clear or drop the value for the designated field.
      */
-    void (*dropField)(CursorZ0HIdataPT data,
-                      fieldLetterRowPT field);
+    void (*dropField)(CursorZ0HIdataPT data, fieldLetterRowPT field);
     /**
      * Compare per the sortOn list
      * (see CPR_FTYPE_*).
@@ -57,9 +54,7 @@ typedef struct CursorO0HelperInstanceApiStruct
      * - field c, date-time
      * sortOn literally looks like "Halbnct"
      */
-    char *(*sort)(CursorZ0HIdataPT data,
-                  CursorZ0HIdataPT that,
-                  sortCtlCprPT sortOnP);
+    char *(*sort)(CursorZ0HIdataPT data, CursorZ0HIdataPT that, sortCtlCprPT sortOnP);
 }CursorO0HIapiT, *CursorO0HIapiPT;
 extern CursorO0HIapiT CursorO0HIapi;
 
@@ -84,7 +79,8 @@ typedef struct CursorO0HelperClassApiStruct
     * A newCursor reformats the input data (journal or commaSep)
     * so copy or strlen the input row first as necessary.
     */
-    CursorO0HInewT (*newCursor)(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT infoP);
+    CursorO0HInewT (*newCursor)(char *jnlOrCsvLine, gpSllgChar64PT);
+    
 }CursorO0HCapiT, *CursorO0HCapiPT;
 extern CursorO0HCapiT CursorO0HCapi;
 

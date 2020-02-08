@@ -77,7 +77,7 @@
         char wkCursorStr[1001];
         char ckCursorStr[1001];
         strcpy(wkCursorStr, doCursorStr);
-        CursorO0HInewT tR = CursorO0HCapi.newCursor(wkCursorStr, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT tR = CursorO0HCapi.newCursor(wkCursorStr, &TestAidZ0QCdata.gp64);
         //tR.apiP->toRow(&tR.data, ckCursorStr); TODO
         
         if(TestAidC.putTestChars(doCursorStr, ckCursorStr, __LINE__) != 0){
@@ -92,7 +92,7 @@
         char *ckCursorStr = "zaz" FSS_ARC "a" "zbz" FSS_ARC "b" "zcz" FSS_ARC "c" "zez" FSS_ARC "e" "zfz" FSS_ARC "f";
         char wkcsvCursorStr[1001];
         strcpy(wkcsvCursorStr, doCursorStr);
-        CursorO0HInewT tR = CursorO0HCapi.newCursor(wkcsvCursorStr, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT tR = CursorO0HCapi.newCursor(wkcsvCursorStr, &TestAidZ0QCdata.gp64);
         char wkjnlCursorStr[1001];
         //tR.apiP->toRow(&tR.data, wkjnlCursorStr); TODO
         
@@ -149,7 +149,7 @@
         char* sortInfoP = "HaS";
         
         strcpy(rowAchars, rowAsrc);
-        CursorO0HInewT rowA = CursorO0HCapi.newCursor(rowAchars, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT rowA = CursorO0HCapi.newCursor(rowAchars, &TestAidZ0QCdata.gp64);
         if(TestAidC.putTestChars(IS_EQL_ARC,
                                   rowA.apiP->sort(&rowA.data, &rowA.data, sortInfoP),
                                   __LINE__) != 0 ||
@@ -162,7 +162,7 @@
         
         
         strcpy(rowBchars, rowBsrc);
-        CursorO0HInewT rowB = CursorO0HCapi.newCursor(rowBchars, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT rowB = CursorO0HCapi.newCursor(rowBchars, &TestAidZ0QCdata.gp64);
         
         if(TestAidC.putTestChars(IS_HIGH_ARC,
                                   rowA.apiP->sort(&rowA.data, &rowB.data, sortInfoP),
@@ -198,10 +198,10 @@
         char *myExpectChars;
         
         strcpy(wkoCursorStr, origCursorStr);
-        CursorO0HInewT tRo = CursorO0HCapi.newCursor(wkoCursorStr, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT tRo = CursorO0HCapi.newCursor(wkoCursorStr, &TestAidZ0QCdata.gp64);
         
         strcpy(wkuCursorStr, updtCursorStr);
-        CursorO0HInewT tRu = CursorO0HCapi.newCursor(wkuCursorStr, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT tRu = CursorO0HCapi.newCursor(wkuCursorStr, &TestAidZ0QCdata.gp64);
         
         tRo.apiP->updateMatchingCursor(&tRo.data, &tRu.data);
         

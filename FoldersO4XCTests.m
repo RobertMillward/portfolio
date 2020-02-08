@@ -7,7 +7,7 @@
 // os
 #import <XCTest/XCTest.h>
 #import "FoldersO4TestAid.h"
-#import "TestAidZ0.h" // until the fetch can be eliminated
+//#import "TestAidZ0.h" // until the fetch can be eliminated
 
 /**
  * Alphabetical list of tests batches.
@@ -35,12 +35,12 @@
 
 - (void)setUp
 {
-    FoldersO4QCapi.setupSet1();
+    FoldersO4QCapi.setupSet1(__LINE__);
 }
 
 - (void)tearDown
 {
-    FoldersO4QCapi.teardownSet1();
+    FoldersO4QCapi.teardownSet1(__LINE__);
 }
 
 -(void) test2019GetExistsYes
@@ -48,7 +48,7 @@
     if(FoldersO4QCapi.isScheduled(__FUNCTION__)){
         bool ewc = FoldersO4QCapi.doSet1(__LINE__);
         if(ewc){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__)]);
         }
     }
 }
@@ -59,19 +59,19 @@
 
 - (void)setUp
 {
-    FoldersO4QCapi.setupSet2();
+    FoldersO4QCapi.setupSet2(__LINE__);
 }
 
 - (void)tearDown
 {
-    FoldersO4QCapi.teardownSet2();
+    FoldersO4QCapi.teardownSet2(__LINE__);
 }
 -(void) test2019GetFolderInfoThatExists
 {
     if(FoldersO4QCapi.isScheduled(__FUNCTION__)){
         bool ewc = FoldersO4QCapi.doSet2(__LINE__);;
         if(ewc){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__)]);
         }
     }
 }
@@ -81,19 +81,19 @@
 
 - (void)setUp
 {
-    FoldersO4QCapi.setupSet2();
+    FoldersO4QCapi.setupSet2(__LINE__);
 }
 
 - (void)tearDown
 {
-    FoldersO4QCapi.teardownSet2();
+    FoldersO4QCapi.teardownSet2(__LINE__);
 }
 -(void) test2019GetFolderInfoThatExists
 {
     if(FoldersO4QCapi.isScheduled(__FUNCTION__)){
         bool ewc = FoldersO4QCapi.doSet3(__LINE__);;
         if(ewc){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__)]);
         }
     }
 }

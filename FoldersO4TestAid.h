@@ -12,7 +12,8 @@
 typedef struct FoldersO4QualityClassApiStruct
 {
     void (*setupSuite0)(lineNbrT);
-    bool (*isScheduled)(cfileNameT, lineNbrT);
+    bool (*isScheduled)(cfileNameT);
+    char* (*getAssertText)(cfuncNameT);
     
     void (*setupSet1)(lineNbrT);
     bool (*doSet1)(lineNbrT);

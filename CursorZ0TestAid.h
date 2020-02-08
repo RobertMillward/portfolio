@@ -75,14 +75,14 @@ typedef struct CursorO0QualityInstanceApiStruct
 
 extern CursorO0QIapiT CursorO0QIapi;
 
-typedef struct CursorZ0QInewS
+typedef struct CursorZ0QualiyInstanceThisStruct
 {
     CursorZ0HIdataT data;
     
     // Instance functions:
     CursorO0QIapiPT api;  // The externalized methods to keep the instance as small as possible.
     
-} CursorO0QInewT, *CursorO0QInewPT;
+} CursorO0QIthisT, *CursorO0QIthisPT;
 
 
 
