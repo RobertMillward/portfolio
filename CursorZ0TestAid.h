@@ -22,6 +22,7 @@ typedef struct CursorO0QualityInstanceApiStruct
      */
     void (*toRow)(CursorZ0HIdataPT data,
                     char * here,
+                  massOfT,
                   lineNbrT);
     /**
      * Get a pointer to the designated field.

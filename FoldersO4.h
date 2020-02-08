@@ -42,8 +42,8 @@ enum folderInfoO4T
 
 typedef struct FolderO4HelperClassApiStruct
 {
-    int  (*exists)          (branchPT, peopleGroupIdT, likePT, BufferShareZ0dataPT, gpSllgChar64PT);
-    void (*getInfo)         (branchPT, peopleGroupIdT, likePT, BufferShareZ0dataPT, gpSllgChar64PT);
+    int  (*exists)          (branchPT, peopleGroupIdT, likePT, BufferShareZ0HIdataPT, gpSllgChar64PT);
+    void (*getInfo)         (branchPT, peopleGroupIdT, likePT, BufferShareZ0HIdataPT, gpSllgChar64PT);
     char *(*make)           (pathPT, gpSllgChar64PT);
     char *(*change)         (pathPT, gpSllgChar64PT);
     char* (*copyJournal)    (char *journal, char *from, char *to, gpSllgChar64PT);

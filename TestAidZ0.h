@@ -35,10 +35,13 @@ extern TestAidZ0QCdataT TestAidZ0QCdata;
 /**
 * Some test constants.
 */
-#define GOOD_LOGIN_PPLGRP   "BOEING"
+#define TA_GOOD_LOGIN   "BOEING"
 #define GOOD_PERSON_PPLG    "RRMZZZZ"
 #define WIKIDB_REAL_APP     "WIKIDBA"
 #define WIKIDB_SHARED_APP   "WIKIDBG"
+
+#define TA_HOMPATH "."
+#define TA_GRPFLDR "gf"
 
 /*
  */

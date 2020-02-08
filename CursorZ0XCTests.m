@@ -41,7 +41,7 @@
 - (void)test2019NewEmptyZ0{
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
 
-        ErrorWarnCountT errWrn = CursorZ0QIapi.toRowSafety(__LINE__, __FUNCTION__);
+        ErrorWarnCountT errWrn = CursorO0QIapi.toRowSafety(__LINE__, __FUNCTION__);
         
         if(errWrn.instanceErrors != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
@@ -77,8 +77,8 @@
         char wkCursorStr[1001];
         char ckCursorStr[1001];
         strcpy(wkCursorStr, doCursorStr);
-        CursorZ0AInewT tR = newCursor(wkCursorStr, &TestAidZ0QCdata.twoWay);
-        tR.api->toRow(&tR.data, ckCursorStr);
+        CursorO0HInewT tR = CursorO0HCapi.newCursor(wkCursorStr, &TestAidZ0QCdata.twoWay);
+        //tR.apiP->toRow(&tR.data, ckCursorStr); TODO
         
         if(TestAidC.putTestChars(doCursorStr, ckCursorStr, __LINE__) != 0){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
@@ -92,9 +92,9 @@
         char *ckCursorStr = "zaz" FSS_ARC "a" "zbz" FSS_ARC "b" "zcz" FSS_ARC "c" "zez" FSS_ARC "e" "zfz" FSS_ARC "f";
         char wkcsvCursorStr[1001];
         strcpy(wkcsvCursorStr, doCursorStr);
-        CursorZ0AInewT tR = newCursor(wkcsvCursorStr, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT tR = CursorO0HCapi.newCursor(wkcsvCursorStr, &TestAidZ0QCdata.twoWay);
         char wkjnlCursorStr[1001];
-        tR.api->toRow(&tR.data, wkjnlCursorStr);
+        //tR.apiP->toRow(&tR.data, wkjnlCursorStr); TODO
         
         if(TestAidC.putTestChars(ckCursorStr, wkjnlCursorStr, __LINE__) != 0)
         {
@@ -124,7 +124,7 @@
 
 - (void)test2999SizeofCursorZ0{
     // Added functionality and bigger x-field in early 2015.
-    if(TestAidC.putTestInts(240, sizeof(CursorZ0AInewT), __LINE__) != 0){
+    if(TestAidC.putTestInts(240, sizeof(CursorO0HInewT), __LINE__) != 0){
         XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
     }
 }
@@ -149,12 +149,12 @@
         char* sortInfoP = "HaS";
         
         strcpy(rowAchars, rowAsrc);
-        CursorZ0AInewT rowA = newCursor(rowAchars, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT rowA = CursorO0HCapi.newCursor(rowAchars, &TestAidZ0QCdata.twoWay);
         if(TestAidC.putTestChars(IS_EQL_ARC,
-                                  rowA.api->sort(&rowA.data, &rowA.data, sortInfoP),
+                                  rowA.apiP->sort(&rowA.data, &rowA.data, sortInfoP),
                                   __LINE__) != 0 ||
            TestAidC.putTestChars("some data",
-                                  rowA.api->getField(&rowA.data, &sortInfoP[1]),
+                                  rowA.apiP->getField(&rowA.data, &sortInfoP[1]),
                                   __LINE__) != 0 ||
            1 == 2){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
@@ -162,13 +162,13 @@
         
         
         strcpy(rowBchars, rowBsrc);
-        CursorZ0AInewT rowB = newCursor(rowBchars, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT rowB = CursorO0HCapi.newCursor(rowBchars, &TestAidZ0QCdata.twoWay);
         
         if(TestAidC.putTestChars(IS_HIGH_ARC,
-                                  rowA.api->sort(&rowA.data, &rowB.data, sortInfoP),
+                                  rowA.apiP->sort(&rowA.data, &rowB.data, sortInfoP),
                                   __LINE__) != 0 ||
            TestAidC.putTestChars("some data",
-                                  rowA.api->getField(&rowA.data, &sortInfoP[1]),
+                                  rowA.apiP->getField(&rowA.data, &sortInfoP[1]),
                                   __LINE__) != 0 ||
            1 == 2){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
@@ -176,10 +176,10 @@
         
         
         if(TestAidC.putTestChars(IS_LOW_ARC,
-                                  rowA.api->sort(&rowB.data, &rowA.data, sortInfoP),
+                                  rowA.apiP->sort(&rowB.data, &rowA.data, sortInfoP),
                                   __LINE__) != 0 ||
            TestAidC.putTestChars("more data",
-                                  rowB.api->getField(&rowB.data, &sortInfoP[1]),
+                                  rowB.apiP->getField(&rowB.data, &sortInfoP[1]),
                                   __LINE__) != 0 ||
            1 == 2){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
@@ -198,16 +198,16 @@
         char *myExpectChars;
         
         strcpy(wkoCursorStr, origCursorStr);
-        CursorZ0AInewT tRo = newCursor(wkoCursorStr, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT tRo = CursorO0HCapi.newCursor(wkoCursorStr, &TestAidZ0QCdata.twoWay);
         
         strcpy(wkuCursorStr, updtCursorStr);
-        CursorZ0AInewT tRu = newCursor(wkuCursorStr, &TestAidZ0QCdata.twoWay);
+        CursorO0HInewT tRu = CursorO0HCapi.newCursor(wkuCursorStr, &TestAidZ0QCdata.twoWay);
         
-        tRo.api->updateMatchingCursor(&tRo.data, &tRu.data);
+        tRo.apiP->updateMatchingCursor(&tRo.data, &tRu.data);
         
         for(char fIX = 'a' ; fIX <= 'z' ; fIX++){
             
-            myGotChars = tRo.api->getField(&tRo.data, &fIX);
+            myGotChars = tRo.apiP->getField(&tRo.data, &fIX);
             
             switch (fIX) {
                 case ITEM_NAME_ROW: myExpectChars = "item";         break;

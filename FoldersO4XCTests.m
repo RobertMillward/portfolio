@@ -6,117 +6,122 @@
 //
 // os
 #import <XCTest/XCTest.h>
-// helper api's
-#import "BufferShareO0.h"
-#import "CursorO0.h"
-#import "ErrorHelperO0.h"
-#import "FoldersO4.h"
-#import "RowO0.h"
-//#import "InitDestroyHelper1.h"
-// data plans
-#import "ArchitectureZ0Plan.h"
-#import "CursorZ0Plan.h"
-// quality
-#import "TestAidZ0.h"
+#import "FoldersO4TestAid.h"
+#import "TestAidZ0.h" // until the fetch can be eliminated
 
-#define TA_HOMPATH "hp"
-#define TA_GRPFLDR "gf"
+/**
+ * Alphabetical list of tests batches.
+ */
+@interface FoldersO4AboutTests : XCTestCase
+@end
 
-@interface FoldersO4XCTests : XCTestCase
+@interface FoldersO4Set1Tests : XCTestCase
+@end
 
+@interface FoldersO4Set2Tests : XCTestCase
+@end
+
+@interface FoldersO4Set3Tests : XCTestCase
+@end
+
+@interface FoldersO4ZooTests : XCTestCase
 @end
 
 
-@implementation FoldersO4XCTests
 
 
-// The execution does this per test.
+
+@implementation FoldersO4Set1Tests
 
 - (void)setUp
 {
-    //[super setUp];
-    
-    // Set-up code below here.
-
-    TestAidC.basicInit();
-    
+    FoldersO4QCapi.setupSet1();
 }
 
 - (void)tearDown
 {
-    TestAidC.getCounts();
-    
-    // Tear-down code above here.
-    
-    //[super tearDown];
+    FoldersO4QCapi.teardownSet1();
 }
 
-
-
-#pragma mark - Tests
-
-
--(void) testGetFolderInfoThatExists
+-(void) test2019GetExistsYes
 {
-    gpSllgChar64PT gp64P = &TestAidZ0QCdata.gp64;
-    char here[4096];
-    BufferShareZ0dataT bufShr = BufferShareO0HCapi.new(here, here + sizeof(here) -1, gp64P);
-    likePT like = "some*like";
-    
-    FolderO4HCapi.getInfo(TA_HOMPATH, TA_GRPFLDR, like, &bufShr, gp64P);
-    CursorZ0HIdataT mFI = CursorO0HIapi.newData(bufShr.currentRead, gp64P);
-    
-    if(TestAidC.putTestInts(ACTIVE_ROWST, *mFI.rowStatus, __LINE__) != 0 ||
-       TestAidC.putTestChars("folderInfo", mFI.itemName, __LINE__) != 0  ||
-       1 == 2){
-        //TestAidC.asserT(__FUNCTION__);
-    }
-}
-
--(void) testGetExistsNo
-{
-    gpSllgChar64PT gp64P = &TestAidZ0QCdata.gp64;
-    char *retPtr = IDH_DO_HERE_INIT;
-    BufferShareZ0dataT mgr = BufferShareO0HCapi.xxx();
-    likePT like = "something";
-    
-    int tE = FolderO4HCapi.exists(TA_HOMPATH, TA_GRPFLDR, like, &mgr, gp64P);
-    if(tE != EMPTY_ROWST){
-        retPtr = FolderO4HCapi.remove(TA_GRPFLDR, gp64P);
-        
-        if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-            //TestAidC.asserT(__FUNCTION__);
-        }
-    }
-    
-    
-    retPtr = FolderO4HCapi.make(TA_GRPFLDR, gp64P);
-    if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-        //TestAidC.asserT(__FUNCTION__);
-    }else{
-        retPtr = FolderO4HCapi.remove(TA_GRPFLDR, gp64P);
-        
-        if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-            //TestAidC.asserT(__FUNCTION__);
+    if(FoldersO4QCapi.isScheduled(__FUNCTION__)){
+        bool ewc = FoldersO4QCapi.doSet1(__LINE__);
+        if(ewc){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
     }
 }
 
--(void) testGetExistsYes
+@end
+
+@implementation FoldersO4Set2Tests
+
+- (void)setUp
 {
-    gpSllgChar64PT gp64P = &TestAidZ0QCdata.gp64;
-    BufferShareZ0dataT mgr = BufferShareO0HCapi.xxx();
-    likePT like = "something";
-    int tE = FolderO4HCapi.exists(TA_HOMPATH, TA_GRPFLDR, like, &mgr, gp64P);
-    // branchPT branch, peopleGroupIdT grpId, likePT like, BufferShareZ0dataPT mgr, gpSllgChar64PT gp64P
-    if(TestAidC.putTestInts(ACTIVE_ROWST, tE, __LINE__) != 0){
-        //TestAidC.asserT(__FUNCTION__);
-    }
+    FoldersO4QCapi.setupSet2();
 }
 
-
-- (void)testZReportSuitStats
+- (void)tearDown
 {
+    FoldersO4QCapi.teardownSet2();
+}
+-(void) test2019GetFolderInfoThatExists
+{
+    if(FoldersO4QCapi.isScheduled(__FUNCTION__)){
+        bool ewc = FoldersO4QCapi.doSet2(__LINE__);;
+        if(ewc){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+        }
+    }
+}
+@end
+
+@implementation FoldersO4Set3Tests
+
+- (void)setUp
+{
+    FoldersO4QCapi.setupSet2();
+}
+
+- (void)tearDown
+{
+    FoldersO4QCapi.teardownSet2();
+}
+-(void) test2019GetFolderInfoThatExists
+{
+    if(FoldersO4QCapi.isScheduled(__FUNCTION__)){
+        bool ewc = FoldersO4QCapi.doSet3(__LINE__);;
+        if(ewc){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+        }
+    }
+}
+@end
+
+
+
+@implementation FoldersO4AboutTests
+
+- (void)setUp
+{
+    FoldersO4QCapi.setupSuite0(__LINE__);
+}
+
+- (void)tearDown
+{
+}
+@end
+
+
+@implementation FoldersO4ZooTests
+- (void)setUp
+{
+}
+
+- (void)tearDown
+{
+    FoldersO4QCapi.teardownSuite0(__LINE__);
     //TestAidC.processSuiteStats();
 }
 
