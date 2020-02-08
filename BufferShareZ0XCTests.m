@@ -10,8 +10,8 @@
 #import "BufferShareO0.h"
 #import "PeopleGroupO0.h"
 // data plans (contains HCdata and HIdata)
-#import "ArchitectureZ0Plan.h"
-#import "BufferSshareZ0Plan.h"
+//#import "BufferShareZ0Plan.h" // included by BufferShareO0.h
+//#import "ArchitectureZ0Plan.h" // included by BufferShareZ0Plan.h
 // quality
 #import "TestAidZ0.h"
 
@@ -60,7 +60,7 @@ static gp myTxSizeInteractiveInfo = {TRANSACTION_ID, TINY_PPLG, IS_INTERACTIVE};
  * -- readCurrent()
  */
 static void
-loadAndProcessCSVsim(BufferShareO0HCdataPT ctlP)
+loadAndProcessCSVsim(BufferShareZ0HIdataPT ctlP)
 {
     Ulng maxLoadLen = ctlP->getSizeForLoad(ctlP);
     char *simCSV = "a,b,c,d,e,f\n\rg,h,i,j,k,l\n\r";
@@ -92,7 +92,7 @@ loadAndProcessCSVsim(BufferShareO0HCdataPT ctlP)
     {
         // Create a sharable buffer and a control to share it.
         char sharedBuf[BS0_BFSZ];
-        BufferShareZ0dataT shareCtl =
+        BufferShareZ0HIdataT shareCtl =
         BufferShareO0HCapi.new(sharedBuf,
                         sharedBuf + sizeof(sharedBuf) - 1,
                         &myTxSizeInteractiveInfo);

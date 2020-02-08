@@ -75,12 +75,13 @@ typedef struct CursorO0QualityInstanceApiStruct
 
 extern CursorO0QIapiT CursorO0QIapi;
 
+
 typedef struct CursorZ0QualiyInstanceThisStruct
 {
     CursorZ0HIdataT data;
     
     // Instance functions:
-    CursorO0QIapiPT api;  // The externalized methods to keep the instance as small as possible.
+    CursorO0QIapiPT apiP;  // The externalized methods to keep the instance as small as possible.
     
 } CursorO0QIthisT, *CursorO0QIthisPT;
 
@@ -90,7 +91,7 @@ typedef struct CursorZ0QualiyInstanceThisStruct
  * A newCursor reformats the input data (journal or commaSep)
  * so preserve the input row first as necessary.
  */
-extern CursorO0QInewT newCursorZ0Test(char *jnlOrCsvLine, gpTxPplGrpBatchTwoWayZ0PT, lineNbrT);
+extern CursorO0QIthisT newCursorZ0Test(char *jnlOrCsvLine, gpSllgChar64PT, lineNbrT);
 
 
 

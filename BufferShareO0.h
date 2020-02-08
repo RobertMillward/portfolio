@@ -9,8 +9,8 @@
 // os
 // helper api's
 // data plans
-#include "ArchitectureZ0Plan.h"
-#include "BufferShareZ0Plan.h"
+#include "BufferShareZ0Plan.h" // must be here to define api argument
+//#include "ArchitectureZ0Plan.h" // BufferShareZ0Plan.h provides
 
 typedef struct BufferShareO0HelperInstanceApiStruct
 {
@@ -20,12 +20,12 @@ typedef struct BufferShareO0HelperInstanceApiStruct
      * to bufEnd as, for example, how long
      * of a file can be read.
      */
-    Ulng (*getSizeForLoad)(BufferShareZ0HIdataPT);
+    Ulng (*getSizeForLoad)(BufferShareZ0HIdataPT, gpSllgChar64PT);
     
     /**
      * Setup for readCurrent().
      */
-    bool (*isMore)      (BufferShareZ0HIdataPT);
+    bool (*isMore)      (BufferShareZ0HIdataPT, gpSllgChar64PT);
     
     /**
      * If the next read will not overlap the
@@ -34,7 +34,7 @@ typedef struct BufferShareO0HelperInstanceApiStruct
      * Note that the string can safely be
      * broken into fields.
      */
-    void (*readCurrent)(BufferShareZ0HIdataPT);
+    void (*readCurrent)(BufferShareZ0HIdataPT, gpSllgChar64PT);
     
     /**
      * If room between currentWrite and bufEnd then
@@ -42,7 +42,7 @@ typedef struct BufferShareO0HelperInstanceApiStruct
      * increment currentWrite by that length plus
      * one.
      */
-    void (*writeCurrent)(BufferShareZ0HIdataPT, char *data);
+    void (*writeCurrent)(BufferShareZ0HIdataPT, char *data, gpSllgChar64PT);
     
     /**
      * If the caller is quitting the current
@@ -53,32 +53,42 @@ typedef struct BufferShareO0HelperInstanceApiStruct
      * 2) process null terminated rows
      * 3) all done
      */
-    void (*nextPhase)   (BufferShareZ0HIdataPT);
+    void (*nextPhase)   (BufferShareZ0HIdataPT, gpSllgChar64PT);
     
     /**
      * Into caller's buffer of BS0_DESC_SZ
      * put a description of the current state
      * of this instance.
      */
-    void (*description)(BufferShareZ0HIdataPT, char *here);
+    void (*description)(BufferShareZ0HIdataPT, char *here, gpSllgChar64PT);
     
     /**
      * Into the transaction log put current statics
      * then clean up.
      */
-    void (*destroy)     (BufferShareZ0HIdataPT);
+    void (*destroy)     (BufferShareZ0HIdataPT, gpSllgChar64PT);
     
 }BufferShareO0HIapiT, *BufferShareO0HIapiPT;
 
 extern BufferShareO0HIapiT BufferShareO0HIapi;
 
+/**
+ *
+ */
 typedef struct BufferShareO0HelperInstanceThisStruct
 {
     BufferShareO0HIapiPT apiP;
     BufferShareZ0HIdataT data;
     
 }BufferShareO0HIthisT, *BufferShareO0HIthisPT;
-// no extern
+// instance so no extern
+
+typedef struct BufferShareO0HelperClassApiStruct
+{
+    
+}BufferShareO0HCapiT, *BufferShareO0HCapiPT;
+
+extern BufferShareO0HCapiT BufferShareO0HCapi;
 
 #endif /* BufferShareO0_h */
 /**
