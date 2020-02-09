@@ -17,16 +17,17 @@
 @interface BufferShareO0CreateDestroyTests : XCTestCase
 @end
 
-@interface BufferShareO0IsMoreDescriptionSizesTests : XCTestCase
+@interface BufferShareO0ExampleTests : XCTestCase
 @end
 
-@interface BufferShareO0XCTests : XCTestCase
+@interface BufferShareO0IsMoreDescriptionSizesTests : XCTestCase
 @end
 
 @interface BufferShareO0ZooTests : XCTestCase
 @end
 
-@implementation BufferShareO0XCTests
+
+@implementation BufferShareO0ExampleTests
 
 - (void)setUp {
     //BufferShareO0QCapi.setupCreateDestroy(__LINE__);
@@ -36,77 +37,9 @@
     //BufferShareO0QCapi.teardownCreateDestroy(__LINE__);
 }
 
-
-/**
- * Example of use when processing a CSV:
- * - Caller creates a control using newBufferShare()
- * - loadHere is 10% down in the buffer to account for overlap
- *   and to indicate that a loaded file is being processed
- * - caller passes control to the loader method
- * - loader loads file (i.e, csv) into loadHere
- * - loader then
- * --- while(isMore())
- * --- calls readCurrent()
- * --- formats row data
- * --- calls writeCurrent()
- * -- calls nextPhase()
- * -- returns
- * - caller then can
- * -- while(isMore())
- * -- readCurrent()
- */
-//static void
-//loadAndProcessCSVsim(BufferShareZ0HIdataPT ctlP)
-//{
-//    Ulng maxLoadLen = ctlP->getSizeForLoad(ctlP);
-//    char *simCSV = "a,b,c,d,e,f\n\rg,h,i,j,k,l\n\r";
-//    if(strlen(simCSV) < maxLoadLen)
-//    {
-//        // This would probably be an open, read, close.
-//        strcpy(ctlP->loadHere, simCSV);
-//        // Process each cr/lf terminated CSV line into a Row-ready line.
-//        while(ctlP->isMore(ctlP))
-//        {
-//            ctlP->readCurrent(ctlP);
-//            // A real process would reformat this to Row ready
-//            // but here we only recopy the value.
-//            //printf("lap=%s\n", ctlP->currentRead);
-//            ctlP->writeCurrent(ctlP, ctlP->currentRead);
-//        }
-//        ctlP->nextPhase(ctlP);
-//    }
-//    else
-//    {
-//        ctlP->sourceOnFailure = (char *)__FUNCTION__;
-//        ctlP->lineOnFailure = __LINE__;
-//    }
-//}
-
-- (void)test2015ExampleProcessCSV {
+- (void)test2019ExampleProcessCSV {
     if(BufferShareO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
-//        // Create a sharable buffer and a control to share it.
-//        char sharedBuf[BS0_BFSZ];
-//        BufferShareZ0HIdataT shareCtl =
-//        BufferShareO0HCapi.new(sharedBuf,
-//                        sharedBuf + sizeof(sharedBuf) - 1,
-//                        &myTxSizeInteractiveInfo);
-//        // Load the buffer with (simulated) CSV data
-//        // then process it.
-//        loadAndProcessCSVsim(&shareCtl);
-//
-//        while(shareCtl.isMore(&shareCtl))
-//        {
-//            shareCtl.readCurrent(&shareCtl);
-//            //printf("%s\n", shareCtl.currentRead);
-//        }
-//
-//        char descShare[BS0_DESC_SZ];
-//        shareCtl.description(&shareCtl, descShare);
-//
-//        if(TA0C.putTestInts(0, shareCtl.lineOnFailure, __LINE__)                != 0 ||
-//           TA0C.putTestChars("BufShr: lr=2, lw=2, pr=2", descShare, __LINE__)   != 0 ||
-//           1 == 2)
-        {
+        if(BufferShareO0QCapi.doSet3(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:BufferShareO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
@@ -115,51 +48,12 @@
 
 - (void)test2019ExampleProcessRow {
     if(BufferShareO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
-//        // Create a sharable buffer and a control to share it.
-//        char sharedBuf[BS0_BFSZ];
-//        BufferShare shareCtl =
-//        newBufferShare(sharedBuf,
-//                        sharedBuf + sizeof(sharedBuf) - 1,
-//                        &myTxSizeInteractiveInfo);
-//
-//        shareCtl.nextPhase(&shareCtl);
-//        char rowsBuf[] = "row1\0row2\0row3";
-//        strcpy(shareCtl.bufBeg, rowsBuf);
-//        shareCtl.currentWrite = shareCtl.bufBeg + sizeof(rowsBuf);
-//
-//        while(shareCtl.isMore(&shareCtl))
-//        {
-//            shareCtl.readCurrent(&shareCtl);
-//            //printf("%s\n", shareCtl.currentRead);
-//        }
-//
-//        if(TA0C.putTestChars(TA_NULL, shareCtl.sourceOnFailure, __LINE__) != 0)
-        {
+        if(BufferShareO0QCapi.doSet4(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:BufferShareO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
 }
 
-
-
-- (void)test2019ANew {
-    if(BufferShareO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
-//        // Create a sharable buffer and a control to share it.
-//        char sharedBuf[BS0_BFSZ];
-//        BufferShare shareCtl =
-//        newBufferShare(sharedBuf,
-//                        sharedBuf + sizeof(sharedBuf) - 1,
-//                        &myTxSizeInteractiveInfo);
-//
-//        if(TA0C.putTestChars(TA_NULL, shareCtl.sourceOnFailure, __LINE__) != 0              ||
-//           TA0C.putTestInts(0, shareCtl.lineOnFailure, __LINE__) != 0                       ||
-//           TA0C.putTestInts(1800, (int)shareCtl.getSizeForLoad(&shareCtl),__LINE__) != 0    ||
-//           1 == 2)
-        {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:BufferShareO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
-        }
-    }
-}
 @end
 
 
@@ -196,7 +90,7 @@
     BufferShareO0QCapi.teardownCreateDestroy(__LINE__);
 }
 
-- (void)test2019Zdestroy {
+- (void)test2019CreateDestroy {
     if(BufferShareO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
         if(BufferShareO0QCapi.doCreateDestroy(__LINE__))
         {
@@ -210,7 +104,7 @@
 @implementation BufferShareO0AboutTests
 
 - (void)setUp {
-    BufferShareO0QCapi.setupSuite0(__LINE__);
+    BufferShareO0QCapi.setupSuite(__LINE__);
 }
 
 - (void)tearDown {
@@ -225,7 +119,7 @@
 }
 
 - (void)tearDown {
-    BufferShareO0QCapi.teardownSuite0(__LINE__);
+    BufferShareO0QCapi.teardownSuite(__LINE__);
 }
 
 @end

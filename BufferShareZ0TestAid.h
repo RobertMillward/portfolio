@@ -16,7 +16,7 @@
 
 typedef struct BufferShareO0QualityClassApiStruct
 {
-    void (*setupSuite0)(lineNbrT);
+    void (*setupSuite)(lineNbrT);
     bool (*isScheduled)(cfuncNameT, lineNbrT);
     char* (*getAssertText)(cfuncNameT, lineNbrT);
     
@@ -32,7 +32,11 @@ typedef struct BufferShareO0QualityClassApiStruct
     bool (*doSet3)(lineNbrT);
     void (*teardownSet3)(lineNbrT);
     
-    void (*teardownSuite0)(lineNbrT);
+    void (*setupSet4)(lineNbrT);
+    bool (*doSet4)(lineNbrT);
+    void (*teardownSet4)(lineNbrT);
+    
+    void (*teardownSuite)(lineNbrT);
     
 }BufferShareO0QCapiT, *FoldersO4QCapiPT;
 
