@@ -77,7 +77,7 @@
         char wkCursorStr[1001];
         char ckCursorStr[1001];
         strcpy(wkCursorStr, doCursorStr);
-        CursorO0HInewT tR = CursorO0HCapi.newCursor(wkCursorStr, &TestAidZ0QCdata.gp64);
+        //CursorO0HInewT tR = CursorO0HCapi.newCursor(wkCursorStr, &TestAidZ0QCdata.gp64);
         //tR.apiP->toRow(&tR.data, ckCursorStr); TODO
         
         if(TestAidC.putTestChars(doCursorStr, ckCursorStr, __LINE__) != 0){
@@ -92,7 +92,7 @@
         char *ckCursorStr = "zaz" FSS_ARC "a" "zbz" FSS_ARC "b" "zcz" FSS_ARC "c" "zez" FSS_ARC "e" "zfz" FSS_ARC "f";
         char wkcsvCursorStr[1001];
         strcpy(wkcsvCursorStr, doCursorStr);
-        CursorO0HInewT tR = CursorO0HCapi.newCursor(wkcsvCursorStr, &TestAidZ0QCdata.gp64);
+        //CursorO0HInewT tR = CursorO0HCapi.newCursor(wkcsvCursorStr, &TestAidZ0QCdata.gp64);
         char wkjnlCursorStr[1001];
         //tR.apiP->toRow(&tR.data, wkjnlCursorStr); TODO
         

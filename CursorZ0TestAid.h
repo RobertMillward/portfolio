@@ -20,16 +20,11 @@ typedef struct CursorO0QualityInstanceApiStruct
     /**
      * Create a ready to journal string.
      */
-    void (*toRow)(CursorZ0HIdataPT data,
-                    char * here,
-                  massOfT,
-                  lineNbrT);
+    void (*toRow)(CursorZ0HIdataPT data, char * here, massOfT, lineNbrT);
     /**
      * Get a pointer to the designated field.
      */
-    char* (*getField)(CursorZ0HIdataPT data,
-                      fieldLetterRowPT field,
-                      lineNbrT);
+    char* (*getField)(CursorZ0HIdataPT data, fieldLetterRowPT field, lineNbrT);
     /**
      * Update to/from without deleting missing from
      * fields.
@@ -38,15 +33,11 @@ typedef struct CursorO0QualityInstanceApiStruct
      */
     // For sure ROW_ITEM_NAME must match.
     // Probably ROW_ID should match.
-    void (*updateMatchingCursor)(CursorZ0HIdataPT data,
-                              CursorZ0HIdataPT that,
-                                 lineNbrT);
+    void (*updateMatchingCursor)(CursorZ0HIdataPT data, CursorZ0HIdataPT that, lineNbrT);
     /**
      * Clear or drop the value for the designated field.
      */
-    void (*dropField)(CursorZ0HIdataPT data,
-                      fieldLetterRowPT field,
-                      lineNbrT);
+    void (*dropField)(CursorZ0HIdataPT data, fieldLetterRowPT field, lineNbrT);
     /**
      * Compare per the sortOn list
      * (see CPR_FTYPE_*).
@@ -57,10 +48,7 @@ typedef struct CursorO0QualityInstanceApiStruct
      * - field c, date-time
      * sortOn literally looks like "Halbnct"
      */
-    char *(*sort)(CursorZ0HIdataPT data,
-                  CursorZ0HIdataPT that,
-                  sortCtlCprPT sortOnP,
-                  lineNbrT);
+    char *(*sort)(CursorZ0HIdataPT data, CursorZ0HIdataPT that, sortCtlCprPT sortOnP, lineNbrT);
     /**
      * Tools
      */

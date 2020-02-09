@@ -85,6 +85,7 @@ typedef struct BufferShareO0HelperInstanceThisStruct
 
 typedef struct BufferShareO0HelperClassApiStruct
 {
+    BufferShareO0HIthisT (*newThis)(char* sharedBuf, char* endPoint, gpSllgChar64PT);
     
 }BufferShareO0HCapiT, *BufferShareO0HCapiPT;
 
