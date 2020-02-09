@@ -6,29 +6,34 @@
 //
 // os
 #import <XCTest/XCTest.h>
-// helper api's (contains HCapi and HIapi)
-//#import "BufferShareO0.h"
-//#import "PeopleGroupO0.h"
-// data plans (contains HCdata and HIdata)
-//#import "BufferShareZ0Plan.h" // included by BufferShareO0.h
-//#import "ArchitectureZ0Plan.h" // included by BufferShareZ0Plan.h
 // quality
 #import "TestAidZ0.h"
 #import "BufferShareZ0TestAid.h"
 
-@interface BufferShareCreateDestroyO0Tests : XCTestCase
+
+@interface BufferShareO0AboutTests : XCTestCase
 @end
 
-@interface BufferShareZ0XCTests : XCTestCase
+@interface BufferShareO0CreateDestroyTests : XCTestCase
 @end
-@implementation BufferShareZ0XCTests
 
+@interface BufferShareO0IsMoreDescriptionSizesTests : XCTestCase
+@end
+
+@interface BufferShareO0XCTests : XCTestCase
+@end
+
+@interface BufferShareO0ZooTests : XCTestCase
+@end
+
+@implementation BufferShareO0XCTests
 
 - (void)setUp {
-    BufferShareO0QCapi.setupCreateDestroy(__LINE__);
+    //BufferShareO0QCapi.setupCreateDestroy(__LINE__);
 }
 
 - (void)tearDown {
+    //BufferShareO0QCapi.teardownCreateDestroy(__LINE__);
 }
 
 
@@ -155,45 +160,23 @@
         }
     }
 }
+@end
 
 
-- (void)test2019ASizes {
-    if(BufferShareO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        // Create a sharable buffer and a control to share it.
-//        char sharedBuf[BS0_BFSZ];
-//        BufferShare shareCtl =
-//        newBufferShare(sharedBuf,
-//                        sharedBuf + sizeof(sharedBuf) - 1,
-//                        &myTxSizeInteractiveInfo);
-//
-//        char biggerBuf[1001];
-//        shareCtl.description(&shareCtl, biggerBuf);
-//        int szBuf = (int)strlen(biggerBuf);
-//        int bufToDef = ((szBuf - BS0_DESC_SZ) < 50);
-//        int defToBuf = ((BS0_DESC_SZ - szBuf) < 50);
-//
-//        if(TA0C.putTestInts(152, sizeof(BufferShare), __LINE__) != 0         ||
-//           TA0C.putTestInts(1, bufToDef, __LINE__) != 0                       ||
-//           TA0C.putTestInts(1, defToBuf, __LINE__) != 0                       ||
-//           1 == 2)
-        {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:BufferShareO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
-        }
-    }
+@implementation BufferShareO0IsMoreDescriptionSizesTests
+
+- (void)setUp {
+    BufferShareO0QCapi.setupIsMoreDescriptionSizes(__LINE__);
+}
+
+- (void)tearDown {
+    BufferShareO0QCapi.teardownIsMoreDescriptionSizes(__LINE__);
 }
 
 
-
-- (void)test2019AInBetween {
+- (void)test2019IsMoreDescriptionSizes {
     if(BufferShareO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        // Create a sharable buffer and a control to share it.
-//        char sharedBuf[BS0_BFSZ];
-//        BufferShare shareCtl =
-//        newBufferShare(sharedBuf,
-//                        sharedBuf + sizeof(sharedBuf) - 1,
-//                        &myTxSizeInteractiveInfo);
-//
-//        if(TA0C.putTestInts(0, shareCtl.isMore(&shareCtl), __LINE__) != 0)
+        if(BufferShareO0QCapi.doIsMoreDescriptionSizes(__LINE__))
         {
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:BufferShareO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
@@ -203,14 +186,16 @@
 @end
 
 
-@implementation BufferShareCreateDestroyO0Tests
+@implementation BufferShareO0CreateDestroyTests
 
 - (void)setUp {
     BufferShareO0QCapi.setupCreateDestroy(__LINE__);
 }
 
 - (void)tearDown {
+    BufferShareO0QCapi.teardownCreateDestroy(__LINE__);
 }
+
 - (void)test2019Zdestroy {
     if(BufferShareO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
         if(BufferShareO0QCapi.doCreateDestroy(__LINE__))
@@ -218,6 +203,29 @@
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:BufferShareO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
+}
+@end
+
+
+@implementation BufferShareO0AboutTests
+
+- (void)setUp {
+    BufferShareO0QCapi.setupSuite0(__LINE__);
+}
+
+- (void)tearDown {
+}
+
+@end
+
+
+@implementation BufferShareO0ZooTests
+
+- (void)setUp {
+}
+
+- (void)tearDown {
+    BufferShareO0QCapi.teardownSuite0(__LINE__);
 }
 
 @end

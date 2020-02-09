@@ -24,10 +24,9 @@ typedef struct BufferShareO0QualityClassApiStruct
     bool (*doCreateDestroy)(lineNbrT);
     void (*teardownCreateDestroy)(lineNbrT);
     
-    
-    void (*setupSet2)(lineNbrT);
-    bool (*doSet2)(lineNbrT);
-    void (*teardownSet2)(lineNbrT);
+    void (*setupIsMoreDescriptionSizes)(lineNbrT);
+    bool (*doIsMoreDescriptionSizes)(lineNbrT);
+    void (*teardownIsMoreDescriptionSizes)(lineNbrT);
     
     void (*setupSet3)(lineNbrT);
     bool (*doSet3)(lineNbrT);
