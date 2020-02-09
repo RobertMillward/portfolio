@@ -9,12 +9,11 @@
 // os
 // helper api's
 // data plans
-#include "BufferShareZ0Plan.h" // must be here to define api argument
+#include "BufferShareZ0Plan.h"    // must be here to define api argument
 //#include "ArchitectureZ0Plan.h" // BufferShareZ0Plan.h provides
 
 typedef struct BufferShareO0HelperInstanceApiStruct
 {
-    BufferShareZ0HIdataT (*newData)(char* bufFirstByte, char* bufLastByte, gpSllgChar64PT);
     /**
      * get the number of bytes from loadHere
      * to bufEnd as, for example, how long
@@ -28,37 +27,35 @@ typedef struct BufferShareO0HelperInstanceApiStruct
     bool (*isMore)      (BufferShareZ0HIdataPT, gpSllgChar64PT);
     
     /**
-     * If the next read will not overlap the
-     * current write
+     * This reads phase 1 or phase 2 data.
+     * If the next read will not overlap the  current write
      * then set currentRead to nextRead.
-     * Note that the string can safely be
-     * broken into fields.
+     * Note that now the output can be safely broken into fields.
      */
     void (*readCurrent)(BufferShareZ0HIdataPT, gpSllgChar64PT);
     
     /**
-     * If room between currentWrite and bufEnd then
+     * This allows the caller to write phase 1 data into the phase 2 storage.
+     * If room between currentWrite and bufEnd then TODO
      * store incoming string at currentWrite then
-     * increment currentWrite by that length plus
-     * one.
+     * increment currentWrite by that length plus one.
      */
     void (*writeCurrent)(BufferShareZ0HIdataPT, char *data, gpSllgChar64PT);
     
     /**
-     * If the caller is quitting the current
-     * phase then move to the next phase. The
-     * phases are :
-     * 1) load and process \n terminated rows
-     *    in a null terminated buffer
-     * 2) process null terminated rows
+     * The caller is quitting the current phase so move to the next phase.
+     * The phases are :
+     * 1) load and process \n or \036 terminated rows
+     *    from a null terminated buffer
+     * 2) process the resulting null terminated rows
      * 3) all done
      */
     void (*nextPhase)   (BufferShareZ0HIdataPT, gpSllgChar64PT);
     
     /**
-     * Into caller's buffer of BS0_DESC_SZ
-     * put a description of the current state
-     * of this instance.
+     * Into caller's buffer of  at least BS0_DESC_SZ
+     * put a description of the current state of this instance.
+     * Note: read and write counts may be -1 upon encountering undefined errors.
      */
     void (*description)(BufferShareZ0HIdataPT, char *here, gpSllgChar64PT);
     
@@ -81,11 +78,13 @@ typedef struct BufferShareO0HelperInstanceThisStruct
     BufferShareZ0HIdataT data;
     
 }BufferShareO0HIthisT, *BufferShareO0HIthisPT;
-// instance so no extern
+
 
 typedef struct BufferShareO0HelperClassApiStruct
 {
-    BufferShareO0HIthisT (*newThis)(char* sharedBuf, char* endPoint, gpSllgChar64PT);
+    BufferShareO0HIthisT (*newThis)(char* bufFirstByte, char* bufLastByte, gpSllgChar64PT);
+    
+    BufferShareZ0HIdataT (*newData)(char* bufFirstByte, char* bufLastByte, gpSllgChar64PT);
     
 }BufferShareO0HCapiT, *BufferShareO0HCapiPT;
 
