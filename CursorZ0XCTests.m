@@ -20,7 +20,7 @@
 
  
 
-@interface CursorZ0NewTests : XCTestCase
+@interface CursorZ0SafetyTests : XCTestCase
 
 @end
 
@@ -36,86 +36,29 @@
 
 
 
-@implementation CursorZ0NewTests
+@implementation CursorZ0SafetyTests
 
 - (void)setUp
 {
-    TestAidC.nextTx();
+    CursorO0QCapi.setupSet2(__LINE__);
 }
 
 - (void)tearDown
 {
-    TestAidC.getCounts();
+    CursorO0QCapi.teardownSet2(__LINE__);
 }
 
 
-#pragma mark - Tests
-
-
-- (void)test2019NewEmptyZ0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-
-        ErrorWarnCountT errWrn = CursorO0QIapi.toRowSafety(__LINE__, __FUNCTION__);
-        
-        if(errWrn.instanceErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+- (void)test2019SafetyZ0{
+    if(CursorO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(CursorO0QCapi.doSet2(__LINE__) != 0){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:CursorO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
 }
 
 
 
-
-/** EOW
-- (void)test2019newCursor0EOWZ0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        char *doCursorStr = "item\034wrowID\034x1\034ysome data\034a" EOW;
-        char wkCursorStr[1001];
-        char ckCursorStr[1001];
-        strcpy(wkCursorStr, doCursorStr);
-        CursorZ0AInewT tR = newCursor(wkCursorStr, &TestAidZ0QCdata.twoWay);
-        tR.api->toRow(&tR.data, ckCursorStr);
-        
-        strcat(ckCursorStr, EOW);
-        if(TestAidC.putTestChars(doCursorStr, ckCursorStr, __LINE__) != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
- */
-
-
-- (void)test2019newCursor0NoEOWZ0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        char *doCursorStr = "item\034wrowID\034x1\034ysome data\034a";
-        char wkCursorStr[1001];
-        char ckCursorStr[1001];
-        strcpy(wkCursorStr, doCursorStr);
-        //CursorO0HInewT tR = CursorO0HCapi.newCursor(wkCursorStr, &TestAidZ0QCdata.gp64);
-        //tR.apiP->toRow(&tR.data, ckCursorStr); TODO
-        
-        if(TestAidC.putTestChars(doCursorStr, ckCursorStr, __LINE__) != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-- (void)test2019newCursorZ0Csv{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        char *doCursorStr = "zaz,\"zbz\",zcz,,zez,zfz,,,";
-        char *ckCursorStr = "zaz" FSS_ARC "a" "zbz" FSS_ARC "b" "zcz" FSS_ARC "c" "zez" FSS_ARC "e" "zfz" FSS_ARC "f";
-        char wkcsvCursorStr[1001];
-        strcpy(wkcsvCursorStr, doCursorStr);
-        //CursorO0HInewT tR = CursorO0HCapi.newCursor(wkcsvCursorStr, &TestAidZ0QCdata.gp64);
-        char wkjnlCursorStr[1001];
-        //tR.apiP->toRow(&tR.data, wkjnlCursorStr); TODO
-        
-        if(TestAidC.putTestChars(ckCursorStr, wkjnlCursorStr, __LINE__) != 0)
-        {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
 @end
 
 
@@ -124,18 +67,17 @@
 
 - (void)setUp
 {
-    TestAidC.nextTx();
+    CursorO0QCapi.setupSizes(__LINE__);
 }
 
 - (void)tearDown
 {
-    TestAidC.getCounts();
+    CursorO0QCapi.teardownSizes(__LINE__);
 }
 
 - (void)test2999SizeofCursorZ0{
-    // Added functionality and bigger x-field in early 2015.
-    if(TestAidC.putTestInts(240, sizeof(CursorO0HIthisT), __LINE__) != 0){
-        XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+    if(CursorO0QCapi.doSizes(__LINE__) != 0){
+        XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:CursorO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
     }
 }
 
@@ -233,6 +175,44 @@
     }
 }
 
+
+/** EOW
+- (void)test2019newCursor0EOWZ0{
+    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
+        char *doCursorStr = "item\034wrowID\034x1\034ysome data\034a" EOW;
+        char wkCursorStr[1001];
+        char ckCursorStr[1001];
+        strcpy(wkCursorStr, doCursorStr);
+        CursorZ0AInewT tR = newCursor(wkCursorStr, &TestAidZ0QCdata.twoWay);
+        tR.api->toRow(&tR.data, ckCursorStr);
+        
+        strcat(ckCursorStr, EOW);
+        if(TestAidC.putTestChars(doCursorStr, ckCursorStr, __LINE__) != 0){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+        }
+    }
+}
+ */
+
+- (void)test2019newCursorZ0Csv{
+    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
+        char *doCursorStr = "zaz,\"zbz\",zcz,,zez,zfz,,,";
+        char *ckCursorStr = "zaz" FSS_ARC "a" "zbz" FSS_ARC "b" "zcz" FSS_ARC "c" "zez" FSS_ARC "e" "zfz" FSS_ARC "f";
+        char wkcsvCursorStr[1001];
+        strcpy(wkcsvCursorStr, doCursorStr);
+        //CursorO0HInewT tR = CursorO0HCapi.newCursor(wkcsvCursorStr, &TestAidZ0QCdata.gp64);
+        char wkjnlCursorStr[1001];
+        //tR.apiP->toRow(&tR.data, wkjnlCursorStr); TODO
+        
+        if(TestAidC.putTestChars(ckCursorStr, wkjnlCursorStr, __LINE__) != 0)
+        {
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+        }
+    }
+}
 @end
 
 //END CursorZ0Tests.m
+/**
+ *
+ */

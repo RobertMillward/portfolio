@@ -49,15 +49,6 @@ typedef struct CursorO0QualityInstanceApiStruct
      * sortOn literally looks like "Halbnct"
      */
     char *(*sort)(CursorZ0HIdataPT data, CursorZ0HIdataPT that, sortCtlCprPT sortOnP, lineNbrT);
-    /**
-     * Tools
-     */
-    
-    
-    /**
-     * Tests
-     */
-    ErrorWarnCountT (*toRowSafety)(lineNbrT, cfuncNameT);
     
 }CursorO0QIapiT, *CursorO0QIapiPT;
 extern CursorO0QIapiT CursorO0QIapi;
@@ -68,13 +59,13 @@ typedef struct CursorO0QualityClassApiStruct
     bool (*isScheduled)(cfuncNameT, lineNbrT);
     char* (*getAssertText)(cfuncNameT, lineNbrT);
     
-    void (*setupCreateDestroy)(lineNbrT);
-    bool (*doCreateDestroy)(lineNbrT);
-    void (*teardownCreateDestroy)(lineNbrT);
+    void (*setupSizes)(lineNbrT);
+    bool (*doSizes)(lineNbrT);
+    void (*teardownSizes)(lineNbrT);
     
-    void (*setupIsMoreDescriptionSizes)(lineNbrT);
-    bool (*doIsMoreDescriptionSizes)(lineNbrT);
-    void (*teardownIsMoreDescriptionSizes)(lineNbrT);
+    void (*setupSet2)(lineNbrT);
+    bool (*doSet2)(lineNbrT);
+    void (*teardownSet2)(lineNbrT);
     
     void (*setupSet3)(lineNbrT);
     bool (*doSet3)(lineNbrT);
