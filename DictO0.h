@@ -8,12 +8,12 @@
 #define DictO0_h
 #include "DictZ0Plan.h"
 
-typedef const struct DictO0ACapiS
+typedef const struct DictO0SCapiS
 {
     /**
      * Get the field Dictionary.
      */
-    DictZ0AInewT    (*getDict)(sourcePT, cfuncNameT, gpSllgChar64PT);
+    DictZ0SIdataT    (*getDict)(sourcePT, cfuncNameT, gpSllgChar64PT);
     
     /**
      * Check the source data using the field dictionary.
@@ -21,22 +21,22 @@ typedef const struct DictO0ACapiS
      * The Row.addMore() will impose additional accptance criteria.
      */
     void
-    (*checkViaDict) (DictZ0AInewT, gpSllgChar64PT);
+    (*checkViaDict) (DictZ0SIdataT, gpSllgChar64PT);
     
     /**
      * Format the source data using the dictionary.
      * This is simlple formatting.
      */
     void
-    (*formatViaDict)(DictZ0AInewT, targetPT, targetLengthT, gpSllgChar64PT);
+    (*formatViaDict)(DictZ0SIdataT, targetPT, targetLengthT, gpSllgChar64PT);
     
-}DictO0ACapiT, *DictO0ACapiPT;
+}DictO0SCapiT, *DictO0SCapiPT;
 
-#define DictACapiT DictO0ACapiT
-#define DictACapi DictO0ACapi
-extern DictACapiT DictACapi;
+#define DictSCapiT DictO0SCapiT
+#define DictSCapi DictO0SCapi
+extern DictSCapiT DictSCapi;
 
-#endif /* defined(DictO0_h) */
+#endif /* DictO0_h */
 /**
  A Dictionary is an essential building block in the library.
  Several data types are supported as can be seen from CompareZ0Plan.h.
