@@ -2,17 +2,20 @@
 //  CursorZ0Tests.m
 //
 //  Created by Robert Russell Millward on 10/8/13.
-//  Copyright (c) 2013 Robert Russell Millward.
-//  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-
+// os
 #import <XCTest/XCTest.h>
-//#import "CursorZ0.h"
-//#import "TransactionZ0.h"
-#import "TestAidZ0.h"
-//#import "ArchitectureZ0.h"
+// helper api's
 //#import "InitDestroyHelperZ0.h"
 //#import "PeopleGroupO2.h"
+//#import "CursorZ0.h"
+//#import "TransactionZ0.h"
+// data plans
+//#import "ArchitectureZ0Olan.h"
+#include "ErrorHelperZ0Plan.h"
+// quality
+#import "TestAidZ0.h"
 #import "CursorZ0TestAid.h"
 
  
@@ -21,8 +24,19 @@
 
 @end
 
-@implementation CursorZ0NewTests
+@interface CursorZ0OtherTests : XCTestCase
 
+@end
+
+@interface CursorZ0SizeTests : XCTestCase
+
+@end
+
+
+
+
+
+@implementation CursorZ0NewTests
 
 - (void)setUp
 {
@@ -105,12 +119,8 @@
 @end
 
 
-@interface CursorZ0SizeTests : XCTestCase
-
-@end
 
 @implementation CursorZ0SizeTests
-
 
 - (void)setUp
 {
@@ -124,7 +134,7 @@
 
 - (void)test2999SizeofCursorZ0{
     // Added functionality and bigger x-field in early 2015.
-    if(TestAidC.putTestInts(240, sizeof(CursorO0HInewT), __LINE__) != 0){
+    if(TestAidC.putTestInts(240, sizeof(CursorO0HIthisT), __LINE__) != 0){
         XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
     }
 }
@@ -134,9 +144,6 @@
 
 
 
-@interface CursorZ0OtherTests : XCTestCase
-
-@end
 
 @implementation CursorZ0OtherTests
 
@@ -149,7 +156,7 @@
         char* sortInfoP = "HaS";
         
         strcpy(rowAchars, rowAsrc);
-        CursorO0HInewT rowA = CursorO0HCapi.newCursor(rowAchars, &TestAidZ0QCdata.gp64);
+        CursorO0HIthisT rowA = CursorO0HCapi.newCursor(rowAchars, &TestAidZ0QCdata.gp64);
         if(TestAidC.putTestChars(IS_EQL_ARC,
                                   rowA.apiP->sort(&rowA.data, &rowA.data, sortInfoP),
                                   __LINE__) != 0 ||
@@ -162,7 +169,7 @@
         
         
         strcpy(rowBchars, rowBsrc);
-        CursorO0HInewT rowB = CursorO0HCapi.newCursor(rowBchars, &TestAidZ0QCdata.gp64);
+        CursorO0HIthisT rowB = CursorO0HCapi.newCursor(rowBchars, &TestAidZ0QCdata.gp64);
         
         if(TestAidC.putTestChars(IS_HIGH_ARC,
                                   rowA.apiP->sort(&rowA.data, &rowB.data, sortInfoP),
@@ -198,10 +205,10 @@
         char *myExpectChars;
         
         strcpy(wkoCursorStr, origCursorStr);
-        CursorO0HInewT tRo = CursorO0HCapi.newCursor(wkoCursorStr, &TestAidZ0QCdata.gp64);
+        CursorO0HIthisT tRo = CursorO0HCapi.newCursor(wkoCursorStr, &TestAidZ0QCdata.gp64);
         
         strcpy(wkuCursorStr, updtCursorStr);
-        CursorO0HInewT tRu = CursorO0HCapi.newCursor(wkuCursorStr, &TestAidZ0QCdata.gp64);
+        CursorO0HIthisT tRu = CursorO0HCapi.newCursor(wkuCursorStr, &TestAidZ0QCdata.gp64);
         
         tRo.apiP->updateMatchingCursor(&tRo.data, &tRu.data);
         

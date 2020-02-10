@@ -66,9 +66,9 @@ typedef struct CursorO0HelperInstanceNewStruct
     // Instance functions:
     CursorO0HIapiPT apiP;  // The externalized methods to keep the instance as small as possible.
 
-} CursorO0HInewT, *CursorO0HInewPT;
-#define CursorHInewT CursorO0HInewT
-#define CursorHInew CursorO0HInew
+} CursorO0HIthisT, *CursorO0HIthisPT;
+#define CursorHIthisT CursorO0HIthisT
+#define CursorHIthis CursorO0HIthis
 
 
 
@@ -79,7 +79,7 @@ typedef struct CursorO0HelperClassApiStruct
     * A newCursor reformats the input data (journal or commaSep)
     * so copy or strlen the input row first as necessary.
     */
-    CursorO0HInewT (*newCursor)(char *jnlOrCsvLine, gpSllgChar64PT);
+    CursorO0HIthisT (*newCursor)(char *jnlOrCsvLine, gpSllgChar64PT);
     
 }CursorO0HCapiT, *CursorO0HCapiPT;
 extern CursorO0HCapiT CursorO0HCapi;

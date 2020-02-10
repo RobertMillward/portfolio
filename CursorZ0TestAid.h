@@ -60,8 +60,36 @@ typedef struct CursorO0QualityInstanceApiStruct
     ErrorWarnCountT (*toRowSafety)(lineNbrT, cfuncNameT);
     
 }CursorO0QIapiT, *CursorO0QIapiPT;
-
 extern CursorO0QIapiT CursorO0QIapi;
+
+typedef struct CursorO0QualityClassApiStruct
+{
+    void (*setupSuite)(lineNbrT);
+    bool (*isScheduled)(cfuncNameT, lineNbrT);
+    char* (*getAssertText)(cfuncNameT, lineNbrT);
+    
+    void (*setupCreateDestroy)(lineNbrT);
+    bool (*doCreateDestroy)(lineNbrT);
+    void (*teardownCreateDestroy)(lineNbrT);
+    
+    void (*setupIsMoreDescriptionSizes)(lineNbrT);
+    bool (*doIsMoreDescriptionSizes)(lineNbrT);
+    void (*teardownIsMoreDescriptionSizes)(lineNbrT);
+    
+    void (*setupSet3)(lineNbrT);
+    bool (*doSet3)(lineNbrT);
+    void (*teardownSet3)(lineNbrT);
+    
+    void (*setupSet4)(lineNbrT);
+    bool (*doSet4)(lineNbrT);
+    void (*teardownSet4)(lineNbrT);
+    
+    void (*teardownSuite)(lineNbrT);
+    
+}CursorO0QCapiT, *CursorO0QCapiPT;
+
+extern CursorO0QCapiT CursorO0QCapi;
+
 
 
 typedef struct CursorZ0QualiyInstanceThisStruct
@@ -79,8 +107,16 @@ typedef struct CursorZ0QualiyInstanceThisStruct
  * A newCursor reformats the input data (journal or commaSep)
  * so preserve the input row first as necessary.
  */
-extern CursorO0QIthisT newCursorZ0Test(char *jnlOrCsvLine, gpSllgChar64PT, lineNbrT);
-
+//extern CursorO0QIthisT newCursorZ0Test(char *jnlOrCsvLine, gpSllgChar64PT, lineNbrT);
+//typedef struct CursorO0QualityClassApiStruct
+//{
+//    /**
+//     * Create a ready to journal string.
+//     */
+//    void (*newThisQ)(CursorZ0HIdataPT data, char * here, massOfT, lineNbrT);
+//
+//}CursorO0QCapiT, *CursorO0QCapiPT;
+//extern CursorO0QCapiT CursorO0QCapi;
 
 
 
