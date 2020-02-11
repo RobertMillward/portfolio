@@ -59,9 +59,9 @@ typedef struct CursorO0QualityClassApiStruct
     bool (*isScheduled)(cfuncNameT, lineNbrT);
     char* (*getAssertText)(cfuncNameT, lineNbrT);
     
-    void (*setupSizes)(lineNbrT);
-    bool (*doSizes)(lineNbrT);
-    void (*teardownSizes)(lineNbrT);
+    void (*setupSizesSet1)(lineNbrT);
+    bool (*doSizesSet1)(lineNbrT);
+    void (*teardownSizesSet1)(lineNbrT);
     
     void (*setupSet2)(lineNbrT);
     bool (*doSet2)(lineNbrT);

@@ -20,15 +20,15 @@
 
  
 
-@interface CursorZ0SafetyTests : XCTestCase
+@interface CursorZ0SafetySet2Tests : XCTestCase
 
 @end
 
-@interface CursorZ0OtherTests : XCTestCase
+@interface CursorZ0OtherSet3Tests : XCTestCase
 
 @end
 
-@interface CursorZ0SizeTests : XCTestCase
+@interface CursorZ0SizeSet1Tests : XCTestCase
 
 @end
 
@@ -36,7 +36,7 @@
 
 
 
-@implementation CursorZ0SafetyTests
+@implementation CursorZ0SafetySet2Tests
 
 - (void)setUp
 {
@@ -49,9 +49,9 @@
 }
 
 
-- (void)test2019SafetyZ0{
+- (void)test2019SafetySet2{
     if(CursorO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        if(CursorO0QCapi.doSet2(__LINE__) != 0){
+        if(CursorO0QCapi.doSet2(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:CursorO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
@@ -63,20 +63,20 @@
 
 
 
-@implementation CursorZ0SizeTests
+@implementation CursorZ0SizeSet1Tests
 
 - (void)setUp
 {
-    CursorO0QCapi.setupSizes(__LINE__);
+    CursorO0QCapi.setupSizesSet1(__LINE__);
 }
 
 - (void)tearDown
 {
-    CursorO0QCapi.teardownSizes(__LINE__);
+    CursorO0QCapi.teardownSizesSet1(__LINE__);
 }
 
-- (void)test2999SizeofCursorZ0{
-    if(CursorO0QCapi.doSizes(__LINE__) != 0){
+- (void)test2999SizeofCursorSet1{
+    if(CursorO0QCapi.doSizesSet1(__LINE__)){
         XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:CursorO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
     }
 }
@@ -87,7 +87,17 @@
 
 
 
-@implementation CursorZ0OtherTests
+@implementation CursorZ0OtherSet3Tests
+
+- (void)setUp
+{
+    CursorO0QCapi.setupSet3(__LINE__);
+}
+
+- (void)tearDown
+{
+    CursorO0QCapi.teardownSet3(__LINE__);
+}
 
 - (void)test2019SortLowEqlHighZ0{
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
@@ -194,19 +204,10 @@
 }
  */
 
-- (void)test2019newCursorZ0Csv{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        char *doCursorStr = "zaz,\"zbz\",zcz,,zez,zfz,,,";
-        char *ckCursorStr = "zaz" FSS_ARC "a" "zbz" FSS_ARC "b" "zcz" FSS_ARC "c" "zez" FSS_ARC "e" "zfz" FSS_ARC "f";
-        char wkcsvCursorStr[1001];
-        strcpy(wkcsvCursorStr, doCursorStr);
-        //CursorO0HInewT tR = CursorO0HCapi.newCursor(wkcsvCursorStr, &TestAidZ0QCdata.gp64);
-        char wkjnlCursorStr[1001];
-        //tR.apiP->toRow(&tR.data, wkjnlCursorStr); TODO
-        
-        if(TestAidC.putTestChars(ckCursorStr, wkjnlCursorStr, __LINE__) != 0)
-        {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+- (void)test2019CsvSet3{
+    if(CursorO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(CursorO0QCapi.doSet3(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:CursorO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
 }
