@@ -4,8 +4,7 @@
 //  Created by Robert R on 10/22/14.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-
-
+// os
 #import <XCTest/XCTest.h>
 // api
 #import "ErrorHelperO0.h"
@@ -29,7 +28,7 @@
 }
 
 /**
- * This little bit of testing is not worth the crafting of a ErrorHelperZ0Aid.c/h set.
+ * This little bit of testing is not worth the crafting of a ErrorHelperZ0TestAid.c/h set.
  */
 - (void)test2099EHO0setGet
 {
@@ -39,12 +38,12 @@
         char* badTxt = "99.Bad text, good base";
         int badBase = 9999;
         char* goodTxt = " 1.Good text, bad base";
-        int badNbr = -1;
+        //int badNbr = -1;
         int goodNbr = 28;
         
         if(TestAidQCapi.putTestChars(CEINVAL, ErrorHelperSCapi.set(badTxt, goodBase), __LINE__) != 0 ||
            TestAidC.putTestChars(CEINVAL, ErrorHelperSCapi.set(goodTxt, badBase), __LINE__) != 0 ||
-           TestAidC.putTestChars(CEINVAL, ErrorHelperSCapi.get(goodNbr), __LINE__) != 0)
+           TestAidC.putTestChars(CENOSPC, ErrorHelperSCapi.get(goodNbr), __LINE__) != 0)
         {
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }

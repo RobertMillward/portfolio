@@ -94,7 +94,7 @@
     CursorO0QCapi.teardownSortSet4(__LINE__);
 }
 
-- (void)test2019SortLowEqlHighSet5{
+- (void)test2019SortLowEqlHighSet4{
     if(CursorO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
         if(CursorO0QCapi.doSortSet4(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:CursorO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
