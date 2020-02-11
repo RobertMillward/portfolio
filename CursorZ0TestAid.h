@@ -63,17 +63,21 @@ typedef struct CursorO0QualityClassApiStruct
     bool (*doSizesSet1)(lineNbrT);
     void (*teardownSizesSet1)(lineNbrT);
     
-    void (*setupSet2)(lineNbrT);
-    bool (*doSet2)(lineNbrT);
-    void (*teardownSet2)(lineNbrT);
+    void (*setupSafetySet2)(lineNbrT);
+    bool (*doSafetySet2)(lineNbrT);
+    void (*teardownSafetySet2)(lineNbrT);
     
-    void (*setupSet3)(lineNbrT);
-    bool (*doSet3)(lineNbrT);
-    void (*teardownSet3)(lineNbrT);
+    void (*setupCsvSet3)(lineNbrT);
+    bool (*doCsvSet3)(lineNbrT);
+    void (*teardownCsvSet3)(lineNbrT);
     
-    void (*setupSet4)(lineNbrT);
-    bool (*doSet4)(lineNbrT);
-    void (*teardownSet4)(lineNbrT);
+    void (*setupSortSet4)(lineNbrT);
+    bool (*doSortSet4)(lineNbrT);
+    void (*teardownSortSet4)(lineNbrT);
+    
+    void (*setupUpdateSet5)(lineNbrT);
+    bool (*doSetUpdateSet5)(lineNbrT);
+    void (*teardownUpdateSet5)(lineNbrT);
     
     void (*teardownSuite)(lineNbrT);
     
