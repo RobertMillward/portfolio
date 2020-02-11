@@ -42,10 +42,9 @@
         int badNbr = -1;
         int goodNbr = 28;
         
-        if(TestAidQCapi.putTestChars(CEINVAL, ErrorHelperACapi.set(badTxt, goodBase), __LINE__) != 0 ||
-           TestAidC.putTestChars(CEINVAL, ErrorHelperACapi.set(goodTxt, badBase), __LINE__) != 0 ||
-           TestAidC.putTestChars(CEINVAL, ErrorHelperACapi.get(badNbr), __LINE__) != 0 ||
-           TestAidC.putTestChars(CENOSPC, ErrorHelperACapi.get(goodNbr), __LINE__) != 0)
+        if(TestAidQCapi.putTestChars(CEINVAL, ErrorHelperSCapi.set(badTxt, goodBase), __LINE__) != 0 ||
+           TestAidC.putTestChars(CEINVAL, ErrorHelperSCapi.set(goodTxt, badBase), __LINE__) != 0 ||
+           TestAidC.putTestChars(CEINVAL, ErrorHelperSCapi.get(goodNbr), __LINE__) != 0)
         {
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
