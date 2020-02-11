@@ -213,7 +213,7 @@
         gpSllgChar32T myStruct = {NO_ARG_PTR_ARC, &TestAidZ0QCdata.twoWay, CURRENT_BASE_YEAR};
         Zint theSize = TimeSerNbrO0HCapi.getRowOfSerNbr(&myStruct);
         
-        if(TestAidQCapi.putTestInts(24, theSize, __LINE__) != 0 ||
+        if(TestAidQCapi.putTestInts(21, theSize, __LINE__) != 0 ||
            assertForDebug){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidQCapi.getAssertText(__FUNCTION__)]);
         }

@@ -1,107 +1,131 @@
 //
-//  Folders4Tests.m
+//  FoldersO4XCTests.m
 //
 //  Created by Robert Russell Millward on 10/16/13.
-//  Copyright (c) 2013 Robert Russell Millward. All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward. All rights reserved.
 //
+// os
 #import <XCTest/XCTest.h>
-#import "BufferShare0.h"
-#import "Folders4.h"
-#import "Row2.h"
-#import "TestAid0.h"
-#import "ErrorHelper0.h"
-#import "InitDestroyHelper1.h"
+#import "FoldersO4TestAid.h"
+//#import "TestAidZ0.h" // until the fetch can be eliminated
 
-@interface Folders4Tests : XCTestCase
+/**
+ * Alphabetical list of tests batches.
+ */
+@interface FoldersO4AboutTests : XCTestCase
+@end
 
+@interface FoldersO4Set1Tests : XCTestCase
+@end
+
+@interface FoldersO4Set2Tests : XCTestCase
+@end
+
+@interface FoldersO4Set3Tests : XCTestCase
+@end
+
+@interface FoldersO4ZooTests : XCTestCase
 @end
 
 
-@implementation Folders4Tests
 
 
-// The execution does this per test.
+
+@implementation FoldersO4Set1Tests
 
 - (void)setUp
 {
-    [super setUp];
-    
-    // Set-up code below here.
-
-    TestAidC.nextTx();
-
-    initStatusT status = initFolders();
-    
+    FoldersO4QCapi.setupSet1(__LINE__);
 }
 
 - (void)tearDown
 {
-    TestAidC.getCounts();
-    
-    // Tear-down code above here.
-    
-    [super tearDown];
+    FoldersO4QCapi.teardownSet1(__LINE__);
 }
 
-
-
-#pragma mark - Tests
-
-
--(void) testGetFolderInfoThatExists
+-(void) test2019GetExistsYes
 {
-    char here[4096];
-    BufferShare bufShr = newBufferShare(here, here + sizeof(here) -1, testAid0TxIX);
-    likePT like = "some*like";
-    
-    FolderC.getFolderInfo(TA_HOMPATH, TA_GRPFLDR, like, &bufShr, testAid0TxIX);
-    Row mFI = newRow(bufShr.currentRead, testAid0TxIX);
-    
-    if(TestAidC.putTestInts(ACTIVE_ROWST, *mFI.rowStatus, __LINE__) != 0 ||
-       TestAidC.putTestChars("folderInfo", mFI.itemName, __LINE__) != 0  ||
-       1 == 2){
-        TestAidC.asserT(__FUNCTION__);
-    }
-}
-
--(void) testGetExistsNo
-{
-    char *retPtr = IDH_DO_HERE_INIT;
-    
-    int tE = FolderC.exists(TA_HOMPATH, TA_GRPFLDR, testAid0TxIX);
-    if(tE != EMPTY_ROWST){
-        retPtr = FolderC.remove(TA_GRPFLDR, testAid0TxIX);
-        
-        if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-            TestAidC.asserT(__FUNCTION__);
+    if(FoldersO4QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        bool ewc = FoldersO4QCapi.doSet1(__LINE__);
+        if(ewc){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
-    
-    
-    retPtr = FolderC.makeFolder(TA_GRPFLDR, testAid0TxIX);
-    if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-        TestAidC.asserT(__FUNCTION__);
-    }else{
-        retPtr = FolderC.remove(TA_GRPFLDR, testAid0TxIX);
-        
-        if(TestAidC.putTestChars(CEAOK, retPtr, __LINE__) != 0){
-            TestAidC.asserT(__FUNCTION__);
-        }
-    }
-}
-
--(void) testGetExistsYes
-{
-    int tE = FolderC.exists(TA_HOMPATH, TA_GRPFLDR, testAid0TxIX);
-    if(TestAidC.putTestInts(ACTIVE_ROWST, tE, __LINE__) != 0){
-        TestAidC.asserT(__FUNCTION__);
-    }
-}
-
-
-- (void)testZReportSuitStats
-{
-    TestAidC.processSuiteStats();
 }
 
 @end
+
+@implementation FoldersO4Set2Tests
+
+- (void)setUp
+{
+    FoldersO4QCapi.setupSet2(__LINE__);
+}
+
+- (void)tearDown
+{
+    FoldersO4QCapi.teardownSet2(__LINE__);
+}
+-(void) test2019GetFolderInfoThatExists
+{
+    if(FoldersO4QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        bool ewc = FoldersO4QCapi.doSet2(__LINE__);;
+        if(ewc){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+@end
+
+@implementation FoldersO4Set3Tests
+
+- (void)setUp
+{
+    FoldersO4QCapi.setupSet2(__LINE__);
+}
+
+- (void)tearDown
+{
+    FoldersO4QCapi.teardownSet2(__LINE__);
+}
+-(void) test2019GetFolderInfoThatExists
+{
+    if(FoldersO4QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        bool ewc = FoldersO4QCapi.doSet3(__LINE__);;
+        if(ewc){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+@end
+
+
+
+@implementation FoldersO4AboutTests
+
+- (void)setUp
+{
+    FoldersO4QCapi.setupSuite0(__LINE__);
+}
+
+- (void)tearDown
+{
+}
+@end
+
+
+@implementation FoldersO4ZooTests
+- (void)setUp
+{
+}
+
+- (void)tearDown
+{
+    FoldersO4QCapi.teardownSuite0(__LINE__);
+    //TestAidC.processSuiteStats();
+}
+
+@end // FoldersO4XCTests.m
+/**
+ *
+ */

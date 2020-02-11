@@ -1,20 +1,26 @@
 //
-//  FoldersO4.h (TODO in the Box tree)
+//  FoldersO4.h
 //
 //  Created by Robert Russell Millward on 11/22/13.
-//  Copyright (c) 2013 Robert Russell Millward.
-//  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
+#ifndef FoldersO4_h
+#define FoldersO4_h
+// os
+// helper api's
+//#include "BufferShareO0.h"
+//#include "RowO2.h"
+//#include "DictionaryO3.h"
+//#include "TransactionO3.h"
+#include "PeopleGroupO0.h"
+// data plans
+#include "ArchitectureZ0Plan.h"
+#include "BufferShareZ0Plan.h"
+// app api's
 
-#ifndef _FoldersO4_h
-#define _FoldersO4_h
-
-#include "BufferShareO0.h"
-#include "RowO2.h"
-#include "DictionaryO3.h"
-#include "TransactionO3.h"
-#include "UserGroupO2.h"
-
+// temporary, move to plan then move out
+#define IDH_DO_HERE_INIT "Do"
+#define IDH_IS_DONE_STEP "Done"
 
 typedef char *branchPT;
 typedef char *likePT;
@@ -34,41 +40,21 @@ enum folderInfoO4T
 };
 
 
-typedef struct FolderO4Y
+typedef struct FolderO4HelperClassApiStruct
 {
-    int (*exists)(
-            branchPT branch,
-                  // userGroupT group,
-            likePT like,
-                  // BufferShareP mgr,
-            tranIxT txIX);
-    void (*getFolderInfo)(
-            branchPT branch,
-            userGroupT group,
-            likePT like,
-            BufferShareP mgr,
-            tranIxT txIX);
-    char *(*makeFolder)(
-            pathPT path,
-            tranIxT txIX);
-    char *(*chgFolder)(
-            pathPT path,
-            tranIxT txIX);
-    char *(*copyJournal)(
-            char *journal,
-            char *from,
-            char *to,
-            tranIxT txIX);
-    char *(*remove)(
-            branchPT branch,
-            tranIxT txIX);
-}FolderO4X, *FolderO4XP;
+    int  (*exists)          (branchPT, peopleGroupIdT, likePT, BufferShareZ0HIdataPT, gpSllgChar64PT);
+    void (*getInfo)         (branchPT, peopleGroupIdT, likePT, BufferShareZ0HIdataPT, gpSllgChar64PT);
+    char *(*make)           (pathPT, gpSllgChar64PT);
+    char *(*change)         (pathPT, gpSllgChar64PT);
+    char* (*copyJournal)    (char *journal, char *from, char *to, gpSllgChar64PT);
+    char *(*remove)         (branchPT, gpSllgChar64PT);
+}FolderO4HCapiT, *FolderO4HCapiPT;
 
-#define FolderX FolderO4X
-#define FolderC FolderO4C
-extern FolderX FolderC;
+#define FolderHCapiT FolderO4HCapiT
+#define FolderHCapi FolderO4HCapi
+extern FolderHCapiT FolderHCapi;
 
-#define initFolders initFoldersO4
-extern initStatusT initFolders(void);
-
-#endif
+#endif /* FoldersO4_h */
+/**
+ *
+ */

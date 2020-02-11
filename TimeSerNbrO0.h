@@ -58,18 +58,18 @@ extern TimeSerNbrLinkO0HIapiT TimeSerNbrLinkO0HIapi;
 /**
  * The "new" instance. apiPT->the api and dataT has the data.
  */
-typedef struct TimeSerNbrLinkO0HelperInstanceNewStruct
+typedef struct TimeSerNbrLinkO0HelperInstanceThisStruct
 {
     TimeSerNbrLinkO0HIapiPT apiP;
     TimeSerNbrLinkZ0HIdataT data;
-}TimeSerNbrLinkO0AInewT, *TimeSerNbrLinkO0AInewPT;
+}TimeSerNbrLinkO0AIthisT, *TimeSerNbrLinkO0AIthisPT, TimeSerNbrLinkO0AInewxT;
 /**
  * The Link Class functions.
  */
 typedef struct TimeSerNbrLinkO0HelperClassApiStruct
 {
-    TimeSerNbrLinkO0AInewT (*newHasRow)   (abstractRowT);
-    TimeSerNbrLinkO0AInewT (*newHasFields)(timeSerNbrNodeIdT grantor,   timeSerNbrNodeIdT grntee,
+    TimeSerNbrLinkO0AIthisT (*newHasRow)   (abstractRowT);
+    TimeSerNbrLinkO0AIthisT (*newHasFields)(timeSerNbrNodeIdT grantor,   timeSerNbrNodeIdT grntee,
                                            timeSerNbrDateTimeT,         timeSerNbrDateTimeT,
                                            gpSllgChar64PT);
 }TimeSerNbrLinkO0HCapiT, *TimeSerNbrLinkO0HCapiPT;

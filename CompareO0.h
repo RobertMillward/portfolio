@@ -45,7 +45,7 @@ typedef struct CompareO0HelperClassApiStructure
 #define CompareHCapi CompareO0HCapi
 extern const CompareHCapiT CompareHCapi;
 
-#endif /* defined(CompareO0_h) */
+#endif /* CompareO0_h */
 /**
  *
  */

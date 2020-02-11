@@ -11,7 +11,7 @@
 #include "RowZ0Plan.h"
 // api's
 
-typedef const struct RowO0HCapiS
+typedef const struct RowO0HelperClassApiStruct
 {
     /**
      * Initialize this Row to the empty char[]. The length can be MIN_FIELD_Z_ROW or greater.
