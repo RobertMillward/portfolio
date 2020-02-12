@@ -40,19 +40,19 @@ enum folderInfoO4T
 };
 
 
-typedef struct FolderO4HelperClassApiStruct
+typedef struct FoldersO4HelperClassApiStruct
 {
-    int  (*exists)          (branchPT, peopleGroupIdT, likePT, BufferShareZ0HIdataPT, gpSllgChar64PT);
-    void (*getInfo)         (branchPT, peopleGroupIdT, likePT, BufferShareZ0HIdataPT, gpSllgChar64PT);
-    char *(*make)           (pathPT, gpSllgChar64PT);
-    char *(*change)         (pathPT, gpSllgChar64PT);
+    int   (*exists)         (branchPT, peopleGroupIdT, likePT, BufferShareZ0HIdataPT, gpSllgChar64PT);
+    void  (*getInfo)        (branchPT, peopleGroupIdT, likePT, BufferShareZ0HIdataPT, gpSllgChar64PT);
+    char* (*make)           (pathPT, gpSllgChar64PT);
+    char* (*change)         (pathPT, gpSllgChar64PT);
     char* (*copyJournal)    (char *journal, char *from, char *to, gpSllgChar64PT);
-    char *(*remove)         (branchPT, gpSllgChar64PT);
-}FolderO4HCapiT, *FolderO4HCapiPT;
+    char* (*remove)         (branchPT, gpSllgChar64PT);
+}FoldersO4HCapiT, *FoldersO4HCapiPT;
 
-#define FolderHCapiT FolderO4HCapiT
-#define FolderHCapi FolderO4HCapi
-extern FolderHCapiT FolderHCapi;
+#define FoldersHCapiT FoldersO4HCapiT
+#define FoldersHCapi FoldersO4HCapi
+extern FoldersHCapiT FoldersHCapi;
 
 #endif /* FoldersO4_h */
 /**
