@@ -8,8 +8,6 @@
 #define FoldersO4TestAid_h
 #include "ArchitectureZ0Plan.h"
 
-#define FOLDERS_TEST_PATH "foldersTest"
-#define FOLDERS_TEST_DIR  "youFoundMe"
 
 typedef struct FoldersO4QualityClassApiStruct
 {

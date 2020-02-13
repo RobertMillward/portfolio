@@ -21,7 +21,7 @@
 @interface FoldersO4GetInfoSet2Tests : XCTestCase
 @end
 
-@interface FoldersO4Set3Tests : XCTestCase
+@interface FoldersO4ChangeSet3Tests : XCTestCase
 @end
 
 @interface FoldersO4ZooTests : XCTestCase
@@ -77,7 +77,7 @@
 }
 @end
 
-@implementation FoldersO4Set3Tests
+@implementation FoldersO4ChangeSet3Tests
 
 - (void)setUp
 {

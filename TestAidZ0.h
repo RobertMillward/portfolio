@@ -41,7 +41,9 @@ extern TestAidZ0QCdataT TestAidZ0QCdata;
 #define WIKIDB_SHARED_APP   "WIKIDBG"
 
 #define TA_HOMPATH "." // See ArchitectureInit for overall home
-#define TA_GRPFLDR "folderTest"
+//#define TA_GRPFLDR "foldersTest"
+#define FOLDERS_TEST_PATH "foldersTest"
+#define FOLDERS_TEST_DIR  "youFoundMe"
 
 /*
  */
