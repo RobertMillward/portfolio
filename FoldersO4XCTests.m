@@ -15,10 +15,10 @@
 @interface FoldersO4AboutTests : XCTestCase
 @end
 
-@interface FoldersO4Set1Tests : XCTestCase
+@interface FoldersO4ExistsSet1Tests : XCTestCase
 @end
 
-@interface FoldersO4Set2Tests : XCTestCase
+@interface FoldersO4GetInfoSet2Tests : XCTestCase
 @end
 
 @interface FoldersO4Set3Tests : XCTestCase
@@ -31,22 +31,22 @@
 
 
 
-@implementation FoldersO4Set1Tests
+@implementation FoldersO4ExistsSet1Tests
 
 - (void)setUp
 {
-    FoldersO4QCapi.setupSet1(__LINE__);
+    FoldersO4QCapi.setupExistsSet1(__LINE__);
 }
 
 - (void)tearDown
 {
-    FoldersO4QCapi.teardownSet1(__LINE__);
+    FoldersO4QCapi.teardownExistsSet1(__LINE__);
 }
 
 -(void) test2019GetExistsYes
 {
     if(FoldersO4QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        bool ewc = FoldersO4QCapi.doSet1(__LINE__);
+        bool ewc = FoldersO4QCapi.doExistsSet1(__LINE__);
         if(ewc){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
@@ -55,21 +55,21 @@
 
 @end
 
-@implementation FoldersO4Set2Tests
+@implementation FoldersO4GetInfoSet2Tests
 
 - (void)setUp
 {
-    FoldersO4QCapi.setupSet2(__LINE__);
+    FoldersO4QCapi.setupGetInfoSet2(__LINE__);
 }
 
 - (void)tearDown
 {
-    FoldersO4QCapi.teardownSet2(__LINE__);
+    FoldersO4QCapi.teardownGetInfoSet2(__LINE__);
 }
--(void) test2019GetFolderInfoThatExists
+-(void) test2019GetInfoThatExists
 {
     if(FoldersO4QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        bool ewc = FoldersO4QCapi.doSet2(__LINE__);;
+        bool ewc = FoldersO4QCapi.doGetInfoSet2(__LINE__);;
         if(ewc){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
@@ -81,17 +81,17 @@
 
 - (void)setUp
 {
-    FoldersO4QCapi.setupSet2(__LINE__);
+    FoldersO4QCapi.setupChangeSet3(__LINE__);
 }
 
 - (void)tearDown
 {
-    FoldersO4QCapi.teardownSet2(__LINE__);
+    FoldersO4QCapi.teardownChangeSet3(__LINE__);
 }
--(void) test2019GetFolderInfoThatExists
+-(void) test2019DoChangeSet3
 {
     if(FoldersO4QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        bool ewc = FoldersO4QCapi.doSet3(__LINE__);;
+        bool ewc = FoldersO4QCapi.doChangeSet3(__LINE__);;
         if(ewc){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:FoldersO4QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
@@ -105,11 +105,12 @@
 
 - (void)setUp
 {
-    FoldersO4QCapi.setupSuite0(__LINE__);
+    FoldersO4QCapi.setupSuite(__LINE__);
 }
 
 - (void)tearDown
 {
+    // No teardown for suite
 }
 @end
 
@@ -117,11 +118,12 @@
 @implementation FoldersO4ZooTests
 - (void)setUp
 {
+    // No initialization for Zoo (suite)
 }
 
 - (void)tearDown
 {
-    FoldersO4QCapi.teardownSuite0(__LINE__);
+    FoldersO4QCapi.teardownSuite(__LINE__);
     //TestAidC.processSuiteStats();
 }
 

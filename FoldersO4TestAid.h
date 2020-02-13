@@ -7,28 +7,30 @@
 #ifndef FoldersO4TestAid_h
 #define FoldersO4TestAid_h
 #include "ArchitectureZ0Plan.h"
-//#include "ErrorHelperZ0Plan.h"
+
+#define FOLDERS_TEST_PATH "foldersTest"
+#define FOLDERS_TEST_DIR  "youFoundMe"
 
 typedef struct FoldersO4QualityClassApiStruct
 {
-    void (*setupSuite0)(lineNbrT);
+    void (*setupSuite)(lineNbrT);
     bool (*isScheduled)(cfileNameT, lineNbrT);
     char* (*getAssertText)(cfuncNameT, lineNbrT);
     
-    void (*setupSet1)(lineNbrT);
-    bool (*doSet1)(lineNbrT);
-    void (*teardownSet1)(lineNbrT);
+    void (*setupExistsSet1)(lineNbrT);
+    bool (*doExistsSet1)(lineNbrT);
+    void (*teardownExistsSet1)(lineNbrT);
     
     
-    void (*setupSet2)(lineNbrT);
-    bool (*doSet2)(lineNbrT);
-    void (*teardownSet2)(lineNbrT);
+    void (*setupGetInfoSet2)(lineNbrT);
+    bool (*doGetInfoSet2)(lineNbrT);
+    void (*teardownGetInfoSet2)(lineNbrT);
     
-    void (*setupSet3)(lineNbrT);
-    bool (*doSet3)(lineNbrT);
-    void (*teardownSet3)(lineNbrT);
+    void (*setupChangeSet3)(lineNbrT);
+    bool (*doChangeSet3)(lineNbrT);
+    void (*teardownChangeSet3)(lineNbrT);
     
-    void (*teardownSuite0)(lineNbrT);
+    void (*teardownSuite)(lineNbrT);
     
 }FoldersO4QCapiT, *FoldersO4QCapiPT;
 
