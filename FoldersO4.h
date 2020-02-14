@@ -23,7 +23,6 @@
 #define IDH_IS_DONE_STEP "Done"
 
 typedef char *branchPT;
-typedef char *likePT;
 typedef char *pathPT;
 
 #define folderInfoW "folderInfo"
