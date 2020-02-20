@@ -5,11 +5,13 @@
 //  Copyright (c) 2014 Robert Russell Millward.
 //  All rights reserved.
 //
-
-#ifndef __UnixStreamO0__
-#define __UnixStreamO0__
-#import <stdlib.h>
-#import "ArchitectureO0.h"
+#ifndef UnixStreamO0_h
+#define UnixStreamO0_h
+// os
+#include <stdlib.h>
+#include <stdio.h>
+// data plans
+#include "ArchitectureZ0Plan.h"
 /*
  */
 #pragma mark - init and destroy.
@@ -35,7 +37,7 @@
 #pragma mark - Class Methods
 /*
  */
-typedef struct UnixStreamO0goClassMethodsStruct
+typedef struct UnixStreamO0ServiceClassApiStruct
 {
     FILE* (*open)(char *fullPath, char* X_UXSTRM);
     Ulng (*write)(char* data, size_t itemSize, size_t itemCount, FILE* stream);
@@ -50,7 +52,7 @@ typedef struct UnixStreamO0goClassMethodsStruct
     Slng (*isError)(FILE* stream);
     void (*clearError)(FILE* stream);
     FILE* (*memopen)(char* buf, int size, char* mode);
-}UnixStreamO0goCT, *UnixStreamO0goCPT;
+}UnixStreamO0SCapiT, *UnixStreamO0SCapiPT;
 
 #define RO_MODE_UXSTRM "r"
 #define APPEND_MODE_UXSTRM "a"
@@ -59,11 +61,14 @@ typedef struct UnixStreamO0goClassMethodsStruct
 #define BINARY_MEMORY_UXSTRM "b"  // for use with fmemopen()
 #define EXCLUSIVE_MODE_UXSTRM "x"
 
-#define UnixStreamCT UnixStreamO0goCT
-#define UnixStreamC UnixStreamO0C
-extern UnixStreamCT UnixStreamC;
+#define UnixStreamSCapiT UnixStreamO0SCapiT
+#define UnixStreamSCapi UnixStreamO0SCapi
+extern UnixStreamSCapiT UnixStreamSCapi;
 
-#endif /* defined(__UnixStreamO0__) */
+#endif /* UnixStreamO0_h */
+/**
+ *
+ */
 
 
 
