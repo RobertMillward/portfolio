@@ -2,11 +2,12 @@
 //  HashBasicsO0.h
 //
 //  Created by Robert R on 2/3/15.
-//  Copyright (c) 2015 Robert Russell Millward.  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 #ifndef HashBasicsO0_h
 #define HashBasicsO0_h
 // os
+// helper and service api's
 // data plans
 #include "HashBasicsZ0Plan.h"
 // api's
@@ -51,4 +52,7 @@ typedef struct HashBasicsO0HelperClassApiStruct
 extern HashBasicsHCapiT HashBasicsHCapi;
 
 
-#endif /* defined(HashBasicsO0_h) */
+#endif /* HashBasicsO0_h */
+/**
+ *
+ */

@@ -26,37 +26,37 @@
 #pragma mark - The instance
 /*
  */
-typedef struct PermissionO0ApplicationInstanceDataStruct
-{
-    /**
-     * The PeopleGroup for this permission.
-     */
-    peopleGroupIdT peopleGroupId;
-    /**
-     * The signature of the application being operated.
-     * How many weeks old the version being run is.
-     */
-    appSigT         appSig;
-    appWeeksOldT    appWeeksOldOverRide;
-    /**
-     * The signature of the role.
-     * The level of the role this person is allowed to access.
-     */
-    roleSigT    roleSig;
-    roleLevelT  rollLevel;
-    /**
-     * The signature of the person operating the app.
-     * Their self assessed expertise level (affects prompting).
-     */
-    personSigT      personSig;
-    roleExpertiseT  roleExpertise;
-    /**
-     * Overhead variables.
-     */
-    gpTxPplGrpBatchTwoWayO0PT flagsForTwoWayEtAlP;
-    gpVersionLevelO0PT flagsForCodeVersionAndLevelP;
-    
-}PermissionO0AIdataT, *PermissionO0AIdataPT;
+//typedef struct PermissionO0ApplicationInstanceDataStruct
+//{
+//    /**
+//     * The PeopleGroup for this permission.
+//     */
+//    peopleGroupIdT peopleGroupId;
+//    /**
+//     * The signature of the application being operated.
+//     * How many weeks old the version being run is.
+//     */
+//    appSigT         appSig;
+//    appWeeksOldT    appWeeksOldOverRide;
+//    /**
+//     * The signature of the role.
+//     * The level of the role this person is allowed to access.
+//     */
+//    roleSigT    roleSig;
+//    roleLevelT  rollLevel;
+//    /**
+//     * The signature of the person operating the app.
+//     * Their self assessed expertise level (affects prompting).
+//     */
+//    personSigT      personSig;
+//    roleExpertiseT  roleExpertise;
+//    /**
+//     * Overhead variables.
+//     */
+//    gpTxPplGrpBatchTwoWayO0PT flagsForTwoWayEtAlP;
+//    gpVersionLevelO0PT flagsForCodeVersionAndLevelP;
+//    
+//}PermissionO0AIdataT, *PermissionO0AIdataPT;
 
 
 
