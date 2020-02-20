@@ -1,23 +1,18 @@
 //
 //  CommaSepO3.h
 //
-//  Created by Robert Russell Millward
-//  on 9/26/13.
-//  Copyright (c) 2013 Robert Russell Millward.
-//  All rights reserved.
+//  Created by Robert Russell Millward  on 9/26/13.
+//  Copyright (c) 2013 Robert Russell Millward.  All rights reserved.
 //
-/**
- * Special parameters notes for this package:
- * - uses no memory so does not need group size information, does use Id
- * - DOES transaction trace logging so does use the transaction Id (probably TRAN_IX) and isBatch information
- * - may have versions using inheritance so has version and level information
- */
 #ifndef CommaSepO3_h
 #define CommaSepO3_h
+// os
 #include <stdio.h>
-#include "ArchitectureO0.h"
+// helper and service api's
 #include "TransactionO3.h"
-#include "InitDestroyHelperO0.h"
+//#include "InitDestroyHelperO0.h"
+// data plans
+#include "ArchitectureZ0Plan.h"
 
 #define COMMASEP_PATH "Downloads/Sources/Databases"
 
@@ -28,7 +23,7 @@
 /**
  * Instance data.
  */
-typedef struct CommaSepO3toInstanceDataStruct
+typedef struct CommaSepO3SInstanceDataStruct
 {
     /**
      * Not yet open or open for writing else open for reading.
@@ -48,47 +43,47 @@ typedef struct CommaSepO3toInstanceDataStruct
      * Overhead variables.
      */
     PermissionO0IPT permissionP;
-    gpVersionLevelO0PT flagsForCodeVersionAndLevelP;
+    gpVersionLevelZ0PT flagsForCodeVersionAndLevelP;
     FILE *cstream;
     
-}CommaSepO3toIT, *CommaSepO3toIPT;
+}CommaSepO3SIdataT, *CommaSepO3SIdataPT;
 
 
 /**
  * Instance methods.
  * Other methods may refer to these through the extern immediately below.
  */
-typedef struct CommaSepO3goInstanceMethodsStruct
+typedef struct CommaSepO3ServiceInstanceApiStruct
 {
     /**
      *
      */
-    void (* close)(CommaSepO3toIPT dataP);
+    void (* close)(CommaSepO3SIdataPT dataP);
     /**
      *
      */
-    void (* openRead)(fileNmPT file, CommaSepO3toIPT dataP);
+    void (* openRead)(fileNmPT file, CommaSepO3SIdataPT dataP);
     /**
      *
      */
-    void (* read)(int length, char *buffer, CommaSepO3toIPT dataP);
+    void (* read)(int length, char *buffer, CommaSepO3SIdataPT dataP);
     /**
      *
      */
-    Sint (* isAtEof)(CommaSepO3toIPT dataP);
+    Sint (* isAtEof)(CommaSepO3SIdataPT dataP);
     
-}CommaSepO3goIT, *CommaSepO3goIPT;
+}CommaSepO3SIapiT, *CommaSepO3SIapiPT;
 
-extern CommaSepO3goIT CommaSepO3go;
+extern CommaSepO3SIapiT CommaSepO3SIapi;
 
 
 
 typedef struct CommaSepO3InstanceStruct // (both data and methods)
 {
-    CommaSepO3goIPT go;
-    CommaSepO3toIT to;
+    CommaSepO3SIapiPT apiP;
+    CommaSepO3SIdataT data;
     
-} CommaSepO3IT, *CommaSepO3IPT;
+} CommaSepO3SIthisT, *CommaSepO3SIthisPT;
 #define CommaSepIT CommaSepO3IT
 #define CommaSepIPT CommaSepO3IPT
 
@@ -107,7 +102,7 @@ typedef struct CommaSepsInitO3Y
      * existing now does not guarantee existing later.\
      * Runs successfully only before calling init().
      */
-    void (* initPath)(pathPT path, gpTxPplGrpBatchTwoWayO0PT info);
+    void (* initPath)(pathPT path, gpTxPplGrpBatchTwoWayZ0PT info);
 
     
 }CommaSepsInitO3X, *CommaSepsInitO3XP;
@@ -122,11 +117,14 @@ extern CommaSepsInitX CommaSepsInitO3C;
  * Note: destroy is done with InitDestroyHelper.destroyAll().
  */
 #define initCommaSeps initCommaSepsO3
-extern initStatusT initCommaSeps(gpTxPplGrpBatchTwoWayO0PT info);
+extern initStatusT initCommaSeps(gpTxPplGrpBatchTwoWayZ0PT info);
 
 #pragma mark - New CommaSep instance.
 
 #define newCommaSep newCommaSepO3
-extern CommaSepIT newCommaSep(PermissionO0IPT permissionP);
+extern CommaSepO3SIthisT newCommaSep(PermissionO0IPT permissionP);
 
-#endif  // CommaSepO3.h
+#endif  // CommaSepO3_h
+/**
+ *
+ */
