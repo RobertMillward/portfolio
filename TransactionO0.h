@@ -10,7 +10,7 @@
 // helper api's
 // data plans
 #include "ArchitectureZ0Plan.h"
-#include "TransactionZ0Plan.h"
+//#include "TransactionZ0Plan.h"
 
 
 typedef const struct TransactionEnvO0HCapiStruct
@@ -34,11 +34,11 @@ typedef const struct TransactionEnvO0HCapiStruct
     char*
     (* getDevOrProd)(gpTxPplGrpBatchTwoWayZ0PT);
     
-}TransactionEnvO0HCapiT, *TransactionEnvO0HCapiPT;
+}TransactionEnvO0SCapiT, *TransactionEnvO0SCapiPT;
 
-#define TransactionEnvHCapiT TransactionEnvO0HCapiT
-#define TransactionEnvHCapi TransactionEnvO0HCapi
-extern TransactionEnvHCapiT TransactionEnvHCapi;
+#define TransactionEnvSCapiT TransactionEnvO0SCapiT
+#define TransactionEnvSCapi TransactionEnvO0SCapi
+extern TransactionEnvSCapiT TransactionEnvSCapi;
 
 
 

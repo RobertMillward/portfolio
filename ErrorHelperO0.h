@@ -12,7 +12,7 @@
 // api
 
 
-typedef struct ErrorHelperO0HelpClassStruct
+typedef struct ErrorHelperO0ServiceClassStruct
 {
     char *(*set)(char *msgStr, int base); // Do first, never thread safe
     char *(*get)(int msgIx);    // error code, x.missing, not init, invalid
@@ -25,7 +25,7 @@ extern ErrorHelperSCapiT ErrorHelperSCapi;
 
 //#define ErrorHelperACapi ErrorHelperO0HCapi // until they are all fixed
 
-#endif /* defined(ErrorHelperO0_h) */
+#endif /* ErrorHelperO0_h */
 /**
  */
 
