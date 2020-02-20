@@ -42,7 +42,7 @@ typedef struct CommaSepO3SInstanceDataStruct
     /**
      * Overhead variables.
      */
-    PermissionO0IPT permissionP;
+    //PermissionO0IPT permissionP;
     gpVersionLevelZ0PT flagsForCodeVersionAndLevelP;
     FILE *cstream;
     
@@ -122,7 +122,7 @@ extern initStatusT initCommaSeps(gpTxPplGrpBatchTwoWayZ0PT info);
 #pragma mark - New CommaSep instance.
 
 #define newCommaSep newCommaSepO3
-extern CommaSepO3SIthisT newCommaSep(PermissionO0IPT permissionP);
+extern CommaSepO3SIthisT newCommaSep(void/*PermissionO0IPT permissionP*/);
 
 #endif  // CommaSepO3_h
 /**
