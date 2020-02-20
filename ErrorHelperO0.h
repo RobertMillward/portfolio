@@ -17,13 +17,13 @@ typedef struct ErrorHelperO0HelpClassStruct
     char *(*set)(char *msgStr, int base); // Do first, never thread safe
     char *(*get)(int msgIx);    // error code, x.missing, not init, invalid
     
-}ErrorHelperO0HCapiT, *ErrorHelperO0HCapiPT;
+}ErrorHelperO0SCapiT, *ErrorHelperO0SCapiPT;
 
-#define ErrorHelperHCapiT ErrorHelperO0HCapiT
-#define ErrorHelperHCapi ErrorHelperO0HCapi
-extern ErrorHelperHCapiT ErrorHelperHCapi;
+#define ErrorHelperSCapiT ErrorHelperO0SCapiT
+#define ErrorHelperSCapi ErrorHelperO0SCapi
+extern ErrorHelperSCapiT ErrorHelperSCapi;
 
-#define ErrorHelperACapi ErrorHelperO0HCapi // until they are all fixed
+//#define ErrorHelperACapi ErrorHelperO0HCapi // until they are all fixed
 
 #endif /* defined(ErrorHelperO0_h) */
 /**
