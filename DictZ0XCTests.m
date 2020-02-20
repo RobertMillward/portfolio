@@ -1,5 +1,6 @@
 //
-//  DictZ0XCTests.m - rename
+//  DictZ0XCTests.m -
+//  2020Mar10Dev
 //
 //  Created by Robert Russell Millward on 12/3/19.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -12,9 +13,13 @@
 // quality
 #import "TestAidZ0.h"
 
-@interface DictO0GetTests : XCTestCase
-
+@interface DictO0CheckTests : XCTestCase
 @end
+@interface DictO0FormatTests : XCTestCase
+@end
+@interface DictO0GetTests : XCTestCase
+@end
+
 
 @implementation DictO0GetTests
 - (void)setUp{
@@ -51,29 +56,11 @@
 @end
 
 
-///**
-// * Check
-// */
-//@interface DictO0CheckTests : XCTestCase
-//
-//@end
-//
-//@implementation DictO0CheckTests
-//- (void)setUp{
-//}
-//
-//- (void)tearDown{
-//}
-//
-//@end
-
 
 /**
  * Check
  */
-@interface DictO0CheckTests : XCTestCase
 
-@end
 
 @implementation DictO0CheckTests
 - (void)setUp{
@@ -139,9 +126,7 @@
 /**
  * Format
  */
-@interface DictO0FormatTests : XCTestCase
 
-@end
 
 @implementation DictO0FormatTests
 - (void)setUp{

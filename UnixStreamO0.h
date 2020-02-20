@@ -1,8 +1,9 @@
 //
 //  UnixStreamO0.h
+//  2020Mar10Dev
 //
 //  Created by Robert R on 10/17/14.
-//  Copyright (c) 2014 Robert Russell Millward.  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 #ifndef UnixStreamO0_h
 #define UnixStreamO0_h

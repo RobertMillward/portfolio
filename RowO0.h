@@ -1,5 +1,6 @@
 //
 //  RowO0.h - A thread safe library to robustly support Row manipulation.
+//  2020Mar10Dev
 //
 //  Created by Robert Russell Millward on 10/4/19.
 //  Copyright (c) 2020 Robert Russell Millward. All rights reserved
@@ -27,10 +28,10 @@ typedef const struct RowO0HelperClassApiStruct
      * The field cannot contain a field or row separator.
      */
     Sint // -1 if error else 0
-    (*addMore)(fieldLetterRowT, sourcePT, targetPT);
+    (*addMore)(fieldLetterT, sourcePT, targetPT);
     
     Sint // -1 if error else 0
-    (*addChar)(fieldLetterRowT, sourceT, targetPT);
+    (*addChar)(fieldLetterT, sourceT, targetPT);
     
     /**
      * Add the metadata.
