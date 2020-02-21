@@ -30,6 +30,12 @@ typedef const struct DictO0SCapiS
     void
     (*formatViaDict)(DictZ0SIdataT, targetPT, targetLengthT, gpSllgChar64PT);
     
+    /**
+     * Some tools
+     * - getOfAlphaMon will search for the alpha month (Jan) and return the value or zero
+     */
+    int (*getOfAlphaMon)(char* searchableP);
+    
 }DictO0SCapiT, *DictO0SCapiPT;
 
 #define DictSCapiT DictO0SCapiT
