@@ -23,7 +23,7 @@ typedef struct ErrorHelperO0ServiceClassStruct
 #define ErrorHelperSCapi ErrorHelperO0SCapi
 extern ErrorHelperSCapiT ErrorHelperSCapi;
 
-#define ErrorHelperACapi ErrorHelperO0HCapi // until they are all fixed
+//#define ErrorHelperACapi ErrorHelperO0HCapi // until they are all fixed
 
 #endif /* ErrorHelperO0_h */
 /**

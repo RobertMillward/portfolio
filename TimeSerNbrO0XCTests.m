@@ -212,8 +212,8 @@
         
         gpSllgChar32T myStruct = {NO_ARG_PTR_ARC, &TestAidZ0QCdata.twoWay, CURRENT_BASE_YEAR};
         Zint theSize = TimeSerNbrO0HCapi.getRowOfSerNbr(&myStruct);
-        
-        if(TestAidQCapi.putTestInts(21, theSize, __LINE__) != 0 ||
+        // set to 24 11Feb2020
+        if(TestAidQCapi.putTestInts(24, theSize, __LINE__) != 0 ||
            assertForDebug){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidQCapi.getAssertText(__FUNCTION__)]);
         }
@@ -268,7 +268,7 @@
         
         TimeSerNbrO0HCapi.getAgeInWeeksAndDays(&myStruct);
         // This string has to be set for each day of testing because the unit position is days.
-        if(TestAidQCapi.putTestChars("540W", myStruct.theCharValue, __LINE__) != 0 || // i.e, 46W is 4 weeks and 6 days so 50W is next.
+        if(TestAidQCapi.putTestChars("551W", myStruct.theCharValue, __LINE__) != 0 || // i.e, 46W is 4 weeks and 6 days so 50W is next.
            assertForDebug){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidQCapi.getAssertText(__FUNCTION__)]);
         }
