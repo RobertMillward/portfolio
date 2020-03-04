@@ -3,15 +3,14 @@
 //  2020Mar10Dev
 //
 //  Created by Robert R on 2/18/2019.
-//  Copyright (c) 2019 Robert Russell Millward.  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 #ifndef HexasoftO3_h
 #define HexasoftO3_h
-//#include "InitDestroyHelperO0.h"
 #include "CommaSepO3.h"
 
 
-typedef struct HexasoftO3ServiceInstanceApiStruct // go for methods
+typedef struct HexasoftO3ServiceInstanceApiStruct
 {
     void (* open)(char* file, CommaSepO3SIdataPT);
     void (* read)(char* here, CommaSepO3SIdataPT);
@@ -24,23 +23,21 @@ extern HexasoftO3SIapiT HexasoftO3SIapi;
 
 typedef struct HexasoftO3ServiceInstanceStruct // Having neither to nor go for complete instance
 {
-    CommaSepO3SIdataT data;  // the data
-    HexasoftO3SIapiT api; // the methods
+    CommaSepO3SIdataT   data;
+    HexasoftO3SIapiT    api;
 }HexasoftO3SIthisT, *HexasoftO3SIthisPT;
 
 #define HexasoftSIthisT HexasoftO3SIthisT
 #define HexasoftSIthisPT HexasoftO3SIPthisT
 
-#define newHexasoft newHexasoftO3
-extern HexasoftSIthisT newHexasoft(gpSllgChar64PT);
 
 /**
  * Class methods
  */
-
 typedef struct HexasoftO3ServiceClassApiStruct
 {
-    void (* noMethods)(void);
+    void            (* init)    (pathPT, gpSllgChar64PT);
+    HexasoftSIthisT (*newThis)  (gpSllgChar64PT);
 }HexasoftO3SCapiT, *HexasoftO3SCapiPT;
 
 #define HexasoftSCapiT HexasoftO3SCapiT

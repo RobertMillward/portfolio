@@ -20,20 +20,20 @@ typedef struct HexasoftZ3TestAidClassApiStructure
     char* (*getAssertText)(cfuncNameT, lineNbrT);
     
     void (*setupSet1)(lineNbrT);
-    bool (*doSet1)(lineNbrT);
+    bool (*doSet1SizeSafe)(lineNbrT);
     void (*teardownSet1)(lineNbrT);
     
     
     void (*setupSet2)(lineNbrT);
-    bool (*doSet2)(lineNbrT);
+    bool (*doSet2Basics)(lineNbrT);
     void (*teardownSet2)(lineNbrT);
     
     void (*setupSet3)(lineNbrT);
-    bool (*doSet3)(lineNbrT);
+    bool (*doSet3ExtraDemo)(lineNbrT);
     void (*teardownSet3)(lineNbrT);
     
     void (*setupSet4)(lineNbrT);
-    bool (*doSet4)(lineNbrT);
+    bool (*doSet4Performance)(lineNbrT);
     void (*teardownSet4)(lineNbrT);
     
     void (*teardownSuite)(lineNbrT);

@@ -9,45 +9,12 @@
 // os
 #include <stdio.h>
 // helper and service api's
-#include "TransactionO3.h"
-//#include "InitDestroyHelperO0.h"
+//#include "TransactionO3.h"
 // data plans
 #include "ArchitectureZ0Plan.h"
+#include "CommaSepZ3Plan.h"
 
-#define COMMASEP_PATH "Downloads/Sources/Databases"
-
-
-
-
-#pragma mark - The commaSep as an instance
-/**
- * Instance data.
- */
-typedef struct CommaSepO3SInstanceDataStruct
-{
-    /**
-     * Not yet open or open for writing else open for reading.
-     */
-    char* isOpenForWrite;
-    // If KNOW_NO_ARC or KNOW_YES_ARC (i.e, isConsistent())
-    // then the following instance variables
-    // should be consistent.
-    Schr openMode[4]; // "r" only, not "w", or "a" and can include "+" and or "x"
-    
-    
-    Sint operations;
-    Zint warnings;
-    Zint errors;
-    Ulng fileSizeAtOpen;
-    /**
-     * Overhead variables.
-     */
-    //PermissionO0IPT permissionP;
-    gpVersionLevelZ0PT flagsForCodeVersionAndLevelP;
-    FILE *cstream;
-    
-}CommaSepO3SIdataT, *CommaSepO3SIdataPT;
-
+//#define COMMASEP_PATH "Downloads/Sources/Databases"
 
 /**
  * Instance methods.
@@ -78,21 +45,21 @@ extern CommaSepO3SIapiT CommaSepO3SIapi;
 
 
 
-typedef struct CommaSepO3InstanceStruct // (both data and methods)
+typedef struct CommaSepO3ServiceInstanceThisStruct
 {
     CommaSepO3SIapiPT apiP;
     CommaSepO3SIdataT data;
     
 } CommaSepO3SIthisT, *CommaSepO3SIthisPT;
-#define CommaSepIT CommaSepO3IT
-#define CommaSepIPT CommaSepO3IPT
+#define CommaSepSIthisT  CommaSepO3SIthisT
+#define CommaSepSIthisPT CommaSepO3SIthisPT
 
 
 
-#pragma mark - init and destroy.
 
+#pragma mark - New CommaSep instance.
 
-typedef struct CommaSepsInitO3Y
+typedef struct CommaSepO3ServiceClassApiStruct
 {
     /**
      * Copy the base path into the commaSep system.
@@ -102,27 +69,14 @@ typedef struct CommaSepsInitO3Y
      * existing now does not guarantee existing later.\
      * Runs successfully only before calling init().
      */
-    void (* initPath)(pathPT path, gpTxPplGrpBatchTwoWayZ0PT info);
-
+    initStatusT     (*init)(pathPT, gpSllgChar64PT);
     
-}CommaSepsInitO3X, *CommaSepsInitO3XP;
+    CommaSepSIthisT (*newThis)(gpSllgChar64PT);
+}CommaSepO3SCapiT, *CommaSepO3SCapiPT;
 
-#define CommaSepsInitXP CommaSepsInitO3XP
-#define CommaSepsInitX CommaSepsInitO3X
-#define CommaSepsInitC CommaSepsInitO3C
-extern CommaSepsInitX CommaSepsInitO3C;
-
-/**
- *
- * Note: destroy is done with InitDestroyHelper.destroyAll().
- */
-#define initCommaSeps initCommaSepsO3
-extern initStatusT initCommaSeps(gpTxPplGrpBatchTwoWayZ0PT info);
-
-#pragma mark - New CommaSep instance.
-
-#define newCommaSep newCommaSepO3
-extern CommaSepO3SIthisT newCommaSep(void/*PermissionO0IPT permissionP*/);
+#define CommaSepSCapiT CommaSepO3SCapiT
+#define CommaSepSCapi CommaSepO3SCapi
+extern CommaSepSCapiT CommaSepSCapi;
 
 #endif  // CommaSepO3_h
 /**

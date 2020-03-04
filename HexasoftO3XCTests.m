@@ -38,14 +38,44 @@
     HexasoftZ3QCapi.teardownSet1(__LINE__);
 }
 
+- (void)test2020SizeSafe
+{
+    if(HexasoftZ3QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(HexasoftZ3QCapi.doSet1SizeSafe(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HexasoftZ3QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}// END SizeSafe
+
+
 - (void)test2020Basics
 {
     if(HexasoftZ3QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        if(HexasoftZ3QCapi.doSet1(__LINE__)){
+        if(HexasoftZ3QCapi.doSet2Basics(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HexasoftZ3QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
 }// END Basics
+
+
+- (void)test2020ExtraDemo
+{
+    if(HexasoftZ3QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(HexasoftZ3QCapi.doSet3ExtraDemo(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HexasoftZ3QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}// END ExtraDemo
+
+
+- (void)test2020Performance
+{
+    if(HexasoftZ3QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(HexasoftZ3QCapi.doSet4Performance(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HexasoftZ3QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}// END Performance
 
 
 
