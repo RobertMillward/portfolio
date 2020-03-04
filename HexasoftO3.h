@@ -12,10 +12,10 @@
 
 typedef struct HexasoftO3ServiceInstanceApiStruct
 {
-    void (* open)(char* file, CommaSepO3SIdataPT);
-    void (* read)(char* here, CommaSepO3SIdataPT);
-    int  (* isAtEof)(CommaSepO3SIdataPT);
-    void (* close)(CommaSepO3SIdataPT);
+    void (* open)(char* file, CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* read)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
+    int  (* isAtEof)(CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* close)(CommaSepO3SIdataPT, gpSllgChar64PT);
     
 }HexasoftO3SIapiT, *HexasoftO3SIapiPT;
 

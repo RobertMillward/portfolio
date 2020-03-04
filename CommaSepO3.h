@@ -25,19 +25,19 @@ typedef struct CommaSepO3ServiceInstanceApiStruct
     /**
      *
      */
-    void (* close)(CommaSepO3SIdataPT dataP);
+    void (* close)(CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
      *
      */
-    void (* openRead)(fileNmPT file, CommaSepO3SIdataPT dataP);
+    void (* openRead)(fileNmPT file, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
      *
      */
-    void (* read)(int length, char *buffer, CommaSepO3SIdataPT dataP);
+    void (* read)(int length, char *buffer, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
      *
      */
-    Sint (* isAtEof)(CommaSepO3SIdataPT dataP);
+    Sint (* isAtEof)(CommaSepO3SIdataPT, gpSllgChar64PT);
     
 }CommaSepO3SIapiT, *CommaSepO3SIapiPT;
 
