@@ -3,7 +3,7 @@
 //  20200310Dev
 //
 //  Created by Robert R on 3/27/15.
-//  Copyright (c) 2015 Robert Russell Millward.  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 // os
 #include <XCTest/XCTest.h>
@@ -13,13 +13,15 @@
 //#import "SignatureFactoryO0.h"
 //#import "CSVO0.h"
 // data plans
-#include "ArchitectureZ0Plan.h"
+//#include "ArchitectureZ0Plan.h"
 // other api's
-#include "HexasoftO3.h"
+//#include "HexasoftO3.h"
 // quality
-#import "TestAidZ0.h"
+//#import "TestAidZ0.h"
 
-#import "UnixStreamO0.h"
+//#import "UnixStreamO0.h"
+
+#import "HexasoftZ3TestAid.h"
 
 @interface HexasoftO3Tests : XCTestCase
 
@@ -27,37 +29,25 @@
 
 @implementation HexasoftO3Tests
 
-static bool showFunctionName = false;
 
 - (void)setUp {
-    //initSignatureFactoryO0(&TestAidO0QCre.infoTwoWay);
+    HexasoftZ3QCapi.setupSet1(__LINE__);
 }
 
 - (void)tearDown {
-    TestAidC.getCounts();
-    //InitDestroyerHelperC.destroyAll(&TestAidO0QCre.infoTwoWay);
+    HexasoftZ3QCapi.teardownSet1(__LINE__);
 }
 
-
-
-- (void)test2019ZdoHexasoft {
-    if(TA0C.isScheduled(__FUNCTION__, showFunctionName))
-    {
-//        int rowCount = 0;
-//        /*initStatusT status = */initHexasofts(&TestAidO0QCdata.infoTwoWay);
-//        HexasoftIT myHexasoft = newHexasoft(&TestAidO0QCdata.infoTwoWay);
-//        myHexasoft.open("IP2LOCATION-LITE-DB11", &myHexasoft);
-//        
-//        char here[2000];
-//        while(!myHexasoft.isAtEof(&myHexasoft) )
-//        {
-//            myHexasoft.read(here, &myHexasoft);
-//            rowCount++;
-//        }
-//        myHexasoft.close(&myHexasoft);
-//        here[1999] = 0;
+- (void)test2020Basics
+{
+    if(HexasoftZ3QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(HexasoftZ3QCapi.doSet1(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HexasoftZ3QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
     }
-}
+}// END Basics
+
+
 
 @end
 /**

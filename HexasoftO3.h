@@ -10,17 +10,13 @@
 //#include "InitDestroyHelperO0.h"
 #include "CommaSepO3.h"
 
-typedef struct HexasoftO3ServiceInstanceDataStruct // to for data
-{
-    // Not used, no additional data required
-}HexasoftO3SIdataT, *HexasoftO3SIdataPT;
 
 typedef struct HexasoftO3ServiceInstanceApiStruct // go for methods
 {
-    void (* open)(char* file, CommaSepO3SIdataPT data);
-    void (* read)(char* here, CommaSepO3SIdataPT data);
-    int  (* isAtEof)(CommaSepO3SIdataPT data);
-    void (* close)(CommaSepO3SIdataPT data);
+    void (* open)(char* file, CommaSepO3SIdataPT);
+    void (* read)(char* here, CommaSepO3SIdataPT);
+    int  (* isAtEof)(CommaSepO3SIdataPT);
+    void (* close)(CommaSepO3SIdataPT);
     
 }HexasoftO3SIapiT, *HexasoftO3SIapiPT;
 
@@ -42,7 +38,7 @@ extern HexasoftSIthisT newHexasoft(gpSllgChar64PT);
  * Class methods
  */
 
-typedef struct HexasoftO3ClassO3Struct
+typedef struct HexasoftO3ServiceClassApiStruct
 {
     void (* noMethods)(void);
 }HexasoftO3SCapiT, *HexasoftO3SCapiPT;
@@ -50,15 +46,6 @@ typedef struct HexasoftO3ClassO3Struct
 #define HexasoftSCapiT HexasoftO3SCapiT
 #define HexasoftSCapi HexasoftO3SCapi
 extern HexasoftSCapiT HexasoftSCapi;
-
-//#define initHexasoft initHexasoftsO3
-//extern initStatusT initHexasofts(PermissionO0toIPT permissionP);
-
-/**
- * Some test constants.
- */
-#define HEXASOFT_PPLG   "HEXASFT"
-
 
 
 
