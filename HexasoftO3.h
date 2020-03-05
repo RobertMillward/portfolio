@@ -13,7 +13,7 @@
 typedef struct HexasoftO3ServiceInstanceApiStruct
 {
     void (* open)(peopleGroupIdT, devOrProdT, fileNmPT, CommaSepO3SIdataPT, gpSllgChar64PT);
-    void (* read)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* read)(char* here, massOfT, CommaSepO3SIdataPT, gpSllgChar64PT);
     int  (* isAtEof)(CommaSepO3SIdataPT, gpSllgChar64PT);
     void (* close)(CommaSepO3SIdataPT, gpSllgChar64PT);
     

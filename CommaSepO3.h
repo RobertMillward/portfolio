@@ -3,7 +3,7 @@
 //  2020Mar10Dev
 //
 //  Created by Robert Russell Millward  on 9/26/13.
-//  Copyright (c) 2013 Robert Russell Millward.  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
 #ifndef CommaSepO3_h
 #define CommaSepO3_h
@@ -13,8 +13,6 @@
 // data plans
 #include "ArchitectureZ0Plan.h"
 #include "CommaSepZ3Plan.h"
-
-//#define COMMASEP_PATH "Downloads/Sources/Databases"
 
 /**
  * Instance methods.
@@ -35,7 +33,7 @@ typedef struct CommaSepO3ServiceInstanceApiStruct
     /**
      *
      */
-    void (* read)(int length, char *buffer, CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* read)(massOfT, char *buffer, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
      *
      */
