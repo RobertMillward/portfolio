@@ -12,7 +12,7 @@
 
 typedef struct HexasoftO3ServiceInstanceApiStruct
 {
-    void (* open)(char* file, CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* open)(peopleGroupIdT, devOrProdT, fileNmPT, CommaSepO3SIdataPT, gpSllgChar64PT);
     void (* read)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
     int  (* isAtEof)(CommaSepO3SIdataPT, gpSllgChar64PT);
     void (* close)(CommaSepO3SIdataPT, gpSllgChar64PT);
@@ -36,7 +36,7 @@ typedef struct HexasoftO3ServiceInstanceStruct // Having neither to nor go for c
  */
 typedef struct HexasoftO3ServiceClassApiStruct
 {
-    void            (* init)    (pathPT, gpSllgChar64PT);
+    initStatusT     (* init)    (pathPT, gpSllgChar64PT);
     HexasoftSIthisT (*newThis)  (gpSllgChar64PT);
 }HexasoftO3SCapiT, *HexasoftO3SCapiPT;
 

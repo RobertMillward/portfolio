@@ -1,5 +1,6 @@
 //
 //  CommaSepO3.h
+//  2020Mar10Dev
 //
 //  Created by Robert Russell Millward  on 9/26/13.
 //  Copyright (c) 2013 Robert Russell Millward.  All rights reserved.
@@ -9,7 +10,6 @@
 // os
 #include <stdio.h>
 // helper and service api's
-//#include "TransactionO3.h"
 // data plans
 #include "ArchitectureZ0Plan.h"
 #include "CommaSepZ3Plan.h"
@@ -25,11 +25,13 @@ typedef struct CommaSepO3ServiceInstanceApiStruct
     /**
      *
      */
-    void (* close)(CommaSepO3SIdataPT, gpSllgChar64PT);
+    int (* close)(CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
-     *
+     * Prepare for this call by:
+     * TwoWayZ0SCapi.setMustWork(&gp64P->twoWayP->twoWayStatusP);
+     * TwoWayZ0SCapi.setMustFail(&gp64P->twoWayP->twoWayStatusP);
      */
-    void (* openRead)(fileNmPT file, CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* openRead)(peopleGroupIdT, devOrProdT, fileNmPT, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
      *
      */
@@ -37,7 +39,7 @@ typedef struct CommaSepO3ServiceInstanceApiStruct
     /**
      *
      */
-    Sint (* isAtEof)(CommaSepO3SIdataPT, gpSllgChar64PT);
+    bool (* isAtEof)(CommaSepO3SIdataPT, gpSllgChar64PT);
     
 }CommaSepO3SIapiT, *CommaSepO3SIapiPT;
 
@@ -70,7 +72,9 @@ typedef struct CommaSepO3ServiceClassApiStruct
      * Runs successfully only before calling init().
      */
     initStatusT     (*init)(pathPT, gpSllgChar64PT);
-    
+    /**
+     *
+     */
     CommaSepSIthisT (*newThis)(gpSllgChar64PT);
 }CommaSepO3SCapiT, *CommaSepO3SCapiPT;
 

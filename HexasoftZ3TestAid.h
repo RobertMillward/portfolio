@@ -13,7 +13,7 @@
 #include "ArchitectureZ0Plan.h"
 // quality
 
-typedef struct HexasoftZ3TestAidClassApiStructure
+typedef struct HexasoftZ3QualityClassApiStructure
 {
     void (*setupSuite)(lineNbrT);
     bool (*isScheduled)(cfileNameT, lineNbrT);

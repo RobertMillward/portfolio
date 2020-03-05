@@ -69,7 +69,7 @@ typedef const char *funcNamePT;
 /**
  * TestAid description
  */
-typedef struct TestAidZ0ClassMethodStructure
+typedef struct TestAidZ0QualityClassApiStructure
 {
     void (*basicInit)(void);
     void (*nextTx)(void);
@@ -106,7 +106,7 @@ typedef struct TestAidZ0ClassMethodStructure
 #define TestAidQCapi TestAidZ0QCapi
 extern TestAidQCapiT TestAidQCapi;
 
-#define TestAidC TestAidZ0QCapi // temporary, diminishing as 0f 03Feb2020
+#define TestAidC TestAidZ0QCapi // temporary, diminishing as of 03Feb2020
 
 // If a shorter call name will clarify code.
 #define TA0C TestAidZ0QCapi
