@@ -29,16 +29,16 @@
  */
 typedef struct UnixStreamO0ServiceClassApiStruct
 {
-    FILE* (*open)(char *fullPath, char* X_UXSTRM);
-    Ulng (*write)(char* data, size_t itemSize, size_t itemCount, FILE* stream);
-    Sint (*flush)(FILE* stream);
+    FILE* (*fopen)(char *fullPath, char* X_UXSTRM);
+    Ulng (*fwrite)(char* data, size_t itemSize, size_t itemCount, FILE* stream);
+    Sint (*fflush)(FILE* stream);
     Uchr (*getc)(FILE* stream);
     Sint (*ungetc)(Uchr gotc, FILE* stream);
     Sint (*isEOF)(FILE* stream);
-    Slng (*tell)(FILE* stream);
-    Ulng (*read)(char* data, size_t itemSize, size_t itemCount, FILE* stream);
+    Slng (*ftell)(FILE* stream);
+    Ulng (*fread)(char* data, size_t itemSize, size_t itemCount, FILE* stream);
     char* (*getLine)(char* data, int size, FILE* stream);
-    Sint (*close)(FILE* stream);
+    Sint (*fclose)(FILE* stream);
     Slng (*isError)(FILE* stream);
     void (*clearError)(FILE* stream);
     //FILE* (*memopen)(char* buf, int size, char* mode);
