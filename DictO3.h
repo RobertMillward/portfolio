@@ -15,7 +15,7 @@
 /**
  * Api to the global universal-column-id (uci) and thesarus-to-values (tav) library.
  */
-typedef struct DictionaryTavO3ApiStruct
+typedef struct DictionaryTavO3ServiceClassApiStruct
 {
     /**
      * Process the column headers to assign csv (as the name defaults to) columns to the global dictionary.

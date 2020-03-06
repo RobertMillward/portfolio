@@ -8,7 +8,7 @@
 #define DictO0_h
 #include "DictZ0Plan.h"
 
-typedef const struct DictO0SCapiS
+typedef const struct DictO0ServiceClassApiStruct
 {
     /**
      * Get the field Dictionary.
@@ -20,15 +20,13 @@ typedef const struct DictO0SCapiS
      * This is to assure that the data to be stored has acceptable content.
      * The Row.addMore() will impose additional accptance criteria.
      */
-    void
-    (*checkViaDict) (DictZ0SIdataT, gpSllgChar64PT);
+    void (*checkViaDict) (DictZ0SIdataT, gpSllgChar64PT);
     
     /**
      * Format the source data using the dictionary.
      * This is simlple formatting.
      */
-    void
-    (*formatViaDict)(DictZ0SIdataT, targetPT, targetLengthT, gpSllgChar64PT);
+    void (*formatViaDict)(DictZ0SIdataT, targetPT, targetLengthT, gpSllgChar64PT);
     
     /**
      * Some tools

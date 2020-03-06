@@ -12,9 +12,30 @@
 
 typedef struct HexasoftO3ServiceInstanceApiStruct
 {
+    /**
+     * Initialize the thesarus.
+     */
+    void (* hdrs)(CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Open the Hexasoft csv file.
+     */
     void (* open)(peopleGroupIdT, devOrProdT, fileNmPT, CommaSepO3SIdataPT, gpSllgChar64PT);
-    void (* read)(char* here, massOfT, CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Check for EOF
+     */
     int  (* isAtEof)(CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Read one row.
+     */
+    void (* read)(char* here, massOfT, CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Load the data into the thesarus.
+     * After or instead of this step, take and store the csv row data.
+     */
+    void (* csv)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Close the file and deque the thesarus.
+     */
     void (* close)(CommaSepO3SIdataPT, gpSllgChar64PT);
     
 }HexasoftO3SIapiT, *HexasoftO3SIapiPT;
