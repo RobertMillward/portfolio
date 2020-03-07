@@ -27,6 +27,14 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
      */
     csvColDataPT (*newDataToTav)(csvColDataPT, gpSllgChar64PT);
     /**
+     *
+     */
+    void (*whatIndexToTav)(sourcePT what, sourcePT index, gpSllgChar64PT);
+    /**
+     * Create row(s) at this target for these universal columns..
+     */
+    void            (*createRows)(targetPT, massOfT, UniversalColumnIdT[]);
+    /**
      * Dequeue so another can use it. As always, enqueue for the shortest possible duration.
      */
     void (*dequeTav)(void);
