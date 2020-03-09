@@ -35,21 +35,15 @@ extern TestAidZ0QCdataT TestAidZ0QCdata;
 /**
 * Some test constants.
 */
-#define TA_GOOD_LOGIN   "BOEING"
+#define TA_GRP              "SBBOZZ"
 #define GOOD_PERSON_PPLG    "RRMZZZZ"
 #define WIKIDB_REAL_APP     "WIKIDBA"
 #define WIKIDB_SHARED_APP   "WIKIDBG"
 
 #define TA_HOMPATH "." // See ArchitectureInit for overall home
-//#define TA_GRPFLDR "foldersTest"
 #define FOLDERS_TEST_PATH "foldersTest"
 #define FOLDERS_TEST_DIR  "youFoundMe"
 
-/*
- */
-#pragma mark - Class Methods
-/*
- */
 
 /**
  * How many years to run a test before it expires.

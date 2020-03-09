@@ -19,7 +19,7 @@ typedef struct HexasoftO3ServiceInstanceApiStruct
     /**
      * Open the Hexasoft csv file.
      */
-    void (* open)(peopleGroupIdT, devOrProdT, fileNmPT, CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* open)(fileNmPT, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
      * Check for EOF
      */
