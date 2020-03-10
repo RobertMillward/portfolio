@@ -1,8 +1,9 @@
 //
 //  RowZ0TestAid.h
+//  2020Mar10Dev
 //
 //  Created by Robert Russell Millward on 10/4/19.
-//  Copyright (c) 2019 Robert Russell Millward. All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward. All rights reserved.
 //
 #ifndef RowZ0TestAid_h
 #define RowZ0TestAid_h
@@ -19,7 +20,7 @@ typedef const struct RowO0QCapiS
     
     // These have line number unlike O0.h
     Sint
-    (*addMore)(fieldLetterRowT, sourcePT, targetPT, lineNbrT);
+    (*addMore)(fieldLetterT, sourcePT, targetPT, lineNbrT);
     
     // These have line number unlike O0.h
     Zint

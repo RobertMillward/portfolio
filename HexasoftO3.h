@@ -1,68 +1,73 @@
 //
 //  HexasoftO3.h
+//  2020Mar10Dev
 //
 //  Created by Robert R on 2/18/2019.
-//  Copyright (c) 2019 Robert Russell Millward.
-//  All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
 //
-/**
- *
- */
-#ifndef __HexasoftO3__
-#define __HexasoftO3__
-#include "InitDestroyHelperO0.h"
+#ifndef HexasoftO3_h
+#define HexasoftO3_h
 #include "CommaSepO3.h"
 
-typedef struct HexasoftO3toInstanceDataStruct // to for data
-{
-    // Not used, no additional data required
-}HexasoftO3toIT, *HexasoftO3toIPT;
 
-typedef struct HexasoftO3goInstanceMethodsStruct // go for methods
+typedef struct HexasoftO3ServiceInstanceApiStruct
 {
-    void (* open)(char* file, CommaSepO3toIPT data);
-    void (* read)(char* here, CommaSepO3toIPT data);
-    int (* isAtEof)(CommaSepO3toIPT data);
-    void (* close)(CommaSepO3toIPT data);
+    /**
+     * Initialize the thesarus.
+     */
+    void (* hdrs)(CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Open the Hexasoft csv file.
+     */
+    void (* open)(fileNmPT, CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Check for EOF
+     */
+    int  (* isAtEof)(CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Read one row.
+     */
+    void (* read)(char* here, massOfT, CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Load the data into the thesarus.
+     * After or instead of this step, take and store the csv row data.
+     */
+    void (* csv)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
+    /**
+     * Close the file and deque the thesarus.
+     */
+    void (* close)(CommaSepO3SIdataPT, gpSllgChar64PT);
     
-}HexasoftO3goIT, *HexasoftO3goIPT;
+}HexasoftO3SIapiT, *HexasoftO3SIapiPT;
 
-extern HexasoftO3goIT HexasoftO3go;
+extern HexasoftO3SIapiT HexasoftO3SIapi;
 
-typedef struct HexasoftO3InstanceStruct // Having neither to nor go for complete instance
+typedef struct HexasoftO3ServiceInstanceStruct // Having neither to nor go for complete instance
 {
-    CommaSepO3toIT to;  // the data
-    HexasoftO3goIT go; // the methods
-}HexasoftO3IT, *HexasoftO3IPT;
+    CommaSepO3SIdataT   data;
+    HexasoftO3SIapiT    api;
+}HexasoftO3SIthisT, *HexasoftO3SIthisPT;
 
-#define HexasoftIT HexasoftO3IT
-#define HexasoftIPT HexasoftO3IPT
+#define HexasoftSIthisT HexasoftO3SIthisT
+#define HexasoftSIthisPT HexasoftO3SIPthisT
 
-#define newHexasoft newHexasoftO3
-extern HexasoftIT newHexasoft(gpTxPplGrpBatchTwoWayO0PT approvedParmName);
 
 /**
  * Class methods
  */
-
-typedef struct HexasoftO3ClassO3Struct
+typedef struct HexasoftO3ServiceClassApiStruct
 {
-    void (* noMethods)(void);
-}HexasoftO3CT, *HexasoftO3CPT;
+    initStatusT     (* init)    (pathPT, gpSllgChar64PT);
+    HexasoftSIthisT (*newThis)  (gpSllgChar64PT);
+}HexasoftO3SCapiT, *HexasoftO3SCapiPT;
 
-#define HexasoftCT HexasoftO3CT
-#define HexasoftC HexasoftO3C
-extern HexasoftCT HexasoftC;
+#define HexasoftSCapiT HexasoftO3SCapiT
+#define HexasoftSCapi HexasoftO3SCapi
+extern HexasoftSCapiT HexasoftSCapi;
 
-#define initHexasofts initHexasoftsO3
-extern initStatusT initHexasofts(PermissionO0toIPT permissionP);
 
+
+#endif /* HexasoftO3_h */
 /**
- * Some test constants.
+ *
  */
-#define HEXASOFT_PPLG   "HEXASFT"
-
-
-
-
-#endif /* defined(__HexasoftO3__) */

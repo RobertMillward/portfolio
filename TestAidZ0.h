@@ -35,21 +35,14 @@ extern TestAidZ0QCdataT TestAidZ0QCdata;
 /**
 * Some test constants.
 */
-#define TA_GOOD_LOGIN   "BOEING"
 #define GOOD_PERSON_PPLG    "RRMZZZZ"
 #define WIKIDB_REAL_APP     "WIKIDBA"
 #define WIKIDB_SHARED_APP   "WIKIDBG"
 
 #define TA_HOMPATH "." // See ArchitectureInit for overall home
-//#define TA_GRPFLDR "foldersTest"
 #define FOLDERS_TEST_PATH "foldersTest"
 #define FOLDERS_TEST_DIR  "youFoundMe"
 
-/*
- */
-#pragma mark - Class Methods
-/*
- */
 
 /**
  * How many years to run a test before it expires.
@@ -69,7 +62,7 @@ typedef const char *funcNamePT;
 /**
  * TestAid description
  */
-typedef struct TestAidZ0ClassMethodStructure
+typedef struct TestAidZ0QualityClassApiStructure
 {
     void (*basicInit)(void);
     void (*nextTx)(void);
@@ -106,7 +99,7 @@ typedef struct TestAidZ0ClassMethodStructure
 #define TestAidQCapi TestAidZ0QCapi
 extern TestAidQCapiT TestAidQCapi;
 
-#define TestAidC TestAidZ0QCapi // temporary, diminishing as 0f 03Feb2020
+#define TestAidC TestAidZ0QCapi // temporary, diminishing as of 03Feb2020
 
 // If a shorter call name will clarify code.
 #define TA0C TestAidZ0QCapi
