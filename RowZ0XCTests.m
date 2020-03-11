@@ -1,5 +1,6 @@
 //
 //  RowZ0XCTests.m
+//  2020Apr02Dev
 //
 //  Created by Robert Russell Millward on 10/8/19.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -7,16 +8,15 @@
 // os
 #import <XCTest/XCTest.h>
 // helper api's
-//#import "AuthAndAuthO8.h"
 // quality
 #import "RowZ0TestAid.h"
 #import "TestAidZ0.h"
 
-@interface RowO0Tests : XCTestCase
+@interface RowO0OrdinaryTests : XCTestCase
 
 @end
 
-@implementation RowO0Tests
+@implementation RowO0OrdinaryTests
 - (void)setUp{
     TestAidZ0QCapi.basicInit();
 }
@@ -66,6 +66,7 @@
     }
 }
 
-@end
+@end //END ordinary
+// END RowZ0XCTests.m
 /**
  */

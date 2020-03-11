@@ -40,6 +40,10 @@ typedef struct HexasoftZ3QualityClassApiStructure
 }HexasoftZ3QCapiT, *HexasoftZ3QCapiPT;
 
 extern HexasoftZ3QCapiT HexasoftZ3QCapi;
+/**
+ * Some internal sizes
+ */
+extern CfileZ0objInfoT DictZ3objInfo[]; // a null terminated array of part sizes
 
 #endif /* HexasoftZ3TestAid_h */
 /**

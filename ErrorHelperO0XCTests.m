@@ -1,5 +1,6 @@
 //
 //  ErrorHelperO0XCTests.m
+//  2020Apr02Dev
 //
 //  Created by Robert R on 10/22/14.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -14,11 +15,11 @@
 // quality
 #import "TestAidZ0.h"
 
-@interface ErrorHelperO0Tests : XCTestCase
+@interface ErrorHelperO0OrdinaryTests : XCTestCase
 
 @end
 
-@implementation ErrorHelperO0Tests
+@implementation ErrorHelperO0OrdinaryTests
 
 - (void)setUp {
 }
@@ -41,16 +42,17 @@
         //int badNbr = -1;
         int goodNbr = 28;
         
-        if(TestAidQCapi.putTestChars(CEINVAL, ErrorHelperSCapi.set(badTxt, goodBase), __LINE__) != 0 ||
-           TestAidC.putTestChars(CEINVAL, ErrorHelperSCapi.set(goodTxt, badBase), __LINE__) != 0 ||
-           TestAidC.putTestChars(CENOSPC, ErrorHelperSCapi.get(goodNbr), __LINE__) != 0)
+        if(TestAidQCapi.putTestChars(CEINVAL, ErrorHelperSCapi.set(badTxt, goodBase),   __LINE__) != 0 ||
+           TestAidQCapi.putTestChars(CEINVAL, ErrorHelperSCapi.set(goodTxt, badBase),   __LINE__) != 0 ||
+           TestAidQCapi.putTestChars(CENOSPC, ErrorHelperSCapi.get(goodNbr),            __LINE__) != 0)
         {
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidQCapi.getAssertText(__FUNCTION__)]);
         }
     }
 }
 
 
-@end // ErrorHelperO0XCTests.m
+@end
+// ErrorHelperO0XCTests.m
 /**
  */

@@ -12,7 +12,9 @@
 
 
 
-
+// Break out only tests that require special setup
+@interface TwoWayZ0OrdinaryTests : XCTestCase
+@end
 @interface TwoWayZ0SafeSizeTests : XCTestCase
 @end
 @interface TwoWayZ0BasicTests : XCTestCase
@@ -22,7 +24,56 @@
 @interface TwoWayZ0PerformanceTests : XCTestCase
 @end
 
+@implementation TwoWayZ0OrdinaryTests
 
+- (void)setUp {
+    TwoWayZ0QCapi.setupSet1(__LINE__);
+}
+
+- (void)tearDown {
+    TwoWayZ0QCapi.teardownSet1(__LINE__);
+}
+
+
+
+- (void)test2099SafeSize {
+    if(TwoWayZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(TwoWayZ0QCapi.doSet1SizeSafe(__LINE__)){
+           XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TwoWayZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+- (void)test2099Basics {
+    if(TwoWayZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        
+        if(TwoWayZ0QCapi.doSet2Basics(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TwoWayZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+
+- (void)test2099ExtraDemo {
+    if(TwoWayZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        
+        if(TwoWayZ0QCapi.doSet3ExtraDemo(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TwoWayZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+- (void)test2099Performance {
+    if(TwoWayZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        
+        if(TwoWayZ0QCapi.doSet4Performance(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TwoWayZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+@end
+/*
 @implementation TwoWayZ0SafeSizeTests
 
 - (void)setUp {
@@ -72,11 +123,11 @@
 @implementation TwoWayZ0ExtraDemoTests
 
 - (void)setUp {
-    TwoWayZ0QCapi.setupSet2(__LINE__);
+    TwoWayZ0QCapi.setupSet3(__LINE__);
 }
 
 - (void)tearDown {
-    TwoWayZ0QCapi.teardownSet2(__LINE__);
+    TwoWayZ0QCapi.teardownSet3(__LINE__);
 }
 
 
@@ -113,7 +164,7 @@
 }
 
 @end
-
+*/
 // END TwoWayZ0XCTests.m
 /**
  *

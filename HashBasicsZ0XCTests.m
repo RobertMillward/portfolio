@@ -1,5 +1,6 @@
 //
 //  HashBasicsZ0XCTests.m - Test the O0 interface
+//  2020Apr02Dev
 //
 //  Created by Robert R on 4/1/15.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -12,11 +13,11 @@
 #import "HashBasicsZ0TestAid.h"
 
 
-@interface HashBasicsO0Tests : XCTestCase
+@interface HashBasicsO0OrdinaryTests : XCTestCase
 
 @end
 
-@implementation HashBasicsO0Tests
+@implementation HashBasicsO0OrdinaryTests
 
 - (void)setUp {
     HashBasicsZ0QCapi.setupParseSet1(__LINE__);

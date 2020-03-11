@@ -1,6 +1,6 @@
 //
 //  HexasoftO3Tests.m
-//  20200310Dev
+//  2020Apr02Dev
 //
 //  Created by Robert R on 3/27/15.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -8,26 +8,16 @@
 // os
 #include <XCTest/XCTest.h>
 // helper and service api's
-//#import "PeopleGroupO0.h"
-//#import "InitDestroyHelperO1.h"
-//#import "SignatureFactoryO0.h"
-//#import "CSVO0.h"
 // data plans
-//#include "ArchitectureZ0Plan.h"
 // other api's
-//#include "HexasoftO3.h"
 // quality
-//#import "TestAidZ0.h"
-
-//#import "UnixStreamO0.h"
-
 #import "HexasoftZ3TestAid.h"
 
-@interface HexasoftO3Tests : XCTestCase
+@interface HexasoftO3OrdinaryTests : XCTestCase
 
 @end
 
-@implementation HexasoftO3Tests
+@implementation HexasoftO3OrdinaryTests
 
 
 - (void)setUp {
