@@ -20,18 +20,22 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
     /**
      * Process the column headers to assign csv (as the name defaults to) columns to the global dictionary.
      * Enqueues the global thesarus-and-values (tav) so dequeue when all data is loaded.
+     * gp64P->threadIx must be set.
      */
     csvColDataPT (*newHdrsToTav)(csvColHeadersPT, gpSllgChar64PT);
     /**
      *
+     * gp64P->threadIx must be set.
      */
     csvColDataPT (*newDataToTav)(csvColDataPT, gpSllgChar64PT);
     /**
      *
+     * gp64P->threadIx must be set.
      */
     void (*whatIndexToTav)(sourcePT what, sourcePT index, gpSllgChar64PT);
     /**
      * Create row(s) at this target for these universal columns..
+     * gp64P->threadIx must be set. 
      */
     void            (*createRows)(targetPT, massOfT, UniversalColumnIdT[]);
     /**
