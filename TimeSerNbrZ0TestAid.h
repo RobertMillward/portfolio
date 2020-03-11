@@ -22,10 +22,10 @@ typedef struct TimeSerNbrZ0QualityClassApiStruct
     /**
      * Please see TimeSerNbrO0.h for documentation
      */
-    void (*newTimeAndSerNbrNow)(theStampAIdataPT, lineNbrT);
-    Sint (*getStrOfTime)(gpSllgChar32PT, lineNbrT);
-    Sint (*getRowOfSerNbr)(gpSllgChar32PT, lineNbrT);
-    void (*getAgeInWeeksAndDays)(gpSllgChar32PT, lineNbrT);
+    //void (*newTimeAndSerNbrNow)(theStampAIdataPT, lineNbrT);
+    //Sint (*getStrOfTime)(gpSllgChar32PT, lineNbrT);
+    //Sint (*getRowOfSerNbr)(gpSllgChar32PT, lineNbrT);
+    //void (*getAgeInWeeksAndDays)(gpSllgChar32PT, lineNbrT);
     /**
      * Tools
      */
@@ -43,5 +43,32 @@ typedef struct TimeSerNbrZ0QualityClassApiStruct
 }TimeSerNbrZ0QCapiT, * TimeSerNbrZ0QCapiPT;
 
 extern TimeSerNbrZ0QCapiT TimeSerNbrZ0QCapi;
+//====================================
+typedef struct TimeSerNbrO0QualityClassApiStructure
+{
+    void (*setupSuite)(lineNbrT);
+    bool (*isScheduled)(cfileNameT, lineNbrT);
+    char* (*getAssertText)(cfuncNameT, lineNbrT);
+    
+    void (*setupSet1)(lineNbrT);
+    bool (*doSet1SizeSafe)(lineNbrT);
+    void (*teardownSet1)(lineNbrT);
+    
+    void (*setupSet2)(lineNbrT);
+    bool (*doSet2Basics)(lineNbrT);
+    void (*teardownSet2)(lineNbrT);
+    
+    void (*setupSet3)(lineNbrT);
+    bool (*doSet3ExtraDemo)(lineNbrT);
+    void (*teardownSet3)(lineNbrT);
+    
+    void (*setupSet4)(lineNbrT);
+    bool (*doSet4Performance)(lineNbrT);
+    void (*teardownSet4)(lineNbrT);
+    
+    void (*teardownSuite)(lineNbrT);
+}TimeSerNbrO0QCapiT, *TimeSerNbrO0QCapiPT;
+
+extern TimeSerNbrO0QCapiT TimeSerNbrO0QCapi;
 
 #endif /* TimeSerNbrZ0TestAid_h */
