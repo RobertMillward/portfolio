@@ -1,6 +1,6 @@
 //
 //  DictO3.h
-//  2020Mar10Dev
+//  2020Apr02Dev
 //
 //  Created by Robert Russell Millward on 2/20/20.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
@@ -30,9 +30,14 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
     csvColDataPT (*newDataToTav)(csvColDataPT, gpSllgChar64PT);
     /**
      *
-     * gp64P->threadIx must be set.
+     * gp64P...threadIx must be set.
      */
-    void (*whatIndexToTav)(sourcePT what, sourcePT index, gpSllgChar64PT);
+    void (*putWXYZtoTav)(whatT, indeXT, whYT, whoZT, gpSllgChar64PT);
+    /**
+     * Get the pointer to data for a UCI for your thread.
+     * gp64P...threadIx must be set.
+     */
+    ValPtrASizeZ3dataT (*getFieldViaUci)(UniversalColumnIdT, gpSllgChar64PT);
     /**
      * Create row(s) at this target for these universal columns..
      * gp64P->threadIx must be set. 
@@ -44,8 +49,25 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
     void (*dequeTav)(void);
     
 }DictTavO3SCapiT, *DictTavO3SCapiPT;
-
 extern DictTavO3SCapiT DictTavO3SCapi;
+
+
+/**
+ * Services over and above stock store-and-forward.
+ */
+typedef struct DictTavExtras03ServiceClassApiStruct
+{
+    /**
+     * latitude and longitude arguments in decimal strings as "-47.228" or "57.914".
+     */
+    void    (*ofLatLong)(longLatPT, char* latitude, char* longitude);
+    /**
+     * the distance between two points given in
+     */
+    double  (*distance) (longLatPT place, longLatPT dest);
+    
+}DictTavExtrasO3SCapiT;
+extern DictTavExtrasO3SCapiT DictTavExtrasO3SCapi;
 
 
 #endif /* DictO3_h */

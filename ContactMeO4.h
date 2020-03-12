@@ -78,20 +78,6 @@ typedef struct ContactMeStatusO4AppNewInstanceStruct // (both data and methods)
 #pragma mark - Class Api
 /*
  */
-typedef struct LongLat04AppClassApiStruct
-{
-    /**
-     * latitude and longitude are provided in decimal strings as -47.228 or 57.914.
-     */
-    void    (*ofLatLong)(longLatPT, char* latitude, char* longitude);
-    /**
-     * the distance between two points given in
-     */
-    double  (*distance) (longLatPT place, longLatPT dest);
-    
-}LongLatO4ACapiT;
-extern LongLatO4ACapiT LongLatO4ACapi;
-
 
 typedef struct ContactMeO4AppClassApiStruct
 {
