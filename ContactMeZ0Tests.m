@@ -1,5 +1,6 @@
 //
 //  ContactMeZ0Tests.m
+//  2020Apr02Dev
 //
 //  Created by Robert R on 01/09/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -17,8 +18,13 @@
 #import "TestAidZ0.h"
 
 @interface ContactMeZ0SafetyTests : XCTestCase
-
 @end
+@interface ContactMeZ0GeneralTests : XCTestCase
+@end
+@interface ContactMeLinkZ0GeneralTests : XCTestCase
+@end
+
+
 
 @implementation ContactMeZ0SafetyTests
 
@@ -42,11 +48,9 @@ test2019Supply
         }
     }
 }
-@end
+@end // ContactMeZ0SafetyTests
 
-@interface ContactMeZ0GeneralTests : XCTestCase
 
-@end
 
 @implementation ContactMeZ0GeneralTests
 
@@ -70,11 +74,9 @@ test2019ContactMe
         }
     }
 }
-@end
+@end // ContactMeZ0GeneralTests
 
-@interface ContactMeLinkZ0GeneralTests : XCTestCase
 
-@end
 
 @implementation ContactMeLinkZ0GeneralTests
 
@@ -100,6 +102,8 @@ test2019Link
 }
 
 
-@end // END ContactMeZ0Tests.m
+@end // ContactMeLinkZ0GeneralTests
+
+// END ContactMeZ0Tests.m
 /**
  */
