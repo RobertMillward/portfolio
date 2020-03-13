@@ -100,7 +100,7 @@
 - (void)tearDown {
     TwoWayZ0QCapi.teardownSuite(__LINE__);
 }
-- (void)test9999ZooStats {
+- (void)test9999SuiteStats {
 }
 - (void)test9999ZuluStats {
 }

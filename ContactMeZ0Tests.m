@@ -17,16 +17,21 @@
 #import "ContactMeZ0TestAid.h"
 #import "TestAidZ0.h"
 
-@interface ContactMeZ0SafetyTests : XCTestCase
+
+@interface ContactMeZ0OrdinaryTests : XCTestCase
 @end
-@interface ContactMeZ0GeneralTests : XCTestCase
-@end
-@interface ContactMeLinkZ0GeneralTests : XCTestCase
-@end
+//@interface ContactMeZ0SafetyTests : XCTestCase
+//@end
+//@interface ContactMeZ0GeneralTests : XCTestCase
+//@end
+//@interface ContactMeLinkZ0GeneralTests : XCTestCase
+//@end
 
 
 
-@implementation ContactMeZ0SafetyTests
+
+
+@implementation ContactMeZ0OrdinaryTests
 
 - (void)setUp{
 }
@@ -34,7 +39,6 @@
 - (void)tearDown{
     TestAidC.getCounts();
 }
-
 
 - (void)
 test2019Supply
@@ -48,23 +52,6 @@ test2019Supply
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
     }
-}
-
-
-- (void)test9999SuiteStats{
-    
-}
-@end // ContactMeZ0SafetyTests
-
-
-
-@implementation ContactMeZ0GeneralTests
-
-- (void)setUp{
-}
-
-- (void)tearDown{
-    TestAidC.getCounts();
 }
 
 
@@ -82,22 +69,6 @@ test2019ContactMe
     }
 }
 
-- (void)test9999SuiteStats{
-    
-}
-@end // ContactMeZ0GeneralTests
-
-
-
-@implementation ContactMeLinkZ0GeneralTests
-
-- (void)setUp{
-}
-
-- (void)tearDown{
-    TestAidC.getCounts();
-}
-
 
 - (void)test2019Link
 {
@@ -112,12 +83,11 @@ test2019ContactMe
     }
 }
 
-
 - (void)test9999SuiteStats{
     
 }
+@end // ContactMeZ0OrdinaryTests
 
-@end // ContactMeLinkZ0GeneralTests
 
 // END ContactMeZ0Tests.m
 /**

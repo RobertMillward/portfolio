@@ -27,10 +27,10 @@
     HexasoftZ3QCapi.teardownSet1(__LINE__);
 }
 
-- (void)test2020SizeSafe
+- (void)test2020SafeSize
 {
     if(HexasoftZ3QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        if(HexasoftZ3QCapi.doSet1SizeSafe(__LINE__)){
+        if(HexasoftZ3QCapi.doSet1SafeSize(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HexasoftZ3QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
