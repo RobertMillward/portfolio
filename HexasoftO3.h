@@ -66,7 +66,6 @@ typedef struct HexasoftO3ServiceClassApiStruct
 extern HexasoftSCapiT HexasoftSCapi;
 
 
-
 #endif /* HexasoftO3_h */
 /**
  *

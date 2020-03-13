@@ -21,25 +21,27 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
      * Process the column headers to assign csv (as the name defaults to) columns to the global thesarus.
      * gp64P->threadIx must be set.
      */
-    csvColDataPT (*newHdrsToTav)(csvColHeadersPT, gpSllgChar64PT);
+    csvColDataPT        (*newHdrsToTav)(csvColHeadersPT, gpSllgChar64PT);
     /**
      *
      * gp64P->threadIx must be set.
      */
-    csvColDataPT (*newDataToTav)(csvColDataPT, gpSllgChar64PT);
+    csvColDataPT        (*newDataToTav)(csvColDataPT, gpSllgChar64PT);
     /**
      *
      * gp64P...threadIx must be set.
      */
-    void (*putWXYZtoTav)(whatT, indeXT, whYT, whoZT, gpSllgChar64PT);
+    void                (*putWXYZtoTav)(whatT, indeXT, whYT, whoZT, gpSllgChar64PT);
     /**
      * Get the pointer to data for a UCI for your thread.
      * gp64P...threadIx must be set.
      */
-    ValPtrASizeZ3dataT (*getFieldViaUci)(UniversalColumnIdT, gpSllgChar64PT);
+    ValPtrASizeZ3dataT  (*getFieldViaUci)(UniversalColumnIdT, gpSllgChar64PT);
     /**
      * Create row(s) at this target for these universal columns in this UCI_CATEGORY terminated array.
      * All Uci must be from the same category.
+     * Except for the category, meta felds what, whY, whoZ, and indeX must be requested.
+     * The category is the first output so can be ignored if desired.
      * gp64P...threadIx must be set. 
      */
     void            (*createRow)(targetPT, massOfT, UniversalColumnIdT[], gpSllgChar64PT);
@@ -68,6 +70,20 @@ typedef struct DictTavExtras03ServiceClassApiStruct
     
 }DictTavExtrasO3SCapiT;
 extern DictTavExtrasO3SCapiT DictTavExtrasO3SCapi;
+
+
+/**
+ * These hold the isPresent bits corresponding to the UniversalColumnIdT.
+ * The bits are accessed via bitHolders[(UniversalColumnIdT - 1)/ 32] & (1 <<  (UniversalColumnIdT % 32).
+ */
+#define TAV_BITS_PER 32
+typedef struct DictionaryBitsThisStruct
+{
+    void (*set)  (struct DictionaryBitsThisStruct*, UniversalColumnIdT);
+    bool (*isSet)(struct DictionaryBitsThisStruct*, UniversalColumnIdT);
+    bool (*clear)(struct DictionaryBitsThisStruct*);
+
+}DictBitsZ3SIthisT, *DictBitsZ3SIthisPT;
 
 
 #endif /* DictO3_h */
