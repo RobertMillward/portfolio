@@ -32,6 +32,7 @@
 }
 
 - (void)tearDown{
+    TestAidC.getCounts();
 }
 
 
@@ -48,6 +49,11 @@ test2019Supply
         }
     }
 }
+
+
+- (void)test9999SuiteStats{
+    
+}
 @end // ContactMeZ0SafetyTests
 
 
@@ -58,6 +64,7 @@ test2019Supply
 }
 
 - (void)tearDown{
+    TestAidC.getCounts();
 }
 
 
@@ -74,6 +81,10 @@ test2019ContactMe
         }
     }
 }
+
+- (void)test9999SuiteStats{
+    
+}
 @end // ContactMeZ0GeneralTests
 
 
@@ -84,11 +95,11 @@ test2019ContactMe
 }
 
 - (void)tearDown{
+    TestAidC.getCounts();
 }
 
 
-- (void)
-test2019Link
+- (void)test2019Link
 {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
@@ -101,6 +112,10 @@ test2019Link
     }
 }
 
+
+- (void)test9999SuiteStats{
+    
+}
 
 @end // ContactMeLinkZ0GeneralTests
 

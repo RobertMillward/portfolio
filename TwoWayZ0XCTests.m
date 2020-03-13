@@ -11,6 +11,12 @@
 #import "TwoWayZ0TestAid.h"
 
 
+// For test accounting
+@interface AboutTests : XCTestCase
+@end
+@interface ZuluTests : XCTestCase
+@end
+
 
 // Break out only tests that require special setup
 @interface TwoWayZ0OrdinaryTests : XCTestCase
@@ -73,6 +79,33 @@
 }
 
 @end
+
+//============== Stats
+@implementation AboutTests
+- (void)setUp {
+    TwoWayZ0QCapi.setupSuite(__LINE__);
+}
+
+- (void)tearDown {
+}
+
+- (void)test2099StatsBegin {
+}
+@end
+
+@implementation ZuluTests
+- (void)setUp {
+}
+
+- (void)tearDown {
+    TwoWayZ0QCapi.teardownSuite(__LINE__);
+}
+- (void)test9999ZooStats {
+}
+- (void)test9999ZuluStats {
+}
+@end
+
 /*
 @implementation TwoWayZ0SafeSizeTests
 

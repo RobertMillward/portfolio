@@ -50,6 +50,9 @@
     }
 }
 
+- (void)test9999SuiteStats{
+}
+
 @end // END NonSpecial
 
 /*

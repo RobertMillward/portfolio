@@ -63,6 +63,9 @@
     }
 }
 
+- (void)test9999SuiteStats{
+}
+
 @end
 
 //END HashBasicsZ0XCTests.m

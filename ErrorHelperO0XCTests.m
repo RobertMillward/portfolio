@@ -24,8 +24,8 @@
 - (void)setUp {
 }
 
-- (void)tearDown
-{
+- (void)tearDown{
+    TestAidC.getCounts();
 }
 
 /**
@@ -49,6 +49,10 @@
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidQCapi.getAssertText(__FUNCTION__)]);
         }
     }
+}
+
+-(void)test9999SuiteStats{
+    
 }
 
 

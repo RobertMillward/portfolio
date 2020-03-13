@@ -13,15 +13,15 @@
 #import "TestAidZ0.h"
 
 @interface RowO0OrdinaryTests : XCTestCase
-
 @end
 
 @implementation RowO0OrdinaryTests
 - (void)setUp{
-    TestAidZ0QCapi.basicInit();
+    RowZ3QCapi.setupSet1(__LINE__);
 }
 
 - (void)tearDown{
+    RowZ3QCapi.teardownSet1(__LINE__);
 }
 
 
@@ -64,6 +64,9 @@
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
     }
+}
+
+- (void)test9999SuiteStats{
 }
 
 @end //END ordinary

@@ -14,7 +14,6 @@
 #import "HexasoftZ3TestAid.h"
 
 @interface HexasoftO3OrdinaryTests : XCTestCase
-
 @end
 
 @implementation HexasoftO3OrdinaryTests
@@ -67,7 +66,9 @@
     }
 }// END Performance
 
-
+- (void)test9999SuiteStats{
+    
+}
 
 @end
 /**
