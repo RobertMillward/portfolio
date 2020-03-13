@@ -18,8 +18,7 @@
 typedef struct DictionaryTavO3ServiceClassApiStruct
 {
     /**
-     * Process the column headers to assign csv (as the name defaults to) columns to the global dictionary.
-     * Enqueues the global thesarus-and-values (tav) so dequeue when all data is loaded.
+     * Process the column headers to assign csv (as the name defaults to) columns to the global thesarus.
      * gp64P->threadIx must be set.
      */
     csvColDataPT (*newHdrsToTav)(csvColHeadersPT, gpSllgChar64PT);
@@ -39,14 +38,15 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
      */
     ValPtrASizeZ3dataT (*getFieldViaUci)(UniversalColumnIdT, gpSllgChar64PT);
     /**
-     * Create row(s) at this target for these universal columns..
-     * gp64P->threadIx must be set. 
+     * Create row(s) at this target for these universal columns in this UCI_CATEGORY terminated array.
+     * All Uci must be from the same category.
+     * gp64P...threadIx must be set. 
      */
-    void            (*createRows)(targetPT, massOfT, UniversalColumnIdT[]);
+    void            (*createRow)(targetPT, massOfT, UniversalColumnIdT[], gpSllgChar64PT);
     /**
      * Dequeue so another can use it. As always, enqueue for the shortest possible duration.
      */
-    void (*dequeTav)(void);
+    //void (*dequeTav)(void);
     
 }DictTavO3SCapiT, *DictTavO3SCapiPT;
 extern DictTavO3SCapiT DictTavO3SCapi;
@@ -60,7 +60,7 @@ typedef struct DictTavExtras03ServiceClassApiStruct
     /**
      * latitude and longitude arguments in decimal strings as "-47.228" or "57.914".
      */
-    void    (*ofLatLong)(longLatPT, char* latitude, char* longitude);
+    void    (*getLongLat)(longLatPT, gpSllgChar64PT);
     /**
      * the distance between two points given in
      */
