@@ -12,7 +12,7 @@
 #include "HashBasicsZ0Plan.h"
 // api's
 
-
+#define HASH8100 8100
 typedef struct HashBasicsO0HelperClassApiStruct
 {
     /**
@@ -44,6 +44,33 @@ typedef struct HashBasicsO0HelperClassApiStruct
      * Convert the hash to 8100.
      */
     void (*get8100code)(char* the8100store, Ssht hash);
+    
+    /**
+     * The following functions give acces to an array of Union Heap TBD items
+     * for the life of the thread.
+     *
+     * Clear my thread safe 8100
+     */
+    void (*clearMy8100)(uhxSubTypeT, gpSllgChar64PT);
+    
+    /**
+     * Add my item to my thread safe 8100.
+     * Return the 8100 index.
+     * The hash uses get8100HashForOtherName() to support compiles.
+     */
+    Ssht (*addTo8100)(uhxElT, gpSllgChar64PT);
+    
+    /**
+     * Get a pointer to my item using (returned) index.
+     * Actually the pointer for any of the 8100 items can be gotten
+     * meaning data can be stored.
+     */
+    uhxElPT (*getViaHash8100)(Ssht, gpSllgChar64PT);
+    
+    /**
+     * Get a pointer to my item sequentially.
+     */
+    uhxElPT (*geSequentially8100)(gpSllgChar64PT);
     
 }HashBasicsO0HCapiT, *HashBasicsO0HCapiPT;
 
