@@ -49,7 +49,7 @@ typedef struct HexasoftO3ServiceInstanceStruct // Having neither to nor go for c
 }HexasoftO3SIthisT, *HexasoftO3SIthisPT;
 
 #define HexasoftSIthisT HexasoftO3SIthisT
-#define HexasoftSIthisPT HexasoftO3SIPthisT
+#define HexasoftSIthisPT HexasoftO3SIthisPT
 
 
 /**
