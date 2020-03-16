@@ -70,7 +70,7 @@ typedef struct HashBasicsO0HelperClassApiStruct
     /**
      * Get a pointer to my item sequentially.
      */
-    uhxElPT (*geSequentially8100)(gpSllgChar64PT);
+    uhxElPT (*getSequentially8100)(gpSllgChar64PT);
     
 }HashBasicsO0HCapiT, *HashBasicsO0HCapiPT;
 
