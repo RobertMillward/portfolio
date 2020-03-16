@@ -12,7 +12,6 @@
 #include "HashBasicsZ0Plan.h"
 // api's
 
-#define HASH8100 8100
 typedef struct HashBasicsO0HelperClassApiStruct
 {
     /**
@@ -29,7 +28,7 @@ typedef struct HashBasicsO0HelperClassApiStruct
      * Create a hash which falls into the 90^2 (thus 8100) category
      * with an item name as input. It doesnt actually reach
      * 90^2 so the actual limit is noted by MAX_8100_HB.
-     * The underscore character is ignored.
+     * Non alpha-numeric and underscore are ignored.
      */
     Ssht (*get8100HashForItemName)(char *strP);
     
