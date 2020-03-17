@@ -35,6 +35,7 @@ typedef struct MetroCacheO0ServiceClassApiStruct
 {
     char* (*putText)(char* text);
     void  (*putElement)(uhxElT);
+    void  (*save)(void);
 }MetroCacheO0SCapiT;
 extern MetroCacheO0SCapiT MetroCacheO0SCapi;
 

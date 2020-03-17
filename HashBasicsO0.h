@@ -30,7 +30,7 @@ typedef struct HashBasicsO0HelperClassApiStruct
      * 90^2 so the actual limit is noted by MAX_8100_HB.
      * Non alpha-numeric and underscore are ignored.
      */
-    Ssht (*get8100HashForItemName)(char *strP);
+    Ssht (*get8100HashForItemName)(char *strP, HashBasics8100BitSubsetsZ0SCenumT bitCtl);
     
     /**
      * Using get8100HashForItemName(), create a hash
@@ -38,7 +38,7 @@ typedef struct HashBasicsO0HelperClassApiStruct
      * with a name that might start with get, set, is, etc
      * then call get8100HashForItemName().
      */
-    Ssht (*get8100HashForOtherName)(char *strP);
+    Ssht (*get8100HashForOtherName)(sourcePT, HashBasics8100BitSubsetsZ0SCenumT bitCtl);
     /**
      * Convert the hash to 8100.
      */
