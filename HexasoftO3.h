@@ -42,7 +42,7 @@ typedef struct HexasoftO3ServiceInstanceApiStruct
 
 extern HexasoftO3SIapiT HexasoftO3SIapi;
 
-typedef struct HexasoftO3ServiceInstanceStruct // Having neither to nor go for complete instance
+typedef struct HexasoftO3ServiceInstanceStruct // Having neither data nor api for complete instance
 {
     CommaSepO3SIdataT   data;
     HexasoftO3SIapiT    api;
@@ -60,8 +60,8 @@ typedef struct HexasoftO3ServiceClassApiStruct
     initStatusT     (* init)    (pathPT, gpSllgChar64PT);
     HexasoftSIthisT (*newThis)  (gpSllgChar64PT);
     void            (*getCountries) (HexasoftSIthisPT, gpSllgChar64PT);
-    void            (*getStates)    (HexasoftSIthisPT, sourcePT forCountry, gpSllgChar64PT);
-    void            (*getCities)    (HexasoftSIthisPT, sourcePT forCountry, sourcePT forState, gpSllgChar64PT);
+    void            (*getStates)    (HexasoftSIthisPT, gpSllgChar64PT);
+    void            (*getTowns)    (HexasoftSIthisPT, gpSllgChar64PT);
 }HexasoftO3SCapiT, *HexasoftO3SCapiPT;
 
 #define HexasoftSCapiT HexasoftO3SCapiT
