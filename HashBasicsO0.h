@@ -71,6 +71,11 @@ typedef struct HashBasicsO0HelperClassApiStruct
      */
     uhxElPT (*getSequentially8100)(gpSllgChar64PT);
     
+    /**
+     * Get the hash code for the most recent sequential access.
+     */
+    void    (*getHashCode8100)(char* here, gpSllgChar64PT);
+    
 }HashBasicsO0HCapiT, *HashBasicsO0HCapiPT;
 
 #define HashBasicsHCapiT HashBasicsO0HCapiT
