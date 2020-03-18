@@ -57,7 +57,7 @@ typedef struct HashBasicsO0HelperClassApiStruct
      * Return the 8100 index.
      * The hash uses get8100HashForOtherName() to support compiles.
      */
-    Ssht (*addTo8100)(uhxElT, gpSllgChar64PT);
+    Ssht (*addTo8100)(uhxElT, HashBasics8100BitSubsetsZ0SCenumT, gpSllgChar64PT);
     
     /**
      * Get a pointer to my item using (returned) index.

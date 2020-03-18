@@ -33,6 +33,10 @@ typedef enum MetroCacheContentTypesZ0ServiceClassEnum
  */
 typedef struct MetroCacheO0ServiceClassApiStruct
 {
+    /**
+     * Store the text into the pool and get the address.
+     * Return 0 if the pool is full.
+     */
     char* (*putText)(char* text);
     void  (*putElement)(uhxElT);
     void  (*save)(void);
