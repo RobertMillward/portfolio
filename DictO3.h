@@ -45,10 +45,6 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
      * gp64P...threadIx must be set. 
      */
     void            (*createRow)(targetPT, massOfT, UniversalColumnIdT[], gpSllgChar64PT);
-    /**
-     * Dequeue so another can use it. As always, enqueue for the shortest possible duration.
-     */
-    //void (*dequeTav)(void);
     
 }DictTavO3SCapiT, *DictTavO3SCapiPT;
 extern DictTavO3SCapiT DictTavO3SCapi;

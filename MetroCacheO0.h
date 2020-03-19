@@ -30,16 +30,24 @@ typedef enum MetroCacheContentTypesZ0ServiceClassEnum
 
 /**
  * The metropolotian data cache class api.
+ * Data can be loaded from any source so loading services are not included.
+ * Do load towns (cities) first so that the longLat linked list can start at the top.
+ * Next would be states link listed to countries.
+ * Next would be counties link listed to states.
  */
 typedef struct MetroCacheO0ServiceClassApiStruct
 {
     /**
      * Store the text into the cache and return the address.
      * Return 0 if the pool is full.
+     * The putting of the text may happen during importing the data.
+     * The text is a unique town, county, state, or country name,
      */
     char* (*putText)(char* text);
     /**
      * Store the element which points to the text in the cache.
+     * The putting of the element may happen after the import and
+     * after resequencing.
      */
     void  (*putElement)(uhxElT);
     /**
