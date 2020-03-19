@@ -25,6 +25,10 @@ typedef struct HashBasicsO0HelperClassApiStruct
     fourHashT (*getWordHash)(char *strP);
     
     /**
+     * Create a hash for 1<<17 which is up to approximately 131,000
+     */
+    Slng (*get131KHashForItemName)(char *strP, HashBasics8100BitSubsetsZ0SCenumT bitCtl);
+    /**
      * Create a hash which falls into the 90^2 (thus 8100) category
      * with an item name as input. It doesnt actually reach
      * 90^2 so the actual limit is noted by MAX_8100_HB.
