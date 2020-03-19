@@ -34,11 +34,18 @@ typedef enum MetroCacheContentTypesZ0ServiceClassEnum
 typedef struct MetroCacheO0ServiceClassApiStruct
 {
     /**
-     * Store the text into the pool and get the address.
+     * Store the text into the cache and return the address.
      * Return 0 if the pool is full.
      */
     char* (*putText)(char* text);
+    /**
+     * Store the element which points to the text in the cache.
+     */
     void  (*putElement)(uhxElT);
+    /**
+     * Save the contents to disk for rapid retrieval.
+     * Not implemented.
+     */
     void  (*save)(void);
 }MetroCacheO0SCapiT;
 extern MetroCacheO0SCapiT MetroCacheO0SCapi;

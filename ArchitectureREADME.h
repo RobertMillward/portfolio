@@ -46,7 +46,11 @@
  * and contain the definitions that the code is built around. There can be a function structure
  * at the end of a "Z0" which exposes some of the internal information as a testing hook.
  * Those functions and data are, as they say, subject to change without notice.
+ *
+ * Finally finally, if a class has storage files for depricated code then the name will end
+ * with Depricated. These files are not maintained and are not included in the build.
  */
+typedef char AboutArchitectureT;
 
 #endif /* ArchitectureREADME_h */
 /**

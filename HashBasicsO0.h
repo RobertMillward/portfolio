@@ -44,7 +44,7 @@ typedef struct HashBasicsO0HelperClassApiStruct
      */
     Ssht (*get8100HashForOtherName)(sourcePT, HashBasics8100BitSubsetsZ0SCenumT bitCtl);
     /**
-     * Convert the hash to 8100.
+     * Convert the hash to 8100 two printable codes.
      */
     void (*get8100code)(char* the8100store, Ssht hash);
     

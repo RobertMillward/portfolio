@@ -7,7 +7,10 @@
 #ifndef HashBasicsZ0TestAid_h
 #define HashBasicsZ0TestAid_h
 #include "ArchitectureZ0Plan.h"
-
+/**
+ * The definition of the Quality Class interface for HashBasics.
+ * It currently does not use the standard testing structure.
+ */
 typedef struct HashBasicsZ0QualityClassApiStruct
 {
     void (*setupSuite)(lineNbrT);
