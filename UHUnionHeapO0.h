@@ -13,13 +13,13 @@
 // api's
 
 /**
- * Tjhe core of the UnionHeap is an array (heap) of a union of type uhxElT
- * containing data types of a pointer, an integer, a float, or a seven character C-string.
+ * The core of the UnionHeap is an array (heap) of a union of type uhxElT
+ * containing data types of a pointer, a math integer, a math float, or a seven character C-string.
  * It is carried about among the functions via a control structure identified by uhxPassT.
  * There is a default dompare for each of the four data types or the caller may provide one.
- * Functions are listed in the Instance Helper below.
+ * Functions are listed in the Service Instance below.
  */
-typedef struct UHUnionHeapO0HelperInstanceApiStruct
+typedef struct UHUnionHeapO0ServiceInstanceApiStruct
 {
     /**
      * Get a new control structure.
@@ -56,9 +56,9 @@ typedef struct UHUnionHeapO0HelperInstanceApiStruct
      */
     uhxAnalysisT        (*analyze)(uhxPassPT uhxPassP);
     
-}UHUnionHeapO0HIapiT, *UHUnionHeapO0HIapiPT;
+}UHUnionHeapO0SIapiT, *UHUnionHeapO0SIapiPT;
 
-extern UHUnionHeapO0HIapiT UHUnionHeapO0HIapi;
+extern UHUnionHeapO0SIapiT UHUnionHeapO0SIapi;
 
 
 #endif /* UHUnionHeapO0_h */

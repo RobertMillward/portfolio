@@ -1,5 +1,6 @@
 //
 //  UHSortO0.h
+//  2020Apr02Dev
 //
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
@@ -32,7 +33,7 @@ typedef struct UHSortO0HelperInstanceApiStruct
      * These simple sort examples being here avoid two more code sets.
      */
     int             (*clangSort)(srtPassPT);
-    void            (*bruteSort)(srtPassPT);
+    void            (*bruteSortIntegers)(srtPassPT);
     /**
      * Tools
      * - caller should increment srtPassP->passCount for these two
