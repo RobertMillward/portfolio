@@ -14,7 +14,7 @@
 #include "UHUnionHeapZ0Plan.h"
 // api's
 
-typedef struct UHSortO0HelperInstanceDataStruct
+typedef struct UHSortO0ServiceInstanceDataStruct
 {
     long    passCount;
     long    parentSwapCount;
@@ -23,7 +23,7 @@ typedef struct UHSortO0HelperInstanceDataStruct
 }srtPassT, *srtPassPT;
 
 
-typedef struct UHSortO0HelperInstanceApiStruct
+typedef struct UHSortO0ServiceInstanceApiStruct
 {
     /**
      * Functions
@@ -41,9 +41,9 @@ typedef struct UHSortO0HelperInstanceApiStruct
     uhxIxNoMoreT    (*sortYourToBeCoupledItems)(srtPassPT);
     void            (*swapItems)               (srtPassPT);
     
-}UHSortO0HIapiT, *UHSortO0HIapiPT;
+}UHSortO0SIapiT, *UHSortO0SIapiPT;
 
-extern UHSortO0HIapiT UHSortO0HIapi;
+extern UHSortO0SIapiT UHSortO0SIapi;
 
 
 #endif /* UHSortO0_h */

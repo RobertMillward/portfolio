@@ -29,10 +29,10 @@ typedef struct HexasoftO3ServiceInstanceApiStruct
      */
     void (* read)(char* here, massOfT, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
-     * Load the data into the thesarus.
-     * After or instead of this step, take and store the csv row data.
+     * Load the csv data into the thesarus.
+     * After or instead of this step, take the data from the thesarus and process it.
      */
-    void (* csv)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* csvToThesarus)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
      * Close the file and deque the thesarus.
      */
