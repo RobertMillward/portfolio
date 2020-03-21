@@ -14,18 +14,23 @@
 // other api's
 
 // the following will be moved to the data plan file
+// if exposed at completion else the C-file.
 /**
  * The several types of data in the metro cache
+ * Used interchangebly:
+ * - country, nation. and region
+ * - state and province
+ * - town and city
  */
-typedef enum MetroCacheContentTypesZ0ServiceClassEnum
+typedef enum MetroCacheKnowTypesZ0ServiceClassEnum
 {
     METCACHE_CNTTYP_CNTRY = '^',
-    METCACHE_CNTTYP_STATE = '=',
+    METCACHE_CNTTYP_STATE = '[',
     METCACHE_CNTTYP_CNTY = '~',
     METCACHE_CNTTYP_TOWN = 'v',
     METCACHE_CNTTYP_LINK = '>'
     
-}MetroCacheCntTypZ0SCEnumT;
+}MetroCacheKnowTypesZ0SCEnumT;
 
 
 /**
