@@ -40,18 +40,22 @@ typedef enum MetroCacheKnowTypesZ0ServiceClassEnum
 typedef struct MetroCacheO0ServiceClassApiStruct
 {
     /**
+     * Process the row most recently put into the thesarus.
+     */
+    void (*doThisRow)(gpSllgChar64PT);
+    /**
      * Store the text into the cache and return the address.
      * Return 0 if the pool is full.
      * The putting of the text may happen during importing the data.
      * The text is a unique town, county, state, or country name,
      */
-    char*   (*putText)(char* text);
+    //char*   (*putText)(char* text);
     /**
      * Store the element which points to the text in the cache.
      * The putting of the element may happen after the import and
      * after resequencing.
      */
-    void    (*putElement)(uhxElT);
+    //void    (*putElement)(uhxElT);
     /**
      * Sort elements according to text.
      */
