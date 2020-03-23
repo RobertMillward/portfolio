@@ -21,14 +21,15 @@
  * - country, nation. and region
  * - state and province
  * - town and city
+ * programming note: the codes were chozen to be contiguous
  */
 typedef enum MetroCacheKnowTypesZ0ServiceClassEnum
 {
-    METCACHE_CNTTYP_CNTRY = '^',
-    METCACHE_CNTTYP_STATE = '[',
-    METCACHE_CNTTYP_CNTY = '~',
-    METCACHE_CNTTYP_TOWN = 'v',
-    METCACHE_CNTTYP_LINK = '>'
+    METCACHE_CNTTYP_CNTRY = '[',
+    METCACHE_CNTTYP_STATE = '\\',
+    METCACHE_CNTTYP_CNTY = ']',
+    METCACHE_CNTTYP_TOWN = 'v', // really A-Z
+    METCACHE_CNTTYP_LINK = '>'  // currently unused
     
 }MetroCacheKnowTypesZ0SCEnumT;
 
