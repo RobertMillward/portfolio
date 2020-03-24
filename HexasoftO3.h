@@ -59,9 +59,7 @@ typedef struct HexasoftO3ServiceClassApiStruct
 {
     initStatusT     (* init)    (pathPT, gpSllgChar64PT);
     HexasoftSIthisT (*newThis)  (gpSllgChar64PT);
-    void            (*getCountries) (HexasoftSIthisPT, gpSllgChar64PT);
-    void            (*getStates)    (HexasoftSIthisPT, gpSllgChar64PT);
-    void            (*getTowns)    (HexasoftSIthisPT, gpSllgChar64PT);
+    void            (*getData) (HexasoftSIthisPT, gpSllgChar64PT);
 }HexasoftO3SCapiT, *HexasoftO3SCapiPT;
 
 #define HexasoftSCapiT HexasoftO3SCapiT

@@ -13,25 +13,7 @@
 // data plans
 // other api's
 
-// the following will be moved to the data plan file
-// if exposed at completion else the C-file.
-/**
- * The several types of data in the metro cache
- * Used interchangebly:
- * - country, nation. and region
- * - state and province
- * - town and city
- * programming note: the codes were chozen to be contiguous
- */
-typedef enum MetroCacheKnowTypesZ0ServiceClassEnum
-{
-    METCACHE_CNTTYP_CNTRY = '[',
-    METCACHE_CNTTYP_STATE = '\\',
-    METCACHE_CNTTYP_CNTY = ']',
-    METCACHE_CNTTYP_TOWN = 'v', // really A-Z
-    METCACHE_CNTTYP_LINK = '>'  // currently unused
-    
-}MetroCacheKnowTypesZ0SCEnumT;
+
 
 
 /**
@@ -45,12 +27,9 @@ typedef struct MetroCacheO0ServiceClassApiStruct
      */
     void (*doThisRow)(gpSllgChar64PT);
     /**
-     * Store the text into the cache and return the address.
-     * Return 0 if the pool is full.
-     * The putting of the text may happen during importing the data.
-     * The text is a unique town, county, state, or country name,
+     * Get the pointer to the longLat for a toen
      */
-    //char*   (*putText)(char* text);
+    char*   (*getLongLat)(char* town, char* stateOrCountry, gpSllgChar64PT);
     /**
      * Store the element which points to the text in the cache.
      * The putting of the element may happen after the import and
