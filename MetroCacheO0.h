@@ -32,10 +32,8 @@ typedef struct MetroCacheO0ServiceClassApiStruct
     char*   (*getLongLat)(char* town, char* stateOrCountry, gpSllgChar64PT);
     /**
      * Store the element which points to the text in the cache.
-     * The putting of the element may happen after the import and
-     * after resequencing.
      */
-    //void    (*putElement)(uhxElT);
+    //void    (*findX)(void);
     /**
      * Sort elements according to text.
      */
