@@ -1,6 +1,6 @@
 //
 //  HexasoftO3Tests.m
-//  20200310Dev
+//  2020Apr02Dev
 //
 //  Created by Robert R on 3/27/15.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -8,26 +8,15 @@
 // os
 #include <XCTest/XCTest.h>
 // helper and service api's
-//#import "PeopleGroupO0.h"
-//#import "InitDestroyHelperO1.h"
-//#import "SignatureFactoryO0.h"
-//#import "CSVO0.h"
 // data plans
-//#include "ArchitectureZ0Plan.h"
 // other api's
-//#include "HexasoftO3.h"
 // quality
-//#import "TestAidZ0.h"
-
-//#import "UnixStreamO0.h"
-
 #import "HexasoftZ3TestAid.h"
 
-@interface HexasoftO3Tests : XCTestCase
-
+@interface HexasoftO3OrdinaryTests : XCTestCase
 @end
 
-@implementation HexasoftO3Tests
+@implementation HexasoftO3OrdinaryTests
 
 
 - (void)setUp {
@@ -38,10 +27,10 @@
     HexasoftZ3QCapi.teardownSet1(__LINE__);
 }
 
-- (void)test2020SizeSafe
+- (void)test2020SafeSize
 {
     if(HexasoftZ3QCapi.isScheduled(__FUNCTION__, __LINE__)){
-        if(HexasoftZ3QCapi.doSet1SizeSafe(__LINE__)){
+        if(HexasoftZ3QCapi.doSet1SafeSize(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HexasoftZ3QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
@@ -77,7 +66,9 @@
     }
 }// END Performance
 
-
+- (void)test9999SuiteStats{
+    
+}
 
 @end
 /**

@@ -1,6 +1,6 @@
 //
 //  DictZ0XCTests.m -
-//  2020Mar10Dev
+//  2020Apr02Dev
 //
 //  Created by Robert Russell Millward on 12/3/19.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -9,185 +9,95 @@
 #import <XCTest/XCTest.h>
 // helper api's
 // data plans
-#import "DictZ0TestAid.h"
 // quality
-#import "TestAidZ0.h"
+#import "DictZ0TestAid.h"
 
-@interface DictO0CheckTests : XCTestCase
+// Break out only tests that require special aetup
+@interface DictO0OrdinaryTests : XCTestCase
 @end
-@interface DictO0FormatTests : XCTestCase
+@interface DictO0SafeSizeTests : XCTestCase
 @end
-@interface DictO0GetTests : XCTestCase
+@interface DictO0BasicTests : XCTestCase
+@end
+@interface DictO0ExtraDemoTests : XCTestCase
+@end
+@interface DictO0PerformanceTests : XCTestCase
 @end
 
+@implementation DictO0OrdinaryTests
 
-@implementation DictO0GetTests
-- (void)setUp{
-    TestAidZ0QCapi.basicInit();
+- (void)setUp {
+    DictO0QCapi.setupSet1(__LINE__);
 }
 
-- (void)tearDown{
+- (void)tearDown {
+    DictO0QCapi.teardownSet1(__LINE__);
 }
 
-
-- (void)test2019GetItO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.getDictTests(CPR_FTYPE_STRL, __LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-        
-        ewc = DictO0QCapi.getDictTests(CPR_FTYPE_DUBL, __LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-        
-        ewc = DictO0QCapi.getDictTests(CPR_FTYPE_DTTM, __LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-        
-        ewc = DictO0QCapi.getDictTests(CPR_FTYPE_TEXT, __LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
+- (void)test2020SafeSize{
+    if(DictO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(DictO0QCapi.doSet1SizeSafe(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:DictO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
 }
-@end
 
+- (void)test2020Basic{
+    if(DictO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(DictO0QCapi.doSet2Basics(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:DictO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
 
+- (void)test9999SuiteStats{
+}
 
-/**
- * Check
+@end // END NonSpecial
+
+/*
+@implementation DictO0SafeSizeTests
+
+- (void)setUp {
+    DictO0QCapi.setupSet1(__LINE__);
+}
+
+- (void)tearDown {
+    DictO0QCapi.teardownSet1(__LINE__);
+}
+
+- (void)test2020SafeSize{
+    if(DictO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(DictO0QCapi.doSet1SizeSafe(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:DictO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+@end // END SafeSize
+
+@implementation DictO0BasicTests
+
+- (void)setUp {
+    DictO0QCapi.setupSet2(__LINE__);
+}
+
+- (void)tearDown {
+    DictO0QCapi.teardownSet2(__LINE__);
+}
+
+- (void)test2020Basic{
+    if(DictO0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(DictO0QCapi.doSet2Basics(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:DictO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+@end // END Basic
+ 
  */
 
-
-@implementation DictO0CheckTests
-- (void)setUp{
-    TestAidZ0QCapi.basicInit();
-}
-
-- (void)tearDown{
-}
-
-
-
-- (void)test2019CheckDUBLTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictDUBLTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-
-- (void)test2019CheckDTXXTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.checkDictDTXXTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-
-- (void)test2019CheckTEXTTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictTEXTTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-
-- (void)test2019CheckSTRXTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictSTRXTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-
-- (void)test2019CheckINTGTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictINTGTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-@end
-
-/**
- * Format
- */
-
-
-@implementation DictO0FormatTests
-- (void)setUp{
-    TestAidZ0QCapi.basicInit();
-}
-
-- (void)tearDown{
-}
-
-
-
-- (void)test2019FormatDUBLTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictDUBLTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-
-- (void)test2019FormatDTXXTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictDTXXTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-
-- (void)test2019FormatTEXTTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictTEXTTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-
-- (void)test2019FormatSTRXTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictSTRXTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-
-- (void)test2019FormatINTGTestsO0{
-    if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
-        ErrorWarnCountT ewc = DictO0QCapi.formatDictINTGTests(__LINE__);
-        if(ewc.classErrors != 0){
-            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
-        }
-    }
-}
-
-@end // DictZ0XCTests.m
-
+//END  DictZ0XCTests.m
 /**
  */

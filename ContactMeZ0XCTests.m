@@ -1,5 +1,6 @@
 //
-//  ContactMeZ0Tests.m
+//  ContactMeZ0XCTests.m
+//  2020Apr02Dev
 //
 //  Created by Robert R on 01/09/20.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -16,18 +17,28 @@
 #import "ContactMeZ0TestAid.h"
 #import "TestAidZ0.h"
 
-@interface ContactMeZ0SafetyTests : XCTestCase
 
+@interface ContactMeZ0OrdinaryTests : XCTestCase
 @end
+//@interface ContactMeZ0SafetyTests : XCTestCase
+//@end
+//@interface ContactMeZ0GeneralTests : XCTestCase
+//@end
+//@interface ContactMeLinkZ0GeneralTests : XCTestCase
+//@end
 
-@implementation ContactMeZ0SafetyTests
+
+
+
+
+@implementation ContactMeZ0OrdinaryTests
 
 - (void)setUp{
 }
 
 - (void)tearDown{
+    TestAidC.getCounts();
 }
-
 
 - (void)
 test2019Supply
@@ -41,19 +52,6 @@ test2019Supply
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidC.getAssertText(__FUNCTION__)]);
         }
     }
-}
-@end
-
-@interface ContactMeZ0GeneralTests : XCTestCase
-
-@end
-
-@implementation ContactMeZ0GeneralTests
-
-- (void)setUp{
-}
-
-- (void)tearDown{
 }
 
 
@@ -70,23 +68,9 @@ test2019ContactMe
         }
     }
 }
-@end
-
-@interface ContactMeLinkZ0GeneralTests : XCTestCase
-
-@end
-
-@implementation ContactMeLinkZ0GeneralTests
-
-- (void)setUp{
-}
-
-- (void)tearDown{
-}
 
 
-- (void)
-test2019Link
+- (void)test2019Link
 {
     if(TestAidC.isScheduled(__FUNCTION__, TestAidZ0QCdata.showFunctionName)){
         
@@ -99,7 +83,12 @@ test2019Link
     }
 }
 
+- (void)test9999SuiteStats{
+    
+}
+@end // ContactMeZ0OrdinaryTests
 
-@end // END ContactMeZ0Tests.m
+
+// END ContactMeZ0XCTests.m
 /**
  */

@@ -1,5 +1,6 @@
 //
 //  HashBasicsZ0XCTests.m - Test the O0 interface
+//  2020Apr02Dev
 //
 //  Created by Robert R on 4/1/15.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -12,11 +13,10 @@
 #import "HashBasicsZ0TestAid.h"
 
 
-@interface HashBasicsO0Tests : XCTestCase
-
+@interface HashBasicsO0OrdinaryTests : XCTestCase
 @end
 
-@implementation HashBasicsO0Tests
+@implementation HashBasicsO0OrdinaryTests
 
 - (void)setUp {
     HashBasicsZ0QCapi.setupParseSet1(__LINE__);
@@ -27,7 +27,7 @@
 }
 
 
-- (void)test2015SampleNotWorking {
+- (void)test2015SampleNotWorkingSet4 {
     if(HashBasicsZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
         if(HashBasicsZ0QCapi.doSet4(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HashBasicsZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
@@ -36,7 +36,7 @@
 }
 
 
-- (void)test2019LikeTestAid {
+- (void)test2019LikeTestAidSet3 {
     if(HashBasicsZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
         if(HashBasicsZ0QCapi.doParseTestAidSet3(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HashBasicsZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
@@ -44,7 +44,7 @@
     }
 }
 
-- (void)test2019OtherName{
+- (void)test2019OtherNameSet2{
     if(HashBasicsZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
         if(HashBasicsZ0QCapi.do8100Set2(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HashBasicsZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
@@ -53,13 +53,16 @@
 }
 
 
-- (void)test201901Parse{
+- (void)test201901ParseSet1{
     if(HashBasicsZ0QCapi.isScheduled(__FUNCTION__, __LINE__))
     {
         if(HashBasicsZ0QCapi.doParseSet1(__LINE__)){
             XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:HashBasicsZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
         }
     }
+}
+
+- (void)test9999SuiteStats{
 }
 
 @end

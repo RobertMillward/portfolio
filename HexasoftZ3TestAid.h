@@ -20,7 +20,7 @@ typedef struct HexasoftZ3QualityClassApiStructure
     char* (*getAssertText)(cfuncNameT, lineNbrT);
     
     void (*setupSet1)(lineNbrT);
-    bool (*doSet1SizeSafe)(lineNbrT);
+    bool (*doSet1SafeSize)(lineNbrT);
     void (*teardownSet1)(lineNbrT);
     
     
@@ -40,6 +40,10 @@ typedef struct HexasoftZ3QualityClassApiStructure
 }HexasoftZ3QCapiT, *HexasoftZ3QCapiPT;
 
 extern HexasoftZ3QCapiT HexasoftZ3QCapi;
+/**
+ * Expose some internal sizes
+ */
+extern CfileZ0objInfoT DictZ3objInfo[]; // a null terminated array of part sizes
 
 #endif /* HexasoftZ3TestAid_h */
 /**

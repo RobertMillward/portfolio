@@ -29,10 +29,10 @@ typedef struct HexasoftO3ServiceInstanceApiStruct
      */
     void (* read)(char* here, massOfT, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
-     * Load the data into the thesarus.
-     * After or instead of this step, take and store the csv row data.
+     * Load the csv data into the thesarus.
+     * After or instead of this step, take the data from the thesarus and process it.
      */
-    void (* csv)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
+    void (* csvToThesarus)(char* here, CommaSepO3SIdataPT, gpSllgChar64PT);
     /**
      * Close the file and deque the thesarus.
      */
@@ -42,14 +42,14 @@ typedef struct HexasoftO3ServiceInstanceApiStruct
 
 extern HexasoftO3SIapiT HexasoftO3SIapi;
 
-typedef struct HexasoftO3ServiceInstanceStruct // Having neither to nor go for complete instance
+typedef struct HexasoftO3ServiceInstanceStruct // Having neither data nor api for complete instance
 {
     CommaSepO3SIdataT   data;
     HexasoftO3SIapiT    api;
 }HexasoftO3SIthisT, *HexasoftO3SIthisPT;
 
 #define HexasoftSIthisT HexasoftO3SIthisT
-#define HexasoftSIthisPT HexasoftO3SIPthisT
+#define HexasoftSIthisPT HexasoftO3SIthisPT
 
 
 /**
@@ -59,12 +59,12 @@ typedef struct HexasoftO3ServiceClassApiStruct
 {
     initStatusT     (* init)    (pathPT, gpSllgChar64PT);
     HexasoftSIthisT (*newThis)  (gpSllgChar64PT);
+    void            (*getData) (HexasoftSIthisPT, gpSllgChar64PT);
 }HexasoftO3SCapiT, *HexasoftO3SCapiPT;
 
 #define HexasoftSCapiT HexasoftO3SCapiT
 #define HexasoftSCapi HexasoftO3SCapi
 extern HexasoftSCapiT HexasoftSCapi;
-
 
 
 #endif /* HexasoftO3_h */

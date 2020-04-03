@@ -46,35 +46,35 @@ extern TimeSerNbrHCapiT TimeSerNbrHCapi;
  * Only revised links will save.
  * Validation failure information will appear in gpSllgChar64PT->theChar64
  */
-typedef struct TimeSerNbrLinkO0HelperInstanceApiStruct
+typedef struct TimeSerNbrLinkO0ApplicationInstanceApiStruct
 {
     void (*setHideRow)      (TimeSerNbrLinkZ0HIdataPT);
     void (*setUnhideRow)    (TimeSerNbrLinkZ0HIdataPT);
     void (*saveRow)         (TimeSerNbrLinkZ0HIdataPT); // Not fully implemented
     void (*toRow)           (TimeSerNbrLinkZ0HIdataPT, targetPT, massOfT, indeXPT, whoZPT, gpSllgChar64PT);
-}TimeSerNbrLinkO0HIapiT, *TimeSerNbrLinkO0HIapiPT;
-extern TimeSerNbrLinkO0HIapiT TimeSerNbrLinkO0HIapi;
+}TimeSerNbrLinkO0AIapiT, *TimeSerNbrLinkO0AIapiPT;
+extern TimeSerNbrLinkO0AIapiT TimeSerNbrLinkO0AIapi;
 
 /**
  * The "new" instance. apiPT->the api and dataT has the data.
  */
-typedef struct TimeSerNbrLinkO0HelperInstanceThisStruct
+typedef struct TimeSerNbrLinkO0ApplicationInstanceThisStruct
 {
-    TimeSerNbrLinkO0HIapiPT apiP;
+    TimeSerNbrLinkO0AIapiPT apiP;
     TimeSerNbrLinkZ0HIdataT data;
 }TimeSerNbrLinkO0AIthisT, *TimeSerNbrLinkO0AIthisPT, TimeSerNbrLinkO0AInewxT;
 /**
  * The Link Class functions.
  */
-typedef struct TimeSerNbrLinkO0HelperClassApiStruct
+typedef struct TimeSerNbrLinkO0ApplicationClassApiStruct
 {
     TimeSerNbrLinkO0AIthisT (*newHasRow)   (abstractRowT);
     TimeSerNbrLinkO0AIthisT (*newHasFields)(timeSerNbrNodeIdT grantor,   timeSerNbrNodeIdT grntee,
                                            timeSerNbrDateTimeT,         timeSerNbrDateTimeT,
                                            gpSllgChar64PT);
-}TimeSerNbrLinkO0HCapiT, *TimeSerNbrLinkO0HCapiPT;
-extern TimeSerNbrLinkO0HCapiT TimeSerNbrLinkO0HCapi;
+}TimeSerNbrLinkO0ACapiT, *TimeSerNbrLinkO0ACapiPT;
+extern TimeSerNbrLinkO0ACapiT TimeSerNbrLinkO0ACapi;
 
-#endif /* defined(TimeSerNbrO0_h) */
+#endif /* TimeSerNbrO0_h */
 /**
  */

@@ -42,6 +42,34 @@ typedef const struct RowO0QCapiS
 
 extern RowO0QCapiT RowO0QCapi;
 
+typedef struct RowZ3QualityClassApiStructure
+{
+    void (*setupSuite)(lineNbrT);
+    bool (*isScheduled)(cfileNameT, lineNbrT);
+    char* (*getAssertText)(cfuncNameT, lineNbrT);
+    
+    void (*setupSet1)(lineNbrT);
+    bool (*doSet1SizeSafe)(lineNbrT);
+    void (*teardownSet1)(lineNbrT);
+    
+    
+    void (*setupSet2)(lineNbrT);
+    bool (*doSet2Basics)(lineNbrT);
+    void (*teardownSet2)(lineNbrT);
+    
+    void (*setupSet3)(lineNbrT);
+    bool (*doSet3ExtraDemo)(lineNbrT);
+    void (*teardownSet3)(lineNbrT);
+    
+    void (*setupSet4)(lineNbrT);
+    bool (*doSet4Performance)(lineNbrT);
+    void (*teardownSet4)(lineNbrT);
+    
+    void (*teardownSuite)(lineNbrT);
+}RowZ3QCapiT, *RowZ3QCapiPT;
+
+extern RowZ3QCapiT RowZ3QCapi;
+
 /**
  * Additional Versons api will go here.
  */
