@@ -1,6 +1,6 @@
 //
 //  DictZ0TestAid.h
-//  2020Apr02Dev
+//  2020Apr21Dev
 //
 //  Created by Robert Russell Millward on 12/4/19.
 //  Copyright (c) 2020 Robert Russell Millward. All rights reserved.
@@ -42,9 +42,39 @@ typedef struct DictO0QualityClassApiStructure
     void (*teardownSet4)(lineNbrT);
     
     void (*teardownSuite)(lineNbrT);
-}DictO0QCapiT, *DictO0QCapiPT; // these will be O0 when conversion is complete.
+}DictO0QCapiT, *DictO0QCapiPT;
 
 extern DictO0QCapiT DictO0QCapi;
+
+
+
+typedef struct DictO3QualityClassApiStructure
+{
+    void (*setupSuite)(lineNbrT);
+    bool (*isScheduled)(cfileNameT, lineNbrT);
+    char* (*getAssertText)(cfuncNameT, lineNbrT);
+    
+    void (*setupSet1)(lineNbrT);
+    bool (*doSet1SizeSafe)(lineNbrT);
+    void (*teardownSet1)(lineNbrT);
+    
+    
+    void (*setupSet2)(lineNbrT);
+    bool (*doSet2Basics)(lineNbrT);
+    void (*teardownSet2)(lineNbrT);
+    
+    void (*setupSet3)(lineNbrT);
+    bool (*doSet3ExtraDemo)(lineNbrT);
+    void (*teardownSet3)(lineNbrT);
+    
+    void (*setupSet4)(lineNbrT);
+    bool (*doSet4Performance)(lineNbrT);
+    void (*teardownSet4)(lineNbrT);
+    
+    void (*teardownSuite)(lineNbrT);
+}DictO3QCapiT, *DictO3QCapiPT;
+
+extern DictO3QCapiT DictO3QCapi;
 
 #endif /* DictZ0TestAid_h */
 /**

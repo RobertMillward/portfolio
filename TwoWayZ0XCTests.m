@@ -1,6 +1,6 @@
 //
 //  TwoWayZ0XCTests.m
-//  2020Apr02Dev
+//  2020Apr21Dev
 //
 //  Created by Robert R on 3/27/19.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -78,9 +78,12 @@
     }
 }
 
+- (void)test9999SuiteStats{
+}
+
 @end
 
-//============== Stats
+//============== Stats only
 @implementation AboutTests
 - (void)setUp {
     TwoWayZ0QCapi.setupSuite(__LINE__);
