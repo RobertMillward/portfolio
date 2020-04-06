@@ -19,23 +19,24 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
 {
     /**
      * Process the column headers to assign csv (as the name defaults to) columns to the global thesarus.
-     * gp64P->threadIx must be set.
+     * gp64P->...threadIx must be set.
      */
     csvColDataPT        (*newHdrsToFields)(csvColHeadersPT, gpSllgChar64PT);
     /**
      *
-     * gp64P->threadIx must be set.
+     * gp64P->...threadIx must be set.
      */
     csvColDataPT        (*newDataToFields)(csvColDataPT, gpSllgChar64PT);
     /**
      *
-     * gp64P...threadIx must be set.
-     * must be run after newDataToFields
+     * gp64P->...threadIx must be set.
+     * must be run after newDataToFields.
+     * Use 0 (zero) for any unimportant value.
      */
     void                (*putSubXYZtoFields)(subCatPT, indeXT, whYT, whoZT, gpSllgChar64PT);
     /**
      * Get the pointer to data for a UCI for your thread.
-     * gp64P...threadIx must be set.
+     * gp64P->...threadIx must be set.
      */
     ValPtrASizeZ3dataT  (*getFieldViaUci)(UniversalColumnIdT, gpSllgChar64PT);
     /**
@@ -43,7 +44,7 @@ typedef struct DictionaryTavO3ServiceClassApiStruct
      * All Uci must be from the same category.
      * Except for the category, meta felds what, whY, whoZ, and indeX must be requested.
      * The category/sub (What identifier) is the first output which can be skipped if desired.
-     * gp64P...threadIx must be set. 
+     * gp64P->...threadIx must be set.
      */
     void            (*createRow)(targetPT, massOfT, UniversalColumnIdT[], gpSllgChar64PT);
     
