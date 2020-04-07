@@ -19,7 +19,7 @@ typedef struct AuthAndAuthO8AppClassApiStruct
     /**
      * At my location produce a generated Authentication head key.
      */
-    void (* newRow)(char* newRowP, massOfT, AuthAuthZ0AIEntityT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT);
+    void (* newRow)(char* newRowP, massOfT, AuthAuthZ0AIEntityT, whoZPT, gpSllgChar64PT);
     /**
      *
      */

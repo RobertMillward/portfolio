@@ -19,7 +19,7 @@
 typedef const struct AuthAndAuthO8QCapiS
 {
     // These have line number unlike O8.h
-    void (* newRow)(char* newRowP, massOfT, AuthAuthZ0AIEntityT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT, lineNbrT);
+    void (* newRow)(char* newRowP, massOfT, AuthAuthZ0AIEntityT, whoZPT, gpSllgChar64PT, lineNbrT);
     
     // These have line number unlike O8.h
     
