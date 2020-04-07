@@ -10,6 +10,7 @@
 // os
 // helper and server spi's
 // data plans
+#include "PermissionZ0Plan.h"
 // other api's
 #include "PeopleGroupO0.h"
 #include "AppO4.h" 
@@ -39,7 +40,7 @@ extern PermissionO0AIapiT PermissionO0AIapi; // For easy non instance referral
 typedef struct PermissionO0ApplicationThisStruct // (both data and methods)
 {
     PermissionO0AIapiPT api;
-    PermissionO0AIdataT data;
+    PermissionZ0AIdataT data;
     
 } PermissionO0AIthisT, *PermissionO0AIthisPT;
 #define PermissionAIthisT PermissionO0AIthisT
@@ -49,7 +50,7 @@ typedef struct PermissionO0ApplicationThisStruct // (both data and methods)
 #pragma mark - New instance
 /*
  */
-extern PermissionO0AIobjT newPermissionO0(void);
+extern PermissionO0AIthisT newPermissionO0(void);
 /*
  */
 #pragma mark - Class Methods
