@@ -14,12 +14,12 @@
 #include "AuthAndAuthZ8Plan.h"
 // other api's
 
-typedef struct AuthAndAuthO8AppClassApiStruct
+typedef struct AuthAndAuthO8ServiceClassApiStruct
 {
     /**
      * At my location produce a generated Authentication head key.
      */
-    void (* newRow)(char* newRowP, massOfT, AuthAuthZ0AIEntityT, whoZPT, gpSllgChar64PT);
+    void (* newRow)(char* newRowP, massOfT, AuthAuthEntityZ0SItypeT, whoZPT, gpSllgChar64PT);
     /**
      *
      */
@@ -31,12 +31,13 @@ typedef struct AuthAndAuthO8AppClassApiStruct
                               char *stepID);
     
     
-}AuthAndAuthO8ACapiT, *AuthAndAuthO8ACapiPT;
+}AuthAndAuthO8SCapiT, *AuthAndAuthO8SCapiPT;
 
-extern AuthAndAuthO8ACapiT AuthAndAuthO8ACapi;
+extern AuthAndAuthO8SCapiT AuthAndAuthO8SCapi;
 
 #endif /* AuthAndAuthO8_h */
 /**
  * Authentication and Authorization
+ * Gets messages and validates information then builds and executes the step.
  */
 

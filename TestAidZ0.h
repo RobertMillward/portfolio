@@ -1,5 +1,6 @@
 //
 //  TestAidZ0.h
+//  2020Apr21Dev
 //
 //  Created by Robert Russell Millward on 11/29/13.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -35,6 +36,7 @@ extern TestAidZ0QCdataT TestAidZ0QCdata;
 /**
 * Some test constants.
 */
+#define GOOD_LOGIN_PPLGRP   "ppg"
 #define GOOD_PERSON_PPLG    "RRMZZZZ"
 #define WIKIDB_REAL_APP     "WIKIDBA"
 #define WIKIDB_SHARED_APP   "WIKIDBG"
