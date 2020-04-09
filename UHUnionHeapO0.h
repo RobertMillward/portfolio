@@ -1,5 +1,6 @@
 //
 //  UHUnionHeapO0.h
+//  2020Apr21Dev
 //
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
@@ -14,17 +15,18 @@
 
 /**
  * The core of the UnionHeap is an array (heap) of a union of type uhxElT
- * containing data types of a pointer, a math integer, a math float, or a seven character C-string.
+ * containing data types of a pointer, a math integer, a math float, or a seven character C-string
+ * and others as described in ArchitectureUHXZ0.h.
  * It is carried about among the functions via a control structure identified by uhxPassT.
  * There is a default dompare for each of the four data types or the caller may provide one.
  * Functions are listed in the Service Instance below.
  */
-typedef struct UHUnionHeapO0ServiceInstanceApiStruct
+typedef struct UHUnionHeapO0ServiceClassApiStruct
 {
     /**
      * Get a new control structure.
      */
-    uhxPassT    (*newUhxPassT)(uhxElPT, uhxHeapCountT, uhxSubTypeT, uhxComparePT);
+    uhxPassT    (*newUhxPass)(uhxElPT, uhxHeapCountT, uhxSubTypeT, uhxComparePT);
     /**
      * Fill in the default compare if missing.
      */
@@ -56,9 +58,9 @@ typedef struct UHUnionHeapO0ServiceInstanceApiStruct
      */
     uhxAnalysisT        (*analyze)(uhxPassPT uhxPassP);
     
-}UHUnionHeapO0SIapiT, *UHUnionHeapO0SIapiPT;
+}UHUnionHeapO0SCapiT, *UHUnionHeapO0SCapiPT;
 
-extern UHUnionHeapO0SIapiT UHUnionHeapO0SIapi;
+extern UHUnionHeapO0SCapiT UHUnionHeapO0SCapi;
 
 
 #endif /* UHUnionHeapO0_h */

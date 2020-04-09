@@ -23,7 +23,7 @@ typedef struct UHSortO0ServiceInstanceDataStruct
 }srtPassT, *srtPassPT;
 
 
-typedef struct UHSortO0ServiceInstanceApiStruct
+typedef struct UHSortO0ServiceClassApiStruct
 {
     /**
      * Functions
@@ -41,9 +41,9 @@ typedef struct UHSortO0ServiceInstanceApiStruct
     uhxIxNoMoreT    (*sortYourToBeCoupledItems)(srtPassPT);
     void            (*swapItems)               (srtPassPT);
     
-}UHSortO0SIapiT, *UHSortO0SIapiPT;
+}UHSortO0SCapiT, *UHSortO0SCapiPT;
 
-extern UHSortO0SIapiT UHSortO0SIapi;
+extern UHSortO0SCapiT UHSortO0SCapi;
 
 
 #endif /* UHSortO0_h */

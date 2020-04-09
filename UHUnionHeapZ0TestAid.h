@@ -1,5 +1,6 @@
 //
 //  UHUnionHeapZ0TestAid.h - interface file for all level 0 quality assurance code silo parts common to all versions
+//  2020Apr21Dev
 //
 //  Created by Robert R on 11/2/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
@@ -31,7 +32,7 @@ typedef enum UHUnionHeapFillOrderQ0enum
 /**
  * The UHUnionHeap applcation silo quality assurance class api
  */
-typedef struct UHUnionHeapO0QualityInstanceApiStruct
+typedef struct UHUnionHeapO0QualityClassApiStruct
 {
     /**
      * Canned Tests
@@ -66,9 +67,9 @@ typedef struct UHUnionHeapO0QualityInstanceApiStruct
     void (*slosh)(uhxPassPT, lineNbrT);
     void (*btree)(uhxPassPT, lineNbrT);
     
-}UHUnionHeapO0QIapiT, * UHUnionHeapO0QIapiPT;
+}UHUnionHeapO0QCapiT, * UHUnionHeapO0QCapiPT;
 
-extern UHUnionHeapO0QIapiT UHUnionHeapO0QIapi;
+extern UHUnionHeapO0QCapiT UHUnionHeapO0QCapi;
 
 #endif /* UHUnionHeapZ0TestAid_h */
 /**
