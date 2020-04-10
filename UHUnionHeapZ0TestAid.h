@@ -1,5 +1,5 @@
 //
-//  UHUnionHeapZ0TestAid.h - interface file for all level 0 quality assurance code silo parts common to all versions
+//  UHUnionHeapZ0TestAid.h - Precious interface file for all level 0 QA code silo parts common to all versions
 //  2020Apr21Dev
 //
 //  Created by Robert R on 11/2/19.
@@ -66,6 +66,7 @@ typedef struct UHUnionHeapO0QualityClassApiStruct
      */
     void (*slosh)(uhxPassPT, lineNbrT);
     void (*btree)(uhxPassPT, lineNbrT);
+    long (*hashSort)(srtPassPT, lineNbrT);
     
 }UHUnionHeapO0QCapiT, * UHUnionHeapO0QCapiPT;
 

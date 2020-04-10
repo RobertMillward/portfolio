@@ -1,6 +1,6 @@
 //
-//  UHSortO0.h
-//  2020Apr02Dev
+//  UHSortO0.h - Precious
+//  2020Apr21Dev
 //
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
@@ -40,6 +40,10 @@ typedef struct UHSortO0ServiceClassApiStruct
      */
     uhxIxNoMoreT    (*sortYourToBeCoupledItems)(srtPassPT);
     void            (*swapItems)               (srtPassPT);
+    /**
+     * Hash Sort
+     */
+    long (*hashSort)(srtPassPT);
     
 }UHSortO0SCapiT, *UHSortO0SCapiPT;
 
