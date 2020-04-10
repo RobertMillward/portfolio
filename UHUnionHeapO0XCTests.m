@@ -147,7 +147,7 @@ static srtPassT srtPass;
     
     UHUnionHeapO0QCapi.hashSort(&srtPass, __LINE__);
     
-    UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+    //UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }
 
 
