@@ -66,7 +66,7 @@ typedef struct UHUnionHeapO0QualityClassApiStruct
      */
     void (*slosh)(uhxPassPT, lineNbrT);
     void (*btree)(uhxPassPT, lineNbrT);
-    long (*hashSort)(srtPassPT, lineNbrT);
+    long (*logSort)(srtPassPT, lineNbrT);
     
 }UHUnionHeapO0QCapiT, * UHUnionHeapO0QCapiPT;
 

@@ -18,16 +18,17 @@ static uhxElT myMillionUnions[MYARRAYCT];
 static uhxPassT masterMillionUnionsInfo;
 static srtPassT srtPass;
 
-
+@interface UHUnionHeapO0SafetyTests : XCTestCase
+@end
+@interface UHUnionHeapZ0UseLogSortTests : XCTestCase
+@end
 
 #pragma mark - SAFETY
 
 /**
  * S A F E
  */
-@interface UHUnionHeapO0SafetyTests : XCTestCase
 
-@end
 
 @implementation UHUnionHeapO0SafetyTests
 
@@ -125,11 +126,9 @@ static srtPassT srtPass;
 /**
  *
  */
-@interface UHUnionHeapZ0UseHashSortTests : XCTestCase
 
-@end
 
-@implementation UHUnionHeapZ0UseHashSortTests
+@implementation UHUnionHeapZ0UseLogSortTests
 
 - (void)setUp {
     masterMillionUnionsInfo =
@@ -139,13 +138,13 @@ static srtPassT srtPass;
 - (void)tearDown {
 }
 
-- (void)test2099HashSortIntegers {
+- (void)test2099LogSortIntegers {
     
     masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT;
     srtPass.uhxPassP = &masterMillionUnionsInfo;
     srtPass.passCount = srtPass.parentSwapCount = 0;
     
-    UHUnionHeapO0QCapi.hashSort(&srtPass, __LINE__);
+    UHUnionHeapO0QCapi.logSort(&srtPass, __LINE__);
     
     //UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 }

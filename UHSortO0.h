@@ -5,7 +5,6 @@
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
 //
-
 #ifndef UHSortO0_h
 #define UHSortO0_h
 // os
@@ -41,9 +40,9 @@ typedef struct UHSortO0ServiceClassApiStruct
     uhxIxNoMoreT    (*sortYourToBeCoupledItems)(srtPassPT);
     void            (*swapItems)               (srtPassPT);
     /**
-     * Hash Sort
+     * Log Sort
      */
-    long (*hashSort)(srtPassPT);
+    long (*logSort)(srtPassPT);
     
 }UHSortO0SCapiT, *UHSortO0SCapiPT;
 
@@ -51,3 +50,6 @@ extern UHSortO0SCapiT UHSortO0SCapi;
 
 
 #endif /* UHSortO0_h */
+/**
+ *
+ */
