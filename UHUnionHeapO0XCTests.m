@@ -15,7 +15,7 @@
 #import "TestAidZ0.h"
 
 #define MULT_FACTOR 5
-static uhxElT my2MillionUnions[MYARRAYCT*MULT_FACTOR];
+static uhxElT myNMillionUnions[MYARRAYCT*MULT_FACTOR];
 static uhxPassT masterMillionUnionsInfo;
 static srtPassT srtPass;
 
@@ -110,7 +110,7 @@ static srtPassT srtPass;
 
 - (void)setUp {
     masterMillionUnionsInfo =
-        UHUnionHeapO0QCapi.newUhxPassT(my2MillionUnions, sizeof(my2MillionUnions), INT_DATATYPESM, FILL_RANDOM, __LINE__);
+        UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions, sizeof(myNMillionUnions), INT_DATATYPESM, FILL_RANDOM, __LINE__);
 }
 
 - (void)tearDown {
@@ -143,7 +143,7 @@ static srtPassT srtPass;
 
 - (void)setUp {
     masterMillionUnionsInfo =
-        UHUnionHeapO0QCapi.newUhxPassT(my2MillionUnions, sizeof(my2MillionUnions), INT_DATATYPESM, FILL_RANDOM, __LINE__);
+        UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions, sizeof(myNMillionUnions), INT_DATATYPESM, FILL_RANDOM, __LINE__);
 }
 
 - (void)tearDown {
@@ -172,13 +172,13 @@ static srtPassT srtPass;
 
 @implementation UHUnionHeapZ0PerfIntRandTests
 - (void)setUp {
-    masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassT(my2MillionUnions,
-                                                             sizeof(my2MillionUnions),
+    masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions,
+                                                             sizeof(myNMillionUnions),
                                                              INT_DATATYPESM,
                                                              FILL_RANDOM,
                                                              __LINE__);
     
-    masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT*MULT_FACTOR;
+    //masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT*MULT_FACTOR;
 }
 
 - (void)tearDown {
@@ -215,13 +215,13 @@ static srtPassT srtPass;
 
 - (void)setUp {
 
-    masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassT(my2MillionUnions,
-                                                             sizeof(my2MillionUnions),
+    masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions,
+                                                             sizeof(myNMillionUnions),
                                                              INT_DATATYPESM,
                                                              FILL_RANDOM,
                                                              __LINE__);
     
-    masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT*2;
+    masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT;
 }
 
 - (void)tearDown {
@@ -251,8 +251,8 @@ static srtPassT srtPass;
 
 - (void)setUp {
     masterMillionUnionsInfo =
-        UHUnionHeapO0QCapi.newUhxPassT(my2MillionUnions,
-                                 sizeof(my2MillionUnions),
+        UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions,
+                                 sizeof(myNMillionUnions),
                                  INT_DATATYPESM,
                                  FILL_RANDOM,
                                  __LINE__);
@@ -279,8 +279,8 @@ static srtPassT srtPass;
 
 - (void)setUp {
     masterMillionUnionsInfo =
-        UHUnionHeapO0QCapi.newUhxPassT(my2MillionUnions,
-                                 sizeof(my2MillionUnions),
+        UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions,
+                                 sizeof(myNMillionUnions),
                                  INT_DATATYPESM,
                                  FILL_RANDOM,
                                  __LINE__);
@@ -309,8 +309,8 @@ static srtPassT srtPass;
 
 - (void)setUp {
     masterMillionUnionsInfo =
-        UHUnionHeapO0QCapi.newUhxPassT(my2MillionUnions,
-                                 sizeof(my2MillionUnions),
+        UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions,
+                                 sizeof(myNMillionUnions),
                                  INT_DATATYPESM,
                                  FILL_RANDOM,
                                  __LINE__);
