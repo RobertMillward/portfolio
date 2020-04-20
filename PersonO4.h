@@ -1,5 +1,6 @@
 //
 //  PersonO4.h
+//  2020Apr21Dev
 //
 //  Created by Robert Russell Millward on 9/26/13.
 //  Copyright (c) 2020 Robert Russell Millward.  All rights reserved.
@@ -45,12 +46,12 @@ typedef struct PersonO4ApplicationInstanceApiStructure
 #pragma mark - New instance
 /*
  */
-typedef struct PersonO4ApplicationInstanceNewStructure
+typedef struct PersonO4ApplicationInstanceThisStructure
 {
     PersonO4AIapiPT apiP;
     PersonZ0AIdataT data;
     
-}PersonO4AInewT, *PersonO4AInewPT;
+}PersonO4AIthisT, *PersonO4AIthisPT;
 
 /*
  */
@@ -62,11 +63,11 @@ typedef struct PersonO4ApplicationClassApiStructure
     /**
      *
      */
-    PersonO4AInewT (*fromRow)(abstractRowT);
+    PersonO4AIthisT (*fromRow)(abstractRowT);
     /**
      *
      */
-    PersonO4AInewT (*fromFields)(personIdT, gpSllgChar64PT);
+    PersonO4AIthisT (*fromFields)(personIdT, gpSllgChar64PT);
 }PersonO4ACapiT, *PersonO4ACapiPT;
 #define PersonACapiT PersonO4ACapiT
 #define PersonACapi  PersonO4ACapi

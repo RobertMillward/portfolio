@@ -1,11 +1,10 @@
 //
-//  UHSortO0.h
-//  2020Apr02Dev
+//  UHSortO0.h - Precious
+//  2020Apr21Dev
 //
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
 //
-
 #ifndef UHSortO0_h
 #define UHSortO0_h
 // os
@@ -23,7 +22,7 @@ typedef struct UHSortO0ServiceInstanceDataStruct
 }srtPassT, *srtPassPT;
 
 
-typedef struct UHSortO0ServiceInstanceApiStruct
+typedef struct UHSortO0ServiceClassApiStruct
 {
     /**
      * Functions
@@ -40,10 +39,17 @@ typedef struct UHSortO0ServiceInstanceApiStruct
      */
     uhxIxNoMoreT    (*sortYourToBeCoupledItems)(srtPassPT);
     void            (*swapItems)               (srtPassPT);
+    /**
+     * Log Sort
+     */
+    long (*logSort)(srtPassPT);
     
-}UHSortO0SIapiT, *UHSortO0SIapiPT;
+}UHSortO0SCapiT, *UHSortO0SCapiPT;
 
-extern UHSortO0SIapiT UHSortO0SIapi;
+extern UHSortO0SCapiT UHSortO0SCapi;
 
 
 #endif /* UHSortO0_h */
+/**
+ *
+ */

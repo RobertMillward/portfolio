@@ -24,6 +24,17 @@
 @interface DictO0PerformanceTests : XCTestCase
 @end
 
+@interface DictO3OrdinaryTests : XCTestCase
+@end
+@interface DictO3SafeSizeTests : XCTestCase
+@end
+@interface DictO3BasicTests : XCTestCase
+@end
+@interface DictO3ExtraDemoTests : XCTestCase
+@end
+@interface DictO3PerformanceTests : XCTestCase
+@end
+
 @implementation DictO0OrdinaryTests
 
 - (void)setUp {
@@ -53,7 +64,39 @@
 - (void)test9999SuiteStats{
 }
 
-@end // END NonSpecial
+@end // END O0 NonSpecial
+
+
+@implementation DictO3OrdinaryTests
+
+- (void)setUp {
+    DictO3QCapi.setupSet1(__LINE__);
+}
+
+- (void)tearDown {
+    DictO3QCapi.teardownSet1(__LINE__);
+}
+
+- (void)test2020SafeSize{
+    if(DictO3QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(DictO3QCapi.doSet1SizeSafe(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:DictO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+- (void)test2020Basic{
+    if(DictO3QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(DictO3QCapi.doSet2Basics(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:DictO0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+- (void)test9999SuiteStats{
+}
+
+@end // END O3 NonSpecial
 
 /*
 @implementation DictO0SafeSizeTests

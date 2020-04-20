@@ -1,11 +1,16 @@
 //
 //  AuthAndAuthZ8TestAid.h
+//  2020Apr21Dev
 //
 //  Created by Robert Russell Millward on 12/14/19.
-//  Copyright (c) 2019 Robert Russell Millward. All rights reserved.
+//  Copyright (c) 2020 Robert Russell Millward. All rights reserved.
 //
 #ifndef AuthAndAuthZ8TestAid_h
 #define AuthAndAuthZ8TestAid_h
+// os
+// helper and service api's
+// data plans
+// other api's
 #include "AuthAndAuthO8.h"
 
 /**
@@ -14,7 +19,7 @@
 typedef const struct AuthAndAuthO8QCapiS
 {
     // These have line number unlike O8.h
-    void (* newRow)(char* newRowP, massOfT, AuthAuthZ0AIEntityT, whoZPT, gpTxPplGrpBatchTwoWayZ0PT, lineNbrT);
+    void (* newRow)(char* newRowP, massOfT, AuthAuthEntityZ0SItypeT, whoZPT, gpSllgChar64PT, lineNbrT);
     
     // These have line number unlike O8.h
     
