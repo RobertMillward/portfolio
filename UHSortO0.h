@@ -1,6 +1,6 @@
 //
 //  UHSortO0.h - Precious
-//  2020Apr21Dev
+//  2020May10Dev
 //
 //  Created by Robert R on 11/02/19.
 //  Copyright © 2020 Robert Russell Millward. All rights reserved.
@@ -13,13 +13,7 @@
 #include "UHUnionHeapZ0Plan.h"
 // api's
 
-typedef struct UHSortO0ServiceInstanceDataStruct
-{
-    long    passCount;
-    long    parentSwapCount;
-    
-    uhxPassPT uhxPassP;
-}srtPassT, *srtPassPT;
+
 
 
 typedef struct UHSortO0ServiceClassApiStruct
@@ -27,22 +21,22 @@ typedef struct UHSortO0ServiceClassApiStruct
     /**
      * Functions
      */
-    long            (*ourSort)(srtPassPT);
+    Slng (*ourSort)(srtPassPT);
     /**
      * These simple sort examples being here avoid two more code sets.
      */
-    int             (*clangSort)(srtPassPT);
-    void            (*bruteSortIntegers)(srtPassPT);
+    Sint (*clangSort)(srtPassPT);
+    /**
+     * Log Sort
+     */
+    Slng (*logSort)(srtPassPT);
+    //void            (*bruteSortIntegers)(srtPassPT);
     /**
      * Tools
      * - caller should increment srtPassP->passCount for these two
      */
     uhxIxNoMoreT    (*sortYourToBeCoupledItems)(srtPassPT);
     void            (*swapItems)               (srtPassPT);
-    /**
-     * Log Sort
-     */
-    long (*logSort)(srtPassPT);
     
 }UHSortO0SCapiT, *UHSortO0SCapiPT;
 

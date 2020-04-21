@@ -17,7 +17,7 @@
 #define MULT_FACTOR 5
 static uhxElT myNMillionUnions[MYARRAYCT*MULT_FACTOR];
 static uhxPassT masterMillionUnionsInfo;
-static srtPassT srtPass;
+static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 
 
 @interface UHUnionHeapZ0PerfIntRandTests : XCTestCase
@@ -132,7 +132,7 @@ static srtPassT srtPass;
 @end // use
 
 
-#pragma mark - HASHSORT
+#pragma mark - LOGSORT
 
 /**
  *
@@ -152,8 +152,10 @@ static srtPassT srtPass;
 - (void)test2099LogSortIntegers {
     
     masterMillionUnionsInfo.heapCount = MYBIGODD_HEAPCT;
+    masterMillionUnionsInfo.oneTooManyP = masterMillionUnionsInfo.uhxHeapP + masterMillionUnionsInfo.heapCount;
     srtPass.uhxPassP = &masterMillionUnionsInfo;
     srtPass.passCount = srtPass.parentSwapCount = 0;
+    srtPass.yourValuer = 0;
     
     UHUnionHeapO0QCapi.logSort(&srtPass, __LINE__);
     
@@ -289,12 +291,12 @@ static srtPassT srtPass;
 - (void)tearDown {
 }
 
-- (void)test2099BruteA {
-    srtPass.uhxPassP = &masterMillionUnionsInfo;
-    srtPass.passCount = srtPass.parentSwapCount = 0;
-    UHUnionHeapO0QCapi.bruteSort(&srtPass, __LINE__);
-    UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
-}
+//- (void)test2099BruteA {
+//    srtPass.uhxPassP = &masterMillionUnionsInfo;
+//    srtPass.passCount = srtPass.parentSwapCount = 0;
+//    UHUnionHeapO0QCapi.bruteSort(&srtPass, __LINE__);
+//    UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+//}
 
 @end
 

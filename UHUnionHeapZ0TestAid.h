@@ -44,7 +44,7 @@ typedef struct UHUnionHeapO0QualityClassApiStruct
      */
     long                (*ourSort)      (srtPassPT, lineNbrT);
     int                 (*clangSort)    (srtPassPT, lineNbrT);
-    void                (*bruteSort)    (srtPassPT, lineNbrT);
+    //void                (*bruteSort)    (srtPassPT, lineNbrT);
     
     uhxIxNoMoreT        (*sortCouplets) (srtPassPT, lineNbrT);
     uhxIxNoMoreT        (*swapEnds)     (srtPassPT, lineNbrT);
