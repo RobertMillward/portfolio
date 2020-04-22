@@ -1,5 +1,6 @@
 //
 //  UHUnionHeapO0.h - Precious
+//  2020May10Dev
 //  2020Apr21Dev
 //
 //  Created by Robert R on 11/02/19.
@@ -24,9 +25,10 @@
 typedef struct UHUnionHeapO0ServiceClassApiStruct
 {
     /**
-     * Get a new control structure.
+     * Get a new control structure for heap or sort.
      */
     uhxPassT    (*newUhxPass)(uhxElPT, uhxHeapCountT, uhxSubTypeT, uhxComparePT);
+    srtPassT    (*newSrtPass)(uhxPassPT, uhxGetValPT);
     /**
      * Fill in the default compare if missing.
      */
@@ -64,3 +66,6 @@ extern UHUnionHeapO0SCapiT UHUnionHeapO0SCapi;
 
 
 #endif /* UHUnionHeapO0_h */
+/**
+ *
+ */
