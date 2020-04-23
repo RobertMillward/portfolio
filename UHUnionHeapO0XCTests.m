@@ -38,6 +38,8 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 @end
 @interface UHUnionHeapO0SizeTests : XCTestCase
 @end
+@interface UHUnionHeapO0OtherTests : XCTestCase
+@end
 
 
 #pragma mark - SAFETY
@@ -297,6 +299,57 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 //    UHUnionHeapO0QCapi.bruteSort(&srtPass, __LINE__);
 //    UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
 //}
+
+@end
+
+@implementation UHUnionHeapO0OtherTests
+- (void)setUp {
+}
+- (void)tearDown {
+}
+- (void)test2004KeyHashTest {
+    int year = 2014;
+    if(year > 2015)
+    {
+        char lotsaText[] = "Now is the time for all good men to come to the aid of their country."
+        " Give them hell. It's now or never. Bring every able bodied man. Love is in the air tonight."
+        " Damn the torpedoes, full speed ahead. I Nephi, having been born of goodly parents, therefor"
+        " I take it to myself to write about some of the things I learned in kindergarten."
+        " Did you ever iver over see a deer dire dore with a dimple dimple domple on its ear ire ore?"
+        " When in the course of human events it becomes necessary for one party to sever its relationship."
+        " Do you like bacon wrapped avacado sandwiches?";
+        
+        Ssht KeyHashTest_researchYv[MAX_SORTX];
+        extern void UHLLogSortZ0_gatherData_xf99(sourcePT source, int* keyByte, actionT action);
+        UHLLogSortZ0_gatherData_xf99(lotsaText, 0, INIT_BASE);
+        for(int xx = 0; xx < MAX_SORTX; xx++){
+            int keyByte = xx;
+            UHLLogSortZ0_gatherData_xf99(0, &keyByte, INIT_SRCH);
+            KeyHashTest_researchYv[xx] = keyByte;
+        }
+        
+        /**
+         * Hash the text..
+         */
+        Slng fullLen = strlen(lotsaText);
+        printf("    0 2 4 6 8 A C E");
+        for(int ltsaIx = 0; ltsaIx < fullLen; ltsaIx++)
+        {
+            int xx = ltsaIx % MAX_SORTX;
+            if(xx == 0){
+                printf("\n%3d ", ltsaIx / MAX_SORTX );
+            }
+            
+            char yv = lotsaText[ltsaIx] ^ KeyHashTest_researchYv[xx];
+            if(yv < ' '){
+                yv = '?';
+            }
+            printf("%c", yv);
+            
+        }
+        printf("\n");
+    }
+}
 
 @end
 
