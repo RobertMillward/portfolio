@@ -320,11 +320,12 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
         " Do you like bacon wrapped avacado sandwiches?";
         
         Ssht KeyHashTest_researchYv[MAX_SORTX];
-        extern void UHLLogSortZ0_gatherData_xf99(sourcePT source, int* keyByte, actionT action);
-        UHLLogSortZ0_gatherData_xf99(lotsaText, 0, INIT_BASE);
+        // programming note: the file containing this code was lost during checkin. We may rebuild it later
+//        extern void UHLLogSortZ0_gatherData_xf99(sourcePT source, int* keyByte, actionT action);
+//        UHLLogSortZ0_gatherData_xf99(lotsaText, 0, INIT_BASE);
         for(int xx = 0; xx < MAX_SORTX; xx++){
             int keyByte = xx;
-            UHLLogSortZ0_gatherData_xf99(0, &keyByte, INIT_SRCH);
+            //UHLLogSortZ0_gatherData_xf99(0, &keyByte, INIT_SRCH);
             KeyHashTest_researchYv[xx] = keyByte;
         }
         
