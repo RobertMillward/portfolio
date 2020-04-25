@@ -1,5 +1,6 @@
 //
 //  UHUnionHeapZ0TestAid.h - Precious interface file for all level 0 QA code silo parts common to all versions
+//  2020May10Dev
 //  2020Apr21Dev
 //
 //  Created by Robert R on 11/2/19.
@@ -30,14 +31,41 @@ typedef enum UHUnionHeapFillOrderQ0enum
 #define MYTINY_HEAPCT        16
 
 /**
- * The UHUnionHeap applcation silo quality assurance class api
+ * The standard test interface
+ */
+typedef struct UHUnionHeapZ0QualityClassApiStructure
+{
+    void (*setupSuite)(lineNbrT);
+    bool (*isScheduled)(cfileNameT, lineNbrT);
+    char* (*getAssertText)(cfuncNameT, lineNbrT);
+    
+    void (*setupSet1)(lineNbrT);
+    bool (*doSet1SizeSafe)(lineNbrT);
+    void (*teardownSet1)(lineNbrT);
+    
+    
+    void (*setupSet2)(lineNbrT);
+    bool (*doSet2Basics)(lineNbrT);
+    void (*teardownSet2)(lineNbrT);
+    
+    void (*setupSet3)(lineNbrT);
+    bool (*doSet3ExtraDemo)(lineNbrT);
+    void (*teardownSet3)(lineNbrT);
+    
+    void (*setupSet4)(lineNbrT);
+    bool (*doSet4Performance)(lineNbrT);
+    void (*teardownSet4)(lineNbrT);
+    
+    void (*teardownSuite)(lineNbrT);
+}UHUnionHeapZ0QCapiT, *UHUnionHeapZ0QCapiPT;
+
+extern UHUnionHeapZ0QCapiT UHUnionHeapZ0QCapi;
+
+/**
+ * The UHUnionHeapO0 applcation silo quality assurance class api
  */
 typedef struct UHUnionHeapO0QualityClassApiStruct
 {
-    /**
-     * Canned Tests
-     */
-    ErrorWarnCountT     (*safeSizeChecks012n)(lineNbrT);
     /**
      * Functions
      */
@@ -52,7 +80,7 @@ typedef struct UHUnionHeapO0QualityClassApiStruct
     /**
      * New
      */
-    uhxPassT (*newUhxPassT)(uhxElPT, massOfT, uhxSubTypeT, uhxqFillOrderQ0T, lineNbrT);
+    uhxPassT (*newUhxPassQ)(uhxElPT, massOfT, uhxSubTypeT, uhxqFillOrderQ0T, lineNbrT);
     /**
      * Test tools
      */

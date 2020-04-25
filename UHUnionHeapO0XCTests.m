@@ -1,5 +1,6 @@
 //
 //  UHUnionHeapO0XCTests.m - Precious tests for version O level 0
+//  2020May10Dev
 //  2020Apr02Dev
 //
 //  Created by Robert R on 11/1/19.
@@ -22,43 +23,67 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 
 @interface UHUnionHeapZ0OrdinaryTests : XCTestCase
 @end
+@interface UHUnionHeapZ0XOrdinaryTests : XCTestCase
+@end
 
 @interface UHUnionHeapZ0PerfIntRandTests : XCTestCase
 @end
 @interface UHUnionHeapO0UseMiscTests : XCTestCase
 @end
-
-@interface UHUnionHeapO0SafeSizeTests : XCTestCase
-@end
 @interface UHUnionHeapO0OtherTests : XCTestCase
 @end
 
-
-
-#pragma mark - SAFETY
-
-
-@implementation UHUnionHeapO0SafeSizeTests
+@implementation UHUnionHeapZ0OrdinaryTests
 
 - (void)setUp {
+    UHUnionHeapZ0QCapi.setupSet1(__LINE__);
 }
 
 - (void)tearDown {
+    UHUnionHeapZ0QCapi.teardownSet1(__LINE__);
 }
-/**
-* This includes about 20 tests for safety.
-*/
-- (void)test2099SafeSize {
-    
-    ErrorWarnCountT ewc = UHUnionHeapO0QCapi.safeSizeChecks012n(__LINE__);
-    
-    if(ewc.classErrors > 0)
-    {
-        XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:TestAidQCapi.getAssertText(__FUNCTION__)]);
+
+#pragma mark - SAFETY
+
+- (void)test2020SafeSize{
+    if(UHUnionHeapZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(UHUnionHeapZ0QCapi.doSet1SizeSafe(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:UHUnionHeapZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
     }
 }
 
-@end
+- (void)test2020Basic{
+    if(UHUnionHeapZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(UHUnionHeapZ0QCapi.doSet2Basics(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:UHUnionHeapZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+- (void)test2020ExtraDemo{
+    if(UHUnionHeapZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(UHUnionHeapZ0QCapi.doSet3ExtraDemo(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:UHUnionHeapZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+- (void)test2020Performance{
+    if(UHUnionHeapZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        if(UHUnionHeapZ0QCapi.doSet4Performance(__LINE__)){
+            XCTAssert(NO, @"%@", [[NSString alloc] initWithUTF8String:UHUnionHeapZ0QCapi.getAssertText(__FUNCTION__, __LINE__)]);
+        }
+    }
+}
+
+- (void)test9999SuiteStats{
+}
+
+@end // END O0 NonSpecial
+
+
+
 
 
 
@@ -67,7 +92,7 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 
 @implementation UHUnionHeapZ0PerfIntRandTests
 - (void)setUp {
-    masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions,
+    masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassQ(myNMillionUnions,
                                                              sizeof(myNMillionUnions),
                                                              INT_DATATYPESM,
                                                              FILL_RANDOM,
@@ -102,11 +127,11 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 
 
 
-@implementation UHUnionHeapZ0OrdinaryTests
+@implementation UHUnionHeapZ0XOrdinaryTests
 
 - (void)setUp {
 
-    masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions,
+    masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassQ(myNMillionUnions,
                                                              sizeof(myNMillionUnions),
                                                              INT_DATATYPESM,
                                                              FILL_RANDOM,
@@ -145,7 +170,7 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 
 - (void)test2099SeqChkLogSortIntegers {
 
-    masterMillionUnionsInfo.oneTooManyP = masterMillionUnionsInfo.uhxHeapP + masterMillionUnionsInfo.heapCount;
+    //masterMillionUnionsInfo.oneTooManyP = masterMillionUnionsInfo.uhxHeapP + masterMillionUnionsInfo.heapCount;
     srtPass.uhxPassP = &masterMillionUnionsInfo;
     srtPass.passCount = srtPass.parentSwapCount = 0;
     srtPass.yourValuer = 0;
@@ -162,7 +187,7 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 
 - (void)setUp {
     masterMillionUnionsInfo =
-        UHUnionHeapO0QCapi.newUhxPassT(myNMillionUnions,
+        UHUnionHeapO0QCapi.newUhxPassQ(myNMillionUnions,
                                  sizeof(myNMillionUnions),
                                  INT_DATATYPESM,
                                  FILL_RANDOM,
@@ -175,9 +200,12 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 
 #pragma mark - BTREE
 
-- (void)test2099BtreeA {
-    UHUnionHeapO0QCapi.btree(&masterMillionUnionsInfo, __LINE__);
-    UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+- (void)test2001BtreeA
+{
+    if(UHUnionHeapZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        UHUnionHeapO0QCapi.btree(&masterMillionUnionsInfo, __LINE__);
+        UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+    }
 }
 
 #pragma mark - BRUTE
@@ -192,9 +220,12 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 #pragma mark - SLOSH
 
 
-- (void)test2099SloshA {
-    UHUnionHeapO0QCapi.slosh(&masterMillionUnionsInfo, __LINE__);
-    UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+- (void)test2001SloshA
+{
+    if(UHUnionHeapZ0QCapi.isScheduled(__FUNCTION__, __LINE__)){
+        UHUnionHeapO0QCapi.slosh(&masterMillionUnionsInfo, __LINE__);
+        UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+    }
 }
 
 @end
