@@ -37,14 +37,13 @@ typedef struct UHUnionHeapO0QualityClassApiStruct
     /**
      * Canned Tests
      */
-    ErrorWarnCountT     (*sizeChecks)(lineNbrT);
-    ErrorWarnCountT     (*safetyChecks012n)(lineNbrT);
+    ErrorWarnCountT     (*safeSizeChecks012n)(lineNbrT);
     /**
      * Functions
      */
     long                (*ourSort)      (srtPassPT, lineNbrT);
     int                 (*clangSort)    (srtPassPT, lineNbrT);
-    //void                (*bruteSort)    (srtPassPT, lineNbrT);
+    long                (*logSort)      (srtPassPT, lineNbrT);
     
     uhxIxNoMoreT        (*sortCouplets) (srtPassPT, lineNbrT);
     uhxIxNoMoreT        (*swapEnds)     (srtPassPT, lineNbrT);
@@ -66,7 +65,7 @@ typedef struct UHUnionHeapO0QualityClassApiStruct
      */
     void (*slosh)(uhxPassPT, lineNbrT);
     void (*btree)(uhxPassPT, lineNbrT);
-    long (*logSort)(srtPassPT, lineNbrT);
+    //void                (*bruteSort)    (srtPassPT, lineNbrT);
     
 }UHUnionHeapO0QCapiT, * UHUnionHeapO0QCapiPT;
 
