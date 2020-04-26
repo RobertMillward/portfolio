@@ -29,6 +29,7 @@ typedef enum UHUnionHeapFillOrderQ0enum
 #define MYBIGODD_HEAPCT  999997 // To test the left edge of the third row
 #define MYSMALL_HEAPCT      900 // To keep the test small
 #define MYTINY_HEAPCT        16
+#define SEQCHK_UNDER    2000000
 
 /**
  * The standard test interface

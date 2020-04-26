@@ -37,7 +37,7 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
     UHUnionHeapZ0QCapi.setupSet1(__LINE__);
     // until moved in
     masterMillionUnionsInfo = UHUnionHeapO0QCapi.newUhxPassQ(myNMillionUnions,
-                                                             sizeof(myNMillionUnions),
+                                                             sizeof(myNMillionUnions) / 1,
                                                              INT_DATATYPESM,
                                                              FILL_RANDOM,
                                                              __LINE__);
@@ -92,7 +92,9 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
         
         UHUnionHeapO0QCapi.clangSort(&srtPass, __LINE__);
         
-        UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+        if(srtPass.uhxPassP->heapCount >= SEQCHK_UNDER){
+            UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+        }
     }
 }
 
@@ -107,7 +109,9 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
         
         UHUnionHeapO0QCapi.ourSort(&srtPass, __LINE__);
         
-        UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+        if(srtPass.uhxPassP->heapCount >= SEQCHK_UNDER){
+            UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+        }
     }
 }
 
@@ -121,8 +125,9 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
         srtPass.yourValuer = 0;
         
         UHUnionHeapO0QCapi.logSort(&srtPass, __LINE__);
-        
-        UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+        if(srtPass.uhxPassP->heapCount >= SEQCHK_UNDER){
+            UHUnionHeapO0QCapi.seqChk(&masterMillionUnionsInfo, __LINE__);
+        }
     }
 }
 
@@ -155,20 +160,20 @@ static srtPassT srtPass = {0, 0, DEFAULT_COMPARE, 0};
 - (void)test2099CompareOurSortIntegers {
     srtPass.uhxPassP = &masterMillionUnionsInfo;
     srtPass.passCount = srtPass.parentSwapCount = 0;
-    UHUnionHeapO0QCapi.ourSort(&srtPass, __LINE__);
+    UHSortO0SCapi.ourSort(&srtPass);
 }
 
 
 - (void)test2099CompareClangSortIntegers {
     srtPass.uhxPassP = &masterMillionUnionsInfo;
     srtPass.passCount = srtPass.parentSwapCount = 0;
-    UHUnionHeapO0QCapi.clangSort(&srtPass, __LINE__);
+    UHSortO0SCapi.clangSort(&srtPass);
 }
 
 - (void)test2099CompareLogSortIntegers {
     srtPass.uhxPassP = &masterMillionUnionsInfo;
     srtPass.passCount = srtPass.parentSwapCount = 0;
-    UHUnionHeapO0QCapi.logSort(&srtPass, __LINE__);
+    UHSortO0SCapi.logSort(&srtPass);
 }
 
 
